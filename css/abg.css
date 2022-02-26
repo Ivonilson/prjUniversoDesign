@@ -1,0 +1,200 @@
+@media print {
+
+body {
+  visibility: hidden;
+}
+
+table { page-break-after:auto }
+tr    { page-break-inside:avoid; page-break-after:auto }
+thead { display:table-header-group }
+tfoot { display:table-footer-group }
+
+  #imprimir, #imprimir * {
+    visibility: visible;
+  }
+
+  #imprimir {
+    margin-left: 0;
+    margin-top: 0;
+    margin-right: 10;
+  }
+}
+
+.modal-content {
+	min-width: 2200px;
+	min-height: 1000px;
+	margin:  0;
+}
+
+.modal-dialog {
+	width: 100%;
+	margin:  0;
+}
+
+.progresso {
+	height:44px;
+	width: 500px;
+	border: solid 1px #FF6347;
+}
+
+.progresso > div {
+	background-color: #FF6347;
+	color: white;
+	height: 100%;
+	text-align: right;
+	font-size: 18px;
+	min-width: 15%;
+	padding-right:10px;
+	padding-bottom: 5px;
+}
+
+#navegacao li a:hover {
+   background-color: #DCDCDC;
+   font-weight: bold;
+}
+
+.containerGeralImpressao {
+	border: solid black 2px;
+	margin-right: 5px;
+	margin-left: 5px;
+	//background-color: orange;
+}	
+
+.containerBtnImpressao {
+		margin-right: 5px;
+		margin-left: 5px;
+		margin-top: 5px;
+}
+
+.divLogo img {
+	width: 80%;
+	//border: solid blue 3px;
+	margin-top: 5px;
+}
+
+.divProposta {
+	border: solid black 3px;
+	border-radius: 5px;
+	margin-right: 10px;
+	margin-top: 5px;
+	padding: auto;
+}
+
+.divProposta h1 {
+	size: 10px;
+	font-size: 32px;
+	text-align: center;
+	padding-top: 18%;
+	padding-bottom: 18%;
+}
+
+.containerGeralImpressao span {
+	margin-top: 20px;
+}
+
+.informacoesIniciais {
+	margin-top: 20px;
+	//border: solid red 3px;
+	padding-top: 5px;
+}
+
+.dadosCliente {
+	text-align: left;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.dadosProposta {
+	text-align: left;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#precoTotal {
+	font-size: 20px;
+	font-weight: bold;
+	border: solid black 2px;
+	border-radius: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 6px;
+	padding-right: 6px;
+	text-align: center;
+}
+
+#validadeProposta {
+	font-size: 20px;
+	font-weight: bold;
+	border: solid black 2px;
+	border-radius: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 6px;
+	padding-right: 6px;
+	text-align: center;
+}
+
+#gerente {
+	font-size: 20px;
+	font-weight: bold;
+	border: solid black 2px;
+	border-radius: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 6px;
+	padding-right: 6px;
+	text-align: center;
+}
+
+#formaPagamento {
+	font-size: 20px;
+	font-weight: bold;
+	border: solid black 2px;
+	border-radius: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 6px;
+	padding-right: 6px;
+	text-align: center;
+}
+
+
+#pPrecoTotal {
+	font-weight: bold;
+	text-align: center;
+}
+
+#pValidade {
+	font-weight: bold;
+	text-align: center;
+}
+
+#pGerente{
+	font-weight: bold;
+	text-align: center;
+}
+
+#pFormaPagamento{
+	font-weight: bold;
+	text-align: center;
+}
+
+
+.linhaPreco {
+	//border: solid red 5px;
+}
+
+.linhaValidade {
+	//border: solid orange 5px;
+}
+
+.linhaFormaPagamento {
+	//border: solid blue 5px;
+	margin-top: 20px;
+}
+
+#telefoneVendedor {
+	display: block;
+	font-size: 12px;
+	margin-top: 0;
+}
