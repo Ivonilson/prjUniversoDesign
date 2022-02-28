@@ -1,9 +1,5 @@
 <?php
 class Conn {
-	/*public static $host = "br900.hostgator.com.br";
-	public static $user = "abgsol79_abgsol79_abgsoft";
-	public static $pass = "Kmvd00ui!";
-	public static $dbName = "abgsol79_universo_design";*/
 	
 	public static $host = "localhost";
 	public static $user = "root";
