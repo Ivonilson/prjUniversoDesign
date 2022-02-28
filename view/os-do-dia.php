@@ -32,7 +32,7 @@
 					Pesquisa
 				</li>
 				<li class="breadcrumb-item">
-					O.S(s) do dia MASTERR
+					O.S(s) do dia
 				</li>	
 			</ol>
 
