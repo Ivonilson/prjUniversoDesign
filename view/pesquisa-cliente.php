@@ -19,7 +19,7 @@
 </head>
 <body class="bg-dark fixed-nav sticky-footer" id="page-top">
 	<!-- NAVEGAÇÃO -->
-	<?php require 'navegacao.php';?>
+	<?php require 'includes/navegacao.php';?>
 	
 	<div class="content-wrapper" id="background-tela-consulta">
 		<div class="container-fluid">
@@ -155,7 +155,7 @@
 			</div>
 		</div>
 		<!-- rodapé -->
-		<?php require 'rodape.php';?>
+		<?php require 'includes/rodape.php';?>
 	</div>
 	<script src="../bibliotecas/jquery/jquery.min.js"></script>
 	<script src="../bibliotecas/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -18,7 +18,7 @@
 <body class="bg-dark fixed-nav sticky-footer" id="page-top">
 	<!-- NAVEGAÇÃO -->
 	<?php
-		include('navegacao.php');
+		include('includes/navegacao.php');
 	?>
 	
 	<div class="content-wrapper">
@@ -317,7 +317,7 @@
 			</div>
 
 			<?php  
-				include ('rodape.php');
+				include ('includes/rodape.php');
 			?>
 			
 		</div>
