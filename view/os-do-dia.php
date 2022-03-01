@@ -8,7 +8,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Ordens de Serviço do Dia - VIEWS</title>
+	<title>Ordens de Serviço do Dia</title>
 	<!--<link rel="stylesheet" type="text/css" href="../bibliotecas/bootstrap/css/bootstrap.min.css">-->
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap2.min.css">
 	<link rel="stylesheet" type="text/css" href="../bibliotecas/font-awesome/css/font-awesome.min.css">

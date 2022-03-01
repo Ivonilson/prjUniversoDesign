@@ -13,6 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap2.min.css">
 	<link rel="stylesheet" type="text/css" href="../bibliotecas/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/sb-admin.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/abg.css">
 </head>
 <body class="bg-dark fixed-nav sticky-footer" id="page-top">
 	<!-- NAVEGAÇÃO -->
@@ -111,7 +112,7 @@
 										AGENDAR
 									</div>
 								</div>
-								<input type="text" class="form-control" name="ipt-data-agendamento" value="<?=date_format(date_create($registro->data_agendamento), "d-m-Y")?>">
+								<input type="text" class="form-control" name="ipt-data-agendamento" value="<?=date_format(date_create($registro->data_agendamento), "d/m/Y")?>">
 							</div>
 						</div>
 
@@ -204,6 +205,28 @@
 						</div>
 
 						<input type="submit" name="btnEditarOs" value="GRAVAR" id="btnGravarEdicao">
+						
+					<?php
+						if($mensagem_erro == "Ordem de Serviço atualizada com Sucesso!")
+						{
+					?>
+
+					<div class="alert alert-success font-weight-bold alertaCadOsOk col-12 text-center" role="alert">
+ 						<img src="../assets/ok.png"><h5><strong><?=$mensagem_erro?></strong></h5>
+					</div>
+
+					<?php 
+						} else if($mensagem_erro == "ERRO. Verifique se você REALMENTE alterou alguma coisa ou Contate o Suporte.") {
+					?>
+
+					<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
+ 						<img src="../assets/error.png"><h5><strong><?=$mensagem_erro?></strong></h5>
+					</div>
+
+					<?php
+						}
+					?>
+
 					</div>
 
 				</form>
@@ -237,7 +260,7 @@
 	<script src="../bibliotecas/jquery/jquery.min.js"></script>
 	<script src="../bibliotecas/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="../bibliotecas/jquery-easing/jquery.easing.min.js"></script>
-	<script type="text/javascript" src="../js/sb-admin.min.js"></script>
+	<script src="../js/sb-admin.min.js"></script>
 	<script src="../js/abg.js"></script>
 </body>
 </html>
