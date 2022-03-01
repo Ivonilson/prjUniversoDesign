@@ -20,7 +20,7 @@
 </head>
 <body class="bg-dark fixed-nav sticky-footer" id="page-top">
 	<!-- NAVEGAÇÃO -->
-	<?php require 'navegacao.php';?>
+	<?php require 'includes/navegacao.php';?>
 	
 	<div class="content-wrapper">
 		<div class="container-fluid">
@@ -169,7 +169,7 @@
 
 		</div>
 		<!-- rodapé -->
-		<?php require 'rodape.php';?>
+		<?php require 'includes/rodape.php';?>
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.4.3.min.js"></script>
 	<script src="../bibliotecas/jquery/jquery.min.js"></script>
