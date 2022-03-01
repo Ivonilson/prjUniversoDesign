@@ -21,7 +21,6 @@ class EditarOs {
 	{
 			$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 			//$form = filter_input(INPUT_GET, 'form');
-			$data_editada = date_format(date_create($dados['ipt-data-agendamento']), "Y-d-m");
 
 			if (!empty($dados['btnEditarOs'])) {
 				unset($dados['btnEditarOs']);
@@ -40,7 +39,7 @@ class EditarOs {
 
 			$dados_editar->bindParam(':cod_os', $dados['ipt-os']);
 			$dados_editar->bindParam(':id_orcamento', $dados['ipt-orcamento']);
-			$dados_editar->bindParam(':data_agendamento', $data_editada);
+			$dados_editar->bindParam(':data_agendamento', date_format(date_create($dados['ipt-data-agendamento']), "Y-d-m"));
 			$dados_editar->bindParam(':cidade_uf', $dados['sel-cidade-uf']);
 			$dados_editar->bindParam(':endereco', $dados['ipt-endereco']);
 			$dados_editar->bindParam(':sit_pagamento', $dados['sel-pagamento']);
