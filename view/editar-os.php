@@ -112,7 +112,7 @@
 										AGENDAR
 									</div>
 								</div>
-								<input type="text" class="form-control" name="ipt-data-agendamento" value="<?=date_format(date_create($registro->data_agendamento), 'd/m/Y')?>">
+								<input type="date" class="form-control" name="ipt-data-agendamento" value="<?=$registro->data_agendamento?>">
 							</div>
 						</div>
 
@@ -215,7 +215,19 @@
  						<img src="../assets/ok.png"><h5><strong><?=$mensagem_erro?></strong></h5>
 					</div>
 
+					<?php   
+						if($_GET['form']  == 'os-do-dia' ){
+					?>
+
+					<a href="/?pagina=<?=$_GET['form']?>" class="btn btn-success btn-lg mt-1 mb-1">Retornar</a>		
+
+					<?php  
+					    }
+					?>		
+
+
 					<?php 
+
 						} else if($mensagem_erro == "ERRO. Verifique se você REALMENTE alterou alguma coisa ou Contate o Suporte.") {
 					?>
 
