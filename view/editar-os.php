@@ -112,7 +112,7 @@
 										AGENDAR
 									</div>
 								</div>
-								<input type="text" class="form-control" name="ipt-data-agendamento" value="<?=date_format(date_create($registro->data_agendamento), "d/m/Y")?>">
+								<input type="text" class="form-control" name="ipt-data-agendamento" value="<?=date_format(date_create($registro->data_agendamento), 'd/m/Y')?>">
 							</div>
 						</div>
 
