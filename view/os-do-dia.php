@@ -9,12 +9,14 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Ordens de Serviço do Dia</title>
-	<!--<link rel="stylesheet" type="text/css" href="../bibliotecas/bootstrap/css/bootstrap.min.css">-->
-	<?php include 'includes/bootstrap-css.php' ?>
+	<?php require_once 'includes/bootstrap-css.php'; ?>
+	<link rel="stylesheet" type="text/css" href="../css/abg.css">
+
 </head>
+
 <body class="bg-dark fixed-nav sticky-footer" id="page-top">
 	<!-- NAVEGAÇÃO -->
-	<?php include 'includes/navegacao.php';?>
+	<?php require_once 'includes/navegacao.php';?>
 	
 	<div class="content-wrapper">
 		<div class="container-fluid">
@@ -153,11 +155,14 @@
 			</div>
 		</div>
 		<!-- rodapé -->
-		<?php require 'includes/rodape.php';?>
+		<?php require_once 'includes/rodape.php';?>
 	</div>
 	
-	<?php //include 'includes/bootstrap-js.php' ?>
-	
+	<link rel="stylesheet" type="text/css" href="bootstrap-4.1.3/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../bibliotecas/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../bibliotecas/datatables/dataTables.bootstrap4.css">
+	<link rel="stylesheet" type="text/css" href="../css/sb-admin.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/sb-admin.min.css">
 	
 	<script type="text/javascript">
 	  //REFRESH AUTOMÁTICO 
@@ -166,5 +171,6 @@
       //BARRA DE PROGRESSO DOS SERVIÇOS EXECUTADOS
       configurarBarra();
 	</script>
+
 </body>
 </html>
