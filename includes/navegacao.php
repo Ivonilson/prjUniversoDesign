@@ -223,92 +223,91 @@
 
 		</div>
 	</nav>
-	
-			<!-- MODAL DAS NOTIFICAÇÕES -->
-			<div class="modal fade" tabindex="-1" id="modalNotificacoes" role="dialog" aria-labelledby="notificacoes" aria-hidden="true">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title text-center text-danger" id="notificacoes"><?="Pendências programadas para resolver em ".date('d/m/Y')?></h5>
-							<button class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
 
-						<?php 
+	<!-- MODAL DAS NOTIFICAÇÕES -->
+	<div class="modal fade offset-4 col-4 offset-4" tabindex="-1" id="modalNotificacoes" role="dialog" aria-labelledby="notificacoes" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title text-center text-danger" id="notificacoes"><?="Pendências programadas para resolver em ".date('d/m/Y')?></h5>
+					<button class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
 
-							foreach ($resultadoNotificacoes as $dados) {
+				<?php 
 
-						?>
+					foreach ($resultadoNotificacoes as $dados) {
 
-						<div class="modal-body">
-							<span class="text-info">
-								<strong>
-									<?=$dados->descricao?>
-								</strong>
-							</span>
-							<br>
+				?>
 
-							<span class="small text-danger">Cadastrado em: </span><p class="text-muted"> <?=date_format(date_create($dados->data_cadastro), 'd/m/Y H:i:s')
+				<div class="modal-body">
+					<span class="text-info">
+						<strong>
+							<?=$dados->descricao?>
+						</strong>
+					</span>
+					<br>
+
+					<span class="small text-danger">Cadastrado em: </span><p class="text-muted"> <?=date_format(date_create($dados->data_cadastro), 'd/m/Y H:i:s')
 							?></p>
-
-							<span class="small text-danger">Cadastrado por:</span><p class="text-muted"> <?=$dados->usuario
+					<span class="small text-danger">Cadastrado por:</span><p class="text-muted"> <?=$dados->usuario
 							?></p>
 							
-							<span class="small text-danger" >Remetente: </span><p class="text-muted"><?=$dados->remetente?></p>
+					<span class="small text-danger" >Remetente: </span><p class="text-muted"><?=$dados->remetente?></p>
 
-							<span class="small text-danger" >Destinatário: </span><p class="text-muted"><?=$dados->destinatario?></p>
+					<span class="small text-danger" >Destinatário: </span><p class="text-muted"><?=$dados->destinatario?></p>
 
-							<span class="small text-danger" >Meio da notificação: </span><p class="text-muted"><?=$dados->meio_notificacao?></p>
+					<span class="small text-danger" >Meio da notificação: </span><p class="text-muted"><?=$dados->meio_notificacao?></p>
 
-							<span class="small text-danger">Data de emissão: </span><p class="text-muted"> <?=date_format(date_create($dados->data_emissao), 'd/m/Y')
+					<!--<span class="small text-danger">Data de emissão: </span><p class="text-muted"> <?=date_format(date_create($dados->data_emissao), 'd/m/Y')
+							?></p>-->
+
+					<span class="text-danger font-weight-bold">Data limite: </span><p class="text-muted font-weight-bold"> <?=date_format(date_create($dados->data_limite), 'd/m/Y')
 							?></p>
 
-							<span class="text-danger font-weight-bold">Data limite: </span><p class="text-muted font-weight-bold"> <?=date_format(date_create($dados->data_limite), 'd/m/Y')
-							?></p>
+					<span class="small text-danger">Prioridade: </span><p class="text-muted"><?=$dados->prioridade?></p>
 
-							<span class="small text-danger">Prioridade: </span><p class="text-muted"><?=$dados->prioridade?></p>
+					<span class="small text-danger">Observações: </span><p class="text-muted"><?=$dados->observacoes?></p>
 
-							<span class="small text-danger">Observações: </span><p class="text-muted"><?=$dados->observacoes?></p>
+					<form method="get">
 
-							<form method="get">
+						<input type="hidden" name="ipt-id-notificacao" value="<?=$dados->id_notificacao?>">
+						<input type="hidden" name="pagina" value="editar-notificacao">
 
-								<input type="hidden" name="ipt-id-notificacao" value="<?=$dados->id_notificacao?>">
-								<input type="hidden" name="pagina" value="editar-notificacao">
-
-								<div class="input-group col-auto" >
-									<div class="input-group-prepend">
-										<label class="input-group-text bg-info text-white">Resolver</label>
-									</div>
-									<select name="sel-resolver" class="custom-select">
-										<option value="-">Selecione</option>
-										<option value="RESOLVIDO">RESOLVIDO</option>
-										<option value="ADIAR">ADIAR</option>
-									</select>	
-								</div>
-
-								<div class="input-group col-auto mt-1 mb-1" >
-									<div class="input-group-prepend">
-										<label class="input-group-text bg-info text-white">Adiar para:</label>
-									</div>
-									<input type="date" class="form-control" name="ipt-data-adiada" required>
-								</div>
-								<div class="input-group col-auto mt-1 mb-1">
-									<input type="submit" class="btn btn-info text-white btn-block" name="btnGravar" value="Gravar">
-								</div>
-							</form>
-
-							<hr>
+						<div class="input-group col-3" >
+							<div class="input-group-prepend">
+								<label class="input-group-text bg-info text-white">Resolver</label>
+							</div>
+							<select name="sel-resolver" class="custom-select">
+								<option value="-">Selecione</option>
+								<option value="RESOLVIDO">RESOLVIDO</option>
+									<option value="ADIAR">ADIAR</option>
+							</select>	
 
 						</div>
-						<?php
 
-							}
+						<div class="input-group col-3 mt-1 mb-1" >
+							<div class="input-group-prepend">
+								<label class="input-group-text bg-info text-white">Data:</label>
+							</div>
 
-						?>
-						<div class="modal-footer">
-							<button class="btn btn-danger" data-dismiss="modal">Fechar</button>
+							<input type="date" class="form-control" name="ipt-data-adiada" value="<?= $dados->data_limite ?>">
 						</div>
-					</div>
+
+						<div class="input-group col-3 mt-1 mb-1 ">
+							<input type="submit" class="btn btn-info btn-block text-white" name="btnGravar" value="Gravar">
+						</div>
+					</form>
+
+					<hr>
 				</div>
+
+				<?php
+
+					}
+
+				?>
 			</div>
+		</div>
+	</div>

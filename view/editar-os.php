@@ -215,7 +215,16 @@
  						<img src="../assets/ok.png"><h5><strong><?=$mensagem_erro?></strong></h5>
 					</div>
 
-					<a href="/?pagina=<?=$_GET['form']?>" class="btn btn-success btn-lg mt-1 mb-1">Retornar</a>
+					<?php   
+						if($_GET['form']  == 'os-do-dia' ){
+					?>
+
+					<a href="/?pagina=<?=$_GET['form']?>" class="btn btn-success btn-lg mt-1 mb-1">Retornar</a>		
+
+					<?php  
+					    }
+					?>		
+
 
 					<?php 
 
