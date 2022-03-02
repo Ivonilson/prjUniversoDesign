@@ -50,7 +50,8 @@ $pagina = isset($_GET['pagina']) ? $_GET['pagina'] : "login";
 			break;
 
 		case 'editar-os':
-			require "controller/crtEditarOs.php";
+			require_once "controller/crtEditarOs.php";
+			include_once "view/editar-os.php";
 			break;
 
 		case 'editar-cliente':

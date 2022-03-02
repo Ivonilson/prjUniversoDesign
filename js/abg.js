@@ -564,7 +564,7 @@ $(document).ready(function(){
 
 	/*botões de gravar alterações de edições*/
 	let btn_edicao = document.querySelector("#btnGravarEdicao");
-	btn_edicao.setAttribute("class", "btn btn-danger btn-block font-weight-bold rounded");
+	btn_edicao.setAttribute("class", "btn btn-info btn-block font-weight-bold rounded");
 });
 
 //mascaras campos inputs CADASTRAR CLIENTE
