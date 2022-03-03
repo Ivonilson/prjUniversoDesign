@@ -1,4 +1,4 @@
-<script src="bootstrap-4.1.3/js/bootstrap.min.js"></script>
+<!--<script src="bootstrap-4.1.3/js/bootstrap.min.js"></script>-->
 <script src="../bibliotecas/jquery/jquery.min.js"></script>
 <script src="../bibliotecas/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="../bibliotecas/jquery-easing/jquery.easing.min.js"></script>
