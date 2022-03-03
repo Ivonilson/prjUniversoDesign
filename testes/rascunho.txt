@@ -1,7 +1,0 @@
-<?php require_once 'includes/bootstrap-css.php'; ?>
-
-<?php require_once 'includes/bootstrap-js.php'; ?>
-
-<?php require_once 'includes/navegacao.php';?>
-
-<?php require_once 'includes/rodape.php';?>
