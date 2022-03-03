@@ -252,7 +252,7 @@
 						<input type="submit" value="Gravar O.S." name="btnCadastrar" id="botoesGravarCad">
 
 					<?php
-						if($mensagem_erro == "Orçamento Cadastrado com Sucesso!")
+						if($mensagem_erro == "Ordem de Serviço cadastrada com Sucesso!")
 						{
 					?>
 

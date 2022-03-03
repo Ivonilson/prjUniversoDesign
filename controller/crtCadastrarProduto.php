@@ -12,9 +12,9 @@ require "model/Cidade.php";
 			if(filter_input(INPUT_POST, 'ipt-codigo-produto') != '' && filter_input(INPUT_POST, 'ipt-descricao') != '-') {
 				$usuario = new CadastrarProduto();
 
-				if($usuario->cadProduto(filter_input(INPUT_POST, 'ipt-codigo-produto'), filter_input(INPUT_POST, 'ipt-descricao'), filter_input(INPUT_POST, 'sel-unidade-medida'), filter_input(INPUT_POST, 'ipt-preco-unitario'), filter_input(INPUT_POST, 'ipt-quantidade-estoque'))) {
+				if($usuario->cadProduto()) {
 
-					return "Orçamento Cadastrado com sucesso!";
+					return "Produto Cadastrado com sucesso!";
 
 				} else {
 					return "ERRO. Verifique se o código que está tentando cadastrar já exista no sistema ou contate o Suporte.";

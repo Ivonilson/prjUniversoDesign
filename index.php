@@ -56,12 +56,12 @@ $pagina = isset($_GET['pagina']) ? $_GET['pagina'] : "login";
 
 		case 'editar-cliente':
 			require "controller/crtEditarCliente.php";
+			include "view/editar-cliente.php";
 			break;
 
 		case 'editar-produto':
 			require "controller/crtEditarProduto.php";
-			$crtl = new crtEditarProduto();
-			$crtl->editarProduto();
+			include "view/editar-produto.php";
 			break;
 
 		case 'editar-orcamento':

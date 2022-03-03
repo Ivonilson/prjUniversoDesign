@@ -165,6 +165,40 @@
 						</div>
 
 						<input type="submit" id="btnGravarEdicao" value="GRAVAR" name="btnEditarCliente">
+
+					<?php
+						if($mensagem_erro == "Cliente atualizado com Sucesso!")
+						{
+					?>
+
+					<div class="alert alert-success font-weight-bold alertaCadOsOk col-12 text-center" role="alert">
+ 						<img src="../assets/ok.png"><h5><strong><?=$mensagem_erro?></strong></h5>
+					</div>
+
+					<?php   
+						if($_GET['form']  == 'os-do-dia' || $_GET['form'] == 'lista-agendamentos'){
+					?>
+
+					<a href="/?pagina=<?=$_GET['form']?>" class="btn btn-success btn-lg mt-1 mb-1">Retornar</a>		
+
+					<?php  
+					    }
+					?>		
+
+
+					<?php 
+
+						} else if($mensagem_erro == "ERRO. Verifique se você REALMENTE alterou alguma coisa ou Contate o Suporte.") {
+					?>
+
+					<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
+ 						<img src="../assets/error.png"><h5><strong><?=$mensagem_erro?></strong></h5>
+					</div>
+
+					<?php
+						}
+					?>
+
 					</div>
 				</form>
 			</div>	

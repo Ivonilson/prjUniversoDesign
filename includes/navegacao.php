@@ -39,24 +39,9 @@
 				</li>
 
 				<li class="nav-item" id="navegacao">
-					<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseListas">
-						<i class="fa fa-tasks"></i>
-						<span class="nav-link-text">Agendamentos</span>
-					</a>
-
-					<ul class="sidenav-second-level collapse" id="collapseListas" data-parent="#linksaccordion">
-
-						<li>
-							<a href="/?pagina=lista-agendamentos">Lista de Agendamentos</a>
-						</li>
-
-					</ul>
-				</li>
-
-				<li class="nav-item" id="navegacao">
 					<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapsePesquisas">
 						<i  class="fa fa-search" aria-hidden="true"></i>
-						<span class="nav-link-text">Pesquisas</span>
+						<span class="nav-link-text">Consultas</span>
 					</a>
 					<ul class="sidenav-second-level collapse" id="collapsePesquisas" data-parent="#linksaccordion">
 						<li>
@@ -83,6 +68,21 @@
 						<!--<li>
 							<a href="">Histórico da Ordem de Serviço</a>
 						</li>-->
+					</ul>
+				</li>
+
+				<li class="nav-item" id="navegacao">
+					<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseListas">
+						<i class="fa fa-tasks"></i>
+						<span class="nav-link-text">Agendamentos</span>
+					</a>
+
+					<ul class="sidenav-second-level collapse" id="collapseListas" data-parent="#linksaccordion">
+
+						<li>
+							<a href="/?pagina=lista-agendamentos">Lista de Agendamentos</a>
+						</li>
+
 					</ul>
 				</li>
 

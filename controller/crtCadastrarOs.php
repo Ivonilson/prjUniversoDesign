@@ -8,7 +8,7 @@ require "model/Cidade.php";
 		public function cadastrarOs()
 		{	
 			$usuario = new CadastrarOs();
-			return  $usuario->cadOs(filter_input(INPUT_POST, 'ipt-os'), filter_input(INPUT_POST, 'sel-orcamento'), filter_input(INPUT_POST, 'ipt-data-agendamento'), filter_input(INPUT_POST, 'sel-cidade-uf'), filter_input(INPUT_POST, 'ipt-endereco'), filter_input(INPUT_POST, 'sel-pagamento'), filter_input(INPUT_POST, 'sel-status-servico'), filter_input(INPUT_POST, 'ipt-contato'), filter_input(INPUT_POST, 'ta-observacoes'));
+			return  $usuario->cadOs();
  
 		}
 
@@ -26,7 +26,7 @@ require "model/Cidade.php";
 	if(filter_input(INPUT_POST, 'sel-orcamento') != '' && filter_input(INPUT_POST, 'sel-orcamento') != '-') {
 		if($crtl->cadastrarOs()){
 			$codigo = $codigoDisponivel->gerarCodigoOs();
-			$mensagem_erro = "Orçamento Cadastrado com Sucesso!";
+			$mensagem_erro = "Ordem de Serviço cadastrada com Sucesso!";
 		} else {
 			$mensagem_erro = "ERRO. Contate do Suporte.";
 		}

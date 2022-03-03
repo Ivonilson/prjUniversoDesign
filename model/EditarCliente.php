@@ -81,16 +81,15 @@ class EditarCliente {
 			}	
 
 			if($dados_editar->rowCount()) {
-				echo "<script>alert('Registro ATUALIZADO com SUCESSO.')</script>";
-
+				//echo "<script>alert('Registro ATUALIZADO com SUCESSO.')</script>";
+				//echo "<script>window.location.href = '/?pagina=editar-cliente&id_cliente=".$dados['ipt-id-cliente']."'</script>";
+				//echo "<script>window.location.href = '../view/demandas-do-dia.php'</script>";
+				return true;
 				
-					echo "<script>window.location.href = '/?pagina=editar-cliente&id_cliente=".$dados['ipt-id-cliente']."'</script>";
-					//echo "<script>window.location.href = '../view/demandas-do-dia.php'</script>";
-				
-
 			} else {
-				echo "<script>alert('ERRO ao ATUALIZAR Registro.')</script>";
+				//echo "<script>alert('ERRO ao ATUALIZAR Registro.')</script>";
 				print_r($dados_editar->errorInfo());
+				return false;
 			}
 
 		}

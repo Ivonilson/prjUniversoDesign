@@ -81,7 +81,7 @@
 						<input type="submit" value="Gravar Produto" name="btnCadastrarProduto" id="botoesGravarCad">
 
 						<?php
-							if($mensagem_erro == "Orçamento Cadastrado com sucesso!")
+							if($mensagem_erro == "Produto Cadastrado com sucesso!")
 
 							{
 						?>

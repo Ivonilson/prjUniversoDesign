@@ -117,7 +117,7 @@
 								<td><?=$value['id_prod']?></td>
 								<td><?=$value['descricao']?></td>
 								<td><?=$value['unidade_medida']?></td>
-								<td><?=$value['preco_unitario']?></td>
+								<td><?=number_format($value['preco_unitario'], 2, ',' , '.')?></td>
 								<td><?=date_format(date_create($value['data_cadastro']), "d/m/Y")?></td>
 								<td align="center"><a href="/?pagina=editar-produto&id_prod=<?=$value['id_prod']?>&form=editar-produto" title="Atualizar" target="_blank"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
 								<!--<td align="center"><a href="/?pagina=historico&cod_os=<?=$value['cod_os']?>&form=pesquisa-por-data-receb" title="Histórico" target="_blank"><i class="fa fa-history" aria-hidden="true"></a></td>-->

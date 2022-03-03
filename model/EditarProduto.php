@@ -67,7 +67,10 @@ class EditarProduto {
 			$dados_editar->bindParam(':id_prod', $dados['ipt-id-produto']);
 			$dados_editar->bindParam(':descricao', $dados['ipt-descricao']);
 			$dados_editar->bindParam(':unidade_medida', $dados['sel-unidade-medida']);
+
+			//$valor_formatado = number_format($dados['ipt-preco-unitario'], 2, '.' , '');
 			$dados_editar->bindParam(':preco_unitario', $dados['ipt-preco-unitario']);
+
 			//$dados_editar->bindParam(':quantidade_estoque', $dados['ipt-quantidade-estoque']);
 
 			$dados_editar->execute();
@@ -77,16 +80,16 @@ class EditarProduto {
 			}	
 
 			if($dados_editar->rowCount()) {
-				echo "<script>alert('Registro ATUALIZADO com SUCESSO.')</script>";
-
-				
-					echo "<script>window.location.href = '/?pagina=editar-produto&id_prod=".$dados['ipt-id-produto']."'</script>";
+				//echo "<script>alert('Registro ATUALIZADO com SUCESSO.')</script>";
+				//echo "<script>window.location.href = '/?pagina=editar-produto&id_prod=".$dados['ipt-id-produto']."'</script>";
 					//echo "<script>window.location.href = '../view/demandas-do-dia.php'</script>";
+				return true;
 				
 
 			} else {
-				echo "<script>alert('ERRO ao ATUALIZAR Registro.')</script>";
-				print_r($dados_editar->errorInfo());
+				//echo "<script>alert('ERRO ao ATUALIZAR Registro.')</script>";
+				//print_r($dados_editar->errorInfo());
+				return false;
 			}
 
 		}

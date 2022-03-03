@@ -12,7 +12,7 @@ class crtCadastrarCliente {
 			if(filter_input(INPUT_POST, 'ipt-nome') != '') {
 				$usuario = new CadastrarCliente();
 
-				if($usuario->cadCliente(filter_input(INPUT_POST, 'ipt-nome'), filter_input(INPUT_POST, 'ipt-cpf-cnpj'), filter_input(INPUT_POST, 'ipt-endereco'), filter_input(INPUT_POST, 'ipt-bairro'), filter_input(INPUT_POST, 'sel-cidade-uf'), filter_input(INPUT_POST, 'ipt-tel-fixo'), filter_input(INPUT_POST, 'ipt-tel-cel'), filter_input(INPUT_POST, 'ipt-email'))) {
+				if($usuario->cadCliente()) {
 
 					return "Cadastrado realizado com sucesso!";
 
