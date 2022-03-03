@@ -9,8 +9,13 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Ordens de Serviço do Dia</title>
-	<?php require_once 'includes/bootstrap-css.php'; ?>
+	<link rel="stylesheet" type="text/css" href="bootstrap-4.1.3/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../bibliotecas/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../bibliotecas/datatables/dataTables.bootstrap4.css">
+	<link rel="stylesheet" type="text/css" href="../css/sb-admin.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/sb-admin.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/abg.css">
+	<script src="../js/abg.js"></script>
 
 </head>
 
@@ -158,11 +163,7 @@
 		<?php require_once 'includes/rodape.php';?>
 	</div>
 	
-	<link rel="stylesheet" type="text/css" href="bootstrap-4.1.3/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../bibliotecas/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="../bibliotecas/datatables/dataTables.bootstrap4.css">
-	<link rel="stylesheet" type="text/css" href="../css/sb-admin.min.css">
-	<link rel="stylesheet" type="text/css" href="../css/sb-admin.min.css">
+
 	
 	<script type="text/javascript">
 	  //REFRESH AUTOMÁTICO 
@@ -171,6 +172,16 @@
       //BARRA DE PROGRESSO DOS SERVIÇOS EXECUTADOS
       configurarBarra();
 	</script>
+
+<script src="bootstrap-4.1.3/js/bootstrap.min.js"></script>
+<script src="../bibliotecas/jquery/jquery.min.js"></script>
+<script src="../bibliotecas/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../bibliotecas/jquery-easing/jquery.easing.min.js"></script>
+<script src="../bibliotecas/datatables/jquery.dataTables.js"></script>
+<script src="../bibliotecas/datatables/dataTables.bootstrap4.js"></script>
+<script src="../js/sb-admin.min.js"></script>
+<script src="../js/sb-admin-datatables.min.js"></script>
+<script src="../js/jquery.mask.js"></script>
 
 </body>
 </html>
