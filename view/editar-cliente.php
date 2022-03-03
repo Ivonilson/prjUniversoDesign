@@ -11,11 +11,12 @@
 	<title>Atualizar cliente</title>
 	<?php require_once 'includes/bootstrap-css.php'; ?>
 </head>
+
 <body class="bg-dark fixed-nav sticky-footer" id="page-top">
 	<!-- NAVEGAÇÃO -->
 	<?php require_once 'includes/navegacao.php';?>
 	
-	<div class="content-wrapper">
+	<div class="content-wrapper" id="background-tela-edicao">
 		<div class="container-fluid">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">
@@ -29,11 +30,11 @@
 				</li>
 			</ol>
 	
-			<div class="row bg-secondary">
+			<div id="row-form-edicao">
 				
-				<form class="container" method="post">
+				<form class="container background-form-edicao" method="post">
 
-					<div class="jumbotron jumbotron-fluid bg-dark text-white">
+					<div id="jumbotron_telas_edicao">
 						<div class="container">
 							<h4>Atualizar cliente</h4>
 						</div>
@@ -163,7 +164,7 @@
 							</div>
 						</div>
 
-						<input type="submit" class="col-12 btn btn-dark btn-block text-white" value="GRAVAR" name="btnEditarCliente">
+						<input type="submit" id="btnGravarEdicao" value="GRAVAR" name="btnEditarCliente">
 					</div>
 				</form>
 			</div>	
@@ -173,6 +174,6 @@
 		<?php require_once 'includes/rodape.php';?>
 	</div>
 
-<?php require_once 'includes/bootstrap-js.php'; ?>
+	<?php require_once 'includes/bootstrap-js.php'; ?>
 </body>
 </html>

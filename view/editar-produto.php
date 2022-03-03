@@ -16,7 +16,7 @@
 	<!-- NAVEGAÇÃO -->
 	<?php require_once 'includes/navegacao.php';?>
 	
-	<div class="content-wrapper">
+	<div class="content-wrapper" id="background-tela-edicao">
 		<div class="container-fluid">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">
@@ -30,11 +30,11 @@
 				</li>
 			</ol>
 	
-			<div class="row bg-secondary">
+			<div id="row-form-edicao">
 				
-				<form class="container" method="post">
+				<form class="container background-form-edicao" method="post">
 
-					<div class="jumbotron jumbotron-fluid bg-dark text-white">
+					<div id="jumbotron_telas_edicao">
 						<div class="container">
 							<h4>Atualizar Produto</h4>
 						</div>
@@ -83,7 +83,7 @@
 							<input type="text" class="form-control mb-2" id="inlineFormInputQuantidadeEstoque" placeholder="Quantidade em Estoque" name="ipt-quantidade-estoque" disabled>
 						</div>
 
-						<input type="submit" class="col-12 btn btn-dark btn-block text-white" value="GRAVAR" name="btnEditarProduto">
+						<input type="submit" id="btnGravarEdicao" value="GRAVAR" name="btnEditarProduto">
 					</div>
 				</form>
 			</div>
@@ -92,6 +92,6 @@
 		<?php require_once 'includes/rodape.php';?>
 	</div>
 
-<?php require_once 'includes/bootstrap-js.php'; ?>
+	<?php require_once 'includes/bootstrap-js.php'; ?>
 </body>
 </html>
