@@ -1,0 +1,69 @@
+create table tbl_produto (
+	
+	id_prod VARCHAR(12) PRIMARY KEY NOT NULL,
+	descricao VARCHAR(60) NOT NULL,
+	unidade_medida VARCHAR(6) NOT NULL,
+	preco_unitario DECIMAL(8,2),
+	quantidade_estoque INT(8),
+	data_cadastro DATETIME,
+	data_atualizacao DATETIME,
+	usuario VARCHAR(60)
+
+) engine = innoDB;
+
+
+create table tbl_orcamento (
+
+	id_orcamento INT(8) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	id_cliente INT(8),
+	id_prod VARCHAR(12),
+	valor_total DECIMAL(8,2),
+	desconto DECIMAL(3,2),
+	valor_final DECIMAL(8,2),
+	data_cadastro DATETIME,
+	data_validade DATE,
+	observacao VARCHAR(100),
+	usuario VARCHAR(60),
+	CONSTRAINT fk_id_prod FOREIGN KEY (id_prod) REFERENCES tbl_produto (id_prod),
+	CONSTRAINT fk_id_cliente FOREIGN KEY (id_cliente) REFERENCES tbl_cliente (id_cliente)
+
+
+) engine = innoDB;
+
+
+create table tbl_cliente (
+
+	id_cliente INT(8) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	nome VARCHAR(100),
+	cpf_cnpj VARCHAR(20),
+	endereco VARCHAR(150),
+	bairro VARCHAR(30),
+	cidade_uf VARCHAR(100),
+	tel_fixo VARCHAR(40),
+	tel_cel VARCHAR(40),
+	email VARCHAR(60),
+	data_cadastro DATETIME,
+	data_atualizacao DATETIME,
+	usuario VARCHAR(60)
+
+) engine = innoDB;
+
+
+create table tbl_Os (
+
+	id_os INT(8) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	cod_os VARCHAR(20),
+	id_cliente INT(8),
+	id_orcamento INT(8),
+	id_prod VARCHAR(12),
+	data_cadastro DATETIME,
+	data_agendamento DATETIME,
+	valor_final DECIMAL(8,2),
+	sit_pagamento VARCHAR(50),
+	meio_pag VARCHAR(50),
+	observacao VARCHAR (1000),
+	CONSTRAINT fk_id_orcamento FOREIGN KEY (id_orcamento) REFERENCES tbl_orcamento (id_orcamento),
+	CONSTRAINT fk_id_cliente_os FOREIGN KEY (id_cliente) REFERENCES tbl_cliente (id_cliente),
+	CONSTRAINT fk_id_prod_os FOREIGN KEY (id_prod) REFERENCES tbl_produto (id_prod)
+
+) engine = innoDB;

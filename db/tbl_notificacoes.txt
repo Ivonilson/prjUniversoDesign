@@ -1,0 +1,20 @@
+CREATE TABLE tbl_notificacoes (
+    id_notificacao int(8) PRIMARY KEY AUTO_INCREMENT,
+    tipo varchar(30),
+    remetente varchar(60),
+    destinatario varchar(60),
+    descricao varchar(100),
+    status varchar(40),
+    data_emissao TIMESTAMP,
+    data_limite TIMESTAMP,
+    data_programada_resolver TIMESTAMP,
+    prioridade varchar(15),
+    arquivo_cobranca blob,
+    comprovante_pagamento blob,
+    meio_notificacao varchar(30),
+    meio_pagamento varchar(30),
+    pago_por varchar(50),
+    observacoes varchar(2000),
+    usuario varchar(30),
+    data_cadastro datetime
+) ENGINE = INNODB;
