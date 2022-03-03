@@ -9,13 +9,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Impressão de Orçamento</title>
-	<!--<link rel="stylesheet" type="text/css" href="../bibliotecas/bootstrap/css/bootstrap.min.css">-->
-	<!--<link rel="stylesheet" type="text/css" href="../css/bootstrap2.min.css">-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="../bibliotecas/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="../css/sb-admin.min.css">
-	<link rel="stylesheet" type="text/css" href="../css/abg.css">
+	<?php require_once 'includes/bootstrap-css.php'; ?>
 </head>
+
 <body class="bg-dark" id="page-top">
 
 	<div class="content-wrapper">
@@ -91,7 +87,7 @@
 						
 					</div>
 					
-					<table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+					<table class="table table-bordered table-hover" width="100%" cellspacing="0">
 						<thead class="thead-light">
 							<tr>
 								<th>Descrição</th>
@@ -212,14 +208,6 @@
 
 	</div>
 			
-	<?php  
-		//include ('rodape.php');
-	?>
-
-
-	<script src="../bibliotecas/jquery/jquery.min.js"></script>
-	<script src="../bibliotecas/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script src="../bibliotecas/jquery-easing/jquery.easing.min.js"></script>
-	<script type="text/javascript" src="../js/sb-admin.min.js"></script>
+	<?php require_once 'includes/bootstrap-js.php'; ?>
 </body>
 </html>

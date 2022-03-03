@@ -4,15 +4,14 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Login</title>
-	<link rel="stylesheet" type="text/css" href="../bibliotecas/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../bibliotecas/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="../css/sb-admin.min.css">
+	<?php require_once 'includes/bootstrap-css.php'; ?>
 </head>
+
 <body class="bg-dark">
 
 	<div class="container">
 		<div class="card card-login mx-auto mt-5">
-			<div class="card-header text-center bg-info	 text-light">Abg</div>
+			<div class="card-header text-center bg-info	 text-light">  <h3>UNIVERSO DESIGN</h5><br><h5>ACESSO RESTRITO</h5> </div>
 			<div class="card-body">
 				<form method="post" action="../index.php/?pagina=os-do-dia">
 					<div class="form-group">
@@ -43,8 +42,6 @@
 		</div>
 	</div>
 
-	<script src="../bibliotecas/jquery/jquery.min.js"></script>
-	<script src="../bibliotecas/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script src="../bibliotecas/jquery-easing/jquery.easing.min.js"></script>
+	<?php require_once 'includes/bootstrap-js.php'; ?>
 </body>
 </html>
