@@ -11,7 +11,7 @@
 
 	<div class="container">
 		<div class="card card-login mx-auto mt-5">
-			<div class="card-header text-center bg-info	 text-light">  <h3>UNIVERSO DESIGN</h5><br><h5>ACESSO RESTRITO</h5> </div>
+			<div class="card-header text-center bg-info	 text-light">  <h3>UNIVERSO DESIGN</h5></div>
 			<div class="card-body">
 				<form method="post" action="../index.php/?pagina=os-do-dia">
 					<div class="form-group">

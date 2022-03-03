@@ -211,7 +211,7 @@
 					</div>
 
 					<?php   
-						if($_GET['form']  == 'os-do-dia' ){
+						if($_GET['form']  == 'os-do-dia' || $_GET['form'] == 'lista-agendamentos'){
 					?>
 
 					<a href="/?pagina=<?=$_GET['form']?>" class="btn btn-success btn-lg mt-1 mb-1">Retornar</a>		
