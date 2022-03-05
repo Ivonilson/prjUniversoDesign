@@ -64,13 +64,17 @@ class EditarProduto {
 			.'Observações I/G: '."<mark>".$dados['ta-observacoesig']."</mark>".'<br>'
 			.'<hr>';*/
 
+			//$valor_unitario = number_format( (float) $dados['ipt-preco-unitario'], 2, '.' , '');
+			//$valor_unitario = $dados['ipt-preco-unitario'];
+			
+			//$valor_puro = $dados['ipt-preco-unit'];
+
+			//echo "<script>alert($valor_puro)</script>";
+
 			$dados_editar->bindParam(':id_prod', $dados['ipt-id-produto']);
 			$dados_editar->bindParam(':descricao', $dados['ipt-descricao']);
 			$dados_editar->bindParam(':unidade_medida', $dados['sel-unidade-medida']);
-
-			//$valor_formatado = number_format($dados['ipt-preco-unitario'], 2, '.' , '');
-			$dados_editar->bindParam(':preco_unitario', $dados['ipt-preco-unitario']);
-
+			$dados_editar->bindParam(':preco_unitario', $dados['ipt-preco-unit']);
 			//$dados_editar->bindParam(':quantidade_estoque', $dados['ipt-quantidade-estoque']);
 
 			$dados_editar->execute();

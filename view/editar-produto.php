@@ -75,7 +75,8 @@
 
 						<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
 							<label class="sr-only" for="inlineFormInputValorUnitario">Valor Unitário (R$)</label>
-							<input type="text" class="form-control mb-2" id="inlineFormInputValorUnitario" placeholder="Valor unitário" name="ipt-preco-unitario" value="<?=number_format($registro->preco_unitario, 2, ',' , '.')?>">
+							<input type="text" valor_unitario = "valor_unit" class="form-control mb-2 ipt-princ" id="inlineFormInputValorUnitario" placeholder="Valor unitário"  value="<?=number_format($registro->preco_unitario, 2, ',' , '.')?>">
+							<input type="hidden" id="valor_unit" name="ipt-preco-unit">
 						</div>
 
 						<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">

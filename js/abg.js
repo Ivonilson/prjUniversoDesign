@@ -594,6 +594,25 @@ $(document).ready(function(){
 	$("#inlineFormInputTelCel").mask("(99) 99999-9999");
 });
 
+$(document).ready(function(){
+	$('.ipt-princ').on('input', function(){
+		let valor_digitado = $(this).val();
+		valor_digitado = valor_digitado.replace("." , "");
+		valor_digitado = valor_digitado.replace("," , "." );
+		let ipt_aux = $(this).attr("valor_unitario");
+		$("#"+ ipt_aux).val(valor_digitado);
+
+		
+	});
+	//let valor_unitario = document.querySelector("#inlineFormInputValorUnitario").value;
+	//let valor_formatado = valor_unitario.replace("." , "");
+	//valor_formatado = valor_formatado.replace("," , ".");
+
+	//let input_recebe_formatado = document.querySelector("#unitarioFormatado");
+	//input_recebe_formatado.setAttribute("value", valor_formatado);
+
+});
+
 confirmarDelecaoItem();
 confirmarDelecaoOrcamento();
 
