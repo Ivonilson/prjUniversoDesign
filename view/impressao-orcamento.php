@@ -67,7 +67,7 @@
 							<div class="input-group mb-2">
 								<div class="input-group-prepend">
 									<div class="input-group-text bg-secondary text-white">
-										Data orç.
+										Registrado em
 									</div>
 								</div>
 								<input type="text" disabled class="form-control" value="<?=date_format(date_create($resultado[0]['data_cadastro']), "d/m/Y")?>">
@@ -121,11 +121,11 @@
 
 							<tr>
 								<td><?=$item['descricao']?></td>
-								<td><?=$item['valor_unitario']?></td>
-								<td><?=$item['quantidade']?></td>
-								<td><?=$item['valor_total']?></td>
-								<td><?=$item['desconto']?></td>
-								<td><?=$item['total_pagar']?></td>
+								<td><?=number_format($item['valor_unitario'], 2 , "," , ".")?></td>
+								<td><?=number_format($item['quantidade'], 2 , "," , ".")?></td>
+								<td><?=number_format($item['valor_total'], 2 , "," , ".")?></td>
+								<td><?=number_format($item['desconto'], 2 , "," , ".")?></td>
+								<td><?=number_format($item['total_pagar'], 2 , "," , ".")?></td>
 							</tr>
 							
 							<?php
@@ -151,7 +151,7 @@
 										Valor total do orçamento (R$)
 									</div>
 								</div>
-								<input type="text" disabled class="form-control" value="<?=$totalizador[0]['sum_valor_total']?>">
+								<input type="text" disabled class="form-control" value="<?=number_format($totalizador[0]['sum_valor_total'], 2 , "," , ".")?>">
 							</div>
 						</div>
 
@@ -166,7 +166,7 @@
 										Total de Descontos (R$)
 									</div>
 								</div>
-								<input type="text" disabled class="form-control" value="<?=$totalizador[0]['sum_desconto']?>">
+								<input type="text" disabled class="form-control" value="<?php echo number_format($totalizador[0]['sum_desconto'], 2, "," , ".") . ' ('. number_format(100 - (($totalizador[0]['sum_total_pagar'] / $totalizador[0]['sum_valor_total']) * 100) , 2 , ',' , '')  .'%)'?>">
 							</div>
 						</div>
 
@@ -181,7 +181,7 @@
 										Valor a Pagar (R$)
 									</div>
 								</div>
-								<input type="text" disabled class="form-control" value="<?=$totalizador[0]['sum_total_pagar']?>">
+								<input type="text" disabled class="form-control" value="<?=number_format($totalizador[0]['sum_total_pagar'], 2 , "," , ".")?>">
 							</div>
 						</div>
 

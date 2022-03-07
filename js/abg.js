@@ -370,17 +370,11 @@ function Descontos()
 
 	totais.forEach(function(desconto, indice){
 		soma += parseFloat(desconto.value);
-		percentual = (soma / valorTotalItens.replace('.', '').replace(',' , '.')) * 100;
-		alert(typeof valorTotalItens);
-		alert (valorTotalItens);
-		alert(typeof soma);
-		alert(soma);
-		alert(percentual);
-		
+		percentual = ((soma / valorTotalItens.replace('.', '').replace(',' , '.')) * 100).toFixed(2);
 	});
 
 	//alert(totais.length);
-	document.getElementById('Desconto').value = soma + ' (' + percentual + '%)';
+	document.getElementById('Desconto').value = new Intl.NumberFormat('pt-BR', {minimumFractionDigits: 2}).format(soma) + ' (' + percentual + '%)';
 }
 
 function TotalPagar()
