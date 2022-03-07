@@ -355,7 +355,7 @@ function valorTotal()
 	});
 
 	//alert(totais.length);
-	document.getElementById('valorTotal').value = soma.toFixed(2);
+	document.getElementById('valorTotal').value = new Intl.NumberFormat('pt-BR', {minimumFractionDigits: 2}).format(soma);
 }
 
 function Descontos()
@@ -365,15 +365,22 @@ function Descontos()
 	let soma = 0;
 	let indice = 0;
 	let valorTotalItens = document.getElementById('valorTotal').value;
+
 	let percentual = 0;
 
 	totais.forEach(function(desconto, indice){
 		soma += parseFloat(desconto.value);
-		percentual = (soma / valorTotalItens) * 100;
+		percentual = (soma / valorTotalItens.replace('.', '').replace(',' , '.')) * 100;
+		alert(typeof valorTotalItens);
+		alert (valorTotalItens);
+		alert(typeof soma);
+		alert(soma);
+		alert(percentual);
+		
 	});
 
 	//alert(totais.length);
-	document.getElementById('Desconto').value = soma.toFixed(2) + ' (' + percentual.toFixed(2) + '%)';
+	document.getElementById('Desconto').value = soma + ' (' + percentual + '%)';
 }
 
 function TotalPagar()
@@ -388,7 +395,7 @@ function TotalPagar()
 	});
 
 	//alert(totais.length);
-	document.getElementById('valorTotalPagar').value = soma.toFixed(2);
+	document.getElementById('valorTotalPagar').value = new Intl.NumberFormat('pt-BR', {minimumFractionDigits: 2} ).format(soma);
 }
 
 function retornaItensConsolidado() {
@@ -594,6 +601,8 @@ $(document).ready(function(){
 	$("#inlineFormInputTelCel").mask("(99) 99999-9999");
 });
 
+/*formatando os números do campo input de valor unitário da view editar-produto para o formato 
+com ponto flutante padrão aceito no banco de dados MYSQL*/
 $(document).ready(function(){
 	$('.ipt-princ').on('input', function(){
 		let valor_digitado = $(this).val();
@@ -601,8 +610,6 @@ $(document).ready(function(){
 		valor_digitado = valor_digitado.replace("," , "." );
 		let ipt_aux = $(this).attr("valor_unitario");
 		$("#"+ ipt_aux).val(valor_digitado);
-
-		
 	});
 	//let valor_unitario = document.querySelector("#inlineFormInputValorUnitario").value;
 	//let valor_formatado = valor_unitario.replace("." , "");

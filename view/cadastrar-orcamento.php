@@ -227,18 +227,18 @@
 
 							<div class="row p-2">
 								<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 mt-2">
-									<label class="text-primary" for="valorTotal">VALOR TOTAL (R$)</label>
+									<label class="text-primary" for="valorTotal">VALOR TOTAL</label>
 									<input type="text" class="form-control mb-2" id="valorTotal" aria-describedby="inlineFormInputValorTotal" placeholder="-" name="ipt-valor-servico-global">
 								</div>
 
 								<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 mt-2">
-									<label class="text-primary" for="valorFinal">DESCONTOS (R$)</label>
+									<label class="text-primary" for="valorFinal">DESCONTOS</label>
 									<input type="text" class="form-control mb-2" id="Desconto" placeholder="-" name="ipt-valor-desconto-global" aria-describedby="inlineFormInputValorFinal">
 								</div>
 
 								<!-- no DB o campo está como "valor_final" -->
 								<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 mt-2">
-									<label class="text-primary" for="valorTotal">VALOR A PAGAR (R$)</label>
+									<label class="text-primary" for="valorTotal">VALOR A PAGAR</label>
 									<input type="text" class="form-control mb-2" id="valorTotalPagar" aria-describedby="inlineFormInputValorTotal" placeholder="-" name="ipt-valor-pagar-global">
 								</div>
 							</div>
