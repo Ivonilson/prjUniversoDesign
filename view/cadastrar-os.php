@@ -75,7 +75,6 @@
 
 						</div>
 
-
 						<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 							<div class="input-group mb-2">
 								<div class="input-group-prepend">
@@ -96,30 +95,6 @@
 								</select>
 							</div>
 						</div>
-
-						<!--
-						<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-							<div class="input-group mb-2">
-								<div class="input-group-prepend">
-									<label class="input-group-text bg-secondary text-white" for="select-orcamento">
-										ORÇAMENTO
-									</label>
-								</div>
-								<select class="custom-select" name="sel-orcamento" id="select-orcamento">
-									<option value="-">Selecione</option>
-									<?php
-										//foreach ($orcamento as $carregaOrcamento) {
-											
-									 ?>
-									<option value="<?=$carregaOrcamento->id_orcamento?>"><?=$carregaOrcamento->id_orcamento?></option>
-									<?php 
-										//}
-									?>
-									<option value="0">NÃO CADASTRADO</option>
-								</select>
-							</div>
-						</div>
-						-->
 
 						<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
 							<div class="input-group mb-2">
