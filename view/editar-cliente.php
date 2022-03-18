@@ -138,7 +138,7 @@
 										Tel. Fixo
 									</div>
 								</div>
-								<input type="input" class="form-control" name="ipt-tel-fixo" value="<?=$registro->tel_fixo?>">
+								<input type="input" class="form-control" name="ipt-tel-fixo" value="<?=$registro->tel_fixo?>"  id="inlineFormInputTelFixo">
 							</div>
 						</div>
 
@@ -149,7 +149,7 @@
 										Tel. Celular
 									</div>
 								</div>
-								<input type="input" class="form-control" name="ipt-tel-cel" value="<?=$registro->tel_cel?>">
+								<input type="input" class="form-control" name="ipt-tel-cel" value="<?=$registro->tel_cel?>" id="inlineFormInputTelCel">
 							</div>
 						</div>
 

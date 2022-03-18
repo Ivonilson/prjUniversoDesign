@@ -80,7 +80,7 @@
 					<ul class="sidenav-second-level collapse" id="collapseListas" data-parent="#linksaccordion">
 
 						<li>
-							<a href="/?pagina=lista-agendamentos">Lista de Agendamentos</a>
+							<a href="/?pagina=lista-agendamentos">Visitas agendadas</a>
 						</li>
 
 					</ul>

@@ -189,10 +189,15 @@
 							<span class="text-danger h5">Valor a Pagar (R$): <?=$totalizador[0]['sum_total_pagar']?></span>
 						</div>-->
 							
-						<div class="col mt-5">
+						<div class="col-10 mt-5">
 							<span class="text-danger h5">Vendedor:</span> <span class="text-primary h5"><?=$resultado[0]['usuario']?></span>
 						</div>
 
+						<div class="col-2 mt-5 pl-5">
+							<a href="#"><img src="../assets/whatsapp.png" width="50" height="50" alt="Whatsapp" title="Compartilhar por Whatsapp"></a>
+							&nbsp&nbsp
+							<a href="#"><img  src="../assets/email.png" class="img-fluid" width="50" height="50" alt="Enviar por e-mail" title="E-mail"></a>
+						</div>
 					</div>
 
 				</div>
