@@ -20,7 +20,7 @@ class crtValidarUsuario {
 			}
 
 			} catch (PDOException $erro) {
-				//echo "ERRO: ".$erro->getMessage();
+				echo "ERRO: ".$erro->getMessage();
 
 			}
 

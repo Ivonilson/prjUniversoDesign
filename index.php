@@ -124,14 +124,9 @@ $pagina = isset($_GET['pagina']) ? $_GET['pagina'] : "login";
 			break;
 
 		case 'login':
-			require "view/login.php";
+			include "view/login.php";
 			break;
 
-		case 'form_teste':
-			require "controller/crtFormTeste.php";
-			$crtl = new crtFormTeste();
-			$crtl->formTeste();
-			break;
 	}
 
 ?>

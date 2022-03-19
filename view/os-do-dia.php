@@ -1,5 +1,5 @@
 <?php
-	if ($_SESSION['user'] == NULL) {
+	if ($_SESSION['user'] == "-") {
 		header('Location: index.php');
 	}
 ?>
