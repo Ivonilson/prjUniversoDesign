@@ -1,47 +1,48 @@
 <!DOCTYPE html>
-<htm lang="pt-br">
+<html lang="pt-BR">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="css/signin.css" rel="stylesheet">
+	<link rel="icon" href="assets/abgoficial.ico">
+  <?php require_once 'includes/bootstrap-css.php'; ?>
 	<title>Login</title>
-	<?php require_once 'includes/bootstrap-css.php'; ?>
 </head>
+<body class="text-center">
 
-<body class="bg-dark">
+  <div class="div-login">
 
-	<div class="container">
-		<div class="card card-login mx-auto mt-5">
-			<div class="card-header text-center bg-info	 text-light">  <h3>UNIVERSO DESIGN</h5></div>
-			<div class="card-body">
-				<form method="post" action="../index.php/?pagina=os-do-dia">
-					<div class="form-group">
-						<i class="fa fa-user-circle" aria-hidden="true"></i>
-						<!--<label for="usuario">Usuário</label>-->
-						<input type="text" class="form-control" name="usuario" id="email" placeholder="Usuário">
-					</div>
-					<div class="form-group">
-						<!--<label for="senha">Senha</label>-->
-						<i class="fa fa-key" aria-hidden="true"></i>
-						<input type="password" class="form-control" name="senha" id="senha" placeholder="Senha">
-					</div>
-					<!--<div class="form-group">
-						<div class="form-check">
-							<label class="form-check-label">
-								<input type="checkbox" class="form-check-input">
-								Lembrar minha senha.
-							</label>
-						</div>-->
-					</div>
-					<input type="submit" class="btn btn-info btn-block" value="Entrar">
-					<!--<div class="text-center">
-						<a href="#" class="d-block small mt-3">Criar uma Conta</a>
-						<a href="#" class="d-block small">Esqueceu a senha?</a>
-					</div>-->
-				</form>
-			</div>
-		</div>
-	</div>
+	<form class="form-signin bg-light border rounded" method="post" action="/?pagina=demandas-do-dia">
+      <img class="mb-4" src="assets/abgoficial.png" alt="Abg Soluções" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal text">Área Restrita</h1>
 
-	<?php require_once 'includes/bootstrap-js.php'; ?>
+     <div class="form-group">
+        <label for="exampleInputEmail1" class="sr-only">Usuário</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="usuario" aria-describedby="Usuário" placeholder="Usuário" required>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputPassword1" class="sr-only">Senha</label>
+        <input type="password" class="form-control" id="exampleInputPassword1"  name="senha" placeholder="Senha" required>
+      </div>
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Acessar</button>
+
+        <?php 
+          if ($mensagem_erro == "Usuário ou Senha inválidos!"){
+        ?>
+
+        <div class="mt-1 alert alert-danger msgErroLogin font-weight-bold" role="alert">
+          <?= $mensagem_erro ?>
+        </div>
+      <?php 
+          } 
+      ?>
+
+      <p class="mt-5 mb-3 text-muted">&copy;AbgSoluções 2022</p>
+  </form>
+</div>
+
+<?php require_once 'includes/bootstrap-js.php'; ?>
 </body>
 </html>

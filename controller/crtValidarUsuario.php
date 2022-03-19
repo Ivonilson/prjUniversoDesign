@@ -1,27 +1,36 @@
 <?php
-require "model/Conn.php";
-$conn = new Conn();
 
-if(filter_input(INPUT_POST, 'usuario')!= NULL) {
+class crtValidarUsuario {
 
-	$u = filter_input(INPUT_POST, 'usuario');
-	$p =  filter_input(INPUT_POST, 'senha');
+	public function valUsuario(){
 
-	try {
+		$validacao = new Conn();
 
-		$retorno = $conn->getConn()->query("SELECT user, pass FROM tbl_user WHERE user = '$u' AND pass = '$p'");
+		if(filter_input(INPUT_POST, 'usuario') != NULL) {
 
-		$resultado = $retorno->fetchAll(PDO::FETCH_OBJ);
+			try {
 
-		if($resultado != NULL){
-			$_SESSION['user'] = $resultado[0]->user;
-		} else {
-			$_SESSION['user'] = NULL;
+			$resultado = $validacao->validarUsuario();
+
+			if($resultado){
+				$_SESSION['user'] = $resultado[0]->user;
+
+			} else {
+				$_SESSION['user'] = '-';
+			}
+
+			} catch (PDOException $erro) {
+				//echo "ERRO: ".$erro->getMessage();
+
+			}
+
 		}
 
-		} catch (PDOException $erro) {
-			echo "ERRO: ".$erro->getMessage();
+		if(isset($_SESSION['user']) && $_SESSION['user'] == '-'){
+			return "Usuário ou Senha inválidos!";
 		}
+	}
 }
-
+	$valida = new crtValidarUsuario();
+	$mensagem_erro = $valida->valUsuario();
 ?>
