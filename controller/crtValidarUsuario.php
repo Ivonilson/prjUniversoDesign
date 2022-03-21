@@ -14,6 +14,7 @@ class crtValidarUsuario {
 
 			if($resultado){
 				$_SESSION['user'] = $resultado[0]->user;
+				echo $resultado[0]->user;
 
 			} else {
 				$_SESSION['user'] = '-';
