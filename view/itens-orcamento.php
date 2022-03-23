@@ -35,8 +35,8 @@
 
 			<h3 class="text-center">Itens referentes ao Orçamento <span class="text-danger">N° <?=filter_input(INPUT_GET,	'id_orcamento')?></span></h3>
 			<div class="row">
-				<div class="card-body">
-					<table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+				<div class="col-lg-12">
+					<table class="table table-bordered table-hover display nowrap" id="dataTable" width="100%" cellspacing="0">
 						<thead class="thead-dark">
 							<tr>
 								<th>Descrição</th>

@@ -10,6 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Ordens de Serviço do Dia</title>
 	<link rel="stylesheet" type="text/css" href="../bootstrap-4.1.3/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.bootstrap.min.css"> -->
 	<?php require_once 'includes/bootstrap-css.php'; ?>
 	
 
@@ -64,9 +65,10 @@
 
 				</div>
 			</div>
-			<div class="row border-light bg-light m-2">
-				<div class="card-body">
-					<table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+			<!-- <div class="container"> -->
+				<div class="row">
+					<div class="col-lg-12">
+					<table class="table table-bordered table-hover display nowrap" id="dataTable" width="100%" cellspacing="0">
 						<thead class="thead-light">
 							<tr>
 								<th>O.S</th>
@@ -150,16 +152,19 @@
 							
 						</tbody>
 					</table>
+					</div>
 					<span id="qtdDemandas" class="status sr-only"><?=$quant?></span>
 					<span id="quantOsFinalizada" class="status sr-only"><?=$quantOsFinalizada?></span>
 				</div>
-			</div>
+			<!-- </div> -->
 		</div>
 		<!-- rodapé -->
 		<?php require_once 'includes/rodape.php';?>
 	</div>
 
 	<?php require_once 'includes/bootstrap-js.php'; ?>
+
+	<!-- <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>-->
 	
 	<script type="text/javascript">
 	  //REFRESH AUTOMÁTICO 

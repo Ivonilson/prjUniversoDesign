@@ -4,6 +4,7 @@
 <script src="../bibliotecas/jquery-easing/jquery.easing.min.js"></script>
 <script src="../bibliotecas/datatables/jquery.dataTables.js"></script>
 <script src="../bibliotecas/datatables/dataTables.bootstrap4.js"></script>
+<script src="../bibliotecas/datatables/dataTables.responsive.min.js"></script>
 <script src="../js/sb-admin.min.js"></script>
 <script src="../js/sb-admin-datatables.min.js"></script>
 <script src="../js/jquery.mask.js"></script>
