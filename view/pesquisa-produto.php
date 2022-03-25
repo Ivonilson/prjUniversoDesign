@@ -33,23 +33,23 @@
 
 			<div class="row mb-3">
 
-				<div class="col">
+				<div class="col mb-1">
 					<a href="?pagina=pesquisa-por-os" class="botoes-atalho-cons" title="Pesq. O.S. por código"><i class="fa fa-search" aria-hidden="true"></i> Pesq. O.S. por código </a>
 				</div>
 
-				<div class="col">
+				<div class="col mb-1">
 					<a href="?pagina=pesquisa-por-data-agendamento" class="botoes-atalho-cons" title="Pesq. por data de agendamento"><i class="fa fa-search " aria-hidden="true"></i> O.S(s) por data de agendamento </a>
 				</div>
 
-				<div class="col">
+				<div class="col mb-1">
 					<a href="?pagina=pesquisa-por-data-receb" class="botoes-atalho-cons" title="Pesq. por data de recebimento"><i class="fa fa-search " aria-hidden="true"></i> O.S(s) por data de recebimento  </a>
 				</div>
 
-				<div class="col">
+				<div class="col mb-1">
 					<a href="?pagina=pesquisa-por-orcamento" class="botoes-atalho-cons" title="Orçamentos cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Orçamentos </a>
 				</div>
 
-				<div class="col">
+				<div class="col mb-1">
 					<a href="?pagina=pesquisa-cliente" class="botoes-atalho-cons" title="Clientes cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Clientes </a>
 				</div>
 
@@ -79,13 +79,14 @@
 
 						<!--<div barra-progresso="barraProgresso" class="progresso pr-3 pl-3 pt-1 pb-1 ml-3 float-right  rounded" title="Percentual de serviços finalizados">
 							<div></div>-->
-						</div>
-					</form>
+						</form>
+					</div>
 				</div>
-			</div>
+
 			<div id="row-tbl-consulta">
-				<div class="card-body">
-					<table class="tbl-consulta" id="dataTable" width="100%" cellspacing="0">
+				<div class="col">
+					<br>
+					<table class="table table-bordered table-hover display" id="dataTable" width="100%" cellspacing="0">
 						<thead class="thead-light">
 							<tr>
 								<th>Código</th>
@@ -127,11 +128,12 @@
 								$conexao = null;
 								}
 							} else {
-								echo "<span class='text-danger'>NENHUM DADO RETORNADO.</span><br><br>";
+								//echo "<span class='text-danger'>NENHUM DADO RETORNADO.</span><br><br>";
 							} 
 							?>
 						</tbody>
 					</table>
+					<br>
 				</div>
 			</div>
 		</div>

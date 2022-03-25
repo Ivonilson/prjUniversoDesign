@@ -34,7 +34,7 @@ tfoot { display:table-footer-group }
 .progresso {
 	height:44px;
 	width: 500px;
-	border: solid 1px #FF6347;
+	//border: solid 1px #FF6347;
 }
 
 .progresso > div {

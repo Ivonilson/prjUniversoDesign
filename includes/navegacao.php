@@ -1,11 +1,15 @@
 
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="background-color: #2F4F4F;">
 		<a href="/?pagina=os-do-dia" class="navbar-brand text-light font-weight-bold text-lg" style="font-size: 22px; font-family: Bradley Hand, cursive">Universo Design</a>
-		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCurso" aria-control="navbarCurso" aria-expanded="false" aria-label="Navegação Toggle">
+		
+		<div class="bg-light mb-2">
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCurso" aria-control="navbarCurso" aria-expanded="false" aria-label="Navegação Toggle">
 			<span class="navbar-toggler-icon"></span>
 		</button>
+		</div>
+
 		<div id="navbarCurso" class="collapse navbar-collapse" id="linksaccordion">
-			<ul class="navbar-nav navbar-sidenav accordion">
+			<ul class="navbar-nav navbar-sidenav accordion bg-light pl-1 pr-1">
 
 				<li class="nav-item" id="navegacao">
 					<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseRegistro">
@@ -215,7 +219,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="/?pagina=login" class="nav-link text-light col-2">
+					<a href="/?pagina=logout" class="nav-link text-light col-2">
 						<i class="fa fa-sign-out float-right" title="Sair do Sistema" style="font-family: "><span style="font-size: 15px; font-family: Arial, sans-serif">Logout</span></i>
 					</a>
 				</li>

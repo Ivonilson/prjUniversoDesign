@@ -466,6 +466,12 @@ $(document).ready(function(){
    $(".alertaCadOsNoOk").fadeIn(300).delay(8000).fadeOut(400);
 });
 
+$(document).ready(function(){
+   $(".msgErroLogin").fadeIn(100).delay(2000).fadeOut(200);
+});
+
+
+
 /*Faz a leitura do clique no botão Adicionar para incluir o cabeçalho da relação de itens que estão sendo
 inseridas no orçamento*/
 $(document).ready(function(){
@@ -507,7 +513,7 @@ $(document).ready(function(){
 	
 
 	botoes_atalho_cons.forEach(item =>{
-		item.setAttribute("class", "btn btn-success btn-block font-weight-bold rounded");
+		item.setAttribute("class", "btn btn-secondary btn-block font-weight-bold rounded");
 	});
 	
 	/*por enquanto a função abaixo está sem uso, pois a telas de consulta não tem jumbotrom
@@ -523,7 +529,7 @@ $(document).ready(function(){
 
 	/*Setando as rows das tabelas propriedades das tabelas de consulta*/
 	let row_tbl_consulta = document.querySelector("#row-tbl-consulta");
-	row_tbl_consulta.setAttribute("class", "row border-light bg-light m-2");
+	row_tbl_consulta.setAttribute("class", "row border-light bg-light m-1");
 
 	/*Ajuste das divs dos inputs de data das consultas*/
 	let div_ipt_data_cons = document.querySelector("#div-ipt-data-form-cons");
@@ -533,10 +539,6 @@ $(document).ready(function(){
 	let div_btn_form_cons = document.querySelector("#div-btn-form-cons");
 	div_btn_form_cons.setAttribute("class", "col-lg-5 col-md-5 col-sm-12 col-xs-12 mb-3");
 
-	/*Setando as tabelas de consulta*/
-	let tbl_consulta = document.querySelector(".tbl-consulta");
-	tbl_consulta.setAttribute("class", "table table-bordered table-hover border-light");
-	
 	let botoes_cons = document.querySelector("#botoesCons");
 	botoes_cons.setAttribute("class", "btn btn-lg btn-info btn-block text-white font-weight-bold rounded");
 	//botoes_cons.setAttribute("style", "background-color: #483D8B");

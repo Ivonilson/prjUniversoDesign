@@ -12,7 +12,7 @@
 
   <div class="div-login">
 
-	<form class="form-signin bg-light border rounded" method="post" action="/?pagina=os-do-dia">
+	<form class="form-signin bg-light border rounded" method="post">
       <img class="mb-4" src="assets/abgoficial.png" alt="Abg Soluções" width="72" height="72">
       <h1 class="h3 mb-3 font-weight-normal text">Área Restrita</h1>
 

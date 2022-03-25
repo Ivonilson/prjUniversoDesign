@@ -1,5 +1,5 @@
 <?php
-	if ($_SESSION['user'] == "-") {
+	if ($_SESSION['user'] == null) {
 		header('Location: index.php');
 	}
 ?>
@@ -35,21 +35,17 @@
 			</ol>
 
 			<div class="row">
-				<!-- so pra ocupar espaço -->
-				<div class="col-6">
-					
+
+				<div class="col mb-1">
+					<a href="?pagina=cadastrar-orcamento" class="btn btn-secondary btn-block font-weight-bold" title="Novo Orçamento"><i class="fa fa-plus " aria-hidden="true"></i> Orçamento </a>
 				</div>
 
 				<div class="col">
-					<a href="?pagina=cadastrar-orcamento" class="btn btn-info btn-block font-weight-bold" title="Novo Orçamento"><i class="fa fa-plus " aria-hidden="true"></i> Orçamento </a>
+					<a href="?pagina=cadastrar-os" class="btn btn-secondary btn-block font-weight-bold" title="Nova O.S"><i class="fa fa-plus " aria-hidden="true"></i> O.S </a>
 				</div>
 
 				<div class="col">
-					<a href="?pagina=cadastrar-os" class="btn btn-info btn-block font-weight-bold" title="Nova O.S"><i class="fa fa-plus " aria-hidden="true"></i> O.S </a>
-				</div>
-
-				<div class="col">
-					<a href="?pagina=cadastrar-cliente" class="btn btn-info btn-block font-weight-bold" title="Novo Cliente"><i class="fa fa-plus " aria-hidden="true"></i> Cliente </a>
+					<a href="?pagina=cadastrar-cliente" class="btn btn-secondary btn-block font-weight-bold" title="Novo Cliente"><i class="fa fa-plus " aria-hidden="true"></i> Cliente </a>
 				</div>
 			</div>
 
@@ -57,7 +53,7 @@
 			
 			<div class="card mb-1 border border-light">
 				<div class="card-header">
-					<i class="fa fa-table"></i> O.S(s) do dia - <?php $hoje = date('d/m/Y'); echo $hoje; echo " - (última atualização às ".date('H')." h ".date('i')." m)"; ?><a href="/?pagina=pesquisa-por-os" class=" btn btn-secondary pr-3 pl-3 pt-2 pb-2 ml-3 float-right text-light rounded">Pesquisa por O.S</a>
+					<i class="fa fa-table"></i> O.S(s) do dia - <?php $hoje = date('d/m/Y'); echo $hoje; echo " - (última atualização às ".date('H')." h ".date('i')." m)"; ?><a href="/?pagina=pesquisa-por-os" class=" btn btn-info pr-3 pl-3 pt-2 pb-2 ml-3 float-right text-light rounded">Pesquisa por O.S</a>
 
 					<div barra-progresso="barraProgresso" class="progresso pr-3 pl-3 pt-1 pb-1 ml-3 float-right  rounded" title="Percentual de serviços finalizados">
 						<div></div>
@@ -68,7 +64,7 @@
 			<!-- <div class="container"> -->
 				<div class="row">
 					<div class="col-lg-12">
-					<table class="table table-bordered table-hover display nowrap" id="dataTable" width="100%" cellspacing="0">
+					<table class="table table-bordered table-hover display" id="dataTable" width="100%" cellspacing="0">
 						<thead class="thead-light">
 							<tr>
 								<th>O.S</th>
@@ -152,6 +148,7 @@
 							
 						</tbody>
 					</table>
+					<br>
 					</div>
 					<span id="qtdDemandas" class="status sr-only"><?=$quant?></span>
 					<span id="quantOsFinalizada" class="status sr-only"><?=$quantOsFinalizada?></span>

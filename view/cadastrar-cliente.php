@@ -32,22 +32,15 @@
 				</li>
 			</ol>
 
-			<div class="row">
+			<div class="row justify-content-center">
 				<!-- so pra ocupar espaço -->
-				<div class="col-4">
-					
-				</div>
 
-				<div class="col">
+				<div class="col-3">
 					<a href="?pagina=cadastrar-orcamento" class="botoes-atalho-cad" title="Novo Orçamento"><i class="fa fa-plus " aria-hidden="true"></i> Orçamento </a>
 				</div>
 
-				<div class="col">
+				<div class="col-3">
 					<a href="?pagina=cadastrar-os" class="botoes-atalho-cad" title="Nova O.S"><i class="fa fa-plus " aria-hidden="true"></i> O.S </a>
-				</div>
-
-				<div class="col-4">
-					
 				</div>
 
 			</div>

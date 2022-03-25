@@ -33,23 +33,23 @@
 
 			<div class="row mb-3">
 
-				<div class="col">
+				<div class="col mb-1">
 					<a href="?pagina=pesquisa-por-os" class="botoes-atalho-cons" title="Pesq. O.S. por código"><i class="fa fa-search" aria-hidden="true"></i> Pesq. O.S. por código </a>
 				</div>
 
-				<div class="col">
+				<div class="col mb-1">
 					<a href="?pagina=pesquisa-por-data-agendamento" class="botoes-atalho-cons" title="Pesq. por data de agendamento"><i class="fa fa-search " aria-hidden="true"></i> O.S(s) por data de agendamento </a>
 				</div>
 
-				<div class="col">
+				<div class="col mb-1">
 					<a href="?pagina=pesquisa-por-orcamento" class="botoes-atalho-cons" title="Orçamentos cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Orçamentos </a>
 				</div>
 
-				<div class="col">
+				<div class="col mb-1">
 					<a href="?pagina=pesquisa-produto" class="botoes-atalho-cons" title="Produtos cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Produtos </a>
 				</div>
 
-				<div class="col">
+				<div class="col mb-1">
 					<a href="?pagina=pesquisa-cliente" class="botoes-atalho-cons" title="Clientes cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Clientes </a>
 				</div>
 
@@ -74,14 +74,15 @@
 			</div>
 
 			<div id="row-tbl-consulta">
-				<div class="card-body">
+				<div class="col">
+
 					<!-- barra de progresso -->
-					<div barra-progresso="barraProgresso" class="progresso pr-3 pl-3 pt-1 pb-1 ml-3 mb-1 mr-3 float-right  rounded" title="Percentual de serviços finalizados">
+					<div barra-progresso="barraProgresso" class="col progresso pr-3 pl-3 pt-1 pb-1 ml-3 mb-1 mr-3 float-right  rounded" title="Percentual de serviços finalizados">
 					<div></div>
 					</div>	
 					<!-- fim da barra de progresso -->
 
-					<table class="tbl-consulta" id="dataTable" width="100%" cellspacing="0">
+					<table class="table table-bordered table-hover display" id="dataTable" width="100%" cellspacing="0">
 						<thead class="thead-light">
 							<tr>
 								<th>Cod. O.S</th>
@@ -164,11 +165,12 @@
 								$conexao = null;
 								}
 							} else {
-								echo "<span class='text-danger'>NENHUM DADO RETORNADO.</span><br><br>";
+								echo "<span class='text-danger'></span><br><br>";
 							} 
 							?>
 						</tbody>
 					</table>
+					<br>
 					<span id="qtdDemandas" class="status sr-only"><?=$quant?></span>
 					<span id="quantOsFinalizada" class="status sr-only"><?=$quantLaudoPronto?></span>
 				</div>

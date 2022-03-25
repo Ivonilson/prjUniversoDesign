@@ -81,13 +81,14 @@
 						<div id="div-btn-form-cons">
 							<input type="submit" value="Buscar" id="botoesCons">
 						</div>
-						</form>
-					</div>
+					</form>
+				</div>
 			</div>
 
 			<div id="row-tbl-consulta">
-				<div class="card-body">
-					<table class="tbl-consulta" id="dataTable" width="100%" cellspacing="0">
+				<div class="col">
+					<br>
+					<table class="table table-bordered table-hover display" id="dataTable" width="100%" cellspacing="0">
 						<thead class="thead-light">
 							<tr>
 								<th>Código</th>
@@ -159,12 +160,13 @@
 								$conexao = null;
 
 							} }else {
-								echo "<span class='text-danger'>NENHUM DADO RETORNADO.</span><br><br>";
+								//echo "<span class='text-danger'>NENHUM DADO RETORNADO.</span><br><br>";
 							} 
 
 							?>
 						</tbody>
 					</table>
+					<br>
 				</div>
 			</div>
 		</div>

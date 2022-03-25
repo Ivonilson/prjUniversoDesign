@@ -127,6 +127,11 @@ $pagina = isset($_GET['pagina']) ? $_GET['pagina'] : "login";
 			include "view/login.php";
 			break;
 
+		case 'logout':
+			unset($_SESSION['user']);
+			include_once "view/login.php";
+			break;
+
 	}
 
 ?>
