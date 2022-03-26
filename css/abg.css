@@ -180,8 +180,8 @@ tfoot { display:table-footer-group }
 }
 
 
-.linhaPreco {
-	//border: solid red 5px;
+/*.linhaPreco {
+	border: solid red 5px;
 }
 
 .linhaValidade {
@@ -191,7 +191,7 @@ tfoot { display:table-footer-group }
 .linhaFormaPagamento {
 	//border: solid blue 5px;
 	margin-top: 20px;
-}
+}*/
 
 #telefoneVendedor {
 	display: block;

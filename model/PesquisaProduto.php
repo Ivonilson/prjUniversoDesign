@@ -7,10 +7,10 @@ class PesquisaProduto {
 	function pesqProduto()
 	{
 		
-		$descricao = filter_input(INPUT_POST, 'ipt-descricao');
+		$descricao = filter_input(INPUT_GET, 'palavra_chave');
 
 		if($descricao != ''){
-			$querySelect = "SELECT id_prod, descricao, unidade_medida, preco_unitario, data_cadastro  FROM tbl_produto WHERE descricao LIKE '%$descricao%' || '$descricao' = 'TODOS' ORDER BY descricao";
+			$querySelect = "SELECT id_prod, descricao, unidade_medida, preco_unitario, data_cadastro  FROM tbl_produto WHERE descricao LIKE '%$descricao%' || id_prod LIKE '%$descricao%'  || '$descricao' = 'TODOS' ORDER BY descricao";
 
 			$conn = new Conn();
 			$dadosProduto = $conn->getConn()->query($querySelect);

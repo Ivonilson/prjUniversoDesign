@@ -11,6 +11,8 @@ class CadastrarProduto {
 				unset($dados['btnCadastrarProduto']);
 			}
 
+			$preco_unit = str_replace("," , ".", $dados['ipt-preco-unitario']);
+
 			try {
 
 			$conn = new Conn();
@@ -41,7 +43,7 @@ class CadastrarProduto {
 			$dados_cadastrar->bindParam(':id_prod', $dados['ipt-codigo-produto']);
 			$dados_cadastrar->bindParam(':descricao', $dados['ipt-descricao']);
 			$dados_cadastrar->bindParam(':unidade_medida', $dados['sel-unidade-medida']);
-			$dados_cadastrar->bindParam(':preco_unitario', $dados['ipt-preco-unitario']);
+			$dados_cadastrar->bindParam(':preco_unitario', $preco_unit);
 			$dados_cadastrar->bindParam(':quantidade_estoque', $dados['ipt-quantidade-estoque']);
 			
 			$dados_cadastrar->execute();

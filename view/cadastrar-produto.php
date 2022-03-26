@@ -75,7 +75,7 @@
 
 						<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
 							<label class="sr-only" for="inlineFormInputQuantidadeEstoque">Quantidade em Estoque</label>
-							<input type="text" class="form-control mb-2" id="inlineFormInputQuantidadeEstoque" placeholder="Quantidade em Estoque" name="ipt-quantidade-estoque" disabled>
+							<input type="text" class="form-control mb-2" id="inlineFormInputQuantidadeEstoque" placeholder="Quantidade em Estoque" name="ipt-quantidade-estoque">
 						</div>
 
 						<input type="submit" value="Gravar Produto" name="btnCadastrarProduto" id="botoesGravarCad">

@@ -60,7 +60,7 @@
 					<i class="fa fa-table"></i> Pesquisa de produtos
 					<br>
 					<br>
-					<form method="post"  class="background-form-cons">
+					<form method="get"  class="background-form-cons">
 
 						<div id="div-ipt-data-form-cons">
 							<div class="input-group mb-2">
@@ -69,7 +69,8 @@
 										Pesquisar
 									</div>
 								</div>
-								<input type="text" class="form-control" name="ipt-descricao" placeholder="Digite uma palavra chave ou TODOS">
+								<input type="hidden" class="form-control" name="pagina" value="pesquisa-produto">
+								<input type="text" class="form-control" name="palavra_chave" placeholder="Digite uma palavra chave ou TODOS">	
 							</div>
 						</div>
 
@@ -120,7 +121,7 @@
 								<td><?=$value['unidade_medida']?></td>
 								<td><?=number_format($value['preco_unitario'], 2, ',' , '.')?></td>
 								<td><?=date_format(date_create($value['data_cadastro']), "d/m/Y")?></td>
-								<td align="center"><a href="/?pagina=editar-produto&id_prod=<?=$value['id_prod']?>&form=editar-produto" title="Atualizar" target="_blank"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+								<td align="center"><a href="/?pagina=editar-produto&id_prod=<?=$value['id_prod']?>&form=pesquisa-produto" title="Atualizar"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
 								<!--<td align="center"><a href="/?pagina=historico&cod_os=<?=$value['cod_os']?>&form=pesquisa-por-data-receb" title="Histórico" target="_blank"><i class="fa fa-history" aria-hidden="true"></a></td>-->
 							</tr>
 							
