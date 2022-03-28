@@ -43,8 +43,8 @@
 					<div class="form-row align-items-center">
 
 						<div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
-							<label class="sr-only" for="inlineFormInputProduto">Código do Produto</label>
-							<input type="number" class="form-control mb-2" id="inlineFormInputProduto" placeholder="Código do Produto" name="ipt-codigo-produto" required>
+							<label class="sr-only" for="inlineFormInputProduto">Cód. do Produto</label>
+							<input type="number" class="form-control mb-2" id="inlineFormInputProduto" placeholder="Cód. do Produto" name="ipt-codigo-produto" required>
 
 						</div>
 
@@ -75,7 +75,7 @@
 
 						<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
 							<label class="sr-only" for="inlineFormInputQuantidadeEstoque">Quantidade em Estoque</label>
-							<input type="text" class="form-control mb-2" id="inlineFormInputQuantidadeEstoque" placeholder="Quantidade em Estoque" name="ipt-quantidade-estoque">
+							<input type="text" class="form-control mb-2" id="inlineFormInputQuantidadeEstoque" placeholder="Quantidade em Estoque" name="ipt-quantidade-estoque" disabled>
 						</div>
 
 						<input type="submit" value="Gravar Produto" name="btnCadastrarProduto" id="botoesGravarCad">

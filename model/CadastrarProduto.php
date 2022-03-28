@@ -17,7 +17,7 @@ class CadastrarProduto {
 
 			$conn = new Conn();
 
-			$statement = "INSERT INTO tbl_produto (id_prod, descricao, unidade_medida, preco_unitario, quantidade_estoque, data_cadastro) VALUES (:id_prod, :descricao, :unidade_medida, :preco_unitario, :quantidade_estoque, CURDATE())";
+			$statement = "INSERT INTO tbl_produto (id_prod, descricao, unidade_medida, preco_unitario, data_cadastro) VALUES (:id_prod, :descricao, :unidade_medida, :preco_unitario, CURDATE())";
 
 			$dados_cadastrar = $conn->getConn()->prepare($statement);
 
@@ -44,12 +44,12 @@ class CadastrarProduto {
 			$dados_cadastrar->bindParam(':descricao', $dados['ipt-descricao']);
 			$dados_cadastrar->bindParam(':unidade_medida', $dados['sel-unidade-medida']);
 			$dados_cadastrar->bindParam(':preco_unitario', $preco_unit);
-			$dados_cadastrar->bindParam(':quantidade_estoque', $dados['ipt-quantidade-estoque']);
+			//$dados_cadastrar->bindParam(':quantidade_estoque', $dados['ipt-quantidade-estoque']);
 			
 			$dados_cadastrar->execute();
 
 			} catch (PDOException $erro) {
-				echo "ERRO: ".$erro->getMessage();
+				//echo "ERRO: ".$erro->getMessage();
 			}
 
 			if($dados_cadastrar->rowCount()) {

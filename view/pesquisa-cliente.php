@@ -60,7 +60,7 @@
 					<i class="fa fa-table"></i> Pesquisa de clientes
 					<br>
 					<br>
-					<form method="post" class="background-form-cons">
+					<form method="get" class="background-form-cons">
 
 						<div id="div-ipt-data-form-cons">
 							<div class="input-group mb-2">
@@ -69,7 +69,8 @@
 										Pesquisar
 									</div>
 								</div>
-								<input type="text" class="form-control" name="ipt-nome-cliente" placeholder="Digite uma palavra chave ou TODOS">
+								<input type="hidden" name="pagina" value="pesquisa-cliente">
+								<input type="text" class="form-control" name="palavra_chave" placeholder="Digite uma palavra chave ou TODOS">
 							</div>
 						</div>
 
@@ -135,7 +136,7 @@
 								<td><?=$value['tel_cel']?></td>
 								<td><?=$value['email']?></td>
 								<td><?=date_format(date_create($value['data_cadastro']), "d/m/Y")?></td>
-								<td align="center"><a href="/?pagina=editar-cliente&id_cliente=<?=$value['id_cliente']?>&form=editar-cliente" title="Atualizar" target="_blank"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+								<td align="center"><a href="/?pagina=editar-cliente&id_cliente=<?=$value['id_cliente']?>&form=pesquisa-cliente" title="Atualizar"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
 								<!--<td align="center"><a href="/?pagina=historico&cod_os=<?=$value['cod_os']?>&form=pesquisa-por-data-receb" title="Histórico" target="_blank"><i class="fa fa-history" aria-hidden="true"></a></td>-->
 							</tr>
 							

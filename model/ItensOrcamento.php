@@ -48,6 +48,7 @@ class ItensOrcamento {
 			try {
 
 			$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+			$desconto = str_replace(',' , '.' , $dados['ipt-desconto']);
 
 			if (!empty($dados['btnEditarItensOrcamento'])) {
 				unset($dados['btnEditarItensOrcamento']);
@@ -61,7 +62,7 @@ class ItensOrcamento {
 				$dadosItensOrcamento = $conn->getConn()->prepare($queryEditar);
 
 				$dadosItensOrcamento->bindParam(':quantidade', $dados['ipt-quantidade']);
-				$dadosItensOrcamento->bindParam(':desconto', $dados['ipt-desconto']);
+				$dadosItensOrcamento->bindParam(':desconto', $desconto);
 				$dadosItensOrcamento->bindParam(':id', $dados['ipt-id']);
 
 				$dadosItensOrcamento->execute();

@@ -72,11 +72,11 @@
 							?>
 							<tr>
 								<td><?=$item['descricao']?></td>
-								<td><?=$item['valor_unitario']?></td>
+								<td><?=number_format($item['valor_unitario'], 2 , ',' , '.')?></td>
 								<td><?=$item['quantidade']?></td>
-								<td><?=$item['valor_total']?></td>
-								<td><?=$item['desconto']?></td>
-								<td><?=$item['total_pagar']?></td>
+								<td><?=number_format($item['valor_total'], 2, ',' , '.')?></td>
+								<td><?=number_format($item['desconto'], 2 , ',' , '.')?></td>
+								<td><?=number_format($item['total_pagar'], 2, ',' , '.')?></td>
 								<!--<td align="center"  data-toggle="modal" data-target=".modal-ver-itens"><a href="#" title="Atualizar"><i class="fa fa-check-square-o" aria-hidden="true"></i></a></td>--->
 
 								<td align="center">

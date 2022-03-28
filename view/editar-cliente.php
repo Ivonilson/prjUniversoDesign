@@ -175,16 +175,9 @@
  						<img src="../assets/ok.png"><h5><strong><?=$mensagem_erro?></strong></h5>
 					</div>
 
-					<?php   
-						if($_GET['form']  == 'os-do-dia' || $_GET['form'] == 'lista-agendamentos'){
-					?>
-
-					<a href="/?pagina=<?=$_GET['form']?>" class="btn btn-success btn-lg mt-1 mb-1">Retornar</a>		
-
-					<?php  
-					    }
-					?>		
-
+					<script>setInterval(function(){
+						window.location.href = "/?pagina=<?= $_GET['form'] ?>&palavra_chave=todos"
+					}, 3000)</script>	
 
 					<?php 
 

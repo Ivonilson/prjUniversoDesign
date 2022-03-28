@@ -19,7 +19,7 @@ class EditarCliente {
 	public function edCliente()
 	{
 			$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-			$form = filter_input(INPUT_GET, 'form');
+			//$form = filter_input(INPUT_GET, 'form');
 
 			if (!empty($dados['btnEditarCliente'])) {
 				unset($dados['btnEditarCliente']);
