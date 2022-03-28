@@ -75,13 +75,13 @@
 
 						<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
 							<label class="sr-only" for="inlineFormInputValorUnitario">Valor Unitário (R$)</label>
-							<input type="text" valor_unitario = "valor_unit" class="form-control mb-2 ipt-princ" id="inlineFormInputValorUnitario" placeholder="Valor unitário"  value="<?=number_format($registro->preco_unitario, 2, ',' , '.')?>">
-							<input type="hidden" id="valor_unit" name="ipt-preco-unit">
+							<input type="text" name="ipt-preco-unit"  class="form-control mb-2 ipt-princ" id="inlineFormInputValorUnitario" placeholder="Valor unitário"  value="<?=number_format($registro->preco_unitario, 2, ',' , '.')?>">
+							<input type="hidden" id="valor_unit" >
 						</div>
 
 						<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
 							<label class="sr-only" for="inlineFormInputQuantidadeEstoque">Quantidade em Estoque</label>
-							<input type="text" class="form-control mb-2" id="inlineFormInputQuantidadeEstoque" placeholder="Quantidade em Estoque" name="ipt-quantidade-estoque" disabled>
+							<input type="text" class="form-control mb-2" id="inlineFormInputQuantidadeEstoque" placeholder="Quantidade em Estoque" name="ipt-quantidade-estoque" value="<?=number_format($registro->quantidade_estoque, 2, ',' , '.')?>">
 						</div>
 
 						<input type="submit" id="btnGravarEdicao" value="GRAVAR" name="btnEditarProduto">

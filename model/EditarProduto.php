@@ -21,6 +21,8 @@ class EditarProduto {
 			$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 			$form = filter_input(INPUT_GET, 'form');
 
+			$valor_unit = str_replace(',' , '.' , $dados['ipt-preco-unit']);
+
 			if (!empty($dados['btnEditarProduto'])) {
 				unset($dados['btnEditarProduto']);
 			}
@@ -29,7 +31,7 @@ class EditarProduto {
 
 			$conn = new Conn();
 
-			$statement = "UPDATE tbl_produto SET descricao = :descricao, unidade_medida = :unidade_medida, preco_unitario = :preco_unitario, data_atualizacao = CURDATE() WHERE id_prod = :id_prod";
+			$statement = "UPDATE tbl_produto SET descricao = :descricao, unidade_medida = :unidade_medida, preco_unitario = :preco_unitario, quantidade_estoque = :quantidade_estoque, data_atualizacao = CURDATE() WHERE id_prod = :id_prod";
 
 			$dados_editar = $conn->getConn()->prepare($statement);
 
@@ -74,8 +76,8 @@ class EditarProduto {
 			$dados_editar->bindParam(':id_prod', $dados['ipt-id-produto']);
 			$dados_editar->bindParam(':descricao', $dados['ipt-descricao']);
 			$dados_editar->bindParam(':unidade_medida', $dados['sel-unidade-medida']);
-			$dados_editar->bindParam(':preco_unitario', $dados['ipt-preco-unit']);
-			//$dados_editar->bindParam(':quantidade_estoque', $dados['ipt-quantidade-estoque']);
+			$dados_editar->bindParam(':preco_unitario', $valor_unit);
+			$dados_editar->bindParam(':quantidade_estoque', $dados['ipt-quantidade-estoque']);
 
 			$dados_editar->execute();
 
