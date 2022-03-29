@@ -24,7 +24,7 @@
 		<div class="container-fluid">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">
-					<a href="?pagina=demandas-do-dia" class="text-decoration-none">Home</a>
+					<a href="?pagina=demandas-do-dia" class="text-decoration-none">Início</a>
 				</li>
 				<li class="breadcrumb-item">
 					Histórico O.S.

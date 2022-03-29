@@ -20,7 +20,7 @@
 		<div class="container-fluid">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">
-					<a href="?pagina=os-do-dia" class="text-decoration-none">Home</a>
+					<a href="?pagina=os-do-dia" class="text-decoration-none">Início</a>
 				</li>
 				<li class="breadcrumb-item">
 					Registros
@@ -32,12 +32,20 @@
 
 			<div class="row justify-content-center">
 
-				<div class="col-3">
+				<div class="col">
 					<a href="?pagina=cadastrar-os" class="botoes-atalho-cad" title="Nova O.S"><i class="fa fa-plus " aria-hidden="true"></i> O.S </a>
 				</div>
 
-				<div class="col-3">
+				<div class="col">
 					<a href="?pagina=cadastrar-cliente" class="botoes-atalho-cad" title="Novo Cliente"><i class="fa fa-plus " aria-hidden="true"></i> Cliente </a>
+				</div>
+
+				<div class="col">
+					<a href="?pagina=cadastrar-produto" class="botoes-atalho-cad" title="Novo Produto"><i class="fa fa-plus " aria-hidden="true"></i> Produto </a>
+				</div>
+
+				<div class="col">
+					<a href="?pagina=cadastrar-notificacao" class="botoes-atalho-cad" title="Cadastrar Notificação"><i class="fa fa-plus " aria-hidden="true"></i> Notificação </a>
 				</div>
 
 			</div>

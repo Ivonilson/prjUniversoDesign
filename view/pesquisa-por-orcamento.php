@@ -21,7 +21,7 @@
 		<div class="container-fluid">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">
-					<a href="?pagina=os-do-dia" class="text-decoration-none">Home</a>
+					<a href="?pagina=os-do-dia" class="text-decoration-none">Início</a>
 				</li>
 				<li class="breadcrumb-item">
 					Pesquisas
@@ -63,7 +63,7 @@
 					<form method="get" class="background-form-cons">
 
 						<div id="div-ipt-data-form-cons">
-							<div class="input-group m-3">
+							<div class="input-group mt-3 mb-3">
 								<div class="input-group-prepend">
 									<div class="input-group-text bg-secondary text-white">
 										Pesquisar
@@ -72,8 +72,7 @@
 
 								<input type="hidden" name="pagina" value="pesquisa-por-orcamento">
 
-
-								<input type="text" class="form-control" name="ipt-pesquisa-orcamento" placeholder="Digite uma palavra chave ou TODOS">
+								<input type="text" class="form-control col" name="ipt-pesquisa-orcamento" placeholder="Digite uma palavra chave ou TODOS">
 
 							</div>
 						</div>

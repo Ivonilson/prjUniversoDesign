@@ -20,13 +20,13 @@
 		<div class="container-fluid">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">
-					<a href="?pagina=os-do-dia" class="text-decoration-none">Home</a>
+					<a href="?pagina=os-do-dia" class="text-decoration-none">Início</a>
 				</li>
 				<li class="breadcrumb-item">
 					Pesquisas
 				</li>
 				<li class="breadcrumb-item">
-					Por O.S
+					<mark class="p-2 font-weight-bold">Por O.S</mark>
 				</li>
 			</ol>
 
@@ -56,7 +56,7 @@
 
 			<div class="card mb-1 col">
 				<div class="card-header">
-					<i class="fa fa-table"></i> Pesquisa por Ordem de Serviço
+					<i class="fa fa-table"></i> <span class="font-weight-bold text-lg">Pesquisa por Ordem de Serviço</span>
 					<br>
 					<br>
 					<form method="post" class="background-form-cons">

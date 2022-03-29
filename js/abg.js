@@ -488,11 +488,11 @@ $(document).ready(function(){
 	let botoes_atalho_cad = document.querySelectorAll(".botoes-atalho-cad");
 	
 	botoes_atalho_cad.forEach(item =>{
-		item.setAttribute("class", "btn btn-info btn-block font-weight-bold rounded");
+		item.setAttribute("class", "btn btn-secondary btn-block font-weight-bold rounded");
 	});
 	
 	let jumbotron_tela_cadastro = document.querySelector("#jumbotron_telas_cadastro");
-	jumbotron_tela_cadastro.setAttribute("class", "jumbotron jumbotron-fluid text-white bg-info");
+	jumbotron_tela_cadastro.setAttribute("class", "jumbotron jumbotron-fluid text-white bg-secondary");
 
 	let background_tela_cadastro = document.querySelector("#background-tela-cadastro");
 	background_tela_cadastro.setAttribute("style", "background-color: #DCDCDC");
@@ -502,7 +502,7 @@ $(document).ready(function(){
 	background_form_cad.setAttribute("style", "background-color: #FFFFF0; border-style: outset; padding-bottom: 3px");
 
 	let botoes_gravar_cad = document.querySelector("#botoesGravarCad");
-	botoes_gravar_cad.setAttribute("class", "btn btn-lg btn-info btn-block text-white font-weight-bold rounded")
+	botoes_gravar_cad.setAttribute("class", "btn btn-lg btn-secondary btn-block text-white font-weight-bold rounded")
 
 });
 
@@ -540,7 +540,7 @@ $(document).ready(function(){
 	div_btn_form_cons.setAttribute("class", "col-lg-5 col-md-5 col-sm-12 col-xs-12 mb-3");
 
 	let botoes_cons = document.querySelector("#botoesCons");
-	botoes_cons.setAttribute("class", "btn btn-lg btn-info btn-block text-white font-weight-bold rounded");
+	botoes_cons.setAttribute("class", "btn btn-lg btn-secondary btn-block text-white font-weight-bold rounded");
 	//botoes_cons.setAttribute("style", "background-color: #483D8B");
 });
 

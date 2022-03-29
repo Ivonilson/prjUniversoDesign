@@ -22,7 +22,7 @@
 		<div class="container-fluid">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">
-					<a href="?pagina=os-do-dia" class="text-decoration-none">Home</a>
+					<a href="?pagina=os-do-dia" class="text-decoration-none">Início</a>
 				</li>
 				<li class="breadcrumb-item">
 					Registros
@@ -33,14 +33,21 @@
 			</ol>
 
 			<div class="row justify-content-center">
-				<!-- so pra ocupar espaço -->
 
-				<div class="col-3">
+				<div class="col">
 					<a href="?pagina=cadastrar-orcamento" class="botoes-atalho-cad" title="Novo Orçamento"><i class="fa fa-plus " aria-hidden="true"></i> Orçamento </a>
 				</div>
 
-				<div class="col-3">
+				<div class="col">
 					<a href="?pagina=cadastrar-os" class="botoes-atalho-cad" title="Nova O.S"><i class="fa fa-plus " aria-hidden="true"></i> O.S </a>
+				</div>
+
+				<div class="col">
+					<a href="?pagina=cadastrar-produto" class="botoes-atalho-cad" title="Novo produto"><i class="fa fa-plus " aria-hidden="true"></i> Produto</a>
+				</div>
+
+				<div class="col">
+					<a href="?pagina=cadastrar-notificacao" class="botoes-atalho-cad" title="Cadastrar notificação"><i class="fa fa-plus " aria-hidden="true"></i> Notificação</a>
 				</div>
 
 			</div>

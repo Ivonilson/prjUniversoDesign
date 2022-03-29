@@ -21,13 +21,13 @@
 		<div class="container-fluid">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">
-					<a href="?pagina=os-do-dia" class="text-decoration-none">Home</a>
+					<a href="?pagina=os-do-dia" class="text-decoration-none">Início</a>
 				</li>
 				<li class="breadcrumb-item">
 					Pesquisas
 				</li>
 				<li class="breadcrumb-item">
-					Ordens de serviço por data de recebimento
+					<mark class="p-2 font-weight-bold">Ordens de serviço por data de recebimento</mark>
 				</li>
 			</ol>
 
@@ -57,7 +57,7 @@
 
 			<div class="card mb-1">
 				<div class="card-header">
-					<i class="fa fa-table"></i> Pesquisa por Data de Recebimento
+					<i class="fa fa-table"></i> <span class="font-weight-bold text-lg">Pesquisa por Data de Recebimento</span>
 					<br>
 					<br>
 					<form method="post" class="background-form-cons">
