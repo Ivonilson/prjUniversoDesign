@@ -26,7 +26,7 @@
 					Registros
 				</li>
 				<li class="breadcrumb-item">
-					Cadastrar Orçamento
+					<mark class="p-2 font-weight-bold">Cadastrar Orçamento</mark>
 				</li>
 			</ol>
 

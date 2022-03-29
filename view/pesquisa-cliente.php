@@ -27,7 +27,7 @@
 					Pesquisas
 				</li>
 				<li class="breadcrumb-item">
-					Clientes
+					<mark class="p-2 font-weight-bold">Clientes</mark>
 				</li>
 			</ol>
 
@@ -57,7 +57,7 @@
 
 			<div class="card mb-1">
 				<div class="card-header">
-					<i class="fa fa-table"></i> Pesquisa de clientes
+					<i class="fa fa-table"></i> <span class="font-weight-bold text-lg">Pesquisa de clientes</span>
 					<br>
 					<br>
 					<form method="get" class="background-form-cons">

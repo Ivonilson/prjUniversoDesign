@@ -27,7 +27,7 @@
 					Pesquisas
 				</li>
 				<li class="breadcrumb-item">
-					Pesquisa de Orçamentos
+					<mark class="p-2 font-weight-bold">Pesquisa de Orçamentos</mark>
 				</li>
 			</ol>
 
@@ -57,7 +57,7 @@
 
 			<div class="card mb-1 col">
 				<div class="card-header">
-					<i class="fa fa-table"></i> Orçamentos
+					<i class="fa fa-table"></i> <span class="font-weight-bold text-lg">Orçamentos</span>
 					<br>
 					<br>
 					<form method="get" class="background-form-cons">

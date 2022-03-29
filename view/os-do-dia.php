@@ -30,7 +30,7 @@
 					Pesquisa
 				</li>
 				<li class="breadcrumb-item">
-					O.S(s) do dia
+					<mark class="p-2 font-weight-bold">O.S(s) do dia</mark>
 				</li>	
 			</ol>
 
@@ -53,7 +53,7 @@
 			
 			<div class="card mb-1 border border-light">
 				<div class="card-header">
-					<i class="fa fa-table"></i> O.S(s) do dia - <?php $hoje = date('d/m/Y'); echo $hoje; echo " - (última atualização às ".date('H')." h ".date('i')." m)"; ?><a href="/?pagina=pesquisa-por-os" class=" btn btn-info pr-3 pl-3 pt-2 pb-2 ml-3 float-right text-light rounded">Pesquisa por O.S</a>
+					<i class="fa fa-table"></i> <span class="font-weight-bold text-lg">O.S(s) do dia</span> - <?php $hoje = date('d/m/Y'); echo $hoje; echo " - (última atualização às ".date('H')." h ".date('i')." m)"; ?><a href="/?pagina=pesquisa-por-os" class=" btn btn-info pr-3 pl-3 pt-2 pb-2 ml-3 float-right text-light rounded"><i class="fa fa-search" aria-hidden="true"></i> Pesquisa por O.S</a>
 
 					<div barra-progresso="barraProgresso" class="progresso pr-3 pl-3 pt-1 pb-1 ml-3 float-right  rounded" title="Percentual de serviços finalizados">
 						<div></div>

@@ -27,7 +27,7 @@
 					Pesquisas
 				</li>
 				<li class="breadcrumb-item">
-					Produtos
+					<mark class="p-2 font-weight-bold">Produtos</mark>
 				</li>
 			</ol>
 
@@ -57,7 +57,7 @@
 
 			<div class="card mb-1">
 				<div class="card-header">
-					<i class="fa fa-table"></i> Pesquisa de produtos
+					<i class="fa fa-table"></i> <span class="font-weight-bold text-lg">Pesquisa de produtos</span>
 					<br>
 					<br>
 					<form method="get"  class="background-form-cons">

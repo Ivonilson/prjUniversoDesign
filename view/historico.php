@@ -27,7 +27,7 @@
 					<a href="?pagina=demandas-do-dia" class="text-decoration-none">Início</a>
 				</li>
 				<li class="breadcrumb-item">
-					Histórico O.S.
+					<mark class="p-2 font-weight-bold">Histórico O.S.</mark>
 				</li>
 			</ol>
 			<div class="col bg-secondary">

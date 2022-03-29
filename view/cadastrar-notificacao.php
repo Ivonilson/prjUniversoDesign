@@ -29,7 +29,7 @@
 					Registros
 				</li>
 				<li class="breadcrumb-item">
-					Cadastrar Notificação
+					<mark class="p-2 font-weight-bold">Cadastrar Notificação</mark>
 				</li>
 			</ol>
 

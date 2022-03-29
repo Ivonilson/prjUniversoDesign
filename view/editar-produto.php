@@ -26,7 +26,7 @@
 					Registros
 				</li>
 				<li class="breadcrumb-item">
-					Atualizar Produto
+					<mark class="p-2 font-weight-bold">Atualizar Produto</mark>
 				</li>
 			</ol>
 	

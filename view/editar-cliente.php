@@ -26,7 +26,7 @@
 					Registros
 				</li>
 				<li class="breadcrumb-item">
-					Atualizar Cliente
+					<mark class="p-2 font-weight-bold">Atualizar Cliente</mark>
 				</li>
 			</ol>
 	

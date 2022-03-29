@@ -28,7 +28,7 @@
 					Registros
 				</li>
 				<li class="breadcrumb-item">
-					Cadastrar Cliente
+					<mark class="p-2 font-weight-bold">Cadastrar Cliente</mark>
 				</li>
 			</ol>
 

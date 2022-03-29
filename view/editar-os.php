@@ -26,7 +26,7 @@
 					Registros O.S
 				</li>
 				<li class="breadcrumb-item">
-					Atualizar O.S
+					<mark class="p-2 font-weight-bold">Atualizar O.S</mark>
 				</li>
 			</ol>
 	

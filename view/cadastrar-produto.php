@@ -26,7 +26,7 @@
 					Registros
 				</li>
 				<li class="breadcrumb-item">
-					Cadastrar Produto
+					<mark class="p-2 font-weight-bold">Cadastrar Produto</mark>
 				</li>
 			</ol>
 
