@@ -150,7 +150,7 @@
 								PRODUTO/SERVIÇO
 							</label>
 							<select class="form-control mb-2" id="select-prod" name="sel-produto">
-								<!--<option value="Generico">Selecione</option>-->
+								<option value="Não Selecionado / 0">Selecione</option>
 								<?php
 									foreach ($produto as $carregaProduto) {
 										

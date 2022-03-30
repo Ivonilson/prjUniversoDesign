@@ -232,7 +232,10 @@ function addItem(){
 		iptValorUnit.value = valor_produto[1];
 		iptQuant.value = qtdItens;
 		//ipt.value += ' / Valor unit: ' + valor_produto[1] + ' / Qtd: '+ qtdItens + ' / Total sem desc.: ' + subtotal.toFixed(2);
-		let desconto = document.getElementById('percentualDesconto').value / 100;
+		
+		let desconto = document.getElementById('percentualDesconto').value;
+		desconto = desconto.replace(',' , '.');
+		desconto = parseFloat(desconto) / 100;
 
 		//Valor total do item sem desconto
 		iptTotal.value = subtotal.toFixed(2);
