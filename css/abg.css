@@ -16,7 +16,7 @@ tfoot { display:table-footer-group }
   #imprimir {
     margin-left: 0;
     margin-top: 0;
-    margin-right: 10;
+    margin-right: 0;
   }
 }
 
@@ -54,20 +54,15 @@ tfoot { display:table-footer-group }
 }
 
 .containerGeralImpressao {
-	border: solid black 2px;
-	margin-right: 5px;
-	margin-left: 5px;
+	width: 100% !important;
+	border: solid black 1px;
+	//margin-left: 20px  !important;
 	//background-color: orange;
 }	
 
-.containerBtnImpressao {
-		margin-right: 5px;
-		margin-left: 5px;
-		margin-top: 5px;
-}
 
 .divLogo img {
-	width: 80%;
+	width: 70%;
 	//border: solid blue 3px;
 	margin-top: 5px;
 }

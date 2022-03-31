@@ -22,10 +22,11 @@
 		<div class="container containerGeralImpressao">
 			<div class="row">
 				<div class="col divLogo">
-					<img src="../assets/logo.jpg">
+					<img src="../assets/logo.jpg" style="width: 100%; height: 100%;">
 				</div>
-				<div class="col-5 divProposta p-4 text-center">
-					<h2>PROPOSTA DE SERVIÇO / ORÇAMENTO</h2>
+				<div class="col-6 divProposta p-3 text-center">
+					<h3>PROPOSTA</h3>
+					<h3>ORÇAMENTO / SERVIÇO</h3>
 				</div>
 			</div>
 
@@ -87,7 +88,7 @@
 						
 					</div>
 					
-					<table class="table table-bordered table-hover" width="100%" cellspacing="0">
+					<table class="table table-bordered table-hover table-sm" width="100%" cellspacing="0">
 						<thead class="thead-light">
 							<tr>
 								<th>Descrição</th>
@@ -188,16 +189,20 @@
 						<!--<div class="col-3">
 							<span class="text-danger h5">Valor a Pagar (R$): <?=$totalizador[0]['sum_total_pagar']?></span>
 						</div>-->
-							
+						
 						<div class="col-10 mt-5">
 							<span class="text-danger h5">Vendedor:</span> <span class="text-primary h5"><?=$resultado[0]['usuario']?></span>
 						</div>
 
-						<div class="col-2 mt-5 pl-5">
+						<div class="col mt-5 pl-5 text-left d-print-none">
 							<a href="#"><img src="../assets/whatsapp.png" width="50" height="50" alt="Whatsapp" title="Compartilhar por Whatsapp"></a>
 							&nbsp&nbsp
 							<a href="#"><img  src="../assets/email.png" class="img-fluid" width="50" height="50" alt="Enviar por e-mail" title="E-mail"></a>
 						</div>
+
+						<div class="col text-right mt-5">
+							<span>Planaltina/GO, <?php echo date("d/m/Y") . ".";?></span>
+						</div>	
 					</div>
 
 				</div>
@@ -207,8 +212,8 @@
 
 		<!-- fechamento da DIV de impressão-->
 		</div>
-		<div class="container containerBtnImpressao text-center">
-			<button class="btn btn-default btn-lg btn-center" onclick="window.print()">Gerar Impressão</button>
+		<div class="container text-center">
+			<button class="btn btn-secondary btn-lg btn-center mt-2" onclick="window.print()">Gerar Impressão</button>
 		</div>
 
 	</div>
