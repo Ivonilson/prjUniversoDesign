@@ -71,6 +71,15 @@ class CadastrarOrcamento {
 			}
 
 		}
+
+		function ultimoOrc()
+		{
+			$conn = new Conn();
+			$statement = "SELECT id_orcamento, trabalho_servico, valor_total, desconto, valor_final FROM tbl_orcamento ORDER BY id_orcamento DESC limit 1";
+			$ultimo = $conn->getConn()->query($statement);
+			$resultado = $ultimo->fetch(PDO::FETCH_ASSOC);
+			return $resultado;
+		}
 	}
 
 ?>

@@ -11,12 +11,12 @@ require "model/Cidade.php";
 			return  $usuario->cadOs();
  
 		}
-
 	}
 
 	$crtl = new crtCadastrarOs();
 	$codigoDisponivel = new CadastrarOs();
 	$codigo = $codigoDisponivel->gerarCodigoOs();
+
 
 	$orcamentos = new DadosAuxiliares();
 	$carregaOrcamento = $orcamentos->carregaOrcamento();

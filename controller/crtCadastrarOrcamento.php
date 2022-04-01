@@ -24,16 +24,24 @@ require "model/Cidade.php";
 				}
 		}
 
+		public function ultimoOrcamento(){
+			$ult_orcamento = new CadastrarOrcamento();
+			$ultimo = $ult_orcamento->ultimoOrc();
+			return $ultimo;
+		}
 	}
 
 	$UltimoIdOrcamento = new DadosAuxiliares();
 	$cliente = new DadosAuxiliares();
 	$produtos = new DadosAuxiliares();
 	$crtl = new crtCadastrarOrcamento();
+	$ultimoOrcamento = new crtCadastrarOrcamento();
+
 
 	$clientes = $cliente->carregaCliente();
 	$produto = $produtos->carregaProduto();
 	$mensagem_erro = $crtl->cadastrarOrcamento();
 	$codigoOrcamento = $UltimoIdOrcamento->carregaIdOrcamento();
+	$UltimoOrcCadastrado = $ultimoOrcamento->ultimoOrcamento();
 
 ?>

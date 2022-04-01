@@ -27,6 +27,7 @@
 				</li>
 				<li class="breadcrumb-item">
 					<mark class="p-2 font-weight-bold">Cadastrar Orçamento</mark>
+
 				</li>
 			</ol>
 
@@ -54,13 +55,63 @@
 	
 			<div class="row" id="background-tela-cadastro">
 				
-				<form class="container background-form-cadastro" method="post" id="cadItens">
+				<div class="container background-form-cadastro">
 
-					<div id="jumbotron_telas_cadastro">
+					<div id="jumbotron_telas_cadastro" class="border">
 						<div class="container">
-							<h4>Cadastrar Orçamento</h4>
+
+							<div class="col">
+								<h4>Cadastrar Orçamento</h4>
+							</div>
+
+							<div class="col text-right mb-0">
+								<button type="button" class="text-light btn btn-secondary" data-toggle="modal" data-target="#md-ultimo-orcamento">Ver Último orçamento cadastrado</button>
+							</div>
+
 						</div>
 					</div>
+
+					<!-- Modal -->
+					<div class="modal fade offset-3 col-6 offset-3" id="md-ultimo-orcamento" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+					  <div class="modal-dialog" role="document">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <h5 class="modal-title" id="exampleModalLongTitle">Orçamento N° <?=$UltimoOrcCadastrado['id_orcamento']?></h5>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+					      <div class="modal-body col-5 ml-10 mr-10">
+					        
+							<div class="card">
+							  <div class="card-body col">
+							    <h5 class="card-title font-weight-bold text-dark">Solicitante: </h5>
+							    <h6 class="card-subtitle mb-2 text-muted font-weight-bold text-dark">Data de validade: </h6>
+							    
+							    <span class="font-weight-bold text-dark" style="font-size: 20px">Descrição: </span><span style="font-size: 22px"><?=$UltimoOrcCadastrado['trabalho_servico']?></span><br>
+							    <span class="font-weight-bold text-dark" style="font-size: 20px">Valor Total (R$): </span><span style="font-size: 22px"><?=$UltimoOrcCadastrado['valor_total']?></span><br>
+							    <span class="font-weight-bold text-dark" style="font-size: 20px">Desconto (R$): </span><span style="font-size: 22px"><?=$UltimoOrcCadastrado['desconto']?></span><br>
+							    <span class="font-weight-bold text-dark" style="font-size: 20px">Valor com desconto (R$): </span><span style="font-size: 22px"><?=$UltimoOrcCadastrado['valor_final']?></span><br>
+
+							    <br>
+							    <a href="/?pagina=itens-orcamento&id_orcamento=<?=$UltimoOrcCadastrado['id_orcamento']?>" class="card-link btn btn-secondary">Editar</a>
+							    <a href="#" class="card-link btn btn-secondary">Sair</a>
+							  </div>
+							</div>
+
+					      </div>
+
+					    <!--  <div class="modal-footer col-5">
+					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					        <button type="button" class="btn btn-primary">Save changes</button>
+					      </div> -->
+
+
+					    </div>
+					  </div>
+					</div>						
+
+				<form method="post" id="cadItens">
 
 						<?php
 							if($mensagem_erro == "Orçamento Cadastrado com sucesso!")
@@ -309,6 +360,7 @@
 
 					</div>
 				</form>
+				</div>
 			</div>
 
 			<?php require_once 'includes/rodape.php';?>
