@@ -16,7 +16,7 @@ class CadastrarOrcamento {
 
 			$conn = new Conn();
 
-			$statement = "INSERT INTO tbl_orcamento (id_cliente, trabalho_servico, data_validade, valor_total, desconto, valor_final, condicao_pagamento, meio_pagamento, solicitante, observacao, data_cadastro, usuario) VALUES (:id_cliente, :trabalho_servico, :data_validade, :valor_total, :desconto, :valor_final, :condicao_pagamento, :meio_pagamento, :solicitante, :observacao, CURDATE(), :usuario)";
+			$statement = "INSERT INTO tbl_orcamento (id_cliente, trabalho_servico, data_validade, condicao_pagamento, meio_pagamento, solicitante, observacao, data_cadastro, usuario) VALUES (:id_cliente, :trabalho_servico, :data_validade, :condicao_pagamento, :meio_pagamento, :solicitante, :observacao, CURDATE(), :usuario)";
 
 			$dados_cadastrar = $conn->getConn()->prepare($statement);
 
@@ -43,9 +43,6 @@ class CadastrarOrcamento {
 			$dados_cadastrar->bindParam(':id_cliente', $dados['sel-cliente']);
 			$dados_cadastrar->bindParam(':trabalho_servico', $dados['ipt-trabalho-servico']);
 			$dados_cadastrar->bindParam(':data_validade', $dados['ipt-data-validade-orc']);
-			$dados_cadastrar->bindParam(':valor_total', $dados['ipt-valor-servico-global']);
-			$dados_cadastrar->bindParam(':desconto', $dados['ipt-valor-desconto-global']);
-			$dados_cadastrar->bindParam(':valor_final', $dados['ipt-valor-pagar-global']);
 			$dados_cadastrar->bindParam(':condicao_pagamento', $dados['sel-condicao-pagamento']);
 			$dados_cadastrar->bindParam(':meio_pagamento', $dados['sel-meio-pag']);
 			$dados_cadastrar->bindParam(':solicitante', $dados['ipt-solicitante']);
@@ -75,7 +72,9 @@ class CadastrarOrcamento {
 		function ultimoOrc()
 		{
 			$conn = new Conn();
-			$statement = "SELECT id_orcamento, trabalho_servico, valor_total, desconto, valor_final FROM tbl_orcamento ORDER BY id_orcamento DESC limit 1";
+
+			$statement = "SELECT tbl_orcamento.id_orcamento AS id_orcamento, tbl_orcamento.trabalho_servico AS trabalho_servico, SUM(tbl_itens_orcamento.valor_total) AS valor_total, SUM(tbl_itens_orcamento.desconto) AS desconto, SUM(tbl_itens_orcamento.total_pagar) AS total_pagar FROM tbl_orcamento LEFT JOIN tbl_itens_orcamento ON tbl_orcamento.id_orcamento = tbl_itens_orcamento.id_orcamento ORDER BY tbl_orcamento.id_orcamento DESC LIMIT 1";
+
 			$ultimo = $conn->getConn()->query($statement);
 			$resultado = $ultimo->fetch(PDO::FETCH_ASSOC);
 			return $resultado;

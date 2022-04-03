@@ -91,7 +91,7 @@
 							    <span class="font-weight-bold text-dark" style="font-size: 20px">Descrição: </span><span style="font-size: 22px"><?=$UltimoOrcCadastrado['trabalho_servico']?></span><br>
 							    <span class="font-weight-bold text-dark" style="font-size: 20px">Valor Total (R$): </span><span style="font-size: 22px"><?=$UltimoOrcCadastrado['valor_total']?></span><br>
 							    <span class="font-weight-bold text-dark" style="font-size: 20px">Desconto (R$): </span><span style="font-size: 22px"><?=$UltimoOrcCadastrado['desconto']?></span><br>
-							    <span class="font-weight-bold text-dark" style="font-size: 20px">Valor com desconto (R$): </span><span style="font-size: 22px"><?=$UltimoOrcCadastrado['valor_final']?></span><br>
+							    <span class="font-weight-bold text-dark" style="font-size: 20px">Valor com desconto (R$): </span><span style="font-size: 22px"><?=$UltimoOrcCadastrado['total_pagar']?></span><br>
 
 							    <br>
 							    <a href="/?pagina=itens-orcamento&id_orcamento=<?=$UltimoOrcCadastrado['id_orcamento']?>" class="card-link btn btn-secondary">Editar</a>
