@@ -73,7 +73,7 @@ class CadastrarOrcamento {
 		{
 			$conn = new Conn();
 
-			$statement = "SELECT tbl_orcamento.id_orcamento AS id_orcamento, tbl_orcamento.trabalho_servico AS trabalho_servico, SUM(tbl_itens_orcamento.valor_total) AS valor_total, SUM(tbl_itens_orcamento.desconto) AS desconto, SUM(tbl_itens_orcamento.total_pagar) AS total_pagar FROM tbl_orcamento LEFT JOIN tbl_itens_orcamento ON tbl_orcamento.id_orcamento = tbl_itens_orcamento.id_orcamento ORDER BY tbl_orcamento.id_orcamento DESC LIMIT 1";
+			$statement = "SELECT tbl_orcamento.id_orcamento AS id_orcamento, tbl_orcamento.trabalho_servico AS trabalho_servico, tbl_itens_orcamento.valor_total AS valor_total, tbl_itens_orcamento.desconto AS desconto, tbl_itens_orcamento.total_pagar AS total_pagar FROM tbl_orcamento LEFT JOIN tbl_itens_orcamento ON tbl_orcamento.id_orcamento = tbl_itens_orcamento.id_orcamento ORDER BY tbl_orcamento.id_orcamento DESC LIMIT 1";
 
 			$ultimo = $conn->getConn()->query($statement);
 			$resultado = $ultimo->fetch(PDO::FETCH_ASSOC);
