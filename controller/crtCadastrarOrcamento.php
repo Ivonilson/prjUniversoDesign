@@ -36,6 +36,7 @@ require "model/Cidade.php";
 	$produtos = new DadosAuxiliares();
 	$crtl = new crtCadastrarOrcamento();
 	$ultimoOrcamento = new crtCadastrarOrcamento();
+	$itensUltimoOrcamento = new CadastrarOrcamento();
 
 
 	$clientes = $cliente->carregaCliente();
@@ -43,5 +44,6 @@ require "model/Cidade.php";
 	$mensagem_erro = $crtl->cadastrarOrcamento();
 	$codigoOrcamento = $UltimoIdOrcamento->carregaIdOrcamento();
 	$UltimoOrcCadastrado = $ultimoOrcamento->ultimoOrcamento();
+	$totalizador_itens = $itensUltimoOrcamento->itensUltimoOrc($UltimoOrcCadastrado['id_orcamento']);
 
 ?>

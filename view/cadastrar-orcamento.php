@@ -65,9 +65,8 @@
 							</div>
 
 							<div class="col text-right mb-0">
-								<button type="button" class="text-light btn btn-secondary" data-toggle="modal" data-target="#md-ultimo-orcamento">Ver Último orçamento cadastrado</button>
+								<button type="button" class="text-light btn btn-secondary" data-toggle="modal" data-target="#md-ultimo-orcamento">Ver Último orçamento resumido</button>
 							</div>
-
 						</div>
 					</div>
 
@@ -81,21 +80,29 @@
 					          <span aria-hidden="true">&times;</span>
 					        </button>
 					      </div>
-					      <div class="modal-body col-5 ml-10 mr-10">
+					      <div class="modal-body col-5">
 					        
 							<div class="card">
 							  <div class="card-body col">
-							    <h5 class="card-title font-weight-bold text-dark">Solicitante: </h5>
-							    <h6 class="card-subtitle mb-2 text-muted font-weight-bold text-dark">Data de validade: </h6>
+							    <h5 class="card-title font-weight-bold text-dark">Solicitante: <?=$UltimoOrcCadastrado['nome']?></h5>
+							    <h6 class="card-subtitle mb-2 text-muted font-weight-bold text-dark">Data de validade: <?=date_format(date_create($UltimoOrcCadastrado['data_validade']), "d/m/Y")?></h6>
 							    
-							    <span class="font-weight-bold text-dark" style="font-size: 20px">Descrição: </span><span style="font-size: 22px"><?=$UltimoOrcCadastrado['trabalho_servico']?></span><br>
-							    <span class="font-weight-bold text-dark" style="font-size: 20px">Valor Total (R$): </span><span style="font-size: 22px"><?=$UltimoOrcCadastrado['valor_total']?></span><br>
-							    <span class="font-weight-bold text-dark" style="font-size: 20px">Desconto (R$): </span><span style="font-size: 22px"><?=$UltimoOrcCadastrado['desconto']?></span><br>
-							    <span class="font-weight-bold text-dark" style="font-size: 20px">Valor com desconto (R$): </span><span style="font-size: 22px"><?=$UltimoOrcCadastrado['total_pagar']?></span><br>
+							    <br><span class="font-weight-bold text-dark" style="font-size: 20px">Descrição: </span><span style="font-size: 22px"><?=$UltimoOrcCadastrado['trabalho_servico']?></span><br>
+
+							    <span class="font-weight-bold text-dark" style="font-size: 20px">Itens: </span><span style="font-size: 22px"><?=$totalizador_itens['descricao']?></span><br>
+
+							    <span class="font-weight-bold text-dark" style="font-size: 20px">Valor Total (R$): </span><span style="font-size: 22px"><?=number_format($totalizador_itens['valor_total'], 2, ',' , '.')?></span><br>
+							    <span class="font-weight-bold text-dark" style="font-size: 20px">Desconto (R$): </span><span style="font-size: 22px"><?=number_format($totalizador_itens['desconto'], 2, ',' , '.')?></span><br>
+							    <span class="font-weight-bold text-dark" style="font-size: 20px">Total a pagar (R$): </span><span style="font-size: 22px"><?=number_format($totalizador_itens['total_pagar'], 2, ',' , '.')?></span><br>
 
 							    <br>
-							    <a href="/?pagina=itens-orcamento&id_orcamento=<?=$UltimoOrcCadastrado['id_orcamento']?>" class="card-link btn btn-secondary">Editar</a>
-							    <a href="#" class="card-link btn btn-secondary">Sair</a>
+
+							    <div class="row">
+							    	<a href="/?pagina=itens-orcamento&id_orcamento=<?=$UltimoOrcCadastrado['id_orcamento']?>" target="_blank" class="card-link btn btn-danger  col-sm col-xs col-4">Editar</a>
+
+							   		<a href="/?pagina=impressao-orcamento&id_orcamento=<?=$UltimoOrcCadastrado['id_orcamento']?>" target="_blank" class="card-link btn btn-info  col-md col-sm col-xs col-4">Imprimir</a>
+							    </div>
+							    
 							  </div>
 							</div>
 

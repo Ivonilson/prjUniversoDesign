@@ -73,11 +73,22 @@ class CadastrarOrcamento {
 		{
 			$conn = new Conn();
 
-			$statement = "SELECT tbl_orcamento.id_orcamento AS id_orcamento, tbl_orcamento.trabalho_servico AS trabalho_servico, tbl_itens_orcamento.valor_total AS valor_total, tbl_itens_orcamento.desconto AS desconto, tbl_itens_orcamento.total_pagar AS total_pagar FROM tbl_orcamento LEFT JOIN tbl_itens_orcamento ON tbl_orcamento.id_orcamento = tbl_itens_orcamento.id_orcamento ORDER BY tbl_orcamento.id_orcamento DESC LIMIT 1";
+			$statement = "SELECT tbl_orcamento.id_orcamento AS id_orcamento, tbl_orcamento.trabalho_servico AS trabalho_servico, tbl_orcamento.data_validade AS data_validade, tbl_cliente.nome AS nome FROM tbl_orcamento INNER JOIN tbl_cliente ON tbl_orcamento.id_cliente = tbl_cliente.id_cliente ORDER BY id_orcamento DESC LIMIT 1";
 
 			$ultimo = $conn->getConn()->query($statement);
 			$resultado = $ultimo->fetch(PDO::FETCH_ASSOC);
 			return $resultado;
+		}
+
+		function itensUltimoOrc($id_orc){
+
+			$conn = new Conn();
+			
+			$statement = "SELECT SUM(valor_total) AS valor_total, SUM(desconto) AS desconto, SUM(total_pagar) AS total_pagar, GROUP_CONCAT(descricao ORDER BY descricao) AS descricao FROM tbl_itens_orcamento WHERE id_orcamento = $id_orc";
+
+			$exec_query = $conn->getConn()->query($statement);
+			$totalizador = $exec_query->fetch(PDO::FETCH_ASSOC);
+			return $totalizador;
 		}
 	}
 

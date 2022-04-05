@@ -56,7 +56,6 @@ tfoot { display:table-footer-group }
 .containerGeralImpressao {
 	width: 100% !important;
 	border: solid black 1px;
-	//margin-left: 20px  !important;
 	//background-color: orange;
 }	
 

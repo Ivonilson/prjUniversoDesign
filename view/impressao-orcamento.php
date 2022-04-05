@@ -37,11 +37,11 @@
 						<div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
 							<div class="input-group mb-2">
 								<div class="input-group-prepend">
-									<div class="input-group-text bg-secondary text-white">
-										N° Orç.
+									<div class="input-group-text font-weight-bold">
+										Orç. n° 
 									</div>
 								</div>
-								<input type="text" disabled class="form-control" value="<?=$resultado[0]['id_orcamento']?>">
+								<input type="text" disabled class="form-control bg-light" value="<?=$resultado[0]['id_orcamento']?>">
 							</div>
 						</div>
 
@@ -52,11 +52,11 @@
 						<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
 							<div class="input-group mb-2">
 								<div class="input-group-prepend">
-									<div class="input-group-text bg-secondary text-white">
+									<div class="input-group-text font-weight-bold">
 										Cliente
 									</div>
 								</div>
-								<input type="text" disabled class="form-control" value="<?=$resultado[0]['nome_cliente']?>">
+								<input type="text" disabled class="form-control bg-light" value="<?=$resultado[0]['nome_cliente']?>">
 							</div>
 						</div>
 
@@ -67,22 +67,22 @@
 						<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
 							<div class="input-group mb-2">
 								<div class="input-group-prepend">
-									<div class="input-group-text bg-secondary text-white">
+									<div class="input-group-text font-weight-bold">
 										Registrado em
 									</div>
 								</div>
-								<input type="text" disabled class="form-control" value="<?=date_format(date_create($resultado[0]['data_cadastro']), "d/m/Y")?>">
+								<input type="text" disabled class="form-control bg-light" value="<?=date_format(date_create($resultado[0]['data_cadastro']), "d/m/Y")?>">
 							</div>
 						</div>
 
 						<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
 							<div class="input-group mb-2">
 								<div class="input-group-prepend">
-									<div class="input-group-text bg-secondary text-white">
+									<div class="input-group-text font-weight-bold">
 										Validade
 									</div>
 								</div>
-								<input type="text" disabled class="form-control" value="<?=date_format(date_create($resultado[0]['data_validade']), "d/m/Y")?>">
+								<input type="text" disabled class="form-control bg-light" value="<?=date_format(date_create($resultado[0]['data_validade']), "d/m/Y")?>">
 							</div>
 						</div>
 						
@@ -148,11 +148,11 @@
 						<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
 							<div class="input-group mb-2">
 								<div class="input-group-prepend">
-									<div class="input-group-text bg-secondary text-white">
-										Valor total do orçamento (R$)
+									<div class="input-group-text font-weight-bold">
+										Valor total (R$)
 									</div>
 								</div>
-								<input type="text" disabled class="form-control" value="<?=number_format($totalizador[0]['sum_valor_total'], 2 , "," , ".")?>">
+								<input type="text" disabled class="form-control bg-light" value="<?=number_format($totalizador[0]['sum_valor_total'], 2 , "," , ".")?>">
 							</div>
 						</div>
 
@@ -163,11 +163,11 @@
 						<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
 							<div class="input-group mb-2">
 								<div class="input-group-prepend">
-									<div class="input-group-text bg-secondary text-white">
-										Total de Descontos (R$)
+									<div class="input-group-text font-weight-bold">
+										Descontos (R$)
 									</div>
 								</div>
-								<input type="text" disabled class="form-control" value="<?php echo number_format($totalizador[0]['sum_desconto'], 2, "," , ".") . ' ('. number_format(100 - (($totalizador[0]['sum_total_pagar'] / $totalizador[0]['sum_valor_total']) * 100) , 2 , ',' , '')  .'%)'?>">
+								<input type="text" disabled class="form-control bg-light" value="<?php echo number_format($totalizador[0]['sum_desconto'], 2, "," , ".") . ' ('. number_format(100 - (($totalizador[0]['sum_total_pagar'] / $totalizador[0]['sum_valor_total']) * 100) , 2 , ',' , '')  .'%)'?>">
 							</div>
 						</div>
 
@@ -178,11 +178,11 @@
 						<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
 							<div class="input-group mb-2">
 								<div class="input-group-prepend">
-									<div class="input-group-text bg-secondary text-white">
+									<div class="input-group-text font-weight-bold">
 										Valor a Pagar (R$)
 									</div>
 								</div>
-								<input type="text" disabled class="form-control" value="<?=number_format($totalizador[0]['sum_total_pagar'], 2 , "," , ".")?>">
+								<input type="text" disabled class="form-control bg-light" value="<?=number_format($totalizador[0]['sum_total_pagar'], 2 , "," , ".")?>">
 							</div>
 						</div>
 
