@@ -77,7 +77,9 @@ function addItem(){
 	let qtdItens = document.getElementById('inlineFormInputQuant').value;
 	//let preco_unitario = document.getElementById('preco').value;
 	let altura = document.getElementById('inlineFormInputAltura').value;
+	altura = altura.replace(',' , '.');
 	let largura = document.getElementById('inlineFormInputLargura').value;
+	largura = largura.replace(',' , '.');
 	let ipt = document.createElement('input');	
 
 	let iptProduto = document.createElement('input');

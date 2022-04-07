@@ -68,7 +68,7 @@ class ItensOrcamento {
 				$dadosItensOrcamento->execute();
 				
 			} catch(PDOException $erro){
-				echo "ERRO: ".$erro->getMessage();
+				//echo "ERRO: ".$erro->getMessage();
 			}
 
 			if($dadosItensOrcamento->rowCount()) {
@@ -80,7 +80,7 @@ class ItensOrcamento {
 				
 			} else {
 				echo "<script>alert('ERRO ao ALTERAR Registro.')</script>";
-				print_r($dadosItensOrcamento->errorInfo());
+				//print_r($dadosItensOrcamento->errorInfo());
 			}
 
 		}
@@ -107,16 +107,16 @@ class ItensOrcamento {
 				$dadosItensOrcamento->execute();
 
 			} catch(PDOException $erro){
-				echo "ERRO: ".$erro->getMessage();
+				//echo "ERRO: ".$erro->getMessage();
 			}
 
 			if($dadosItensOrcamento->rowCount()) {
 				echo "<script>alert('Item EXCLUÍDO com SUCESSO.')</script>";
-				echo "window.location.href = '/?pagina=itens-orcamento&id_orcamento=".$dados['ipt-cod-delete'];
+				//echo "window.location.href = '/?pagina=itens-orcamento&id_orcamento=".$dados['ipt-cod-delete'];
 				
 			} else {
 				echo "<script>alert('ERRO ao EXCLUÍR Item.')</script>";
-				print_r($dadosItensOrcamento->errorInfo());
+				//print_r($dadosItensOrcamento->errorInfo());
 			}
 
 		}

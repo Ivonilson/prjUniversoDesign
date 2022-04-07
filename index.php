@@ -22,6 +22,11 @@ $pagina = isset($_GET['pagina']) ? $_GET['pagina'] : "login";
 			include_once "view/cadastrar-orcamento.php";
 			break;
 
+		case 'incluir-item-orcamento':
+			require "controller/crtIncluirItemOrcamento.php";
+			include_once "view/incluir-item-orcamento.php";
+			break;
+
 		case 'cadastrar-os':
 			require "controller/crtCadastrarOs.php";
 			require_once "model/CadastrarOs.php";

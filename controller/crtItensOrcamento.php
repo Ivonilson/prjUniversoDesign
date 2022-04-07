@@ -7,7 +7,7 @@ class crtItensOrcamento {
 	{	
 		$itensOrcamento = new ItensOrcamento();
 		$resultado = $itensOrcamento->pesqItensOrcamento();
-		include "view/itens-orcamento.php";
+		include_once "view/itens-orcamento.php";
 	}
 }
 

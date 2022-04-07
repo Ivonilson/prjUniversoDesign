@@ -34,6 +34,9 @@
 			</div>
 
 			<h3 class="text-center">Itens referentes ao Orçamento <span class="text-danger">N° <?=filter_input(INPUT_GET,	'id_orcamento')?></span></h3>
+
+			<a href="/?pagina=incluir-item-orcamento&id_orcamento=<?=filter_input(INPUT_GET,'id_orcamento')?>" title="Adicionar Item"><h4 class="text-center"><i class="fa fa-plus " aria-hidden="true"></i> Item</h4></a>
+
 			<div class="row">
 				<div class="col-lg-12">
 					<table class="table table-bordered table-hover display nowrap" id="dataTable" width="100%" cellspacing="0">
