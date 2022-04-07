@@ -9,6 +9,8 @@ class IncluirItemOrcamento {
 			$conn = new Conn();
 
 			$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+			$valor_total = $dados['ipt-quantidade-itens'] * $dados['sel-produto'];
+			$total_a_pagar = $valor_total - ($valor_total * ($dados['ipt-percentual-desconto'] / 100));
 
 			if (!empty($dados['btnCadastrarOrcamento'])) {
 				unset($dados['btnCadastrarOrcamento']);
@@ -16,7 +18,7 @@ class IncluirItemOrcamento {
 
 			try {
 
-			$statement = "INSERT INTO tbl_itens_orcamento (id_orcamento, descricao, quantidade, data_cadastro, usuario) VALUES (:id_orcamento, :descricao, :quantidade, CURDATE(), :usuario)";
+			$statement = "INSERT INTO tbl_itens_orcamento (id_orcamento, descricao, valor_unitario, valor_total, desconto, total_pagar, quantidade, data_cadastro, usuario) VALUES (:id_orcamento, :descricao, :valor_unitario, :valor_total, :desconto, :total_pagar, :quantidade, CURDATE(), :usuario)";
 
 			$dados_cadastrar = $conn->getConn()->prepare($statement);
 
@@ -41,11 +43,11 @@ class IncluirItemOrcamento {
 
 			$dados_cadastrar->bindParam(':id_orcamento', $dados['ipt-id-orcamento']);
 			$dados_cadastrar->bindParam(':descricao', $dados['sel-produto']);
-			//$dados_cadastrar->bindParam(':valor_unitario', $dados[1]);
+			$dados_cadastrar->bindParam(':valor_unitario', $dados['sel-produto']);
 			$dados_cadastrar->bindParam(':quantidade', $dados['ipt-quantidade-itens']);
-			//$dados_cadastrar->bindParam(':valor_total', $dados[3]);
-			//$dados_cadastrar->bindParam(':desconto', $dados[4]);
-			//$dados_cadastrar->bindParam(':total_pagar', $dados[5]);
+			$dados_cadastrar->bindParam(':valor_total', $valor_total);
+			$dados_cadastrar->bindParam(':desconto', $dados['ipt-percentual-desconto']);
+			$dados_cadastrar->bindParam(':total_pagar', $total_a_pagar);
 			$dados_cadastrar->bindParam(':usuario', $usuario);
 		
 			$dados_cadastrar->execute();
