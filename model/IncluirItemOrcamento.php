@@ -9,8 +9,12 @@ class IncluirItemOrcamento {
 			$conn = new Conn();
 
 			$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-			$valor_total = $dados['ipt-quantidade-itens'] * $dados['sel-produto'];
-			$total_a_pagar = $valor_total - ($valor_total * ($dados['ipt-percentual-desconto'] / 100));
+
+			$descricao_e_valor_unit = explode('/', $dados['sel-produto']);
+			$desconto = ((float) $dados['ipt-percentual-desconto'] / 100) * ((float) $dados['ipt-quantidade-itens'] * (float) $descricao_e_valor_unit[1]);
+
+			$valor_total = (float) $dados['ipt-quantidade-itens'] * (float) $descricao_e_valor_unit[1];
+			$total_a_pagar = $valor_total - ($valor_total * ((float) $dados['ipt-percentual-desconto'] / 100));
 
 			if (!empty($dados['btnCadastrarOrcamento'])) {
 				unset($dados['btnCadastrarOrcamento']);
@@ -42,11 +46,11 @@ class IncluirItemOrcamento {
 			$usuario = $_SESSION['user'];
 
 			$dados_cadastrar->bindParam(':id_orcamento', $dados['ipt-id-orcamento']);
-			$dados_cadastrar->bindParam(':descricao', $dados['sel-produto']);
-			$dados_cadastrar->bindParam(':valor_unitario', $dados['sel-produto']);
+			$dados_cadastrar->bindParam(':descricao', $descricao_e_valor_unit[0]);
+			$dados_cadastrar->bindParam(':valor_unitario', $descricao_e_valor_unit[1]);
 			$dados_cadastrar->bindParam(':quantidade', $dados['ipt-quantidade-itens']);
 			$dados_cadastrar->bindParam(':valor_total', $valor_total);
-			$dados_cadastrar->bindParam(':desconto', $dados['ipt-percentual-desconto']);
+			$dados_cadastrar->bindParam(':desconto', $desconto);
 			$dados_cadastrar->bindParam(':total_pagar', $total_a_pagar);
 			$dados_cadastrar->bindParam(':usuario', $usuario);
 		

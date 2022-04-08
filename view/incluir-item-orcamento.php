@@ -110,7 +110,7 @@
 									foreach ($produto as $carregaProduto) {
 										
 								 ?>
-								<option value="<?=$carregaProduto->descricao.' ('.$carregaProduto->unidade_medida.') '.'/ '.$carregaProduto->preco_unitario?>" id="preco"><?=$carregaProduto->descricao.' ('.$carregaProduto->unidade_medida.') - Valor Unit.(R$) '.$carregaProduto->preco_unitario?></option>
+								<option value="<?=$carregaProduto->descricao.' ('.$carregaProduto->unidade_medida.') '.'/'.$carregaProduto->preco_unitario?>" id="preco"><?=$carregaProduto->descricao.' ('.$carregaProduto->unidade_medida.') - Valor Unit.(R$) '.$carregaProduto->preco_unitario?></option>
 								<?php 
 									}
 								?>
