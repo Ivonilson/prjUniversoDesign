@@ -9,12 +9,23 @@ class IncluirItemOrcamento {
 			$conn = new Conn();
 
 			$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-
 			$descricao_e_valor_unit = explode('/', $dados['sel-produto']);
-			$desconto = ((float) $dados['ipt-percentual-desconto'] / 100) * ((float) $dados['ipt-quantidade-itens'] * (float) $descricao_e_valor_unit[1]);
 
-			$valor_total = (float) $dados['ipt-quantidade-itens'] * (float) $descricao_e_valor_unit[1];
-			$total_a_pagar = $valor_total - ($valor_total * ((float) $dados['ipt-percentual-desconto'] / 100));
+			if(isset($dados['ipt-largura']) && isset($dados['ipt-altura'])){
+				$tamanho = (float) str_replace(',' , '.' , $dados['ipt-largura']) * (float) str_replace(',' , '.' , $dados['ipt-altura']); 
+				$descricao_e_valor_unit[0] = $descricao_e_valor_unit[0]." - (".$dados['ipt-largura']." larg. X ".$dados['ipt-altura']. " alt.) - ".number_format($tamanho, 2, ',' , '.')." m²";
+
+				$desconto = ((float) $dados['ipt-percentual-desconto'] / 100) * ((float) $dados['ipt-quantidade-itens'] * ((float) $descricao_e_valor_unit[1]) * str_replace(',' , '.' , $tamanho));
+
+				$valor_total = (float) $dados['ipt-quantidade-itens'] * ((float) $descricao_e_valor_unit[1] * str_replace(',' , '.' , $tamanho));
+				$total_a_pagar = $valor_total - ($valor_total * ((float) $dados['ipt-percentual-desconto'] / 100));
+			} else {
+
+				$desconto = ((float) $dados['ipt-percentual-desconto'] / 100) * ((float) $dados['ipt-quantidade-itens'] * (float) $descricao_e_valor_unit[1]);
+
+				$valor_total = (float) $dados['ipt-quantidade-itens'] * (float) $descricao_e_valor_unit[1];
+				$total_a_pagar = $valor_total - ($valor_total * ((float) $dados['ipt-percentual-desconto'] / 100));
+			}
 
 			if (!empty($dados['btnCadastrarOrcamento'])) {
 				unset($dados['btnCadastrarOrcamento']);

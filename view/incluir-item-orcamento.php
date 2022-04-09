@@ -74,7 +74,7 @@
 
 						<?php
 
-							} elseif($mensagem_erro == "Erro ao cadastrar. Verifique se o CLIENTE foi selecionado tente novamente. Caso o problema persista, contate o Suporte.") {
+							} elseif($mensagem_erro == "Erro ao cadastrar. Verifique se um PRODUTO foi selecionado tente novamente. Caso o problema persista, contate o Suporte.") {
 						?>
 
 						<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
@@ -105,7 +105,7 @@
 								PRODUTO/SERVIÇO
 							</label>
 							<select class="form-control mb-2" id="select-prod" name="sel-produto">
-								<option value="Não Selecionado / 0">Selecione</option>
+								<option value="">Selecione</option>
 								<?php
 									foreach ($produto as $carregaProduto) {
 										

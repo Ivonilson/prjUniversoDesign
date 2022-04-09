@@ -5,6 +5,7 @@ require "model/IncluirItemOrcamento.php";
 
 		public function incluirItemOrcamento()
 		{	
+
 				if(filter_input(INPUT_POST, 'sel-produto') != '' && filter_input(INPUT_POST, 'ipt-quantidade-itens') != 0) {
 
 					$incluirItemOrcamento = new IncluirItemOrcamento();
@@ -12,11 +13,9 @@ require "model/IncluirItemOrcamento.php";
 					if($incluirItemOrcamento->incluirItemOrcamento()){
 						return "Item Cadastrado com sucesso!";
 					} else {
-						return "ERRO. Contate o Suporte.";
+						return "Erro ao cadastrar. Verifique se um PRODUTO foi selecionado tente novamente. Caso o problema persista, contate o Suporte.";
 					}
 
-				} elseif(filter_input(INPUT_POST, 'sel-produto') != '') {
-					return "Erro ao cadastrar. Verifique se um PRODUTO foi selecionado tente novamente. Caso o problema persista, contate o Suporte.";
 				} else {
 					return "-";
 				}
