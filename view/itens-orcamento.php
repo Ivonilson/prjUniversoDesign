@@ -52,7 +52,7 @@
 								<th>Valor Total(R$)</th>
 								<th>Desconto(R$)</th>
 								<th>Total a Pagar(R$)</th>
-								<th>Alterar</th>
+								<th>Alterar Desconto</th>
 								<th>Excluir</th>
 							</tr>
 						</thead>
@@ -64,7 +64,7 @@
 								<th>Valor Total(R$)</th>
 								<th>Desconto(R$)</th>
 								<th>Total a Pagar(R$)</th>
-								<th>Alterar</th>
+								<th>AAlterar Desconto</th>
 								<th>Excluir</th>
 							</tr>
 						</tfoot>
@@ -122,15 +122,15 @@
    								</div>
 
    								<div class="col-3">
-   									<label class="text-danger font-weight-bold readonly">Valor Unitário (R$)</label>
+   									<label class="text-danger font-weight-bold readonly">Valor Total (R$)</label>
    									<br>
-   									<input class="form-control" type="text" readonly name="" value="<?=number_format($item['valor_unitario'], 2, ',' , '.')?>">
+   									<input class="form-control" type="text" readonly name="ipt-valor-total" value="<?=number_format($item['valor_total'], 2, ',' , '.')?>">
    								</div>
 
    								<div class="col-1">
    									<label class="text-danger font-weight-bold">Quant.</label>
    									<br>
-   									<input class="form-control" type="number" min="1" name="ipt-quantidade" value="<?=number_format($item['quantidade'], 0, ' ', ' ') ?>">
+   									<input class="form-control" type="number" min="1" name="ipt-quantidade" value="<?=number_format($item['quantidade'], 0, ' ', ' ') ?>" disabled>
    								</div>
 
    								<div class="col-1">

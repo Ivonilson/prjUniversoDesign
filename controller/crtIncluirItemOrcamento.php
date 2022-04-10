@@ -13,7 +13,7 @@ require "model/IncluirItemOrcamento.php";
 					if($incluirItemOrcamento->incluirItemOrcamento()){
 						return "Item Cadastrado com sucesso!";
 					} else {
-						return "Erro ao cadastrar. Verifique se um PRODUTO foi selecionado tente novamente. Caso o problema persista, contate o Suporte.";
+						return "Erro ao cadastrar. Tente novamente ou, caso o problema persista, contate o Suporte.";
 					}
 
 				} else {

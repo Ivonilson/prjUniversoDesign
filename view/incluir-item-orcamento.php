@@ -74,7 +74,7 @@
 
 						<?php
 
-							} elseif($mensagem_erro == "Erro ao cadastrar. Verifique se um PRODUTO foi selecionado tente novamente. Caso o problema persista, contate o Suporte.") {
+							} elseif($mensagem_erro == "Erro ao cadastrar. Tente novamente ou, caso o problema persista, contate o Suporte.") {
 						?>
 
 						<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
@@ -105,7 +105,7 @@
 								PRODUTO/SERVIÇO
 							</label>
 							<select class="form-control mb-2" id="select-prod" name="sel-produto">
-								<option value="">Selecione</option>
+								<!--<option value="">Selecione</option>-->
 								<?php
 									foreach ($produto as $carregaProduto) {
 										
@@ -120,12 +120,12 @@
 
 						<div class="col-lg-1 col-md-12 col-sm-12 col-xs-12">
 							<label class="text-dark" for="inlineFormInputLargura" id="lblLargura">LARGURA</label>
-							<input type="text" class="form-control mb-2" id="inlineFormInputLargura" placeholder="digite" name="ipt-largura" required>
+							<input type="text" class="form-control mb-2" id="inlineFormInputLargura" placeholder="digite" name="ipt-largura" required disabled>
 						</div>
 
 						<div class="col-lg-1 col-md-12 col-sm-12 col-xs-12">
 							<label class="text-dark" for="inlineFormInputAltura" id="lblAltura">ALTURA</label>
-							<input type="text" class="form-control mb-2" id="inlineFormInputAltura" placeholder="digite" name="ipt-altura" required>
+							<input type="text" class="form-control mb-2" id="inlineFormInputAltura" placeholder="digite" name="ipt-altura" required disabled>
 						</div>
 
 						<div class="col-lg-1 col-md-12 col-sm-12 col-xs-12">
