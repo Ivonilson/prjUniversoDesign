@@ -203,9 +203,9 @@ function addItem(){
 	rowItem.appendChild(divIconeExcluir);
 
 	if(altura > 0){
-		let subtotal = (((parseFloat(altura) * parseFloat(largura)) * parseFloat(valor_produto[1])) * parseFloat(qtdItens));
+		let subtotal = (((parseFloat(largura) * parseFloat(altura)) * parseFloat(valor_produto[1])) * parseFloat(qtdItens));
 		ipt.value = nome_produto; 
-		iptProduto.value = nome_produto + ' (' + largura + ' larg. X ' + altura + ' alt.)';
+		iptProduto.value = nome_produto + ' (' + largura + ' larg. X ' + altura + ' alt. = ' + parseFloat(largura) * parseFloat(altura) + ' m²)';
 		iptValorUnit.value = valor_produto[1];
 		iptQuant.value = qtdItens;
 		let desconto = document.getElementById('percentualDesconto').value / 100;
@@ -216,7 +216,7 @@ function addItem(){
 		if(desconto > 0){
 			let valorDesconto = subtotal * desconto;
 			subtotal = subtotal - (subtotal * desconto);
-			iptDesconto.value = valorDesconto.toFixed(2) + ' (' + (desconto * 100) + '%)';
+			iptDesconto.value = valorDesconto.toFixed(3) + ' (' + (desconto * 100) + '%)';
 			iptTotalPagar.value = subtotal.toFixed(2);
 			iconeExcluir.value = 'Excluir';
 
@@ -621,8 +621,25 @@ $(document).ready(function(){
 
 });
 
+$(document).ready(function(){
+	let status = document.querySelectorAll("#sel-status-notificacao");
+	let divAdiar = document.querySelectorAll("#div-adiar");
+
+	status.forEach((item, i) => {
+		item.onchange = function(){
+			if(item.value != 'ADIAR'){
+				divAdiar[i].setAttribute("class", "d-none");
+			} else if (item.value == 'ADIAR') {
+				divAdiar[i].setAttribute("class", "input-group col-auto mt-1 mb-1");
+			}
+		}
+	});
+});
+
 confirmarDelecaoItem();
 confirmarDelecaoOrcamento();
+
+
 
 
 

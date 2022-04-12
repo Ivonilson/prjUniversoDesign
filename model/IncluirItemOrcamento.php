@@ -13,7 +13,7 @@ class IncluirItemOrcamento {
 
 			if(isset($dados['ipt-largura']) && isset($dados['ipt-altura'])){
 				$tamanho = (float) str_replace(',' , '.' , $dados['ipt-largura']) * (float) str_replace(',' , '.' , $dados['ipt-altura']); 
-				$descricao_e_valor_unit[0] = $descricao_e_valor_unit[0]." - (".$dados['ipt-largura']." larg. X ".$dados['ipt-altura']. " alt.) - ".number_format($tamanho, 2, ',' , '.')." m²";
+				$descricao_e_valor_unit[0] = $descricao_e_valor_unit[0]." - (".$dados['ipt-largura']." larg. X ".$dados['ipt-altura']. " alt. = ".number_format($tamanho, 2, ',' , '.')." m²)";
 
 				$desconto = ((float) $dados['ipt-percentual-desconto'] / 100) * ((float) $dados['ipt-quantidade-itens'] * ((float) $descricao_e_valor_unit[1]) * str_replace(',' , '.' , $tamanho));
 

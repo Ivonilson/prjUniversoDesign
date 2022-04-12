@@ -49,21 +49,18 @@ class ItensOrcamento {
 
 			$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 			$desconto = str_replace(',' , '.' , $dados['ipt-desconto']);
-			$valor_total = str_replace(',' , '.' , $dados['ipt-valor-total']);
 
 			if (!empty($dados['btnEditarItensOrcamento'])) {
 				unset($dados['btnEditarItensOrcamento']);
 			}
 
-				$queryEditar = "UPDATE tbl_itens_orcamento SET desconto = ((:desconto/100) * :valor_total), total_pagar = (:valor_total - ((:desconto/100) * :valor_total)) WHERE id = :id";
+				$queryEditar = "UPDATE tbl_itens_orcamento SET desconto = ((:desconto/100) * valor_total), total_pagar = (valor_total - (valor_total * (:desconto/100))) WHERE id = :id";
 
 				/*$queryEditar = "UPDATE tbl_itens_orcamento SET quantidade = :quantidade,  desconto = :desconto WHERE id = :id";*/
 
 				$conn = new Conn();
 				$dadosItensOrcamento = $conn->getConn()->prepare($queryEditar);
 
-				//$dadosItensOrcamento->bindParam(':quantidade', $dados['ipt-quantidade']);
-				$dadosItensOrcamento->bindParam(':valor_total', $valor_total);
 				$dadosItensOrcamento->bindParam(':desconto', $desconto);
 				$dadosItensOrcamento->bindParam(':id', $dados['ipt-id']);
 

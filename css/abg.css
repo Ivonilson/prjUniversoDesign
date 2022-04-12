@@ -48,6 +48,10 @@ tfoot { display:table-footer-group }
 	//background-color: orange;
 }	
 
+.tabela-impressao {
+		margin-left: 16px;
+		margin-right: 16px;
+}
 
 .divLogo img {
 	width: 70%;

@@ -276,33 +276,31 @@
 
 					<form method="get">
 
-						<input type="hidden" name="ipt-id-notificacao" value="<?=$dados->id_notificacao?>">
-						<input type="hidden" name="pagina" value="editar-notificacao">
+							<input type="hidden" name="ipt-id-notificacao" value="<?=$dados->id_notificacao?>">
+							<input type="hidden" name="pagina" value="editar-notificacao">
 
-						<div class="input-group col" >
-							<div class="input-group-prepend">
-								<label class="input-group-text bg-info text-white">Resolver</label>
-							</div>
-							<select name="sel-resolver" class="custom-select">
-								<option value="-">Selecione</option>
-								<option value="RESOLVIDO">RESOLVIDO</option>
+							<div class="input-group col-auto" >
+								<div class="input-group-prepend">
+									<label class="input-group-text bg-info text-white">Ação</label>
+								</div>
+								<select name="sel-resolver" class="custom-select" id="sel-status-notificacao">
+									<option value="-">Selecione</option>
+									<option value="RESOLVIDO">RESOLVIDO</option>
 									<option value="ADIAR">ADIAR</option>
-							</select>	
-
-						</div>
-
-						<div class="input-group mt-1 mb-1 col" >
-							<div class="input-group-prepend">
-								<label class="input-group-text bg-info text-white">Data:</label>
+								</select>	
 							</div>
 
-							<input type="date" class="form-control" name="ipt-data-adiada" value="<?= $dados->data_limite ?>">
-						</div>
+							<div class="input-group col-auto mt-1 mb-1 d-none" id="div-adiar">
+								<div class="input-group-prepend">
+									<label class="input-group-text bg-info text-white">Adiar para</label>
+								</div>
+								<input type="date" class="form-control" name="ipt-data-adiada">
+							</div>
 
-						<div class="input-group mt-1 mb-1 col">
-							<input type="submit" class="btn btn-info btn-block text-white" name="btnGravar" value="Gravar">
-						</div>
-					</form>
+							<div class="input-group col-auto mt-1 mb-1">
+								<input type="submit" class="btn btn-info text-white btn-block" name="btnGravar" value="Gravar">
+							</div>
+						</form>
 
 					<hr>
 				</div>

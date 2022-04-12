@@ -30,9 +30,7 @@
 				</div>
 			</div>
 
-			<div class="row">
-				<div class="card-body">
-					<div class="row">
+			<div class="row pt-2 pb-2">
 
 						<div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
 							<div class="input-group mb-2">
@@ -77,10 +75,9 @@
 								<input type="text" disabled class="form-control bg-light" value="<?=$resultado != null ? date_format(date_create($resultado[0]['data_validade']), "d/m/Y") : '-'?>">
 							</div>
 						</div>
-						
-					</div>
 					
-					<table class="table table-bordered table-hover table-sm" width="100%" cellspacing="0">
+					
+					<table class="table table-bordered table-hover tabela-impressao table-sm" width="100%" cellspacing="0">
 						<thead class="thead-light">
 							<tr>
 								<th>Descrição</th>
@@ -117,9 +114,9 @@
 								<td><?=$item['descricao']?></td>
 								<td><?=number_format($item['valor_unitario'], 2 , "," , ".")?></td>
 								<td><?=number_format($item['quantidade'], 2 , "," , ".")?></td>
-								<td><?=number_format($item['valor_total'], 2 , "," , ".")?></td>
-								<td><?=number_format($item['desconto'], 2 , "," , ".")?></td>
-								<td><?=number_format($item['total_pagar'], 2 , "," , ".")?></td>
+								<td><?=number_format($item['valor_total'], 3 , "," , ".")?></td>
+								<td><?=number_format($item['desconto'], 3 , "," , ".")?></td>
+								<td><?=number_format($item['total_pagar'], 3 , "," , ".")?></td>
 							</tr>
 							
 							<?php
@@ -135,8 +132,6 @@
 							?>
 						</tbody>
 					</table>
-
-					<div class="row">
 
 						<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
 							<div class="input-group mb-2">
@@ -188,9 +183,6 @@
 						<div class="col text-right mt-5">
 							<span>Planaltina/GO, <?php echo date("d/m/Y") . ".";?></span>
 						</div>	
-					</div>
-
-				</div>
 			</div>
 			
 		</div>
