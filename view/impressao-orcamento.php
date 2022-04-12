@@ -175,9 +175,9 @@
 						</div>
 
 						<div class="col mt-5 pl-5 text-left d-print-none">
-							<a href="#"><img src="../assets/whatsapp.png" width="50" height="50" alt="Whatsapp" title="Compartilhar por Whatsapp"></a>
+							 <!--<a href="" id="whatsapp-share-btt" rel="nofollow" target="_blank">--><img src="../assets/whatsapp.png" width="50" height="50" alt="Whatsapp" title="Compartilhar por Whatsapp"><!--</a>-->
 							&nbsp&nbsp
-							<a href="#"><img  src="../assets/email.png" class="img-fluid" width="50" height="50" alt="Enviar por e-mail" title="E-mail"></a>
+							<!--<a href="#">--><img  src="../assets/email.png" class="img-fluid" width="50" height="50" alt="Enviar por e-mail" title="E-mail"><!--</a>-->
 						</div>
 
 						<div class="col text-right mt-5">

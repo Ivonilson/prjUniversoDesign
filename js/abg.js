@@ -636,6 +636,14 @@ $(document).ready(function(){
 	});
 });
 
+//Constrói a URL depois que o DOM estiver pronto
+document.addEventListener("DOMContentLoaded", function() {
+    //conteúdo que será compartilhado: Título da página + URL
+    var conteudo = encodeURIComponent(document.title + "<h1>TESTE</h1>");
+    //altera a URL do botão
+    document.getElementById("whatsapp-share-btt").href = "https://api.whatsapp.com/send?text=" + conteudo;
+}, false);
+
 confirmarDelecaoItem();
 confirmarDelecaoOrcamento();
 
