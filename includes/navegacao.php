@@ -279,7 +279,7 @@
 						<input type="hidden" name="ipt-id-notificacao" value="<?=$dados->id_notificacao?>">
 						<input type="hidden" name="pagina" value="editar-notificacao">
 
-						<div class="input-group col-3" >
+						<div class="input-group col" >
 							<div class="input-group-prepend">
 								<label class="input-group-text bg-info text-white">Resolver</label>
 							</div>
@@ -291,7 +291,7 @@
 
 						</div>
 
-						<div class="input-group col-3 mt-1 mb-1" >
+						<div class="input-group mt-1 mb-1 col" >
 							<div class="input-group-prepend">
 								<label class="input-group-text bg-info text-white">Data:</label>
 							</div>
@@ -299,7 +299,7 @@
 							<input type="date" class="form-control" name="ipt-data-adiada" value="<?= $dados->data_limite ?>">
 						</div>
 
-						<div class="input-group col-3 mt-1 mb-1 ">
+						<div class="input-group mt-1 mb-1 col">
 							<input type="submit" class="btn btn-info btn-block text-white" name="btnGravar" value="Gravar">
 						</div>
 					</form>

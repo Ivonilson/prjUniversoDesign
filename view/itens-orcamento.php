@@ -105,48 +105,50 @@
 							</tr>
 
 					<!-- MODAL EDITAR ITEM --->
-					<div class="modal fade modal-ver-itens" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="<?=$contador?>">
- 						 <div class="modal-dialog">
+					<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="<?=$contador?>">
+ 						 <div class="modal-dialog modal-lg">
    							 <div class="modal-content">
 
-   							 <div class="row mr-2 ml-2 justify-content-center">
+   							 <div class="modal-body">
+   							 	<div class="row justify-content-center">
 
-   							 <h2 class="text-primary col-12 text-center mt-5">Alterando o item <label class="border p-3 text-danger font-weight-bold"><?=$item['descricao']?></label> do Orçamento N° <?=$item['id_orcamento']?> </h2>
+	   							 <h3 class="text-primary col-12 text-center mt-5">Alterando o item <label class="border p-3 text-danger font-weight-bold"><?=$item['descricao']?></label> do Orçamento N° <?=$item['id_orcamento']?> </h3>
 
-   							 	<form method="post">
+	   							 	<form method="post">
 
-   							 	<div class="col-3">
-   									<label class="text-danger font-weight-bold readonly">ID</label>
-   									<br>
-   									<input class="form-control" type="text" readonly name="ipt-id" value="<?=$item['id']?>" id="ipt-codigo">
-   								</div>
+	   							 	<div class="col col-xs-12">
+	   									<label class="text-danger font-weight-bold readonly">ID</label>
+	   									<br>
+	   									<input class="form-control" type="text" readonly name="ipt-id" value="<?=$item['id']?>" id="ipt-codigo">
+	   								</div>
 
-   								<div class="col-3">
-   									<label class="text-danger font-weight-bold readonly">Valor Total (R$)</label>
-   									<br>
-   									<input class="form-control" type="text" readonly name="ipt-valor-total" value="<?=number_format($item['valor_total'], 2, ',' , '.')?>">
-   								</div>
+	   								<div class="col col-xs-12">
+	   									<label class="text-danger font-weight-bold readonly">Valor Total (R$)</label>
+	   									<br>
+	   									<input class="form-control" type="text" readonly name="ipt-valor-total" value="<?=number_format($item['valor_total'], 2, ',' , '.')?>">
+	   								</div>
 
-   								<div class="col-1">
-   									<label class="text-danger font-weight-bold">Quant.</label>
-   									<br>
-   									<input class="form-control" type="number" min="1" name="ipt-quantidade" value="<?=number_format($item['quantidade'], 0, ' ', ' ') ?>" disabled>
-   								</div>
+	   								<div class="col col-xs-12">
+	   									<label class="text-danger font-weight-bold">Quant.</label>
+	   									<br>
+	   									<input class="form-control" type="number" min="1" name="ipt-quantidade" value="<?=number_format($item['quantidade'], 0, ' ', ' ') ?>" disabled>
+	   								</div>
 
-   								<div class="col-1">
-   									<label class="text-danger font-weight-bold">Desconto (%)</label>
-   									<br>
-   									<input class="form-control" type="text" name="ipt-desconto" value="<?php echo (number_format(($item['desconto'] / $item['valor_total']) * 100, 2, ',' , '.')) ?>">
-   								</div>
+	   								<div class="col col-xs-12">
+	   									<label class="text-danger font-weight-bold">Desconto (%)</label>
+	   									<br>
+	   									<input class="form-control" type="text" name="ipt-desconto" value="<?php echo (number_format(($item['desconto'] / $item['valor_total']) * 100, 2, ',' , '.')) ?>">
+	   								</div>
 
-   								<div class="col-1">
-   									<label class="text-danger font-weight-bold">-</label>
-   									<br>
-   									<input class="form-control btn-success" type="submit" name="btnEditarItensOrcamento" value="Gravar">
-   								</div>
-   									
+	   								<div class="col col-xs-12">
+	   									<label class="text-danger text-light">-</label>
+	   									<br>
+	   									<input class="form-control btn-success" type="submit" name="btnEditarItensOrcamento" value="Gravar">
+	   								</div>
 
-   								</form>
+	   								</form>
+   							 		
+   							 	</div>
    								
    							</div>
 

@@ -86,7 +86,7 @@ function addItem(){
 	iptProduto.className = 'form-control mb-3';
 	iptProduto.setAttribute('id', 'ipt_prod');
 	iptProduto.setAttribute('name', 'iptProduto');
-	///iptProduto.setAttribute('readonly', '');
+	iptProduto.setAttribute('readonly', '');
 	//iptProduto.setAttribute('disabled', 'disabled');
 
 	let iptValorUnit = document.createElement('input');
@@ -129,24 +129,24 @@ function addItem(){
 	iconeExcluir.innerHTML = 'Excluir';
 
 	let divDescricao = document.createElement('div');
-	divDescricao.className = 'col-2';
+	divDescricao.className = 'col-3';
 	divDescricao.setAttribute('id', 'divDescricao');
 	let labelDescricao = document.createElement('label');
-	labelDescricao.className = 'text-light';
+	labelDescricao.className = 'text-light text-left ml-0';
 	labelDescricao.innerHTML = 'Descrição';
 
 	let divValorUnitario = document.createElement('div');
-	divValorUnitario.className = 'col-2';
+	divValorUnitario.className = 'col-1';
 	divValorUnitario.setAttribute('id', 'divValorUnitario');
 	let labelValorUnitario = document.createElement('label');
-	labelValorUnitario.className = 'text-light';
+	labelValorUnitario.className = 'text-light text-left ml-0';
 	labelValorUnitario.innerHTML = 'Vl. Unit.(R$)';
 
 	let divQuant = document.createElement('div');
 	divQuant.className = 'col-1';
 	divQuant.setAttribute('id', 'divQuant');
 	let labelQuant = document.createElement('label');
-	labelQuant.className = 'text-light';
+	labelQuant.className = 'text-light text-left ml-0';
 	labelQuant.innerHTML = 'Quant.';
 
 
@@ -154,29 +154,29 @@ function addItem(){
 	divTotal.className = 'col-2';
 	divTotal.setAttribute('id', 'divTotal');
 	let labelTotal = document.createElement('label');
-	labelTotal.className = 'text-light';
+	labelTotal.className = 'text-light text-left ml-0';
 	labelTotal.innerHTML = 'Total (R$)';
 
 
 	let divDesconto = document.createElement('div');
-	divDesconto.className = 'col-1';
+	divDesconto.className = 'col-2';
 	divDesconto.setAttribute('id', 'divDesconto');
 	let labelDesconto = document.createElement('label');
-	labelDesconto.className = 'text-light';
+	labelDesconto.className = 'text-light text-left ml-0';
 	labelDesconto.innerHTML = 'Desconto (R$)';
 
 	let divTotalPagar = document.createElement('div');
 	divTotalPagar.className = 'col-2';
 	divTotalPagar.setAttribute('id', 'divTotalPagar');
 	let labelTotalPagar = document.createElement('label');
-	labelTotalPagar.className = 'text-light';
-	labelTotalPagar.innerHTML = 'Total a pagar (R$)';
+	labelTotalPagar.className = 'text-light text-left ml-0';
+	labelTotalPagar.innerHTML = 'A pagar (R$)';
 
 	let divIconeExcluir = document.createElement('div');
-	divIconeExcluir.className = 'col-2 botaoExcluir';
+	divIconeExcluir.className = 'col-1 botaoExcluir';
 	divIconeExcluir.setAttribute('id', 'divIconeExcluir');
 	let labelIconeExcluir = document.createElement('label');
-	labelIconeExcluir.className = 'text-light';
+	labelIconeExcluir.className = 'text-light text-left ml-0';
 	labelIconeExcluir.innerHTML = 'Ação';
 
 

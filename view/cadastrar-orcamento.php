@@ -55,7 +55,7 @@
 	
 			<div class="row" id="background-tela-cadastro">
 				
-				<div class="container background-form-cadastro">
+				<div class="container background-form-cadastro col-9">
 
 					<div id="jumbotron_telas_cadastro" class="border">
 						<div class="container">
@@ -80,7 +80,7 @@
 					          <span aria-hidden="true">&times;</span>
 					        </button>
 					      </div>
-					      <div class="modal-body col-5">
+					      <div class="modal-body">
 					        
 							<div class="card">
 							  <div class="card-body col">
@@ -89,11 +89,11 @@
 							    
 							    <br><span class="font-weight-bold text-dark" style="font-size: 20px">Descrição: </span><span style="font-size: 22px"><?=$UltimoOrcCadastrado['trabalho_servico']?></span><br>
 
-							    <span class="font-weight-bold text-dark" style="font-size: 20px">Itens: </span><span style="font-size: 22px"><?=$totalizador_itens['descricao']?></span><br>
+							    <span class="font-weight-bold text-dark" style="font-size: 20px">Itens: </span><span style="font-size: 22px"><?=$totalizador_itens['descricao'] != null ? $totalizador_itens['descricao'] : 'Orçamento não possui itens.'?></span><br>
 
-							    <span class="font-weight-bold text-dark" style="font-size: 20px">Valor Total (R$): </span><span style="font-size: 22px"><?=number_format($totalizador_itens['valor_total'], 2, ',' , '.')?></span><br>
-							    <span class="font-weight-bold text-dark" style="font-size: 20px">Desconto (R$): </span><span style="font-size: 22px"><?=number_format($totalizador_itens['desconto'], 2, ',' , '.')?></span><br>
-							    <span class="font-weight-bold text-dark" style="font-size: 20px">Total a pagar (R$): </span><span style="font-size: 22px"><?=number_format($totalizador_itens['total_pagar'], 2, ',' , '.')?></span><br>
+							    <span class="font-weight-bold text-dark" style="font-size: 20px">Valor Total (R$): </span><span style="font-size: 22px"><?=$totalizador_itens['valor_total'] != null ? number_format($totalizador_itens['valor_total'], 2, ',' , '.') : 0?></span><br>
+							    <span class="font-weight-bold text-dark" style="font-size: 20px">Desconto (R$): </span><span style="font-size: 22px"><?=$totalizador_itens['desconto'] != null ? number_format($totalizador_itens['desconto'], 2, ',' , '.') : 0?></span><br>
+							    <span class="font-weight-bold text-dark" style="font-size: 20px">Total a pagar (R$): </span><span style="font-size: 22px"><?=$totalizador_itens['total_pagar'] != null ? number_format($totalizador_itens['total_pagar'], 2, ',' , '.') : 0?></span><br>
 
 							    <br>
 
@@ -247,34 +247,34 @@
 
 
 						<!-- criada dinamicamente -->
-						<div class="col-12 d-none" id="itens">
+						<div class="row d-none" id="itens">
 
 								<div class="d-inline" id="divDescricao">
-									<label class="text-danger col-2 text-left ml-0 pl-0">Descrição</label>
+									<label class="text-danger col-3 text-left ml-0 pl-0">Descrição</label>
 								</div>
 
 								<div class="d-inline" id="divValorUnit">
-									<label class="text-danger col-2 text-left">Vl. Unit.(R$)</label>
+									<label class="text-danger col-1 text-left ml-0 pl-0">Vl. Unit.(R$)</label>
 								</div>
 
-								<div class="d-inline-block" id="divQuant">
-									<label class="text-danger col-1 text-left">Quant.</label>
+								<div class="d-inline" id="divQuant">
+									<label class="text-danger col-1 text-left ml-0 pl-0">Quant.</label>
 								</div>
 
 								<div class="d-inline" id="divTotal">
-									<label class="text-danger col-2 text-left">Total (R$)</label>
+									<label class="text-danger col-2 text-left ml-0 pl-0">Total (R$)</label>
 								</div>
 
 								<div class="d-inline" id="divDesconto">
-									<label class="text-danger col-1 text-left">Desc.(R$)</label>
+									<label class="text-danger col-2 text-left ml-0 pl-0">Desc.(R$)</label>
 								</div>
 
 								<div class="d-inline" id="divTotalPagar">
-									<label class="text-danger col-2 text-left">Total a pagar (R$)</label>
+									<label class="text-danger col-2 text-left ml-0 pl-0">A pagar (R$)</label>
 								</div>
 
 								<div class="d-inline-block" id="divIconeExcluir">
-									<label class="text-danger col-2 text-center"></label>
+									<label class="text-danger col-1 text-left ml-0 pl-0"></label>
 								</div>
 						</div>
 

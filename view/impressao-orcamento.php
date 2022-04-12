@@ -41,13 +41,9 @@
 										Orç. n° 
 									</div>
 								</div>
-								<input type="text" disabled class="form-control bg-light" value="<?=$resultado[0]['id_orcamento']?>">
+								<input type="text" disabled class="form-control bg-light" value="<?=$resultado != null ? $resultado[0]['id_orcamento'] : $_GET['id_orcamento'] ?>">
 							</div>
 						</div>
-
-						<!--<div class="col-2">
-							<span class="text-danger h5">N° Orç.: <?=$resultado[0]['id_orcamento']?></span>
-						</div>-->
 
 						<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
 							<div class="input-group mb-2">
@@ -56,13 +52,9 @@
 										Cliente
 									</div>
 								</div>
-								<input type="text" disabled class="form-control bg-light" value="<?=$resultado[0]['nome_cliente']?>">
+								<input type="text" disabled class="form-control bg-light" value="<?=$resultado != null ? $resultado[0]['nome_cliente'] : 'Orçamento sem itens'?>">
 							</div>
 						</div>
-
-						<!---<div class="col-5">
-							<span class="text-danger h5">Cliente: <?=$resultado[0]['nome_cliente']?></span>
-						</div>-->
 
 						<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
 							<div class="input-group mb-2">
@@ -71,7 +63,7 @@
 										Registrado em
 									</div>
 								</div>
-								<input type="text" disabled class="form-control bg-light" value="<?=date_format(date_create($resultado[0]['data_cadastro']), "d/m/Y")?>">
+								<input type="text" disabled class="form-control bg-light" value="<?=$resultado != null ? date_format(date_create($resultado[0]['data_cadastro']), "d/m/Y") : '-'?>">
 							</div>
 						</div>
 
@@ -82,7 +74,7 @@
 										Validade
 									</div>
 								</div>
-								<input type="text" disabled class="form-control bg-light" value="<?=date_format(date_create($resultado[0]['data_validade']), "d/m/Y")?>">
+								<input type="text" disabled class="form-control bg-light" value="<?=$resultado != null ? date_format(date_create($resultado[0]['data_validade']), "d/m/Y") : '-'?>">
 							</div>
 						</div>
 						
@@ -113,10 +105,11 @@
 
 							<?php 
 
+
+
 							$contador = 0;
 				
 							if($resultado != NULL){
-					
 								foreach ($resultado as  $item) {	
 							?>
 
@@ -134,7 +127,7 @@
 								$conexao = null;
 
 
-							} }else {
+							} }else {	
 								echo "<span class='text-danger'>NENHUM DADO RETORNADO.</span><br><br>";
 							} 
 
@@ -152,13 +145,9 @@
 										Valor total (R$)
 									</div>
 								</div>
-								<input type="text" disabled class="form-control bg-light" value="<?=number_format($totalizador[0]['sum_valor_total'], 2 , "," , ".")?>">
+								<input type="text" disabled class="form-control bg-light" value="<?=$resultado != null ? number_format($totalizador[0]['sum_valor_total'], 2 , "," , ".") : 0 ?>">
 							</div>
 						</div>
-
-						<!--<div class="col-4">
-							<span class="text-danger h5">Valor Total do Orçamento (R$): <?=$totalizador[0]['sum_valor_total']?></span>
-						</div>-->
 
 						<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
 							<div class="input-group mb-2">
@@ -167,13 +156,9 @@
 										Descontos (R$)
 									</div>
 								</div>
-								<input type="text" disabled class="form-control bg-light" value="<?php echo number_format($totalizador[0]['sum_desconto'], 2, "," , ".") . ' ('. number_format(100 - (($totalizador[0]['sum_total_pagar'] / $totalizador[0]['sum_valor_total']) * 100) , 2 , ',' , '')  .'%)'?>">
+								<input type="text" disabled class="form-control bg-light" value="<?= $resultado != null ? number_format($totalizador[0]['sum_desconto'], 2, "," , ".") . ' ('. number_format(100 - (($totalizador[0]['sum_total_pagar'] / $totalizador[0]['sum_valor_total']) * 100) , 2 , ',' , '')  .'%)' : 0 ?>">
 							</div>
 						</div>
-
-						<!--<div class="col-3">
-							<span class="text-danger h5">Total de Descontos (R$): <?=$totalizador[0]['sum_desconto']?></span>
-						</div>-->
 
 						<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
 							<div class="input-group mb-2">
@@ -182,7 +167,7 @@
 										Valor a Pagar (R$)
 									</div>
 								</div>
-								<input type="text" disabled class="form-control bg-light" value="<?=number_format($totalizador[0]['sum_total_pagar'], 2 , "," , ".")?>">
+								<input type="text" disabled class="form-control bg-light" value="<?=$resultado != null ? number_format($totalizador[0]['sum_total_pagar'], 2 , "," , ".") : 0 ?>">
 							</div>
 						</div>
 
@@ -191,7 +176,7 @@
 						</div>-->
 						
 						<div class="col-10 mt-5">
-							<span class="text-danger h5">Vendedor:</span> <span class="text-primary h5"><?=$resultado[0]['usuario']?></span>
+							<span class="text-danger h5">Vendedor:</span> <span class="text-primary h5"><?=$resultado != null ? $resultado[0]['usuario'] : $_SESSION['user']?></span>
 						</div>
 
 						<div class="col mt-5 pl-5 text-left d-print-none">

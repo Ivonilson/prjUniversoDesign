@@ -20,17 +20,6 @@ tfoot { display:table-footer-group }
   }
 }
 
-.modal-content {
-	min-width: 2200px;
-	min-height: 1000px;
-	margin:  0;
-}
-
-.modal-dialog {
-	width: 100%;
-	margin:  0;
-}
-
 .progresso {
 	height:44px;
 	width: 500px;
