@@ -1,9 +1,5 @@
 <?php
-<<<<<<< HEAD
 if ($_SESSION['user'] == null) {
-=======
-if ($_SESSION['user'] == NULL) {
->>>>>>> developer
 	header('Location: index.php');
 }
 ?>
