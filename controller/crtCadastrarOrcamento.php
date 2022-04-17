@@ -45,3 +45,5 @@ require "model/Cidade.php";
 	$codigoOrcamento = $UltimoIdOrcamento->carregaIdOrcamento();
 	$UltimoOrcCadastrado = $ultimoOrcamento->ultimoOrcamento();
 	$totalizador_itens = $itensUltimoOrcamento->itensUltimoOrc($UltimoOrcCadastrado['id_orcamento']);
+
+	
