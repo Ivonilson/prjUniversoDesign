@@ -1,10 +1,11 @@
 <?php
-	if ($_SESSION['user'] == NULL) {
-		header('Location: index.php');
-	}
+if ($_SESSION['user'] == NULL) {
+	header('Location: index.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,7 +15,7 @@
 
 <body class="bg-dark fixed-nav sticky-footer" id="page-top">
 	<!-- NAVEGAÇÃO -->
-	<?php require_once 'includes/navegacao.php';?>
+	<?php require_once 'includes/navegacao.php'; ?>
 
 	<div class="content-wrapper">
 		<div class="container-fluid">
@@ -49,9 +50,9 @@
 				</div>
 
 			</div>
-	
+
 			<div class="row" id="background-tela-cadastro">
-				
+
 				<form class="container background-form-cadastro" method="post">
 
 					<div id="jumbotron_telas_cadastro">
@@ -80,7 +81,7 @@
 										UNIDADE DE MEDIDA
 									</label>
 								</div>
-									<select class="custom-select" name="sel-unidade-medida" id="select-unidade-medida">
+								<select class="custom-select" name="sel-unidade-medida" id="select-unidade-medida">
 									<option value="un.">Unidade</option>
 									<option value="m">Metro</option>
 									<option value="m²">Metro quadrado</option>
@@ -101,34 +102,35 @@
 						<input type="submit" value="Gravar Produto" name="btnCadastrarProduto" id="botoesGravarCad">
 
 						<?php
-							if($mensagem_erro == "Produto Cadastrado com sucesso!")
-
-							{
+						if ($mensagem_erro == "Produto Cadastrado com sucesso!") {
 						?>
 
-						<div class="alert alert-success font-weight-bold alertaCadOsOk col-12 text-center" role="alert">
- 							<img src="../assets/ok.png"><h5><strong><?=$mensagem_erro?></strong></h5>
-						</div>
+							<div class="alert alert-success font-weight-bold alertaCadOsOk col-12 text-center" role="alert">
+								<img src="../assets/ok.png">
+								<h5><strong><?= $mensagem_erro ?></strong></h5>
+							</div>
 
-						<?php 
-							} elseif($mensagem_erro == "ERRO. Verifique se o código que está tentando cadastrar já exista no sistema ou contate o Suporte.") {
+						<?php
+						} elseif ($mensagem_erro == "ERRO. Verifique se o código que está tentando cadastrar já exista no sistema ou contate o Suporte.") {
 						?>
 
-						<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
- 							<img src="../assets/error.png"><h5><strong><?=$mensagem_erro?></strong></h5>
-						</div>
+							<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
+								<img src="../assets/error.png">
+								<h5><strong><?= $mensagem_erro ?></strong></h5>
+							</div>
 
 						<?php
 
-							} elseif($mensagem_erro == "Erro ao cadastrar. Verifique se o campo PRODUTO possui uma descrição válida. Caso o problema persista, contate o Suporte.") {
+						} elseif ($mensagem_erro == "Erro ao cadastrar. Verifique se o campo PRODUTO possui uma descrição válida. Caso o problema persista, contate o Suporte.") {
 						?>
 
-						<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
- 							<img src="../assets/error.png"><h5><strong><?=$mensagem_erro?></strong></h5>
-						</div>
+							<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
+								<img src="../assets/error.png">
+								<h5><strong><?= $mensagem_erro ?></strong></h5>
+							</div>
 
-						<?php 
-							}
+						<?php
+						}
 						?>
 
 					</div>
@@ -136,9 +138,10 @@
 			</div>
 		</div>
 
-		<?php require_once 'includes/rodape.php';?>
+		<?php require_once 'includes/rodape.php'; ?>
 	</div>
 
-<?php require_once 'includes/bootstrap-js.php'; ?>
+	<?php require_once 'includes/bootstrap-js.php'; ?>
 </body>
+
 </html>

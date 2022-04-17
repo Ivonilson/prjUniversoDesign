@@ -1,10 +1,11 @@
 <?php
-	if ($_SESSION['user'] == NULL) {
-		header('Location: index.php');
-	}
+if ($_SESSION['user'] == NULL) {
+	header('Location: index.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,8 +15,8 @@
 
 <body class="bg-dark fixed-nav sticky-footer" id="page-top">
 	<!-- NAVEGAÇÃO -->
-	<?php require_once 'includes/navegacao.php';?>
-	
+	<?php require_once 'includes/navegacao.php'; ?>
+
 	<div class="content-wrapper">
 		<div class="container-fluid">
 			<ol class="breadcrumb">
@@ -51,9 +52,9 @@
 			</div>
 
 			<br>
-	
+
 			<div class="row" id="background-tela-cadastro">
-				
+
 				<form class="container background-form-cadastro" method="post">
 
 					<div id="jumbotron_telas_cadastro">
@@ -67,11 +68,12 @@
 						<div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
 							<label class="sr-only" for="inlineFormInputOs">Nº O.S</label>
 
-							<input type="hidden" class="form-control mb-2" id="inlineFormInputOs" placeholder="Nº O.S" value="<?=$codigo?>" name="ipt-os" required>
+							<input type="hidden" class="form-control mb-2" id="inlineFormInputOs" placeholder="Nº O.S" value="<?= $codigo ?>" name="ipt-os" required>
 
-							<?php //var_dump($codigo); ?>
+							<?php //var_dump($codigo); 
+							?>
 
-							<input type="text" class="form-control mb-2" id="inlineFormInputOs" placeholder="Nº O.S" value="<?=$codigo?>" disabled>
+							<input type="text" class="form-control mb-2" id="inlineFormInputOs" placeholder="Nº O.S" value="<?= $codigo ?>" disabled>
 
 						</div>
 
@@ -82,16 +84,16 @@
 										N° ORÇAMENTO
 									</label>
 								</div>
-									<select class="custom-select" name="sel-orcamento" id="select-orcamento">
+								<select class="custom-select" name="sel-orcamento" id="select-orcamento">
 									<option value="-">Selecione</option>
 									<?php
-										foreach ($carregaOrcamento as $orcamentos) {
-										
+									foreach ($carregaOrcamento as $orcamentos) {
+
 									?>
-									<option value="<?=$orcamentos->orcamento?>"><?=$orcamentos->orcamento.' - '.$orcamentos->nome?></option>
-										<?php 
-										}
-										?>	
+										<option value="<?= $orcamentos->orcamento ?>"><?= $orcamentos->orcamento . ' - ' . $orcamentos->nome ?></option>
+									<?php
+									}
+									?>
 								</select>
 							</div>
 						</div>
@@ -117,18 +119,18 @@
 								<select class="custom-select" name="sel-cidade-uf" id="select-cidade">
 									<option value="-">Selecione</option>
 
-									<?php 
-										$cidade = new Cidade();
-										$cidades = $cidade->carregaCidades();
+									<?php
+									$cidade = new Cidade();
+									$cidades = $cidade->carregaCidades();
 
-										foreach ($cidades as $value) {
-												
+									foreach ($cidades as $value) {
+
 									?>
-									<option value="<?=$value['nome_cidade'].'/'.$value['uf']?>"><?=$value['nome_cidade'].'/'.$value['uf']?></option>
+										<option value="<?= $value['nome_cidade'] . '/' . $value['uf'] ?>"><?= $value['nome_cidade'] . '/' . $value['uf'] ?></option>
 
-									<?php 
+									<?php
 
-										}
+									}
 
 									?>
 
@@ -226,44 +228,47 @@
 
 						<input type="submit" value="Gravar O.S." name="btnCadastrar" id="botoesGravarCad">
 
-					<?php
-						if($mensagem_erro == "Ordem de Serviço cadastrada com Sucesso!")
-						{
-					?>
+						<?php
+						if ($mensagem_erro == "Ordem de Serviço cadastrada com Sucesso!") {
+						?>
 
-					<div class="alert alert-success font-weight-bold alertaCadOsOk col-12 text-center" role="alert">
- 						<img src="../assets/ok.png"><h5><strong><?=$mensagem_erro?></strong></h5>
-					</div>
+							<div class="alert alert-success font-weight-bold alertaCadOsOk col-12 text-center" role="alert">
+								<img src="../assets/ok.png">
+								<h5><strong><?= $mensagem_erro ?></strong></h5>
+							</div>
 
-					<?php 
-						} elseif($mensagem_erro == "ERRO. Contate do Suporte.") {
-					?>
+						<?php
+						} elseif ($mensagem_erro == "ERRO. Contate do Suporte.") {
+						?>
 
-					<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
- 						<img src="../assets/error.png"><h5><strong><?=$mensagem_erro?></strong></h5>
-					</div>
+							<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
+								<img src="../assets/error.png">
+								<h5><strong><?= $mensagem_erro ?></strong></h5>
+							</div>
 
-					<?php
-						} elseif($mensagem_erro == "Um Orçamento precisa ser selecionado para a ordem de serviço. Selecione um orçamento e Tente Novamente.") {
-					?>
+						<?php
+						} elseif ($mensagem_erro == "Um Orçamento precisa ser selecionado para a ordem de serviço. Selecione um orçamento e Tente Novamente.") {
+						?>
 
-					<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
- 						<img src="../assets/error.png"><h5><strong><?=$mensagem_erro?></strong></h5>
-					</div>
+							<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
+								<img src="../assets/error.png">
+								<h5><strong><?= $mensagem_erro ?></strong></h5>
+							</div>
 
-					<?php 
-						} 
-					?>
+						<?php
+						}
+						?>
 
 					</div>
 				</form>
 			</div>
 
-			<?php require_once 'includes/rodape.php';?>
-			
+			<?php require_once 'includes/rodape.php'; ?>
+
 		</div>
 	</div>
 
-<?php require_once 'includes/bootstrap-js.php'; ?>
+	<?php require_once 'includes/bootstrap-js.php'; ?>
 </body>
+
 </html>
