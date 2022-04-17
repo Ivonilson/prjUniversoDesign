@@ -32,5 +32,3 @@ class crtValidarUsuario {
 	} else {
 		$mensagem_erro = "";
 	}
-	
-?>

@@ -20,4 +20,3 @@
 
 	$crtl = new crtEditarNotificacao();
 	$crtl->editarNotificacao();
-?>

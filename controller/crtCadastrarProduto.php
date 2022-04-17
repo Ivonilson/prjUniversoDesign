@@ -30,5 +30,3 @@ require "model/Cidade.php";
 
 	$crtl = new crtCadastrarProduto();
 	$mensagem_erro = $crtl->cadastrarProduto();
-
-?>

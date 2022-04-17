@@ -1,17 +1,18 @@
 <?php
 require_once "Conn.php";
 
-class CadastrarCliente {
+class CadastrarCliente
+{
 
 	public function cadCliente()
 	{
-			$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+		$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-			if (!empty($dados['btnCadastrarCliente'])) {
-				unset($dados['btnCadastrarCliente']);
-			}
+		if (!empty($dados['btnCadastrarCliente'])) {
+			unset($dados['btnCadastrarCliente']);
+		}
 
-			try {
+		try {
 
 			$conn = new Conn();
 
@@ -46,24 +47,20 @@ class CadastrarCliente {
 			$dados_cadastrar->bindParam(':tel_fixo', $dados['ipt-tel-fixo']);
 			$dados_cadastrar->bindParam(':tel_cel', $dados['ipt-tel-cel']);
 			$dados_cadastrar->bindParam(':email', $dados['ipt-email']);
-			
+
 			$dados_cadastrar->execute();
+		} catch (PDOException $erro) {
+			//echo "ERRO: ".$erro->getMessage();
+		}
 
-			} catch (PDOException $erro) {
-				//echo "ERRO: ".$erro->getMessage();
-			}
-
-			if($dados_cadastrar->rowCount()) {
-				//echo "<script>alert('Registro Incluído com Sucesso!!!')</script>";
-				//echo "<script>window.location.href = '/?pagina=cadastrar-cliente'</script>";
-				return true;
-			} else {
-				//echo "<script>alert('Erro ao Incluir Registro!!!')</script>";
-				//print_r($dados_cadastrar->errorInfo());
-				return false;
-			}
-
+		if ($dados_cadastrar->rowCount()) {
+			//echo "<script>alert('Registro Incluído com Sucesso!!!')</script>";
+			//echo "<script>window.location.href = '/?pagina=cadastrar-cliente'</script>";
+			return true;
+		} else {
+			//echo "<script>alert('Erro ao Incluir Registro!!!')</script>";
+			//print_r($dados_cadastrar->errorInfo());
+			return false;
 		}
 	}
-
-?>
+}

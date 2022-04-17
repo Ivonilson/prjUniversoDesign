@@ -8,5 +8,3 @@ class crtPesquisaPorDataAgendamento {
 		include "view/pesquisa-por-data-agendamento.php";
 	}
 }
-
-?>
