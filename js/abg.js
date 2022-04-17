@@ -1,35 +1,35 @@
-function verificaStatus(){
+function verificaStatus() {
 
-	   let valor = document.querySelector(".status").innerHTML;
+	let valor = document.querySelector(".status").innerHTML;
 
-	   switch(valor) {
-	   	case "FINALIZADO":
-	   		document.querySelector(".status").className = "bg-success text-white";
-	   		break;
-	   	case "CANCELADA":
-	   		document.querySelector(".status").className = "bg-secondary text-white";
-	   		break;
-	   	case "PENDENTE":
-	   		document.querySelector(".status").className = "bg-danger text-white";
-	   		break;
-	   	default:
-	   		document.querySelector(".status").className = "bg-secondary text-white";
-	   }
+	switch (valor) {
+		case "FINALIZADO":
+			document.querySelector(".status").className = "bg-success text-white";
+			break;
+		case "CANCELADA":
+			document.querySelector(".status").className = "bg-secondary text-white";
+			break;
+		case "PENDENTE":
+			document.querySelector(".status").className = "bg-danger text-white";
+			break;
+		default:
+			document.querySelector(".status").className = "bg-secondary text-white";
+	}
 
 }
 
-function verificaStatusLista(){
+function verificaStatusLista() {
 
-	   let valor = document.querySelector(".statusLista").innerHTML;
+	let valor = document.querySelector(".statusLista").innerHTML;
 
-	   switch(valor) {
-	   	case "PENDENTE":
-	   		document.querySelector(".statusLista").className = "text-danger";
-	   		break;
-	   	default:
-	   		document.querySelector(".statusLista").className = "text-danger";
-	   		break;
-	   }
+	switch (valor) {
+		case "PENDENTE":
+			document.querySelector(".statusLista").className = "text-danger";
+			break;
+		default:
+			document.querySelector(".statusLista").className = "text-danger";
+			break;
+	}
 }
 
 /*$(document).ready(function(){
@@ -40,34 +40,34 @@ function verificaStatusLista(){
 	})
 })*/
 
-function Redirect(){
-    setTimeout("location.reload(true);",600000);   
- }
+function Redirect() {
+	setTimeout("location.reload(true);", 600000);
+}
 
-function configurarBarra(){
-   setInterval(() => {
-   		let percentual = ((parseInt(document.getElementById('quantOsFinalizada').innerHTML)) / (parseInt(document.getElementById('qtdDemandas').innerHTML))) *  100 ;
-   		if(isNaN(percentual)){
-   			 percentual = 100;
-   		}
-      	const valorDiv = document.querySelector(`[barra-progresso] > div`);
-      	const valorDivExterna = document.querySelector(`[barra-progresso]`);
-      	valorDiv.style.width = `${percentual}%`;
-      	valorDiv.innerHTML = `${percentual.toFixed(2)}%`;
-      		if(percentual == 100){
-      			valorDiv.style.backgroundColor = '#3CB371';
-      			valorDivExterna.style.borderColor = '#3CB371';
-      		}
-      		if(percentual <= 9){
-      			valorDiv.style.backgroundColor = '#F8F8FF';
-      			valorDiv.style.color = '#DC143C';
-      		}
-     }, 500)
+function configurarBarra() {
+	setInterval(() => {
+		let percentual = ((parseInt(document.getElementById('quantOsFinalizada').innerHTML)) / (parseInt(document.getElementById('qtdDemandas').innerHTML))) * 100;
+		if (isNaN(percentual)) {
+			percentual = 100;
+		}
+		const valorDiv = document.querySelector(`[barra-progresso] > div`);
+		const valorDivExterna = document.querySelector(`[barra-progresso]`);
+		valorDiv.style.width = `${percentual}%`;
+		valorDiv.innerHTML = `${percentual.toFixed(2)}%`;
+		if (percentual == 100) {
+			valorDiv.style.backgroundColor = '#3CB371';
+			valorDivExterna.style.borderColor = '#3CB371';
+		}
+		if (percentual <= 9) {
+			valorDiv.style.backgroundColor = '#F8F8FF';
+			valorDiv.style.color = '#DC143C';
+		}
+	}, 500)
 }
 
 var contador = 0;
 
-function addItem(){
+function addItem() {
 
 
 	let produto = document.getElementById('select-prod').value;
@@ -77,10 +77,10 @@ function addItem(){
 	let qtdItens = document.getElementById('inlineFormInputQuant').value;
 	//let preco_unitario = document.getElementById('preco').value;
 	let altura = document.getElementById('inlineFormInputAltura').value;
-	altura = altura.replace(',' , '.');
+	altura = altura.replace(',', '.');
 	let largura = document.getElementById('inlineFormInputLargura').value;
-	largura = largura.replace(',' , '.');
-	let ipt = document.createElement('input');	
+	largura = largura.replace(',', '.');
+	let ipt = document.createElement('input');
 
 	let iptProduto = document.createElement('input');
 	iptProduto.className = 'form-control mb-3';
@@ -123,7 +123,7 @@ function addItem(){
 
 	let iconeExcluir = document.createElement('button');
 	iconeExcluir.className = 'form-control text-center btn btn-danger text-light';
-	iconeExcluir.setAttribute('type' , 'button');
+	iconeExcluir.setAttribute('type', 'button');
 	//iconeExcluir.setAttribute('title' , 'Excluir');
 	iconeExcluir.setAttribute('id', 'botaoExcluir');
 	iconeExcluir.innerHTML = 'Excluir';
@@ -202,9 +202,9 @@ function addItem(){
 	rowItem.appendChild(divTotalPagar);
 	rowItem.appendChild(divIconeExcluir);
 
-	if(altura > 0){
+	if (altura > 0) {
 		let subtotal = (((parseFloat(largura) * parseFloat(altura)) * parseFloat(valor_produto[1])) * parseFloat(qtdItens));
-		ipt.value = nome_produto; 
+		ipt.value = nome_produto;
 		iptProduto.value = nome_produto + ' (' + largura + ' larg. X ' + altura + ' alt. = ' + parseFloat(largura) * parseFloat(altura) + ' m²)';
 		iptValorUnit.value = valor_produto[1];
 		iptQuant.value = qtdItens;
@@ -213,7 +213,7 @@ function addItem(){
 		//Valor total do item sem desconto
 		iptTotal.value = subtotal.toFixed(2);
 
-		if(desconto > 0){
+		if (desconto > 0) {
 			let valorDesconto = subtotal * desconto;
 			subtotal = subtotal - (subtotal * desconto);
 			iptDesconto.value = valorDesconto.toFixed(3) + ' (' + (desconto * 100) + '%)';
@@ -226,23 +226,23 @@ function addItem(){
 			iconeExcluir.value = 'Excluir';
 
 		}
-		
+
 	} else {
 		let subtotal = parseFloat(qtdItens) * parseFloat(valor_produto[1]);
-		ipt.value = nome_produto; 
+		ipt.value = nome_produto;
 		iptProduto.value = nome_produto;
 		iptValorUnit.value = valor_produto[1];
 		iptQuant.value = qtdItens;
 		//ipt.value += ' / Valor unit: ' + valor_produto[1] + ' / Qtd: '+ qtdItens + ' / Total sem desc.: ' + subtotal.toFixed(2);
-		
+
 		let desconto = document.getElementById('percentualDesconto').value;
-		desconto = desconto.replace(',' , '.');
+		desconto = desconto.replace(',', '.');
 		desconto = parseFloat(desconto) / 100;
 
 		//Valor total do item sem desconto
 		iptTotal.value = subtotal.toFixed(2);
 
-		if(desconto > 0){
+		if (desconto > 0) {
 			let valorDesconto = subtotal * desconto;
 			subtotal = subtotal - (subtotal * desconto);
 			//ipt.value += ' / Total com desc.: ' + subtotal.toFixed(2) + '<br>' ;
@@ -257,7 +257,7 @@ function addItem(){
 			iconeExcluir.value = 'Excluir';
 
 		}
-		
+
 	}
 
 	//ipt.disabled = 'disabled';
@@ -266,7 +266,7 @@ function addItem(){
 	ipt.setAttribute('name', 'ipt-produtos[]');
 
 	//ipt.setAttribute('onclick', 'remover()');
-	
+
 	//div.appendChild(ipt);
 	//divProdutos.appendChild(iptValorUnit);
 	//div.appendChild(iptProduto);
@@ -281,17 +281,17 @@ function addItem(){
 	let clickBotao = document.querySelectorAll('.botaoExcluir');
 	let contador = 0;
 
-	for(let item of elemento){
+	for (let item of elemento) {
 
-		clickBotao[contador].onclick = function(){
+		clickBotao[contador].onclick = function () {
 
-			if(confirm('Confirma a Exclusão?')){
+			if (confirm('Confirma a Exclusão?')) {
 				item.remove();
 				valorTotal();
 				Descontos();
 				TotalPagar();
 				retornaItensConsolidado();
-		 	}
+			}
 
 		}
 		contador++;
@@ -303,23 +303,23 @@ function addItem(){
 	retornaItensConsolidado();
 }
 
-function zerar(){
+function zerar() {
 	document.getElementById('valorTotal').value = 0;
 	document.getElementById('valorFinal').value = 0;
 }
 
-function alturaLarguraPadrao(){
+function alturaLarguraPadrao() {
 	document.getElementById('inlineFormInputAltura').value = 1;
 	document.getElementById('inlineFormInputLargura').value = 1;
 }
 
-function zerarAlturaLargura(){
+function zerarAlturaLargura() {
 	document.getElementById('inlineFormInputAltura').value = "-";
 	document.getElementById('inlineFormInputLargura').value = "-";
 }
 
-function desativarDimensoes(){
-	$("#select-prod").on('change', function(){
+function desativarDimensoes() {
+	$("#select-prod").on('change', function () {
 		let iptAltura = document.querySelector("#inlineFormInputAltura");
 		let iptLargura = document.querySelector("#inlineFormInputLargura");
 		let iptAlvo = document.querySelectorAll('#select-prod');
@@ -327,11 +327,11 @@ function desativarDimensoes(){
 		let lblLargura = document.querySelector('#lblLargura');
 		let divIptItens = document.querySelector('#divIptItens');
 
-		for(let itens of iptAlvo){
+		for (let itens of iptAlvo) {
 			let item = itens.value;
 			let unidade = item.split('(', 2);
 
-			if(unidade[1].substring(0, 2) != 'm²'){
+			if (unidade[1].substring(0, 2) != 'm²') {
 				zerarAlturaLargura();
 				iptAltura.setAttribute("disabled", "");
 				iptLargura.setAttribute("disabled", "");
@@ -348,24 +348,22 @@ function desativarDimensoes(){
 	});
 }
 
-function valorTotal()
-{
-	var conteudo;	
+function valorTotal() {
+	var conteudo;
 	let totais = document.querySelectorAll('#ipt_total');
 	let soma = 0;
 	let indice = 0;
 
-	totais.forEach(function(valor, indice){
+	totais.forEach(function (valor, indice) {
 		soma += parseFloat(valor.value);
 	});
 
 	//alert(totais.length);
-	document.getElementById('valorTotal').value = new Intl.NumberFormat('pt-BR', {minimumFractionDigits: 2}).format(soma);
+	document.getElementById('valorTotal').value = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2 }).format(soma);
 }
 
-function Descontos()
-{
-	var conteudo;	
+function Descontos() {
+	var conteudo;
 	let totais = document.querySelectorAll('#ipt_desconto');
 	let soma = 0;
 	let indice = 0;
@@ -373,28 +371,27 @@ function Descontos()
 
 	let percentual = 0;
 
-	totais.forEach(function(desconto, indice){
+	totais.forEach(function (desconto, indice) {
 		soma += parseFloat(desconto.value);
-		percentual = ((soma / valorTotalItens.replace('.', '').replace(',' , '.')) * 100).toFixed(2);
+		percentual = ((soma / valorTotalItens.replace('.', '').replace(',', '.')) * 100).toFixed(2);
 	});
 
 	//alert(totais.length);
-	document.getElementById('Desconto').value = new Intl.NumberFormat('pt-BR', {minimumFractionDigits: 2}).format(soma) + ' (' + percentual + '%)';
+	document.getElementById('Desconto').value = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2 }).format(soma) + ' (' + percentual + '%)';
 }
 
-function TotalPagar()
-{
-	var conteudo;	
+function TotalPagar() {
+	var conteudo;
 	let totais = document.querySelectorAll('#ipt_total_pagar');
 	let soma = 0;
 	let indice = 0;
 
-	totais.forEach(function(valor, indice){
+	totais.forEach(function (valor, indice) {
 		soma += parseFloat(valor.value);
 	});
 
 	//alert(totais.length);
-	document.getElementById('valorTotalPagar').value = new Intl.NumberFormat('pt-BR', {minimumFractionDigits: 2} ).format(soma);
+	document.getElementById('valorTotalPagar').value = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2 }).format(soma);
 }
 
 function retornaItensConsolidado() {
@@ -407,9 +404,9 @@ function retornaItensConsolidado() {
 	let produtos = "";
 	let cont = 0;
 
-	for (let itens of descricao){
+	for (let itens of descricao) {
 		produtos += descricao[cont].value + "-" + valor_unit[cont].value + "-" + quant[cont].value + "-" + valor_total[cont].value +
-		"-" + desconto[cont].value + "-" + total_pagar[cont].value + "/";
+			"-" + desconto[cont].value + "-" + total_pagar[cont].value + "/";
 		cont++;
 	}
 	document.getElementById('consolidado').value = produtos;
@@ -417,70 +414,68 @@ function retornaItensConsolidado() {
 
 desativarDimensoes();
 
-function confirmarDelecaoItem()
-{
+function confirmarDelecaoItem() {
 	let botaoDeletar = document.querySelectorAll("#btnDeletarItem");
-	let confirma = document.querySelectorAll('#ipt-confirma'); 
+	let confirma = document.querySelectorAll('#ipt-confirma');
 
-	botaoDeletar.forEach(clique =>{
+	botaoDeletar.forEach(clique => {
 
-		$(clique).click(function(){
+		$(clique).click(function () {
 
-			if(confirm('Tem certeza que deseja EXCLUIR este item?')){
+			if (confirm('Tem certeza que deseja EXCLUIR este item?')) {
 				let contador = 0;
-				confirma.forEach(function(){
+				confirma.forEach(function () {
 					confirma[contador].setAttribute('value', 'true');
 					contador++;
 				});
 			}
 
 		});
-		
+
 	});
 
 }
 
-function confirmarDelecaoOrcamento()
-{
+function confirmarDelecaoOrcamento() {
 	let botaoDeletar = document.querySelectorAll("#btn-del-orcamento");
-	let confirmaDeletarOrcamento = document.querySelectorAll('#orcamento-deletar'); 
+	let confirmaDeletarOrcamento = document.querySelectorAll('#orcamento-deletar');
 
-	botaoDeletar.forEach(orcamento =>{
+	botaoDeletar.forEach(orcamento => {
 
-		$(orcamento).click(function(){
+		$(orcamento).click(function () {
 
-			if(confirm('Tem certeza que deseja EXCLUIR este ORÇAMENTO PERMANENTEMENTE?')){
+			if (confirm('Tem certeza que deseja EXCLUIR este ORÇAMENTO PERMANENTEMENTE?')) {
 				let contador = 0;
-				confirmaDeletarOrcamento.forEach(function(){
+				confirmaDeletarOrcamento.forEach(function () {
 					confirmaDeletarOrcamento[contador].setAttribute('value', 'true');
 					contador++;
 				});
 			}
 
 		});
-		
+
 	});
 
 }
 
-$(document).ready(function(){
-   $(".alertaCadOsOk").fadeIn(300).delay(2000).fadeOut(400);
+$(document).ready(function () {
+	$(".alertaCadOsOk").fadeIn(300).delay(2000).fadeOut(400);
 });
 
-$(document).ready(function(){
-   $(".alertaCadOsNoOk").fadeIn(300).delay(8000).fadeOut(400);
+$(document).ready(function () {
+	$(".alertaCadOsNoOk").fadeIn(300).delay(8000).fadeOut(400);
 });
 
-$(document).ready(function(){
-   $(".msgErroLogin").fadeIn(100).delay(2000).fadeOut(200);
+$(document).ready(function () {
+	$(".msgErroLogin").fadeIn(100).delay(2000).fadeOut(200);
 });
 
 
 
 /*Faz a leitura do clique no botão Adicionar para incluir o cabeçalho da relação de itens que estão sendo
 inseridas no orçamento*/
-$(document).ready(function(){
-	$("#btnAdicionar").click(function(){
+$(document).ready(function () {
+	$("#btnAdicionar").click(function () {
 		let divItens = document.querySelector("#itens");
 		divItens.setAttribute("class", "col-12 p-2");
 		divItens.setAttribute("style", "background-color:#FFFFF0");
@@ -488,14 +483,14 @@ $(document).ready(function(){
 });
 
 /*Cores padrão das telas de cadastro**/
-$(document).ready(function(){
+$(document).ready(function () {
 
 	let botoes_atalho_cad = document.querySelectorAll(".botoes-atalho-cad");
-	
-	botoes_atalho_cad.forEach(item =>{
+
+	botoes_atalho_cad.forEach(item => {
 		item.setAttribute("class", "btn btn-secondary btn-block font-weight-bold rounded");
 	});
-	
+
 	let jumbotron_tela_cadastro = document.querySelector("#jumbotron_telas_cadastro");
 	jumbotron_tela_cadastro.setAttribute("class", "jumbotron jumbotron-fluid text-white bg-secondary");
 
@@ -512,15 +507,15 @@ $(document).ready(function(){
 });
 
 /*Cores padrão das telas de consulta**/
-$(document).ready(function(){
+$(document).ready(function () {
 
 	let botoes_atalho_cons = document.querySelectorAll(".botoes-atalho-cons");
-	
 
-	botoes_atalho_cons.forEach(item =>{
+
+	botoes_atalho_cons.forEach(item => {
 		item.setAttribute("class", "btn btn-secondary btn-block font-weight-bold rounded");
 	});
-	
+
 	/*por enquanto a função abaixo está sem uso, pois a telas de consulta não tem jumbotrom
 	let jumbotron_tela_consulta = document.querySelector("#jumbotron_telas_consulta");
 	jumbotron_tela_consulta.setAttribute("class", "jumbotron jumbotron-fluid text-white bg-info");*/
@@ -551,7 +546,7 @@ $(document).ready(function(){
 
 
 /*Cores padrão das telas de edição*/
-$(document).ready(function(){
+$(document).ready(function () {
 
 	let background_tela_edicao = document.querySelector("#background-tela-edicao");
 	background_tela_edicao.setAttribute("style", "background-color: #DCDCDC");
@@ -576,21 +571,21 @@ $(document).ready(function(){
 });
 
 //mascaras campos inputs CADASTRAR CLIENTE
-$(document).ready(function(){
+$(document).ready(function () {
 	let inputCpfCnpj = document.querySelector("#inlineFormInputCpfCnpj");
 
-	$("#inlineRadioPF").on('change', function(){
+	$("#inlineRadioPF").on('change', function () {
 
-		$(".reset").bind("click", function() {
-  			$("input[type=text], textarea").val("");
+		$(".reset").bind("click", function () {
+			$("input[type=text], textarea").val("");
 		});
-		
+
 		inputCpfCnpj.setAttribute("placeholder", "Digite o CPF (apenas os números)");
 		$("#inlineFormInputCpfCnpj").mask("999.999.999-99");
 		$("#inlineFormInputCpfCnpj").reset();
 	});
 
-	$("#inlineRadioPJ").on('change', function(){
+	$("#inlineRadioPJ").on('change', function () {
 		$("input[type=text], textarea").val("");
 		inputCpfCnpj.setAttribute("placeholder", "Digite o CNPJ (apenas os números)");
 		$("#inlineFormInputCpfCnpj").mask("99.999.999/9999-99");
@@ -604,13 +599,13 @@ $(document).ready(function(){
 
 /*formatando os números do campo input de valor unitário da view editar-produto para o formato 
 com ponto flutante padrão aceito no banco de dados MYSQL*/
-$(document).ready(function(){
-	$('.ipt-princ').on('input', function(){
+$(document).ready(function () {
+	$('.ipt-princ').on('input', function () {
 		let valor_digitado = $(this).val();
-		valor_digitado = valor_digitado.replace("." , "");
-		valor_digitado = valor_digitado.replace("," , "." );
+		valor_digitado = valor_digitado.replace(".", "");
+		valor_digitado = valor_digitado.replace(",", ".");
 		let ipt_aux = $(this).attr("valor_unitario");
-		$("#"+ ipt_aux).val(valor_digitado);
+		$("#" + ipt_aux).val(valor_digitado);
 	});
 	//let valor_unitario = document.querySelector("#inlineFormInputValorUnitario").value;
 	//let valor_formatado = valor_unitario.replace("." , "");
@@ -621,13 +616,13 @@ $(document).ready(function(){
 
 });
 
-$(document).ready(function(){
+$(document).ready(function () {
 	let status = document.querySelectorAll("#sel-status-notificacao");
 	let divAdiar = document.querySelectorAll("#div-adiar");
 
 	status.forEach((item, i) => {
-		item.onchange = function(){
-			if(item.value != 'ADIAR'){
+		item.onchange = function () {
+			if (item.value != 'ADIAR') {
 				divAdiar[i].setAttribute("class", "d-none");
 			} else if (item.value == 'ADIAR') {
 				divAdiar[i].setAttribute("class", "input-group col-auto mt-1 mb-1");
@@ -646,13 +641,3 @@ document.addEventListener("DOMContentLoaded", function() {
 
 confirmarDelecaoItem();
 confirmarDelecaoOrcamento();
-
-
-
-
-
-	
-
-
-
-

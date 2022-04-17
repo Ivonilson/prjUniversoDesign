@@ -16,5 +16,3 @@ class crtListaAgendamento {
 
 $crtl = new crtListaAgendamento();
 $crtl->listaAgendamento();
-
-?>

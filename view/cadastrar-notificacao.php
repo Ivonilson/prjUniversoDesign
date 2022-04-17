@@ -1,10 +1,11 @@
 <?php
-	if ($_SESSION['user'] == NULL) {
-		header('Location: index.php');
-	}
+if ($_SESSION['user'] == NULL) {
+	header('Location: index.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,10 +16,11 @@
 	<link rel="stylesheet" type="text/css" href="../css/sb-admin.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/abg.css">
 </head>
+
 <body class="bg-dark fixed-nav sticky-footer" id="page-top">
 	<!-- NAVEGAÇÃO -->
-	<?php require_once 'includes/navegacao.php';?>
-	
+	<?php require_once 'includes/navegacao.php'; ?>
+
 	<div class="content-wrapper">
 		<div class="container-fluid">
 			<ol class="breadcrumb">
@@ -52,9 +54,9 @@
 				</div>
 
 			</div>
-	
+
 			<div class="row" id="background-tela-cadastro">
-				
+
 				<form class="container background-form-cadastro" method="post">
 
 					<div id="jumbotron_telas_cadastro">
@@ -63,28 +65,28 @@
 						</div>
 					</div>
 
-						<?php
-							if($mensagem_erro == "Notificação cadastrada com sucesso!")
-
-							{
-						?>
+					<?php
+					if ($mensagem_erro == "Notificação cadastrada com sucesso!") {
+					?>
 
 						<div class="alert alert-success font-weight-bold alertaCadOsOk col-12 text-center" role="alert">
- 							<img src="../assets/ok.png"><h5><strong><?=$mensagem_erro?></strong></h5>
+							<img src="../assets/ok.png">
+							<h5><strong><?= $mensagem_erro ?></strong></h5>
 						</div>
 
-						<?php 
-							} elseif($mensagem_erro == "ERRO. Contate o Suporte.") {
-						?>
+					<?php
+					} elseif ($mensagem_erro == "ERRO. Contate o Suporte.") {
+					?>
 
 						<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
- 							<img src="../assets/error.png"><h5><strong><?=$mensagem_erro?></strong></h5>
+							<img src="../assets/error.png">
+							<h5><strong><?= $mensagem_erro ?></strong></h5>
 						</div>
 
-						<?php
+					<?php
 
-							} 
-						?>
+					}
+					?>
 
 					<div class="form-row align-items-center">
 
@@ -94,7 +96,7 @@
 									Tipo
 								</label>
 							</div>
-							<select name="sel-tipo" class="custom-select" id="lbl-sel-tipo" >
+							<select name="sel-tipo" class="custom-select" id="lbl-sel-tipo">
 								<option value="-">Selecione</option>
 								<option value="AVISOS">AVISOS</option>
 								<option value="CONTAS A PAGAR">CONTAS A PAGAR</option>
@@ -111,7 +113,7 @@
 									Remetente
 								</label>
 							</div>
-							<select name="sel-remetente" class="custom-select" id="lbl-sel-remetente" >
+							<select name="sel-remetente" class="custom-select" id="lbl-sel-remetente">
 								<option value="UNIVERSO DESIGN">UNIVERSO DESIGN</option>
 								<option value="TERCEIROS">TERCEIROS</option>
 							</select>
@@ -123,7 +125,7 @@
 									Destinatário
 								</label>
 							</div>
-							<select name="sel-destinatario" class="custom-select" id="lbl-sel-destinatario" >
+							<select name="sel-destinatario" class="custom-select" id="lbl-sel-destinatario">
 								<option value="UNIVERSO DESIGN">UNIVERSO DESIGN</option>
 								<option value="TERCEIROS">TERCEIROS</option>
 							</select>
@@ -135,7 +137,7 @@
 									Descrição
 								</label>
 							</div>
-							<select name="sel-descricao" class="custom-select" id="lbl-sel-descricao" >
+							<select name="sel-descricao" class="custom-select" id="lbl-sel-descricao">
 								<option value="-">Selecione</option>
 								<option value="BOLETO">BOLETO</option>
 								<option value="VISITA">VISITA</option>
@@ -157,7 +159,7 @@
 						<div class="input-group col-lg-4 col-md-4 col-xs-12 col-sm-12 mt-1">
 							<div class="input-group-prepend">
 								<div class="input-group-text bg-secondary text-white">
-									Alertar em: 								</div>
+									Alertar em: </div>
 							</div>
 							<input type="date" class="form-control" name="ipt-data-programada" title="Data programada para pagamento/saneamento" required>
 						</div>
@@ -168,7 +170,7 @@
 									Prioridade
 								</label>
 							</div>
-							<select name="sel-prioridade" class="custom-select" id="lbl-sel-prioridade" >
+							<select name="sel-prioridade" class="custom-select" id="lbl-sel-prioridade">
 								<option value="NORMAL">Selecione</option>
 								<option value="NORMAL">NORMAL</option>
 								<option value="ALTA">ALTA</option>
@@ -182,8 +184,8 @@
 									Aviso/Cobrança através de:
 								</label>
 							</div>
-							<select name="sel-meio-notificacao" class="custom-select" id="lbl-sel-meio-notificacao" >
-								<option value="<?=$_SESSION['user'].' NÃO INFORMOU'?>">Selecione</option>
+							<select name="sel-meio-notificacao" class="custom-select" id="lbl-sel-meio-notificacao">
+								<option value="<?= $_SESSION['user'] . ' NÃO INFORMOU' ?>">Selecione</option>
 								<option value="E-MAIL">E-MAIL</option>
 								<option value="VERBAL/TELEFONE">VERBAL/TELEFONE</option>
 								<option value="TEXTO WHATSAPP">TEXTO WHATSAPP</option>
@@ -204,13 +206,14 @@
 				</form>
 			</div>
 
-			<?php  
-				include ('includes/rodape.php');
+			<?php
+			include('includes/rodape.php');
 			?>
-			
+
 		</div>
 	</div>
 
-<?php require_once 'includes/bootstrap-js.php'; ?>
+	<?php require_once 'includes/bootstrap-js.php'; ?>
 </body>
+
 </html>

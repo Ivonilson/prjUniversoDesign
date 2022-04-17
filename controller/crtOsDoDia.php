@@ -14,5 +14,3 @@ class crtOsDoDia {
 
 	$crtl = new crtOsDoDia();
 	$crtl->osDoDia();
-
-?>

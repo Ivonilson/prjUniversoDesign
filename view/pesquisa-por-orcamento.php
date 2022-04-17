@@ -1,11 +1,12 @@
 <?php
-	if ($_SESSION['user'] == NULL) {
-		header('Location: index.php');
-	}
+if ($_SESSION['user'] == NULL) {
+	header('Location: index.php');
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,10 +14,11 @@
 	<?php require_once 'includes/bootstrap-css.php'; ?>
 
 </head>
+
 <body class="bg-dark fixed-nav sticky-footer" id="page-top">
 	<!-- NAVEGAÇÃO -->
-	<?php require_once 'includes/navegacao.php';?>
-	
+	<?php require_once 'includes/navegacao.php'; ?>
+
 	<div class="content-wrapper" id="background-tela-consulta">
 		<div class="container-fluid">
 			<ol class="breadcrumb">
@@ -117,50 +119,50 @@
 							</tr>
 						</tfoot>
 						<tbody>
-							<?php 
+							<?php
 
-								$contador = 0;
+							$contador = 0;
 
-								if($resultado != NULL){
-	
-								foreach ($resultado as  $value) {	
+							if ($resultado != NULL) {
+
+								foreach ($resultado as  $value) {
 							?>
-							<tr>
-								<td id="valor_id"><?=$value['id_orcamento']?></td>
-								<td><?=$value['nome']?></td>
-								<td><?=$value['servico']?></td>
-								<td><?=date_format(date_create($value['data_cadastro']), "d/m/Y")?></td>
-								<td><?=date_format(date_create($value['data_validade']), "d/m/Y")?></td>
-								<td><?=$value['status']?></td>
-								<td><?=$value['observacao']?></td>
+									<tr>
+										<td id="valor_id"><?= $value['id_orcamento'] ?></td>
+										<td><?= $value['nome'] ?></td>
+										<td><?= $value['servico'] ?></td>
+										<td><?= date_format(date_create($value['data_cadastro']), "d/m/Y") ?></td>
+										<td><?= date_format(date_create($value['data_validade']), "d/m/Y") ?></td>
+										<td><?= $value['status'] ?></td>
+										<td><?= $value['observacao'] ?></td>
 
-								<!--<td align="center"  data-toggle="modal" data-target=".modal-ver-itens"><a href="#" title="Atualizar"><i class="fa fa-check-square-o" aria-hidden="true"></i></a></td>--->
+										<!--<td align="center"  data-toggle="modal" data-target=".modal-ver-itens"><a href="#" title="Atualizar"><i class="fa fa-check-square-o" aria-hidden="true"></i></a></td>--->
 
-								<td align="center">
-									<a href="/?pagina=itens-orcamento&id_orcamento=<?=$value['id_orcamento']?>" title="Itens orçamento" target="_blank" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></a>
-								</td>
-								
-								<td align="center"><a href="/?pagina=impressao-orcamento&id_orcamento=<?=$value['id_orcamento']?>&form=pesquisa-por-orcamento" title="Imprimir" target="_blank" class="btn btn-default"><i class="fa fa-print" aria-hidden="true"></i></a></td>
+										<td align="center">
+											<a href="/?pagina=itens-orcamento&id_orcamento=<?= $value['id_orcamento'] ?>" title="Itens orçamento" target="_blank" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></a>
+										</td>
 
-								<form method="post">
+										<td align="center"><a href="/?pagina=impressao-orcamento&id_orcamento=<?= $value['id_orcamento'] ?>&form=pesquisa-por-orcamento" title="Imprimir" target="_blank" class="btn btn-default"><i class="fa fa-print" aria-hidden="true"></i></a></td>
 
-									<input type="hidden" name="ipt-orcamento-deletar" value="<?=$value['id_orcamento']?>">
+										<form method="post">
 
-									<input type="hidden" id="orcamento-deletar" name="ipt-confirma-orcamento-deletar">
+											<input type="hidden" name="ipt-orcamento-deletar" value="<?= $value['id_orcamento'] ?>">
 
-									<td align="center"><button class="btn btn-default" name="btn-deletar-orcamento" id="btn-del-orcamento"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+											<input type="hidden" id="orcamento-deletar" name="ipt-confirma-orcamento-deletar">
 
-								</form>
+											<td align="center"><button class="btn btn-default" name="btn-deletar-orcamento" id="btn-del-orcamento"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
 
-								<!--<td align="center"><a href="/?pagina=historico&cod_os=<?=$value['cod_os']?>&form=pesquisa-por-data-receb" title="Histórico" target="_blank"><i class="fa fa-history" aria-hidden="true"></a></td>-->
-							</tr>
-							
-							<?php 
-								$conexao = null;
+										</form>
 
-							} }else {
+										<!--<td align="center"><a href="/?pagina=historico&cod_os=<?= $value['cod_os'] ?>&form=pesquisa-por-data-receb" title="Histórico" target="_blank"><i class="fa fa-history" aria-hidden="true"></a></td>-->
+									</tr>
+
+							<?php
+									$conexao = null;
+								}
+							} else {
 								//echo "<span class='text-danger'>NENHUM DADO RETORNADO.</span><br><br>";
-							} 
+							}
 
 							?>
 						</tbody>
@@ -171,14 +173,15 @@
 		</div>
 
 		<!-- rodapé -->
-		<?php require_once 'includes/rodape.php';?>
+		<?php require_once 'includes/rodape.php'; ?>
 	</div>
-	
+
 	<?php require_once 'includes/bootstrap-js.php'; ?>
 
 	<!-- BARRA DE PROGRESSO DOS SERVIÇOS EXECUTADOS -->
 	<script type="text/javascript">
-      //Redirect();
+		//Redirect();
 	</script>
 </body>
+
 </html>

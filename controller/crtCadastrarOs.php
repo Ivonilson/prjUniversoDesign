@@ -33,6 +33,4 @@ require "model/Cidade.php";
 		
 	} elseif(filter_input(INPUT_POST, 'sel-orcamento') == '-') { 
 		$mensagem_erro = "Um Orçamento precisa ser selecionado para a ordem de serviço. Selecione um orçamento e Tente Novamente.";
-	} 		
-
-?>
+	}
