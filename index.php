@@ -70,12 +70,6 @@ switch ($pagina) {
 		include "view/editar-produto.php";
 		break;
 
-	case 'editar-orcamento':
-		require "controller/crtEditarOrcamento.php";
-		$crtl = new crtEditarOrcamento();
-		$crtl->editarOrcamento();
-		break;
-
 	case 'pesquisa-por-data-receb':
 		require "controller/crtPesquisaPorDataReceb.php";
 		$crtl = new crtPesquisaPorDataReceb();
