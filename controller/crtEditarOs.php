@@ -19,25 +19,3 @@ class crtEditarOs {
 
 $crtl = new crtEditarOs();
 $mensagem_erro = $crtl->editarOs();
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-	
-
-	
-
-	
-
-
-?>

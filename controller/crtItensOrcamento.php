@@ -20,5 +20,3 @@ if(isset($_POST['ipt-id']) && $_POST['ipt-id'] != ''){
 if(isset($_POST['ipt-cod-delete']) && $_POST['ipt-cod-delete'] != '' && $_POST['ipt-confirmacao'] == 'true'){
 	$Item->deletarItemOrcamento();
 }
-
-?>
