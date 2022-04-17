@@ -125,7 +125,7 @@
 
 
 							} }else {	
-								echo "<span class='text-danger'>NENHUM DADO RETORNADO.</span><br><br>";
+								//echo "<span class='text-danger'>NENHUM DADO RETORNADO.</span><br><br>";
 							} 
 
 
