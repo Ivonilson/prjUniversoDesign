@@ -165,11 +165,7 @@ if ($_SESSION['user'] == NULL) {
 							<input type="text" disabled class="form-control bg-light" value="<?= $resultado != null ? number_format($totalizador[0]['sum_total_pagar'], 2, ",", ".") : 0 ?>">
 						</div>
 					</div>
-
-					<!--<div class="col-3">
-							<span class="text-danger h5">Valor a Pagar (R$): <?= $totalizador[0]['sum_total_pagar'] ?></span>
-						</div>-->
-
+						
 					<div class="col-10 mt-5">
 						<span class="text-danger h5">Vendedor:</span> <span class="text-primary h5"><?= $resultado != null ? $resultado[0]['usuario'] : $_SESSION['user'] ?></span>
 					</div>

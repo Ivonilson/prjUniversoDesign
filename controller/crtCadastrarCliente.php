@@ -29,3 +29,5 @@ class crtCadastrarCliente {
 
 $crtl = new crtCadastrarCliente();
 $mensagem_erro = $crtl->cadastrarCliente();
+
+?>

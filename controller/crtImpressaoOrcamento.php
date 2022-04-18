@@ -13,3 +13,5 @@ class crtImpressaoOrcamento {
 		include "view/impressao-orcamento.php";
 	}
 }
+
+?>

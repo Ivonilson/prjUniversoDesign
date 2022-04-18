@@ -8,3 +8,5 @@ class crtPesquisaPorOs {
 		include "view/pesquisa-por-os.php";
 	}
 }
+
+?>

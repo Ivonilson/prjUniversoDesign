@@ -15,3 +15,5 @@ class crtPesquisaCliente {
 
 $crtl = new crtPesquisaCliente();
 $crtl->pesquisaCliente();
+
+?>
