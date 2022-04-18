@@ -27,3 +27,4 @@ require "model/IncluirItemOrcamento.php";
 
 	$mensagem_erro = $crtl->incluirItemOrcamento();
 	$produto = $produtos->carregaProduto();
+?>

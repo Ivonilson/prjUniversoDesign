@@ -131,3 +131,5 @@ switch ($pagina) {
 		include_once "view/login.php";
 		break;
 }
+
+?>

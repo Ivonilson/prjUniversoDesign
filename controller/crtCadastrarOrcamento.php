@@ -49,3 +49,5 @@ require "model/Cidade.php";
 		$totalizador_itens = $itensUltimoOrcamento->itensUltimoOrc($UltimoOrcCadastrado['id_orcamento']);
 	};
 
+	?>
+

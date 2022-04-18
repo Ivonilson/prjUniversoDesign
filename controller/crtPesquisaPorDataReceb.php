@@ -8,3 +8,5 @@ class crtPesquisaPorDataReceb {
 		include "view/pesquisa-por-data-receb.php";
 	}
 }
+
+?>

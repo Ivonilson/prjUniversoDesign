@@ -11,3 +11,5 @@ class crtPesquisaProduto {
 		return $produtos;
 	}
 }
+
+?>

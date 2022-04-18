@@ -91,3 +91,4 @@ class CadastrarOrcamento {
 			return $totalizador;
 		}
 	}
+?>

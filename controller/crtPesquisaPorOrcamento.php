@@ -22,3 +22,5 @@ if(isset($_POST['ipt-orcamento-deletar']) && $_POST['ipt-orcamento-deletar'] != 
 	unset($_POST);
 
 }
+
+?>
