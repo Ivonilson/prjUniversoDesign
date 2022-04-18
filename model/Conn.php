@@ -2,10 +2,10 @@
 class Conn
 {
 
-	/*public static $host = "localhost";
+	public static $host = "localhost";
 	public static $user = "root";
 	public static $pass = "";
-	public static $dbName = "universo_design";*/
+	public static $dbName = "universo_design";
 
 	private static $Connect = null;
 

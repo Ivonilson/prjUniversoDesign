@@ -55,8 +55,8 @@ if ($_SESSION['user'] == null) {
 			<div class="card mb-1 border border-light">
 				<div class="card-header">
 					<i class="fa fa-table"></i> <span class="font-weight-bold text-lg">O.S(s) do dia</span> - <?php $hoje = date('d/m/Y');
-																												echo $hoje;
-																												echo " - (última atualização às " . date('H') . " h " . date('i') . " m)"; ?><a href="/?pagina=pesquisa-por-os" class=" btn btn-info pr-3 pl-3 pt-2 pb-2 ml-3 float-right text-light rounded"><i class="fa fa-search" aria-hidden="true"></i> Pesquisa por O.S</a>
+					echo $hoje;
+					echo " - (última atualização às " . date('H') . " h " . date('i') . " m)"; ?><a href="/?pagina=pesquisa-por-os" class=" btn btn-info pr-3 pl-3 pt-2 pb-2 ml-3 float-right text-light rounded"><i class="fa fa-search" aria-hidden="true"></i> Pesquisa por O.S</a>
 
 					<div barra-progresso="barraProgresso" class="progresso pr-3 pl-3 pt-1 pb-1 ml-3 float-right  rounded" title="Percentual de serviços finalizados">
 						<div></div>
@@ -101,7 +101,7 @@ if ($_SESSION['user'] == null) {
 						<tbody>
 
 							<?php
-							if ($_SESSION['user'] == "IVONILSON" || $_SESSION['user'] == "FABRICIO") {
+							if ($_SESSION['user'] == "FABRICIO") {
 
 								$quant = 0;
 								$quantOsFinalizada = 0;
@@ -116,7 +116,7 @@ if ($_SESSION['user'] == null) {
 											$quantOsFinalizada++;
 										}
 
-							?>
+								?>
 
 										<tr class="itensTabela">
 											<td><?= $value['cod_os'] ?></td>
@@ -147,7 +147,6 @@ if ($_SESSION['user'] == null) {
 								echo "<span class='text-danger'>USUÁRIO SEM PERMISSÃO PARA VISUALIZAR AS INFORMAÇÕES DESTA PÁGINA.</span><br><br>";
 							}
 
-
 							?>
 
 						</tbody>
@@ -175,7 +174,5 @@ if ($_SESSION['user'] == null) {
 		configurarBarra();
 	</script>
 
-
 </body>
-
 </html>
