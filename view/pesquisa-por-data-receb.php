@@ -78,7 +78,7 @@ if ($_SESSION['user'] == NULL) {
 				<div class="col">
 
 					<!-- barra de progresso -->
-					<div barra-progresso="barraProgresso" class="col progresso pr-3 pl-3 pt-1 pb-1 ml-3 mb-1 mr-3 float-right  rounded" title="Percentual de serviços finalizados">
+					<div barra-progresso="barraProgresso" class="col progresso  pl-3 pt-2 pb-1 ml-3 mb-1 float-right  rounded" title="Percentual de serviços finalizados">
 						<div></div>
 					</div>
 					<!-- fim da barra de progresso -->
@@ -174,7 +174,7 @@ if ($_SESSION['user'] == NULL) {
 						</tbody>
 					</table>
 					<br>
-					<span id="qtdDemandas" class="status sr-only"><?= $quant ?></span>
+					<span id="qtdDemandas" class="status sr-only"><?= $quant != 0 ? $quant : '' ?></span>
 					<span id="quantOsFinalizada" class="status sr-only"><?= $quantLaudoPronto ?></span>
 				</div>
 			</div>

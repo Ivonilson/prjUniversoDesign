@@ -75,7 +75,6 @@ if ($_SESSION['user'] == null) {
 								<th>N° Orçamento</th>
 								<th>Data solicitação</th>
 								<th>Data agendamento</th>
-								<th>Valor Final(R$)</th>
 								<th>Situação Pagto.</th>
 								<th>Status Serviço</th>
 								<th>Observações</th>
@@ -90,7 +89,6 @@ if ($_SESSION['user'] == null) {
 								<th>N° Orçamento</th>
 								<th>Data solicitação</th>
 								<th>Data agendamento</th>
-								<th>Valor Final(R$)</th>
 								<th>Situação Pagto.</th>
 								<th>Status Serviço</th>
 								<th>Observações</th>
@@ -124,7 +122,6 @@ if ($_SESSION['user'] == null) {
 											<td><?= $value['numeroOrcamento'] ?></td>
 											<td><?= date_format(date_create($value['data_cadastro']), "d/m/Y") ?></td>
 											<td><?= date_format(date_create($value['data_agendamento']), "d/m/Y") ?></td>
-											<td><?= $value['valor_final'] ?></td>
 											<td><?= $value['sit_pagamento'] ?></td>
 											<td class="status"><?= $value['status'] ?></td>
 											<td class="text-justify"><?= $value['observacao'] ?></td>
@@ -137,9 +134,6 @@ if ($_SESSION['user'] == null) {
 											<!--<td align="center"><a href="/?pagina=historico&cod_os=<?= $value['cod_os'] ?>&form=os-do-dia" title="Histórico" target="_blank"><i class="fa fa-history" aria-hidden="true"></a></td>-->
 										</tr>
 
-										<script>
-											verificaStatus()
-										</script>
 							<?php
 									}
 								}

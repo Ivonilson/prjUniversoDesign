@@ -1,5 +1,4 @@
-function verificaStatus() {
-
+$(function(){
 	let valor = document.querySelector(".status").innerHTML;
 
 	switch (valor) {
@@ -15,8 +14,7 @@ function verificaStatus() {
 		default:
 			document.querySelector(".status").className = "bg-secondary text-white";
 	}
-
-}
+});
 
 function verificaStatusLista() {
 
