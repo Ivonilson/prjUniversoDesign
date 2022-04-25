@@ -132,7 +132,7 @@ if ($_SESSION['user'] == NULL) {
 								}
 							} 
 
-							if($resultadoServico) {
+							if($resultadoServico[0]['valor_total_serv'] != 0) {
 
 							?>
 

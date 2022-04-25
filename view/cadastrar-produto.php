@@ -98,7 +98,7 @@ if ($_SESSION['user'] == NULL) {
 									<option value="un.">Unidade</option>
 									<option value="m">Metro</option>
 									<option value="m²">Metro quadrado</option>
-									<option value="R$/km">Reais por km</option>
+									<option value="R$ por km">Reais por km</option>
 								</select>
 							</div>
 						</div>

@@ -362,7 +362,7 @@ if ($_SESSION['user'] == NULL) {
 							</div>
 
 							<!--CONSOLIDADO--->
-							<input type="text" class="form-control" name="ipt-consolidado" placeholder="..." id="consolidado">
+							<input type="hidden" class="form-control" name="ipt-consolidado" placeholder="..." id="consolidado">
 
 							<div class="col-12">
 								<input type="submit" name="" value="Fechar Orçamento" name="btnCadastrarOrcamento" id="botoesGravarCad">
