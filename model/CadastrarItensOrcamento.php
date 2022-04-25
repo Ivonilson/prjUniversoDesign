@@ -17,10 +17,11 @@ class CadastrarItensOrcamento
 		foreach ($itens_array as $linha) {
 
 			$dados = explode("-", $linha);
+			$tipo = trim($dados[1]);
 
 			try {
 
-				$statement = "INSERT INTO tbl_itens_orcamento (id_orcamento, descricao, valor_unitario, quantidade, valor_total, desconto, total_pagar, data_cadastro, usuario) VALUES (:id_orcamento, :descricao, :valor_unitario, :quantidade, :valor_total, :desconto, :total_pagar, CURDATE(), :usuario)";
+				$statement = "INSERT INTO tbl_itens_orcamento (id_orcamento, descricao, tipo, valor_unitario, quantidade, valor_total, desconto, total_pagar, data_cadastro, usuario) VALUES (:id_orcamento, :descricao, :tipo, :valor_unitario, :quantidade, :valor_total, :desconto, :total_pagar, CURDATE(), :usuario)";
 
 				$dados_cadastrar = $conn->getConn()->prepare($statement);
 
@@ -45,11 +46,12 @@ class CadastrarItensOrcamento
 
 				$dados_cadastrar->bindParam(':id_orcamento', $id_orcamento);
 				$dados_cadastrar->bindParam(':descricao', $dados[0]);
-				$dados_cadastrar->bindParam(':valor_unitario', $dados[1]);
-				$dados_cadastrar->bindParam(':quantidade', $dados[2]);
-				$dados_cadastrar->bindParam(':valor_total', $dados[3]);
-				$dados_cadastrar->bindParam(':desconto', $dados[4]);
-				$dados_cadastrar->bindParam(':total_pagar', $dados[5]);
+				$dados_cadastrar->bindParam(':tipo', $tipo);
+				$dados_cadastrar->bindParam(':valor_unitario', $dados[2]);
+				$dados_cadastrar->bindParam(':quantidade', $dados[3]);
+				$dados_cadastrar->bindParam(':valor_total', $dados[4]);
+				$dados_cadastrar->bindParam(':desconto', $dados[5]);
+				$dados_cadastrar->bindParam(':total_pagar', $dados[6]);
 				$dados_cadastrar->bindParam(':usuario', $usuario);
 
 				$dados_cadastrar->execute();

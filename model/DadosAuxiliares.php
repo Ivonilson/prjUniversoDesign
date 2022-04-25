@@ -83,7 +83,7 @@
 		function carregaProduto()
 		{
 			$conn = new Conn();
-			$statement = "SELECT id_prod, descricao, preco_unitario, unidade_medida FROM tbl_produto ORDER BY descricao";
+			$statement = "SELECT id_prod, tipo, descricao, preco_unitario, unidade_medida FROM tbl_produto ORDER BY descricao";
 			$dado = $conn->getConn()->query($statement);
 			$produtos = $dado->fetchAll(PDO::FETCH_OBJ);
 			return $produtos;

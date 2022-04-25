@@ -12,12 +12,13 @@ class CadastrarProduto {
 			}
 
 			$preco_unit = str_replace("," , ".", $dados['ipt-preco-unitario']);
+			$descricao = strtoupper($dados['ipt-descricao']);
 
 			try {
 
 			$conn = new Conn();
 
-			$statement = "INSERT INTO tbl_produto (id_prod, descricao, unidade_medida, preco_unitario, data_cadastro) VALUES (:id_prod, :descricao, :unidade_medida, :preco_unitario, CURDATE())";
+			$statement = "INSERT INTO tbl_produto (id_prod, tipo, descricao, unidade_medida, preco_unitario, data_cadastro) VALUES (:id_prod, :tipo, :descricao, :unidade_medida, :preco_unitario, CURDATE())";
 
 			$dados_cadastrar = $conn->getConn()->prepare($statement);
 
@@ -41,7 +42,8 @@ class CadastrarProduto {
 			//$produtos = implode('<br> ', ($dados['sel-prod']));
 
 			$dados_cadastrar->bindParam(':id_prod', $dados['ipt-codigo-produto']);
-			$dados_cadastrar->bindParam(':descricao', $dados['ipt-descricao']);
+			$dados_cadastrar->bindParam(':tipo', $dados['sel-tipo']);
+			$dados_cadastrar->bindParam(':descricao', $descricao);
 			$dados_cadastrar->bindParam(':unidade_medida', $dados['sel-unidade-medida']);
 			$dados_cadastrar->bindParam(':preco_unitario', $preco_unit);
 			//$dados_cadastrar->bindParam(':quantidade_estoque', $dados['ipt-quantidade-estoque']);

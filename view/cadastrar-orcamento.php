@@ -217,7 +217,7 @@ if ($_SESSION['user'] == NULL) {
 									foreach ($produto as $carregaProduto) {
 
 									?>
-										<option value="<?= $carregaProduto->descricao . ' (' . $carregaProduto->unidade_medida . ') ' . '/ ' . $carregaProduto->preco_unitario ?>" id="preco"><?= $carregaProduto->descricao . ' (' . $carregaProduto->unidade_medida . ') - Valor Unit.(R$) ' . $carregaProduto->preco_unitario ?>
+										<option value="<?= $carregaProduto->descricao . ' (' . $carregaProduto->unidade_medida . ') - ' . $carregaProduto->tipo .   '/ ' .  $carregaProduto->preco_unitario ?>" id="preco"><?= $carregaProduto->descricao . ' (' . $carregaProduto->unidade_medida . ') - Valor Unit.(R$) ' . $carregaProduto->preco_unitario?>
 										<?php
 									}
 										?>
@@ -362,7 +362,7 @@ if ($_SESSION['user'] == NULL) {
 							</div>
 
 							<!--CONSOLIDADO--->
-							<input type="hidden" class="form-control" name="ipt-consolidado" placeholder="..." id="consolidado">
+							<input type="text" class="form-control" name="ipt-consolidado" placeholder="..." id="consolidado">
 
 							<div class="col-12">
 								<input type="submit" name="" value="Fechar Orçamento" name="btnCadastrarOrcamento" id="botoesGravarCad">

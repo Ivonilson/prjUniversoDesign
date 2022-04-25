@@ -66,10 +66,23 @@ if ($_SESSION['user'] == NULL) {
 						<div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
 							<label class="sr-only" for="inlineFormInputProduto">Cód. do Produto</label>
 							<input type="number" class="form-control mb-2" id="inlineFormInputProduto" placeholder="Cód. do Produto" name="ipt-codigo-produto" required>
-
 						</div>
 
-						<div class="col-lg-10 col-md-12 col-sm-12 col-xs-12">
+						<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+							<div class="input-group mb-2">
+								<div class="input-group-prepend">
+									<label class="input-group-text bg-secondary text-white" for="select-tipo">
+										TIPO
+									</label>
+								</div>
+								<select class="custom-select" name="sel-tipo" id="select-tipo">
+									<option value="NORMAL">Normal</option>
+									<option value="OPERACIONAL">Operacional</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
 							<label class="sr-only" for="inlineFormInputDescricao">Descrição</label>
 							<input type="text" class="form-control mb-2" id="inlineFormInputDescricao" placeholder="Descrição do produto" name="ipt-descricao" required>
 						</div>
@@ -85,6 +98,7 @@ if ($_SESSION['user'] == NULL) {
 									<option value="un.">Unidade</option>
 									<option value="m">Metro</option>
 									<option value="m²">Metro quadrado</option>
+									<option value="R$/km">Reais por km</option>
 								</select>
 							</div>
 						</div>

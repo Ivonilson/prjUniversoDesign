@@ -109,9 +109,15 @@ if ($_SESSION['user'] == NULL) {
 
 							if ($resultado != NULL) {
 								foreach ($resultado as  $item) {
+
+								if($item['tipo'] == 'OPERACIONAL') {
+									continue;
+								}
+
 							?>
 
 									<tr>
+
 										<td><?= $item['descricao'] ?></td>
 										<td><?= number_format($item['valor_unitario'], 2, ",", ".") ?></td>
 										<td><?= number_format($item['quantidade'], 2, ",", ".") ?></td>
@@ -124,10 +130,22 @@ if ($_SESSION['user'] == NULL) {
 									$contador++;
 									$conexao = null;
 								}
-							} else {
-								//echo "<span class='text-danger'>NENHUM DADO RETORNADO.</span><br><br>";
-							}
+							} 
 
+							if($resultadoServico) {
+
+							?>
+
+										<td><?= 'SERVIÇOS' ?></td>
+										<td><?= '-' ?></td>
+										<td><?= '-' ?></td>
+										<td><?= number_format($resultadoServico[0]['valor_total_serv'], 3, ",", ".") ?></td>
+										<td><?= number_format($resultadoServico[0]['valor_desconto_serv'], 3, ",", ".") ?></td>
+										<td><?= number_format($resultadoServico[0]['total_pagar_serv'], 3, ",", ".")?></td>
+
+							<?php
+
+								}
 
 							?>
 						</tbody>
