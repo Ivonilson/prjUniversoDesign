@@ -69,7 +69,7 @@ function addItem() {
 
 
 	let produto = document.getElementById('select-prod').value;
-	let valor_produto = produto.split('/', 2);
+	let valor_produto = produto.split('/', 3);
 	let nome_produto = produto.split('/', 1);
 	//produto = produto.split('/', 1);
 	let qtdItens = document.getElementById('inlineFormInputQuant').value;
@@ -203,7 +203,7 @@ function addItem() {
 	if (altura > 0) {
 		let subtotal = (((parseFloat(largura) * parseFloat(altura)) * parseFloat(valor_produto[1])) * parseFloat(qtdItens));
 		ipt.value = nome_produto;
-		iptProduto.value = nome_produto + ' (' + largura + ' larg. X ' + altura + ' alt. = ' + parseFloat(largura) * parseFloat(altura) + ' m²)';
+		iptProduto.value = nome_produto + ' (' + largura + ' larg. X ' + altura + ' alt. = ' + parseFloat(largura) * parseFloat(altura) + ' m²)' +  valor_produto[2];
 		iptValorUnit.value = valor_produto[1];
 		iptQuant.value = qtdItens;
 		let desconto = document.getElementById('percentualDesconto').value / 100;
@@ -228,7 +228,7 @@ function addItem() {
 	} else {
 		let subtotal = parseFloat(qtdItens) * parseFloat(valor_produto[1]);
 		ipt.value = nome_produto;
-		iptProduto.value = nome_produto;
+		iptProduto.value = nome_produto + valor_produto[2];
 		iptValorUnit.value = valor_produto[1];
 		iptQuant.value = qtdItens;
 		//ipt.value += ' / Valor unit: ' + valor_produto[1] + ' / Qtd: '+ qtdItens + ' / Total sem desc.: ' + subtotal.toFixed(2);
