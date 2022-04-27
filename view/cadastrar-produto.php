@@ -58,7 +58,12 @@ if ($_SESSION['user'] == NULL) {
 					<div id="jumbotron_telas_cadastro">
 						<div class="container">
 							<h4>Cadastrar Produto</h4>
-						</div>
+
+							<div class="offset-lg-8 offset-md-7 col mb-1">
+								<a href="?pagina=pesquisa-produto" class="btn btn-light" title="Produtos cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Produtos cadastrados </a>
+							</div>
+
+						</div>	
 					</div>
 
 					<div class="form-row align-items-center">

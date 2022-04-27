@@ -31,6 +31,10 @@ if ($_SESSION['user'] == NULL) {
 					</div>
 				</div>
 
+				<div class="col mt-1 p-0">
+					<small class="text-dark">CNPJ: 99.999.999/9990-99 - <em>Qd. 02, Mr-02, Lt. 02, St. Norte, CEP: 99.999-999.</em></small>
+				</div>
+
 				<div class="row pt-2 pb-2 mt-2">
 
 					<div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
@@ -116,14 +120,14 @@ if ($_SESSION['user'] == NULL) {
 
 							?>
 
-									<tr>
+									<tr class="table-light">
 
-										<td><?= $item['descricao'] ?></td>
-										<td><?= number_format($item['valor_unitario'], 2, ",", ".") ?></td>
-										<td><?= number_format($item['quantidade'], 2, ",", ".") ?></td>
-										<td><?= number_format($item['valor_total'], 3, ",", ".") ?></td>
-										<td><?= number_format($item['desconto'], 3, ",", ".") ?></td>
-										<td><?= number_format($item['total_pagar'], 3, ",", ".") ?></td>
+										<td class="text-dark" style="border: 1px solid black"><?= $item['descricao'] ?></td>
+										<td class="text-dark" style="border: 1px solid black"><?= number_format($item['valor_unitario'], 2, ",", ".") ?></td>
+										<td class="text-dark" style="border: 1px solid black"><?= number_format($item['quantidade'], 2, ",", ".") ?></td>
+										<td class="text-dark" style="border: 1px solid black"><?= number_format($item['valor_total'], 3, ",", ".") ?></td>
+										<td class="text-dark" style="border: 1px solid black"><?= number_format($item['desconto'], 3, ",", ".") ?></td>
+										<td class="text-dark" style="border: 1px solid black"><?= number_format($item['total_pagar'], 3, ",", ".") ?></td>
 									</tr>
 
 							<?php
@@ -135,13 +139,15 @@ if ($_SESSION['user'] == NULL) {
 							if($resultadoServico[0]['valor_total_serv'] != 0) {
 
 							?>
+									<tr class="table-light">
 
-										<td><?= 'SERVIÇOS' ?></td>
-										<td><?= '-' ?></td>
-										<td><?= '-' ?></td>
-										<td><?= number_format($resultadoServico[0]['valor_total_serv'], 3, ",", ".") ?></td>
-										<td><?= number_format($resultadoServico[0]['valor_desconto_serv'], 3, ",", ".") ?></td>
-										<td><?= number_format($resultadoServico[0]['total_pagar_serv'], 3, ",", ".")?></td>
+										<td class="text-dark" style="border: 1px solid black"><?= 'SERVIÇOS/INSTALAÇÃO' ?></td>
+										<td class="text-dark" style="border: 1px solid black"><?= '-' ?></td>
+										<td class="text-dark" style="border: 1px solid black"><?= '-' ?></td>
+										<td class="text-dark" style="border: 1px solid black"><?= number_format($resultadoServico[0]['valor_total_serv'], 3, ",", ".") ?></td>
+										<td class="text-dark" style="border: 1px solid black"><?= number_format($resultadoServico[0]['valor_desconto_serv'], 3, ",", ".") ?></td>
+										<td class="text-dark" style="border: 1px solid black"><?= number_format($resultadoServico[0]['total_pagar_serv'], 3, ",", ".")?></td>
+									</tr>
 
 							<?php
 
@@ -185,7 +191,7 @@ if ($_SESSION['user'] == NULL) {
 					</div>
 						
 					<div class="col-10 mt-5">
-						<span class="text-danger h5">Vendedor:</span> <span class="text-primary h5"><?= $resultado != null ? $resultado[0]['usuario'] : $_SESSION['user'] ?></span>
+						<span class="text-dark h5">Responsável:</span> <span class="text-dark h5"><?= $resultado != null ? $resultado[0]['usuario'] : $_SESSION['user'] ?></span>
 					</div>
 
 					<div class="col mt-5 pl-5 text-left d-print-none">
