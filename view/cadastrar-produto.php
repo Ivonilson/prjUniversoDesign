@@ -59,11 +59,58 @@ if ($_SESSION['user'] == NULL) {
 						<div class="container">
 							<h4>Cadastrar Produto</h4>
 
-							<div class="offset-lg-8 offset-md-7 col mb-1">
-								<a href="?pagina=pesquisa-produto" class="btn btn-light" title="Produtos cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Produtos cadastrados </a>
+							<div class="col text-right mb-0">
+								<button type="button" class="text-light btn btn-secondary" data-toggle="modal" data-target="#md-ultimo-produto">Ver último produto cadastrado</button>
 							</div>
 
 						</div>	
+					</div>
+
+
+					<!-- Modal -->
+					<div class="modal fade offset-3 col-6 offset-3" id="md-ultimo-produto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLongTitle">Código do Produto/Serviço: <?= $UltimoProdutoCadastrado != null ? $UltimoProdutoCadastrado['id_prod'] : '- Nenhum orçamento cadastrado.';  ?></h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+
+									<div class="card">
+										<div class="card-body col">
+
+											<h5 class="card-title font-weight-bold text-dark">Descrição: <?= $UltimoProdutoCadastrado != null ? $UltimoProdutoCadastrado['descricao']  : '-'  ?></h5>	
+
+											<h6 class="card-subtitle mb-2 text-muted font-weight-bold text-dark">Tipo: <?= $UltimoProdutoCadastrado != null ? $UltimoProdutoCadastrado['tipo'] : '-' ?></h6>
+
+											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Unidade de medida: </span><span style="font-size: 22px"><?= $UltimoProdutoCadastrado != null ? $UltimoProdutoCadastrado['unidade_medida'] : '-' ?></span><br>
+
+											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Preço unitário (R$): </span><span style="font-size: 22px"><?= $UltimoProdutoCadastrado != null ? number_format($UltimoProdutoCadastrado['preco_unitario'], 2, ',' , '.') : '-' ?></span><br>
+
+											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Cadastrado em: </span><span style="font-size: 22px"><?= $UltimoProdutoCadastrado != null ? date_format(date_create($UltimoProdutoCadastrado['data_cadastro']), "d/m/Y") : '-' ?></span><br>
+
+											<br>
+
+											<div class="row">
+												<a href="/?pagina=editar-produto&id_prod=<?=$UltimoProdutoCadastrado['id_prod'] ?>&form=cadastrar-produto" class="card-link btn btn-danger  col-sm col-xs col">Editar</a>
+											</div>
+
+										</div>
+									</div>
+
+								</div>
+
+								<!--  <div class="modal-footer col-5">
+					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					        <button type="button" class="btn btn-primary">Save changes</button>
+					      </div> -->
+
+
+							</div>
+						</div>
 					</div>
 
 					<div class="form-row align-items-center">
@@ -104,6 +151,7 @@ if ($_SESSION['user'] == NULL) {
 									<option value="m">Metro</option>
 									<option value="m²">Metro quadrado</option>
 									<option value="R$ por km">Reais por km</option>
+									<option value="R$ por hora">Reais por hora</option>
 								</select>
 							</div>
 						</div>

@@ -26,9 +26,17 @@ require "model/Cidade.php";
 				return "-";
 			}
 		}
+
+		public function ultimoProduto(){
+			$ult_produto = new CadastrarProduto();
+			$ultimo = $ult_produto->ultimoProdutoCadastrado();
+			return $ultimo;
+		}
 	}
 
 	$crtl = new crtCadastrarProduto();
+
 	$mensagem_erro = $crtl->cadastrarProduto();
+	$UltimoProdutoCadastrado = $crtl->ultimoProduto();
 
 ?>

@@ -17,7 +17,7 @@ class CadastrarProduto {
 
 			$conn = new Conn();
 
-			$statement = "INSERT INTO tbl_produto (id_prod, descricao, tipo, unidade_medida, preco_unitario, data_cadastro) VALUES (:id_prod, :descricao, :tipo, :unidade_medida, :preco_unitario, CURDATE())";
+			$statement = "INSERT INTO tbl_produto (id_prod, descricao, tipo, unidade_medida, preco_unitario, data_cadastro) VALUES (:id_prod, :descricao, :tipo, :unidade_medida, :preco_unitario, CURRENT_TIMESTAMP)";
 
 			$dados_cadastrar = $conn->getConn()->prepare($statement);
 			$descricao = strtoupper($dados['ipt-descricao']);
@@ -64,6 +64,18 @@ class CadastrarProduto {
 				return false;
 			}
 
+		}
+
+
+		function ultimoProdutoCadastrado()
+		{
+			$conn = new Conn();
+
+			$statement = "SELECT id_prod, descricao, tipo, unidade_medida, preco_unitario, data_cadastro, usuario FROM tbl_produto ORDER BY data_cadastro DESC LIMIT 1";
+
+			$ultimo = $conn->getConn()->query($statement);
+			$resultado = $ultimo->fetch(PDO::FETCH_ASSOC);
+			return $resultado;
 		}
 	}
 ?>

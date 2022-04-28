@@ -94,7 +94,9 @@ if ($_SESSION['user'] == NULL) {
 											<span class="font-weight-bold text-dark" style="font-size: 20px">Itens: </span><span style="font-size: 22px"><?=  isset($totalizador_itens) ? $totalizador_itens['descricao'] : 'Orçamento não possui itens.' ?></span><br>
 
 											<span class="font-weight-bold text-dark" style="font-size: 20px">Valor Total (R$): </span><span style="font-size: 22px"><?= isset($totalizador_itens) ? number_format($totalizador_itens['valor_total'], 2, ',', '.') : 0 ?></span><br>
+
 											<span class="font-weight-bold text-dark" style="font-size: 20px">Desconto (R$): </span><span style="font-size: 22px"><?= isset($totalizador_itens) ? number_format($totalizador_itens['desconto'], 2, ',', '.') : 0 ?></span><br>
+											
 											<span class="font-weight-bold text-dark" style="font-size: 20px">Total a pagar (R$): </span><span style="font-size: 22px"><?= isset($totalizador_itens) ? number_format($totalizador_itens['total_pagar'], 2, ',', '.') : 0 ?></span><br>
 
 											<br>
