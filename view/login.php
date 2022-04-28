@@ -15,7 +15,7 @@
   <div class="div-login">
 
     <form class="form-signin bg-light border rounded" method="post">
-      <img class="mb-4" src="assets/abgoficial.png" alt="Abg Soluções" width="72" height="72">
+      <img class="mb-4" src="assets/universo.jpg" alt="Abg Soluções" width="300" height="150" style="border-radius: 20px;">
       <h1 class="h3 mb-3 font-weight-normal text">Área Restrita</h1>
 
       <div class="form-group">
