@@ -23,7 +23,7 @@ if ($_SESSION['user'] == NULL) {
 			<div class="container containerGeralImpressao">
 				<div class="row">
 					<div class="col divLogo">
-						<img src="../assets/logo.jpg" style="width: 100%; height: 100%;">
+						<img src="../assets/universo.jpg" style="width: 99%; height: 99%;">
 					</div>
 					<div class="col-6 divProposta p-3 text-center">
 						<h3>PROPOSTA</h3>

@@ -96,6 +96,8 @@ if ($_SESSION['user'] == NULL) {
 
 											<div class="row">
 												<a href="/?pagina=editar-produto&id_prod=<?=$UltimoProdutoCadastrado['id_prod'] ?>&form=cadastrar-produto" class="card-link btn btn-danger  col-sm col-xs col">Editar</a>
+
+												<a href="/?pagina=pesquisa-produto" class="card-link btn btn-info  col-sm col-xs col">Pesquisar Produtos</a>
 											</div>
 
 										</div>

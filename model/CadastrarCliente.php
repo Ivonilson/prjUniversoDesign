@@ -16,7 +16,7 @@ class CadastrarCliente
 
 			$conn = new Conn();
 
-			$statement = "INSERT INTO tbl_cliente (nome, cpf_cnpj, endereco, bairro, cidade_uf, tel_fixo, tel_cel, email, data_cadastro) VALUES (:nome, :cpf_cnpj, :endereco, :bairro, :cidade_uf, :tel_fixo, :tel_cel, :email, CURDATE())";
+			$statement = "INSERT INTO tbl_cliente (nome, cpf_cnpj, endereco, bairro, cidade_uf, tel_fixo, tel_cel, email, data_cadastro) VALUES (:nome, :cpf_cnpj, :endereco, :bairro, :cidade_uf, :tel_fixo, :tel_cel, :email, CURRENT_TIMESTAMP)";
 
 			$dados_cadastrar = $conn->getConn()->prepare($statement);
 
@@ -62,6 +62,18 @@ class CadastrarCliente
 			//print_r($dados_cadastrar->errorInfo());
 			return false;
 		}
+	}
+
+
+	function ultimoClienteCadastrado()
+	{
+		$conn = new Conn();
+
+		$statement = "SELECT id_cliente, nome, cpf_cnpj, endereco, bairro, cidade_uf, tel_fixo, tel_cel, email, data_cadastro, usuario FROM tbl_cliente ORDER BY data_cadastro DESC LIMIT 1";
+
+		$ultimo = $conn->getConn()->query($statement);
+		$resultado = $ultimo->fetch(PDO::FETCH_ASSOC);
+		return $resultado;
 	}
 }
 
