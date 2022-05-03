@@ -34,26 +34,27 @@ if ($_SESSION['user'] == NULL) {
 				</li>
 
 				<div class="col">
-					<a href="/?pagina=cadastrar-cidade" class="btn btn-danger text-light float-right font-weight-bold rounded" title="Incluir nova Cidade."><i class="fa fa-plus"></i> Cidade</a>
+					<a href="/?pagina=cadastrar-cidade" class="btn btn-danger text-light float-right font-weight-bold rounded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Incluir nova Cidade"><i class="fa fa-plus"></i> Cidade</a>
 				</div>
+				
 			</ol>
 
 			<div class="row justify-content-center">
 
 				<div class="col">
-					<a href="?pagina=cadastrar-orcamento" class="botoes-atalho-cad" title="Novo Orçamento"><i class="fa fa-plus " aria-hidden="true"></i> Orçamento </a>
+					<a href="?pagina=cadastrar-orcamento" class="botoes-atalho-cad" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Novo Orçamento"><i class="fa fa-plus " aria-hidden="true"></i> Orçamento </a>
 				</div>
 
 				<div class="col">
-					<a href="?pagina=cadastrar-os" class="botoes-atalho-cad" title="Nova O.S"><i class="fa fa-plus " aria-hidden="true"></i> O.S </a>
+					<a href="?pagina=cadastrar-os" class="botoes-atalho-cad" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Nova O.S"><i class="fa fa-plus " aria-hidden="true"></i> O.S </a>
 				</div>
 
 				<div class="col">
-					<a href="?pagina=cadastrar-produto" class="botoes-atalho-cad" title="Novo produto"><i class="fa fa-plus " aria-hidden="true"></i> Produto</a>
+					<a href="?pagina=cadastrar-produto" class="botoes-atalho-cad" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Novo produto"><i class="fa fa-plus " aria-hidden="true"></i> Produto</a>
 				</div>
 
 				<div class="col">
-					<a href="?pagina=cadastrar-notificacao" class="botoes-atalho-cad" title="Cadastrar notificação"><i class="fa fa-plus " aria-hidden="true"></i> Notificação</a>
+					<a href="?pagina=cadastrar-notificacao" class="botoes-atalho-cad" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Cadastrar notificação"><i class="fa fa-plus " aria-hidden="true"></i> Notificação</a>
 				</div>
 
 			</div>

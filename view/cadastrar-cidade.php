@@ -25,11 +25,11 @@
 					Registros
 				</li>
 				<li class="breadcrumb-item">
-					<mark class="p-2 rounded">Cadastrar Cidade</mark>
+					<mark class="p-2 font-weight-bold">Cadastrar Cidade</mark>
 				</li>
 
 				<div class="col">
-					<a href="/?pagina=cadastrar-cliente" class="btn btn-danger text-light float-right font-weight-bold rounded" title="Incluir novo Cliente."><i class="fa fa-plus"></i> Cliente</a>
+					<a href="/?pagina=cadastrar-cliente" class="btn btn-danger text-light float-right font-weight-bold rounded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Incluir novo Cliente"><i class="fa fa-plus"></i> Cliente</a>
 				</div>
 				
 			</ol>

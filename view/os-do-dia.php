@@ -38,15 +38,15 @@ if ($_SESSION['user'] == null) {
 			<div class="row">
 
 				<div class="col mb-1">
-					<a href="?pagina=cadastrar-orcamento" class="btn btn-secondary btn-block font-weight-bold" title="Novo Orçamento"><i class="fa fa-plus " aria-hidden="true"></i> Orçamento </a>
+					<a href="?pagina=cadastrar-orcamento" class="btn btn-secondary btn-block font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Novo Orçamento"><i class="fa fa-plus " aria-hidden="true"></i> Orçamento </a>
 				</div>
 
 				<div class="col">
-					<a href="?pagina=cadastrar-os" class="btn btn-secondary btn-block font-weight-bold" title="Nova O.S"><i class="fa fa-plus " aria-hidden="true"></i> O.S </a>
+					<a href="?pagina=cadastrar-os" class="btn btn-secondary btn-block font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Nova O.S"><i class="fa fa-plus " aria-hidden="true"></i> O.S </a>
 				</div>
 
 				<div class="col">
-					<a href="?pagina=cadastrar-cliente" class="btn btn-secondary btn-block font-weight-bold" title="Novo Cliente"><i class="fa fa-plus " aria-hidden="true"></i> Cliente </a>
+					<a href="?pagina=cadastrar-cliente" class="btn btn-secondary btn-block font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Novo Cliente"><i class="fa fa-plus " aria-hidden="true"></i> Cliente </a>
 				</div>
 			</div>
 

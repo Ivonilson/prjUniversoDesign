@@ -31,24 +31,28 @@ if ($_SESSION['user'] == NULL) {
 					<mark class="p-2 font-weight-bold">Cadastrar Orçamento</mark>
 				</li>
 
+				<div class="col">
+					<a href="/?pagina=pesquisa-por-orcamento" class="btn btn-danger text-light float-right font-weight-bold rounded" title="Pesquisar Orçamentos"><i class="fa fa-search"></i> Orçamento</a>
+				</div>
+
 			</ol>
 
 			<div class="row justify-content-center">
 
 				<div class="col">
-					<a href="?pagina=cadastrar-os" class="botoes-atalho-cad" title="Nova O.S"><i class="fa fa-plus " aria-hidden="true"></i> O.S </a>
+					<a href="?pagina=cadastrar-os" class="botoes-atalho-cad" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Nova O.S"><i class="fa fa-plus " aria-hidden="true"></i> O.S </a>
 				</div>
 
 				<div class="col">
-					<a href="?pagina=cadastrar-cliente" class="botoes-atalho-cad" title="Novo Cliente"><i class="fa fa-plus " aria-hidden="true"></i> Cliente </a>
+					<a href="?pagina=cadastrar-cliente" class="botoes-atalho-cad" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Novo Cliente"><i class="fa fa-plus " aria-hidden="true"></i> Cliente </a>
 				</div>
 
 				<div class="col">
-					<a href="?pagina=cadastrar-produto" class="botoes-atalho-cad" title="Novo Produto"><i class="fa fa-plus " aria-hidden="true"></i> Produto </a>
+					<a href="?pagina=cadastrar-produto" class="botoes-atalho-cad" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Novo Produto"><i class="fa fa-plus " aria-hidden="true"></i> Produto </a>
 				</div>
 
 				<div class="col">
-					<a href="?pagina=cadastrar-notificacao" class="botoes-atalho-cad" title="Cadastrar Notificação"><i class="fa fa-plus " aria-hidden="true"></i> Notificação </a>
+					<a href="?pagina=cadastrar-notificacao" class="botoes-atalho-cad" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Cadastrar Notificação"><i class="fa fa-plus " aria-hidden="true"></i> Notificação </a>
 				</div>
 
 			</div>

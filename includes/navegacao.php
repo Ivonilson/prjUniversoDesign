@@ -17,7 +17,7 @@
 						<span class="nav-link-text">Registros</span>
 					</a>
 
-					<ul class="sidenav-second-level collapse" id="collapseRegistro" data-parent="#linksaccordion" style="background-color: #FFFFF0">
+					<ul class="sidenav-second-level collapse" id="collapseRegistro" data-parent="#linksaccordion" style="background-color: #F5FFFA">
 
 						<li>
 							<a href="/?pagina=cadastrar-os" target="opcoes-menu" >Cadastrar O.S.</a>
@@ -47,7 +47,10 @@
 						<i  class="fa fa-search" aria-hidden="true"></i>
 						<span class="nav-link-text">Consultas</span>
 					</a>
-					<ul class="sidenav-second-level collapse" id="collapsePesquisas" data-parent="#linksaccordion" style="background-color: #FFFFF0">
+					<ul class="sidenav-second-level collapse" id="collapsePesquisas" data-parent="#linksaccordion" style="background-color: #F5FFFA">
+						<li>
+							<a href="/?pagina=pesquisa-por-orcamento">Orçamentos</a>
+						</li>
 						<li>
 							<a href="/?pagina=os-do-dia">O.S(s) Vencendo Hoje</a>
 						</li>
@@ -59,9 +62,6 @@
 						</li>
 						<li>
 							<a href="/?pagina=pesquisa-por-os">O.S por código</a>
-						</li>
-						<li>
-							<a href="/?pagina=pesquisa-por-orcamento">Orçamentos</a>
 						</li>
 						<li>
 							<a href="/?pagina=pesquisa-cliente">Clientes</a>
@@ -81,7 +81,7 @@
 						<span class="nav-link-text">Agendamentos</span>
 					</a>
 
-					<ul class="sidenav-second-level collapse" id="collapseListas" data-parent="#linksaccordion" style="background-color: #FFFFF0">
+					<ul class="sidenav-second-level collapse" id="collapseListas" data-parent="#linksaccordion" style="background-color: #F5FFFA">
 
 						<li>
 							<a href="/?pagina=lista-agendamentos">Visitas agendadas</a>

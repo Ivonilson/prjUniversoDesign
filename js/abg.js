@@ -120,7 +120,7 @@ function addItem() {
 	iptTotalPagar.setAttribute('readonly', '');
 
 	let iconeExcluir = document.createElement('button');
-	iconeExcluir.className = 'form-control text-center btn btn-danger text-light';
+	iconeExcluir.className = 'form-control text-center btn btn-danger text-light btn-block';
 	iconeExcluir.setAttribute('type', 'button');
 	//iconeExcluir.setAttribute('title' , 'Excluir');
 	iconeExcluir.setAttribute('id', 'botaoExcluir');
@@ -476,7 +476,7 @@ $(document).ready(function () {
 	$("#btnAdicionar").click(function () {
 		let divItens = document.querySelector("#itens");
 		divItens.setAttribute("class", "col-12 p-2");
-		divItens.setAttribute("style", "background-color:#FFFFF0");
+		divItens.setAttribute("style", "background-color: #F5F5F5");
 	});
 });
 
@@ -497,7 +497,7 @@ $(document).ready(function () {
 	//background_tela_cadastro.setAttribute("style",  "background-image: url('../assets/logo.png');");
 
 	let background_form_cad = document.querySelector(".background-form-cadastro");
-	background_form_cad.setAttribute("style", "background-color: #FFFFF0; border-style: outset; padding-bottom: 3px");
+	background_form_cad.setAttribute("style", "background-color: #F8F8FF; border-style: outset; padding-bottom: 3px");
 
 	let botoes_gravar_cad = document.querySelector("#botoesGravarCad");
 	botoes_gravar_cad.setAttribute("class", "btn btn-lg btn-secondary btn-block text-white font-weight-bold rounded")
@@ -523,7 +523,7 @@ $(document).ready(function () {
 	//background_tela_cadastro.setAttribute("style",  "background-image: url('../assets/logo.png');");
 
 	let background_form_cons = document.querySelector(".background-form-cons");
-	background_form_cons.setAttribute("style", "background-color: #FFFFF0; border-style: outset; padding-bottom: 3px");
+	background_form_cons.setAttribute("style", "background-color: #F5F5F5; border-style: outset; padding-bottom: 3px");
 
 	/*Setando as rows das tabelas propriedades das tabelas de consulta*/
 	let row_tbl_consulta = document.querySelector("#row-tbl-consulta");
@@ -639,3 +639,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 confirmarDelecaoItem();
 confirmarDelecaoOrcamento();
+
+//Inicializando Tooltips
+const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+});
