@@ -30,6 +30,11 @@ if ($_SESSION['user'] == NULL) {
 				<li class="breadcrumb-item">
 					<mark class="p-2 font-weight-bold">Ordens de serviço por data de agendamento</mark>
 				</li>
+
+				<div class="col">
+					<a href="/?pagina=cadastrar-os" class="btn btn-danger text-light float-right font-weight-bold rounded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Incluir nova O.S."><i class="fa fa-plus"></i> O.S.</a>
+				</div>
+
 			</ol>
 
 			<div class="row mb-3">

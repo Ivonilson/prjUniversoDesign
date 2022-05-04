@@ -550,7 +550,7 @@ $(document).ready(function () {
 	background_tela_edicao.setAttribute("style", "background-color: #DCDCDC");
 
 	let background_form_edicao = document.querySelector(".background-form-edicao");
-	background_form_edicao.setAttribute("style", "background-color: #FFFFF0; border-style: outset; padding-bottom: 3px");
+	background_form_edicao.setAttribute("style", "background-color: #EEE9E9; border-style: outset; padding-bottom: 3px");
 
 	/*background jumbotron telas de edição*/
 	let background_jumbotron_telas_ed = document.querySelector("#jumbotron_telas_edicao");
@@ -560,7 +560,7 @@ $(document).ready(function () {
 	/*background das rows dos forms de edição*/
 	let background_row_form_edicao = document.querySelector("#row-form-edicao");
 	background_row_form_edicao.setAttribute("class", "row");
-	background_row_form_edicao.setAttribute("style", "background-color: #E6E6FA");
+	background_row_form_edicao.setAttribute("style", "background-color: #E8E8E8");
 
 
 	/*botões de gravar alterações de edições*/

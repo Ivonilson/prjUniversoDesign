@@ -35,4 +35,7 @@ require "model/Cidade.php";
 		$mensagem_erro = "Um Orçamento precisa ser selecionado para a ordem de serviço. Selecione um orçamento e Tente Novamente.";
 	}
 
+	$ultimaOS = new CadastrarOs();
+	$UltimaOsCadastrada = $ultimaOS->ultimaOsCadastrada();
+
 ?>

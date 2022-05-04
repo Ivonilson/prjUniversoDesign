@@ -33,7 +33,7 @@ if ($_SESSION['user'] == NULL) {
 				</li>
 
 				<div class="col">
-					<a href="/?pagina=cadastrar-orcamento" class="btn btn-danger text-light float-right font-weight-bold rounded" title="Incluir novo Orçamento"><i class="fa fa-plus"></i> Orçamento</a>
+					<a href="/?pagina=cadastrar-orcamento" class="btn btn-danger text-light float-right font-weight-bold rounded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Incluir novo Orçamento"><i class="fa fa-plus"></i> Orçamento</a>
 				</div>
 
 			</ol>

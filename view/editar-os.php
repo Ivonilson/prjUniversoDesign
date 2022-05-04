@@ -108,7 +108,7 @@ if ($_SESSION['user'] == NULL) {
 												AGENDAR
 											</div>
 										</div>
-										<input type="date" class="form-control" name="ipt-data-agendamento" value="<?= $registro->data_agendamento ?>">
+										<input type="date" class="form-control" name="ipt-data-agendamento" value="<?= date_format(date_create($registro->data_agendamento), 'Y-m-d') ?>" >
 									</div>
 								</div>
 
@@ -211,16 +211,10 @@ if ($_SESSION['user'] == NULL) {
 										<h5><strong><?= $mensagem_erro ?></strong></h5>
 									</div>
 
-									<?php
-									if ($_GET['form']  == 'os-do-dia' || $_GET['form'] == 'lista-agendamentos') {
-									?>
-
-										<a href="/?pagina=<?= $_GET['form'] ?>" class="btn btn-success btn-lg mt-1 mb-1">Retornar</a>
-
-									<?php
-									}
-									?>
-
+									<script>
+										setInterval(function() {
+										window.location.href = "/?pagina=<?= $_GET['form'] ?>"}, 3000)
+									</script>
 
 								<?php
 

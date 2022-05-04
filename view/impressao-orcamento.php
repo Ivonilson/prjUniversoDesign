@@ -141,7 +141,7 @@ if ($_SESSION['user'] == NULL) {
 							?>
 									<tr class="table-light">
 
-										<td class="text-dark" style="border: 1px solid black"><?= 'SERVIÇOS/INSTALAÇÃO' ?></td>
+										<td class="text-dark" style="border: 1px solid black"><?= 'SERVIÇOS/INSTALAÇÕES' ?></td>
 										<td class="text-dark" style="border: 1px solid black"><?= '-' ?></td>
 										<td class="text-dark" style="border: 1px solid black"><?= '-' ?></td>
 										<td class="text-dark" style="border: 1px solid black"><?= number_format($resultadoServico[0]['valor_total_serv'], 3, ",", ".") ?></td>

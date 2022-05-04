@@ -30,6 +30,11 @@ if ($_SESSION['user'] == NULL) {
 				<li class="breadcrumb-item">
 					<mark class="p-2 font-weight-bold">Clientes</mark>
 				</li>
+
+				<div class="col">
+					<a href="/?pagina=cadastrar-cliente" class="btn btn-danger text-light float-right font-weight-bold rounded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Incluir novo cliente"><i class="fa fa-plus"></i> Cliente</a>
+				</div>
+
 			</ol>
 
 			<div class="row mb-3">

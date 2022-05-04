@@ -82,5 +82,16 @@ class CadastrarOS {
 
 		}
 
+		function ultimaOsCadastrada()
+		{
+			$conn = new Conn();
+
+			$statement = "SELECT cod_os, id_orcamento, contato, endereco, cidade_uf, data_cadastro, data_agendamento FROM tbl_os ORDER BY data_cadastro DESC LIMIT 1";
+
+			$ultimo = $conn->getConn()->query($statement);
+			$resultado = $ultimo->fetch(PDO::FETCH_ASSOC);
+			return $resultado;
+		}
+
 	}
 ?>
