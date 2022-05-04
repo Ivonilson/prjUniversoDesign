@@ -8,4 +8,5 @@
 <script src="../js/sb-admin.min.js"></script>
 <script src="../js/sb-admin-datatables.min.js"></script>
 <script src="../js/jquery.mask.js"></script>
+<script src="../js/blockUI.js"></script>
 <script src="../js/abg.js"></script>

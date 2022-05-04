@@ -33,6 +33,7 @@ if ($_SESSION['user'] == null) {
 				<li class="breadcrumb-item">
 					<mark class="p-2 font-weight-bold">O.S(s) do dia</mark>
 				</li>
+				
 			</ol>
 
 			<div class="row">

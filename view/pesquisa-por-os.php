@@ -77,7 +77,7 @@ if ($_SESSION['user'] == NULL) {
 						<br>
 
 						<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 mb-3">
-							<input type="submit" value="Buscar" class="btn btn-lg btn-info btn-block text-white font-weight-bold rounded">
+							<input type="submit" value="Buscar" class="btn btn-lg btn-info btn-block text-white font-weight-bold rounded" id="botoesCons">
 						</div>
 
 					</form>
