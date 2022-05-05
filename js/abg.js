@@ -646,7 +646,7 @@ const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 });
 
-$(document).ready(function() { 
+/*$(document).ready(function() { 
     $('#botoesCons').click(function() { 
         $.blockUI({ css: { 
             border: 'none', 
@@ -664,4 +664,33 @@ $(document).ready(function() {
         });
 
     }); 
+}); */
+
+$(document).ready(function() { 
+    $('#botoesCons').click(function() { 
+        $.blockUI({ overlayCSS: { backgroundColor: '#2F4F4F'} }); 
+ 
+        //setTimeout($.unblockUI, 2000); 
+        $(document).onload(function(){
+        	$.unblockUI;
+        }); 
+    }); 
 }); 
+
+/*$(document).ready(function() { 
+    $('#botoesCons').click(function() { 
+        $.blockUI({ 
+            message: $('#displayBox'), 
+            css: { 
+                top:  ($(window).height() - 400) /2 + 'px', 
+                left: ($(window).width() - 400) /2 + 'px', 
+                width: '400px' 
+            } 
+        }); 
+ 
+       //setTimeout($.unblockUI, 2000); 
+        $(document).onload(function(){
+        	$.unblockUI;
+        });
+    }); 
+}); */

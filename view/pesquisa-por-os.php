@@ -70,7 +70,7 @@ if ($_SESSION['user'] == NULL) {
 						<div class="row">
 							<div class="input-group-prepend m-2 col-lg-5 col-md-5 col-sm-12 col-xs-12">
 								<div class="input-group-text">Número da O.S.</div>
-								<input type="text" name="ipt-cod-os" required class="form-control"><span>
+								<input type="text" name="ipt-cod-os" class="form-control"><span>
 							</div>
 						</div>
 
