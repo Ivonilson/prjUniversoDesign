@@ -13,6 +13,13 @@ class crtOsDoDia {
 	}
 
 	$crtl = new crtOsDoDia();
+	$deletar = new OsDoDia();
+
+	if(isset($_POST['ipt-cod-delete']) && $_POST['ipt-cod-delete'] != '' && $_POST['ipt-confirmacao'] == 'true'){
+		$deletar->deletarOs();
+	}
+
+
 	$crtl->osDoDia();
 
 ?>

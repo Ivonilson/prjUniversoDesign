@@ -12,4 +12,14 @@ class crtPesquisaProduto {
 	}
 }
 
+$crtl = new crtPesquisaProduto();
+$deletar = new PesquisaProduto();
+
+
+if(isset($_POST['ipt-cod-delete']) && $_POST['ipt-cod-delete'] != '' && $_POST['ipt-confirmacao'] == 'true'){
+	$deletar->deletarProduto();
+}
+
+$crtl->pesquisaProduto();
+
 ?>

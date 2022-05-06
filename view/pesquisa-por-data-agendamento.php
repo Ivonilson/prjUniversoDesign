@@ -12,6 +12,7 @@ if ($_SESSION['user'] == NULL) {
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Pesquisa por data de agendamento</title>
 	<?php require_once 'includes/bootstrap-css.php'; ?>
+	<script src="../js/abg2.js"></script>
 </head>
 
 <body class="bg-dark fixed-nav sticky-footer" id="page-top">
@@ -163,9 +164,9 @@ if ($_SESSION['user'] == NULL) {
 										<td align="center"><a href="/?pagina=editar-os&cod_os=<?= $value['cod_os'] ?>&form=pesquisa-por-data-receb" title="Atualizar" target=""><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
 										<!--<td align="center"><a href="/?pagina=historico&cod_os=<?= $value['cod_os'] ?>&form=pesquisa-por-data-entrega" title="Histórico" target="_blank"><i class="fa fa-history" aria-hidden="true"></a></td>-->
 									</tr>
-									<script>
-										verificaStatus()
-									</script>
+
+									<script>statusOs();</script>
+									
 							<?php
 									$conexao = null;
 								}
@@ -173,6 +174,7 @@ if ($_SESSION['user'] == NULL) {
 								echo "<span class='text-danger'></span><br><br>";
 							}
 							?>
+
 						</tbody>
 					</table>
 					<br>
@@ -181,10 +183,12 @@ if ($_SESSION['user'] == NULL) {
 				</div>
 			</div>
 		</div>
+
+		<?php require_once 'includes/bootstrap-js.php'; ?>
+
 		<!-- rodapé -->
 		<?php require_once 'includes/rodape.php'; ?>
 	</div>
-	<?php require_once 'includes/bootstrap-js.php'; ?>
 
 	<!-- BARRA DE PROGRESSO DOS SERVIÇOS EXECUTADOS -->
 	<script type="text/javascript">

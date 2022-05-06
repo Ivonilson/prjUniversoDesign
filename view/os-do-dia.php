@@ -13,8 +13,7 @@ if ($_SESSION['user'] == null) {
 	<link rel="stylesheet" type="text/css" href="../bootstrap-4.1.3/css/bootstrap.min.css">
 	<!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.bootstrap.min.css"> -->
 	<?php require_once 'includes/bootstrap-css.php'; ?>
-
-
+	<script src="../js/abg2.js"></script>
 </head>
 
 <body class="bg-dark fixed-nav sticky-footer" id="page-top">
@@ -79,8 +78,9 @@ if ($_SESSION['user'] == null) {
 								<th>Situação Pagto.</th>
 								<th>Status Serviço</th>
 								<th>Observações</th>
-								<th>Atualizar O.S</th>
 								<th>Visualizar Itens Orc.</th>
+								<th>Atualizar</th>
+								<th>Deletar</th>
 							</tr>
 						</thead>
 						<tfoot class="thead-light">
@@ -93,8 +93,9 @@ if ($_SESSION['user'] == null) {
 								<th>Situação Pagto.</th>
 								<th>Status Serviço</th>
 								<th>Observações</th>
-								<th>Atualizar O.S</th>
 								<th>Visualizar Itens Orc.</th>
+								<th>Atualizar</th>
+								<th>Deletar</th>
 							</tr>
 						</tfoot>
 						<tbody>
@@ -124,16 +125,31 @@ if ($_SESSION['user'] == null) {
 											<td><?= date_format(date_create($value['data_cadastro']), "d/m/Y") ?></td>
 											<td><?= date_format(date_create($value['data_agendamento']), "d/m/Y") ?></td>
 											<td><?= $value['sit_pagamento'] ?></td>
-											<td class="status"><?= $value['status'] ?></td>
+
+											<td class="status"><?= $value['status']?></td>
+
 											<td class="text-justify"><?= $value['observacao'] ?></td>
+
+																						<td align="center">
+											<a href="/?pagina=itens-orcamento&id_orcamento=<?= $value['numeroOrcamento'] ?>" title="Itens orçamento" target="_blank" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></a>
+											</td>
+
 											<td align="center"><a href="/?pagina=editar-os&cod_os=<?= $value['cod_os'] ?>&form=os-do-dia" title="Editar"><i class="fa fa-pencil" aria-hidden="true"></a></td>
 
 											<td align="center">
-												<a href="/?pagina=itens-orcamento&id_orcamento=<?= $value['numeroOrcamento'] ?>" title="Itens orçamento" target="_blank" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></a>
+												<form method="post">
+													<input type="hidden" name="ipt-cod-delete" value="<?=  $value['cod_os'] ?>">
+
+													<input type="hidden" name="ipt-confirmacao" id="ipt-confirma">
+
+													<input type="submit" class="btn btn-danger" value='Excluir' name="btnDeletarOs" id="btnDeletarItem">
+												</form>
 											</td>
 
 											<!--<td align="center"><a href="/?pagina=historico&cod_os=<?= $value['cod_os'] ?>&form=os-do-dia" title="Histórico" target="_blank"><i class="fa fa-history" aria-hidden="true"></a></td>-->
 										</tr>
+
+									<script>statusOs()</script>
 
 							<?php
 									}
@@ -153,11 +169,12 @@ if ($_SESSION['user'] == null) {
 			</div>
 			<!-- </div> -->
 		</div>
+
+		<?php require_once 'includes/bootstrap-js.php'; ?>
+
 		<!-- rodapé -->
 		<?php require_once 'includes/rodape.php'; ?>
 	</div>
-
-	<?php require_once 'includes/bootstrap-js.php'; ?>
 
 	<!-- <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>-->
 
@@ -168,6 +185,6 @@ if ($_SESSION['user'] == null) {
 		//BARRA DE PROGRESSO DOS SERVIÇOS EXECUTADOS
 		configurarBarra();
 	</script>
-
+	
 </body>
 </html>

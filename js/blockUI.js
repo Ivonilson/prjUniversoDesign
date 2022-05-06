@@ -147,7 +147,7 @@
 			overlayCSS:  {
 				backgroundColor:	'#000',
 				opacity:			0.6,
-				cursor:				'wait'
+				cursor:				''
 			},
 
 			// style to replace wait cursor before unblocking to correct issue

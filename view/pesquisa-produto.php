@@ -103,6 +103,7 @@ if ($_SESSION['user'] == NULL) {
 								<!--<th>Estoque</th>-->
 								<th>Data de Cadastro</th>
 								<th>Atualizar</th>
+								<th>Deletar</th>
 							</tr>
 						</thead>
 						<tfoot class="thead-light">
@@ -114,6 +115,7 @@ if ($_SESSION['user'] == NULL) {
 								<!--<th>Estoque</th>-->
 								<th>Data de Cadastro</th>
 								<th>Atualizar</th>
+								<th>Deletar</th>
 							</tr>
 						</tfoot>
 						<tbody>
@@ -131,6 +133,17 @@ if ($_SESSION['user'] == NULL) {
 										<!--<td><?= number_format($value['quantidade_estoque'], 2, ',', '.') ?></td>-->
 										<td><?= date_format(date_create($value['data_cadastro']), "d/m/Y") ?></td>
 										<td align="center"><a href="/?pagina=editar-produto&id_prod=<?= $value['id_prod'] ?>&form=pesquisa-produto" title="Atualizar"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+
+										<td align="center">
+											<form method="post">
+												<input type="hidden" name="ipt-cod-delete" value="<?= $value['id_prod'] ?>">
+
+												<input type="hidden" name="ipt-confirmacao" id="ipt-confirma">
+
+												<input type="submit" class="btn btn-danger" value='Excluir' name="btnDeletarProduto" id="btnDeletarItem">
+											</form>
+										</td>
+
 										<!--<td align="center"><a href="/?pagina=historico&cod_os=<?= $value['cod_os'] ?>&form=pesquisa-por-data-receb" title="Histórico" target="_blank"><i class="fa fa-history" aria-hidden="true"></a></td>-->
 									</tr>
 

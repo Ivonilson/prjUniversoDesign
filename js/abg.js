@@ -1,42 +1,3 @@
-$(function(){
-	let valor = document.querySelector(".status").innerHTML;
-
-	switch (valor) {
-		case "FINALIZADO":
-			document.querySelector(".status").className = "bg-success text-white";
-			break;
-		case "CANCELADA":
-			document.querySelector(".status").className = "bg-secondary text-white";
-			break;
-		case "PENDENTE":
-			document.querySelector(".status").className = "bg-danger text-white";
-			break;
-		default:
-			document.querySelector(".status").className = "bg-secondary text-white";
-	}
-});
-
-function verificaStatusLista() {
-
-	let valor = document.querySelector(".statusLista").innerHTML;
-
-	switch (valor) {
-		case "PENDENTE":
-			document.querySelector(".statusLista").className = "text-danger";
-			break;
-		default:
-			document.querySelector(".statusLista").className = "text-danger";
-			break;
-	}
-}
-
-/*$(document).ready(function(){
-	$(".valor").on("input", function(){
-		var textoDigitado = $(this).val();
-		var inputCusto = $(this).attr("custo");
-		$("#"+ inputCusto).val(textoDigitado);
-	})
-})*/
 
 function Redirect() {
 	setTimeout("location.reload(true);", 600000);
@@ -550,7 +511,7 @@ $(document).ready(function () {
 	background_tela_edicao.setAttribute("style", "background-color: #DCDCDC");
 
 	let background_form_edicao = document.querySelector(".background-form-edicao");
-	background_form_edicao.setAttribute("style", "background-color: #EEE9E9; border-style: outset; padding-bottom: 3px");
+	background_form_edicao.setAttribute("style", "background-color: #FFFFF0; border-style: outset; padding-bottom: 3px");
 
 	/*background jumbotron telas de edição*/
 	let background_jumbotron_telas_ed = document.querySelector("#jumbotron_telas_edicao");
@@ -560,7 +521,7 @@ $(document).ready(function () {
 	/*background das rows dos forms de edição*/
 	let background_row_form_edicao = document.querySelector("#row-form-edicao");
 	background_row_form_edicao.setAttribute("class", "row");
-	background_row_form_edicao.setAttribute("style", "background-color: #E8E8E8");
+	background_row_form_edicao.setAttribute("style", "background-color: #E6E6FA");
 
 
 	/*botões de gravar alterações de edições*/
@@ -646,26 +607,6 @@ const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 });
 
-/*$(document).ready(function() { 
-    $('#botoesCons').click(function() { 
-        $.blockUI({ css: { 
-            border: 'none', 
-            padding: '15px', 
-            backgroundColor: '#000', 
-            '-webkit-border-radius': '10px', 
-            '-moz-border-radius': '10px', 
-            opacity: .5, 
-            color: '#fff' 
-        } }); 
- 
-        //setTimeout($.unblockUI, 2000); 
-        $(document).onload(function(){
-        	$.unblockUI;
-        });
-
-    }); 
-}); */
-
 $(document).ready(function() { 
     $('#botoesCons').click(function() { 
         $.blockUI({ overlayCSS: { backgroundColor: '#2F4F4F'} }); 
@@ -676,21 +617,3 @@ $(document).ready(function() {
         }); 
     }); 
 }); 
-
-/*$(document).ready(function() { 
-    $('#botoesCons').click(function() { 
-        $.blockUI({ 
-            message: $('#displayBox'), 
-            css: { 
-                top:  ($(window).height() - 400) /2 + 'px', 
-                left: ($(window).width() - 400) /2 + 'px', 
-                width: '400px' 
-            } 
-        }); 
- 
-       //setTimeout($.unblockUI, 2000); 
-        $(document).onload(function(){
-        	$.unblockUI;
-        });
-    }); 
-}); */

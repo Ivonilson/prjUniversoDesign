@@ -12,7 +12,7 @@ if ($_SESSION['user'] == NULL) {
 	<title>Agendamentos</title>
 	<?php require_once 'includes/bootstrap-css.php'; ?>
 
-	<script src="../js/abg.js"></script>
+	<script src="../js/abg2.js"></script>
 </head>
 
 <body class="bg-dark fixed-nav sticky-footer" id="page-top">
@@ -48,9 +48,9 @@ if ($_SESSION['user'] == NULL) {
 					?>
 						<div class="card-header">
 							<i class="fa fa-table"></i> Agendamentos - <strong>UNIVERSO DESIGN</strong> - <?php $hoje = date('d/m/Y');
-																											echo $hoje;
-																											echo " (última atualização às " . date('H') . " h " . date('i') . " m)";
-																											echo "<br>TOTAL: <strong>" . $contador[0]['total'] . "</strong>"; ?>
+								echo $hoje;
+								echo " (última atualização às " . date('H') . " h " . date('i') . " m)";
+								echo "<br>TOTAL: <strong>" . $contador[0]['total'] . "</strong>"; ?>
 
 							<!-- DISPARADOR DO MODAL DO WHATSAPP-->
 							<button type="button" class="btn btn-success float-right p-2 border-rouded" data-toggle="modal" data-target="#modalListaAgendamento">
@@ -107,7 +107,7 @@ if ($_SESSION['user'] == NULL) {
 										<td><?= $value['endereco'] ?></td>
 										<td><?= $value['cidade_uf'] ?></td>
 										<td><?= date_format(date_create($value['data_agendamento']), "d/m/Y") ?></td>
-										<td><?= $value['sit_pagamento'] ?></td>
+										<td><strong ><?= $value['sit_pagamento'] ?></strong></td>
 										<td><strong class="statusLista"><?= $value['status'] ?></strong></td>
 										<td><?= $value['observacao'] ?></td>
 										<td align="center" id="esconder"><a href="/?pagina=editar-os&cod_os=<?= $value['cod_os'] ?>&form=lista-agendamentos" title="Editar"><i class="fa fa-pencil" aria-hidden="true"></a></td>

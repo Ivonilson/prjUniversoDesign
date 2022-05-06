@@ -13,7 +13,13 @@ class crtPesquisaCliente {
 	}
 }
 
+$deletar = new PesquisaCliente();
 $crtl = new crtPesquisaCliente();
+
+if(isset($_POST['ipt-cod-delete']) && $_POST['ipt-cod-delete'] != '' && $_POST['ipt-confirmacao'] == 'true'){
+	$deletar->deletarCliente();
+}
+
 $crtl->pesquisaCliente();
 
 ?>

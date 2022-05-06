@@ -21,6 +21,43 @@ class OsDoDia {
 		}
 
 	}
+
+
+	function deletarOs() {
+
+		try {
+
+			$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+			//$form = filter_input(INPUT_POST, 'formEditarIntesOrcamento');
+
+			if (!empty($dados['btnDeletarOs'])) {
+				unset($dados['btnDeletarOs']);
+			}
+
+				$queryDeletar = "DELETE FROM tbl_os WHERE id_os = :id_os";
+
+				$conn = new Conn();
+				$os = $conn->getConn()->prepare($queryDeletar);
+
+				$os->bindParam(':id_os', $dados['ipt-cod-delete']);
+
+				$os->execute();
+
+			} catch(PDOException $erro){
+				//echo "ERRO: ".$erro->getMessage();
+			}
+
+			if($os->rowCount()) {
+				//echo "window.location.href = '/?pagina=pesquisa-cliente&palavra_chave=".$palavra_chave;
+				echo "<script>alert('Registro DELETADO com SUCESSO.')</script>";
+				
+				
+			} else {
+				echo "<script>alert('ERRO ao DELETAR registro. Verifique se o cliente não está vinculado com algum orçamento. Caso esteja, a desvinculação é necessária para possibilitar a deleção do mesmo.')</script>";
+				//print_r($os->errorInfo());
+			}
+
+	}
 }
 
 ?>
