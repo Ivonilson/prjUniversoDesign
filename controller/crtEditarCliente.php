@@ -26,3 +26,5 @@ require "model/Cidade.php";
 	
 	$mensagem_erro = $crtl->editarCliente();
 	$registro = $usuario->registroCliente($id_cliente);
+
+?>

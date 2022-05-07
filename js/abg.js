@@ -1,44 +1,3 @@
-function verificaStatus() {
-
-	let valor = document.querySelector(".status").innerHTML;
-
-	switch (valor) {
-		case "FINALIZADO":
-			document.querySelector(".status").className = "bg-success text-white";
-			break;
-		case "CANCELADA":
-			document.querySelector(".status").className = "bg-secondary text-white";
-			break;
-		case "PENDENTE":
-			document.querySelector(".status").className = "bg-danger text-white";
-			break;
-		default:
-			document.querySelector(".status").className = "bg-secondary text-white";
-	}
-
-}
-
-function verificaStatusLista() {
-
-	let valor = document.querySelector(".statusLista").innerHTML;
-
-	switch (valor) {
-		case "PENDENTE":
-			document.querySelector(".statusLista").className = "text-danger";
-			break;
-		default:
-			document.querySelector(".statusLista").className = "text-danger";
-			break;
-	}
-}
-
-/*$(document).ready(function(){
-	$(".valor").on("input", function(){
-		var textoDigitado = $(this).val();
-		var inputCusto = $(this).attr("custo");
-		$("#"+ inputCusto).val(textoDigitado);
-	})
-})*/
 
 function Redirect() {
 	setTimeout("location.reload(true);", 600000);
@@ -71,7 +30,7 @@ function addItem() {
 
 
 	let produto = document.getElementById('select-prod').value;
-	let valor_produto = produto.split('/', 2);
+	let valor_produto = produto.split('/', 3);
 	let nome_produto = produto.split('/', 1);
 	//produto = produto.split('/', 1);
 	let qtdItens = document.getElementById('inlineFormInputQuant').value;
@@ -122,7 +81,7 @@ function addItem() {
 	iptTotalPagar.setAttribute('readonly', '');
 
 	let iconeExcluir = document.createElement('button');
-	iconeExcluir.className = 'form-control text-center btn btn-danger text-light';
+	iconeExcluir.className = 'form-control text-center btn btn-danger text-light btn-block';
 	iconeExcluir.setAttribute('type', 'button');
 	//iconeExcluir.setAttribute('title' , 'Excluir');
 	iconeExcluir.setAttribute('id', 'botaoExcluir');
@@ -205,7 +164,7 @@ function addItem() {
 	if (altura > 0) {
 		let subtotal = (((parseFloat(largura) * parseFloat(altura)) * parseFloat(valor_produto[1])) * parseFloat(qtdItens));
 		ipt.value = nome_produto;
-		iptProduto.value = nome_produto + ' (' + largura + ' larg. X ' + altura + ' alt. = ' + parseFloat(largura) * parseFloat(altura) + ' m²)';
+		iptProduto.value = nome_produto + ' (' + largura + ' larg. X ' + altura + ' alt. = ' + parseFloat(largura) * parseFloat(altura) + ' m²)' +  valor_produto[2];
 		iptValorUnit.value = valor_produto[1];
 		iptQuant.value = qtdItens;
 		let desconto = document.getElementById('percentualDesconto').value / 100;
@@ -230,7 +189,7 @@ function addItem() {
 	} else {
 		let subtotal = parseFloat(qtdItens) * parseFloat(valor_produto[1]);
 		ipt.value = nome_produto;
-		iptProduto.value = nome_produto;
+		iptProduto.value = nome_produto + valor_produto[2];
 		iptValorUnit.value = valor_produto[1];
 		iptQuant.value = qtdItens;
 		//ipt.value += ' / Valor unit: ' + valor_produto[1] + ' / Qtd: '+ qtdItens + ' / Total sem desc.: ' + subtotal.toFixed(2);
@@ -478,7 +437,7 @@ $(document).ready(function () {
 	$("#btnAdicionar").click(function () {
 		let divItens = document.querySelector("#itens");
 		divItens.setAttribute("class", "col-12 p-2");
-		divItens.setAttribute("style", "background-color:#FFFFF0");
+		divItens.setAttribute("style", "background-color: #F5F5F5");
 	});
 });
 
@@ -499,7 +458,7 @@ $(document).ready(function () {
 	//background_tela_cadastro.setAttribute("style",  "background-image: url('../assets/logo.png');");
 
 	let background_form_cad = document.querySelector(".background-form-cadastro");
-	background_form_cad.setAttribute("style", "background-color: #FFFFF0; border-style: outset; padding-bottom: 3px");
+	background_form_cad.setAttribute("style", "background-color: #F8F8FF; border-style: outset; padding-bottom: 3px");
 
 	let botoes_gravar_cad = document.querySelector("#botoesGravarCad");
 	botoes_gravar_cad.setAttribute("class", "btn btn-lg btn-secondary btn-block text-white font-weight-bold rounded")
@@ -525,7 +484,7 @@ $(document).ready(function () {
 	//background_tela_cadastro.setAttribute("style",  "background-image: url('../assets/logo.png');");
 
 	let background_form_cons = document.querySelector(".background-form-cons");
-	background_form_cons.setAttribute("style", "background-color: #FFFFF0; border-style: outset; padding-bottom: 3px");
+	background_form_cons.setAttribute("style", "background-color: #F5F5F5; border-style: outset; padding-bottom: 3px");
 
 	/*Setando as rows das tabelas propriedades das tabelas de consulta*/
 	let row_tbl_consulta = document.querySelector("#row-tbl-consulta");
@@ -631,5 +590,30 @@ $(document).ready(function () {
 	});
 });
 
+//Constrói a URL depois que o DOM estiver pronto
+document.addEventListener("DOMContentLoaded", function() {
+    //conteúdo que será compartilhado: Título da página + URL
+    var conteudo = encodeURIComponent(document.title + "<h1>TESTE</h1>");
+    //altera a URL do botão
+    document.getElementById("whatsapp-share-btt").href = "https://api.whatsapp.com/send?text=" + conteudo;
+}, false);
+
 confirmarDelecaoItem();
 confirmarDelecaoOrcamento();
+
+//Inicializando Tooltips
+const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+});
+
+$(document).ready(function() { 
+    $('#botoesCons').click(function() { 
+        $.blockUI({ overlayCSS: { backgroundColor: '#2F4F4F'} }); 
+ 
+        //setTimeout($.unblockUI, 2000); 
+        $(document).onload(function(){
+        	$.unblockUI;
+        }); 
+    }); 
+}); 

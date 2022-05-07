@@ -23,12 +23,16 @@ if ($_SESSION['user'] == NULL) {
 			<div class="container containerGeralImpressao">
 				<div class="row">
 					<div class="col divLogo">
-						<img src="../assets/logo.jpg" style="width: 100%; height: 100%;">
+						<img src="../assets/universo.jpg" style="width: 99%; height: 99%;">
 					</div>
 					<div class="col-6 divProposta p-3 text-center">
-						<h3>PROPOSTA</h3>
-						<h3>ORÇAMENTO / SERVIÇO</h3>
+						<h2>PROPOSTA</h2>
+						<h2>ORÇAMENTO / SERVIÇO</h2>
 					</div>
+				</div>
+
+				<div class="col mt-1 p-0">
+					<small class="text-dark">CNPJ: 99.999.999/9990-99 - <em>Qd. 02, Mr-02, Lt. 02, St. Norte, CEP: 99.999-999.</em></small>
 				</div>
 
 				<div class="row pt-2 pb-2 mt-2">
@@ -109,25 +113,45 @@ if ($_SESSION['user'] == NULL) {
 
 							if ($resultado != NULL) {
 								foreach ($resultado as  $item) {
+
+								if($item['tipo'] == 'OPERACIONAL') {
+									continue;
+								}
+
 							?>
 
-									<tr>
-										<td><?= $item['descricao'] ?></td>
-										<td><?= number_format($item['valor_unitario'], 2, ",", ".") ?></td>
-										<td><?= number_format($item['quantidade'], 2, ",", ".") ?></td>
-										<td><?= number_format($item['valor_total'], 3, ",", ".") ?></td>
-										<td><?= number_format($item['desconto'], 3, ",", ".") ?></td>
-										<td><?= number_format($item['total_pagar'], 3, ",", ".") ?></td>
+									<tr class="table-light">
+
+										<td class="text-dark" style="border: 1px solid black"><?= $item['descricao'] ?></td>
+										<td class="text-dark" style="border: 1px solid black"><?= number_format($item['valor_unitario'], 2, ",", ".") ?></td>
+										<td class="text-dark" style="border: 1px solid black"><?= number_format($item['quantidade'], 2, ",", ".") ?></td>
+										<td class="text-dark" style="border: 1px solid black"><?= number_format($item['valor_total'], 3, ",", ".") ?></td>
+										<td class="text-dark" style="border: 1px solid black"><?= number_format($item['desconto'], 3, ",", ".") ?></td>
+										<td class="text-dark" style="border: 1px solid black"><?= number_format($item['total_pagar'], 3, ",", ".") ?></td>
 									</tr>
 
 							<?php
 									$contador++;
 									$conexao = null;
 								}
-							} else {
-								//echo "<span class='text-danger'>NENHUM DADO RETORNADO.</span><br><br>";
-							}
+							} 
 
+							if($resultadoServico[0]['valor_total_serv'] != 0) {
+
+							?>
+									<tr class="table-light">
+
+										<td class="text-dark" style="border: 1px solid black"><?= 'SERVIÇOS/INSTALAÇÕES' ?></td>
+										<td class="text-dark" style="border: 1px solid black"><?= '-' ?></td>
+										<td class="text-dark" style="border: 1px solid black"><?= '-' ?></td>
+										<td class="text-dark" style="border: 1px solid black"><?= number_format($resultadoServico[0]['valor_total_serv'], 3, ",", ".") ?></td>
+										<td class="text-dark" style="border: 1px solid black"><?= number_format($resultadoServico[0]['valor_desconto_serv'], 3, ",", ".") ?></td>
+										<td class="text-dark" style="border: 1px solid black"><?= number_format($resultadoServico[0]['total_pagar_serv'], 3, ",", ".")?></td>
+									</tr>
+
+							<?php
+
+								}
 
 							?>
 						</tbody>
@@ -165,13 +189,9 @@ if ($_SESSION['user'] == NULL) {
 							<input type="text" disabled class="form-control bg-light" value="<?= $resultado != null ? number_format($totalizador[0]['sum_total_pagar'], 2, ",", ".") : 0 ?>">
 						</div>
 					</div>
-
-					<!--<div class="col-3">
-							<span class="text-danger h5">Valor a Pagar (R$): <?= $totalizador[0]['sum_total_pagar'] ?></span>
-						</div>-->
-
+						
 					<div class="col-10 mt-5">
-						<span class="text-danger h5">Vendedor:</span> <span class="text-primary h5"><?= $resultado != null ? $resultado[0]['usuario'] : $_SESSION['user'] ?></span>
+						<span class="text-dark h5">Responsável:</span> <span class="text-dark h5"><?= $resultado != null ? $resultado[0]['usuario'] : $_SESSION['user'] ?></span>
 					</div>
 
 					<div class="col mt-5 pl-5 text-left d-print-none">

@@ -44,6 +44,16 @@ require "model/Cidade.php";
 	$mensagem_erro = $crtl->cadastrarOrcamento();
 	$codigoOrcamento = $UltimoIdOrcamento->carregaIdOrcamento();
 	$UltimoOrcCadastrado = $ultimoOrcamento->ultimoOrcamento();
+<<<<<<< HEAD
 	$totalizador_itens = $itensUltimoOrcamento->itensUltimoOrc($UltimoOrcCadastrado['id_orcamento']);
 
 	
+=======
+	
+	if($UltimoOrcCadastrado > 0){
+		$totalizador_itens = $itensUltimoOrcamento->itensUltimoOrc($UltimoOrcCadastrado['id_orcamento']);
+	};
+
+	?>
+
+>>>>>>> 8c52731d72e44d5aefe152ba3e198112d36c7dc3

@@ -30,28 +30,33 @@ if ($_SESSION['user'] == NULL) {
 				<li class="breadcrumb-item">
 					<mark class="p-2 font-weight-bold">Produtos</mark>
 				</li>
+
+				<div class="col">
+					<a href="/?pagina=cadastrar-produto" class="btn btn-danger text-light float-right font-weight-bold rounded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Incluir novo produto"><i class="fa fa-plus"></i> Produto</a>
+				</div>
+
 			</ol>
 
 			<div class="row mb-3">
 
 				<div class="col mb-1">
-					<a href="?pagina=pesquisa-por-os" class="botoes-atalho-cons" title="Pesq. O.S. por código"><i class="fa fa-search" aria-hidden="true"></i> Pesq. O.S. por código </a>
+					<a href="?pagina=pesquisa-por-os" class="botoes-atalho-cons" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Pesq. O.S. por código"><i class="fa fa-search" aria-hidden="true"></i> Pesq. O.S. por código </a>
 				</div>
 
 				<div class="col mb-1">
-					<a href="?pagina=pesquisa-por-data-agendamento" class="botoes-atalho-cons" title="Pesq. por data de agendamento"><i class="fa fa-search " aria-hidden="true"></i> O.S(s) por data de agendamento </a>
+					<a href="?pagina=pesquisa-por-data-agendamento" class="botoes-atalho-cons" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Pesq. por data de agendamento"><i class="fa fa-search " aria-hidden="true"></i> O.S(s) por data de agendamento </a>
 				</div>
 
 				<div class="col mb-1">
-					<a href="?pagina=pesquisa-por-data-receb" class="botoes-atalho-cons" title="Pesq. por data de recebimento"><i class="fa fa-search " aria-hidden="true"></i> O.S(s) por data de recebimento </a>
+					<a href="?pagina=pesquisa-por-data-receb" class="botoes-atalho-cons" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Pesq. por data de recebimento"><i class="fa fa-search " aria-hidden="true"></i> O.S(s) por data de recebimento </a>
 				</div>
 
 				<div class="col mb-1">
-					<a href="?pagina=pesquisa-por-orcamento" class="botoes-atalho-cons" title="Orçamentos cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Orçamentos </a>
+					<a href="?pagina=pesquisa-por-orcamento" class="botoes-atalho-cons" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Orçamentos cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Orçamentos </a>
 				</div>
 
 				<div class="col mb-1">
-					<a href="?pagina=pesquisa-cliente" class="botoes-atalho-cons" title="Clientes cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Clientes </a>
+					<a href="?pagina=pesquisa-cliente" class="botoes-atalho-cons" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Clientes cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Clientes </a>
 				</div>
 
 			</div>
@@ -98,6 +103,7 @@ if ($_SESSION['user'] == NULL) {
 								<!--<th>Estoque</th>-->
 								<th>Data de Cadastro</th>
 								<th>Atualizar</th>
+								<th>Deletar</th>
 							</tr>
 						</thead>
 						<tfoot class="thead-light">
@@ -109,6 +115,7 @@ if ($_SESSION['user'] == NULL) {
 								<!--<th>Estoque</th>-->
 								<th>Data de Cadastro</th>
 								<th>Atualizar</th>
+								<th>Deletar</th>
 							</tr>
 						</tfoot>
 						<tbody>
@@ -126,6 +133,17 @@ if ($_SESSION['user'] == NULL) {
 										<!--<td><?= number_format($value['quantidade_estoque'], 2, ',', '.') ?></td>-->
 										<td><?= date_format(date_create($value['data_cadastro']), "d/m/Y") ?></td>
 										<td align="center"><a href="/?pagina=editar-produto&id_prod=<?= $value['id_prod'] ?>&form=pesquisa-produto" title="Atualizar"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+
+										<td align="center">
+											<form method="post">
+												<input type="hidden" name="ipt-cod-delete" value="<?= $value['id_prod'] ?>">
+
+												<input type="hidden" name="ipt-confirmacao" id="ipt-confirma">
+
+												<input type="submit" class="btn btn-danger" value='Excluir' name="btnDeletarProduto" id="btnDeletarItem">
+											</form>
+										</td>
+
 										<!--<td align="center"><a href="/?pagina=historico&cod_os=<?= $value['cod_os'] ?>&form=pesquisa-por-data-receb" title="Histórico" target="_blank"><i class="fa fa-history" aria-hidden="true"></a></td>-->
 									</tr>
 

@@ -35,4 +35,43 @@ class PesquisaCliente {
 		}
 		
 	}
+
+
+	function deletarCliente() {
+
+		try {
+
+			$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+			//$form = filter_input(INPUT_POST, 'formEditarIntesOrcamento');
+
+			if (!empty($dados['btnDeletarCliente'])) {
+				unset($dados['btnDeletarCliente']);
+			}
+
+				$queryDeletar = "DELETE FROM tbl_cliente WHERE id_cliente = :id_cliente";
+
+				$conn = new Conn();
+				$cliente = $conn->getConn()->prepare($queryDeletar);
+
+				$cliente->bindParam(':id_cliente', $dados['ipt-cod-delete']);
+
+				$cliente->execute();
+
+			} catch(PDOException $erro){
+				//echo "ERRO: ".$erro->getMessage();
+			}
+
+			if($cliente->rowCount()) {
+				//echo "window.location.href = '/?pagina=pesquisa-cliente&palavra_chave=".$palavra_chave;
+				echo "<script>alert('Registro DELETADO com SUCESSO.')</script>";
+				
+				
+			} else {
+				echo "<script>alert('ERRO ao DELETAR registro. Verifique se o cliente não está vinculado com algum orçamento. Caso esteja, a desvinculação é necessária para possibilitar a deleção do mesmo.')</script>";
+				//print_r($cliente->errorInfo());
+			}
+
+	}
 }
+
+?>

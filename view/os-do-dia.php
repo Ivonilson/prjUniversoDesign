@@ -13,8 +13,7 @@ if ($_SESSION['user'] == null) {
 	<link rel="stylesheet" type="text/css" href="../bootstrap-4.1.3/css/bootstrap.min.css">
 	<!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.bootstrap.min.css"> -->
 	<?php require_once 'includes/bootstrap-css.php'; ?>
-
-
+	<script src="../js/abg2.js"></script>
 </head>
 
 <body class="bg-dark fixed-nav sticky-footer" id="page-top">
@@ -33,20 +32,21 @@ if ($_SESSION['user'] == null) {
 				<li class="breadcrumb-item">
 					<mark class="p-2 font-weight-bold">O.S(s) do dia</mark>
 				</li>
+				
 			</ol>
 
 			<div class="row">
 
 				<div class="col mb-1">
-					<a href="?pagina=cadastrar-orcamento" class="btn btn-secondary btn-block font-weight-bold" title="Novo Orçamento"><i class="fa fa-plus " aria-hidden="true"></i> Orçamento </a>
+					<a href="?pagina=cadastrar-orcamento" class="btn btn-secondary btn-block font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Novo Orçamento"><i class="fa fa-plus " aria-hidden="true"></i> Orçamento </a>
 				</div>
 
 				<div class="col">
-					<a href="?pagina=cadastrar-os" class="btn btn-secondary btn-block font-weight-bold" title="Nova O.S"><i class="fa fa-plus " aria-hidden="true"></i> O.S </a>
+					<a href="?pagina=cadastrar-os" class="btn btn-secondary btn-block font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Nova O.S"><i class="fa fa-plus " aria-hidden="true"></i> O.S </a>
 				</div>
 
 				<div class="col">
-					<a href="?pagina=cadastrar-cliente" class="btn btn-secondary btn-block font-weight-bold" title="Novo Cliente"><i class="fa fa-plus " aria-hidden="true"></i> Cliente </a>
+					<a href="?pagina=cadastrar-cliente" class="btn btn-secondary btn-block font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Novo Cliente"><i class="fa fa-plus " aria-hidden="true"></i> Cliente </a>
 				</div>
 			</div>
 
@@ -55,8 +55,8 @@ if ($_SESSION['user'] == null) {
 			<div class="card mb-1 border border-light">
 				<div class="card-header">
 					<i class="fa fa-table"></i> <span class="font-weight-bold text-lg">O.S(s) do dia</span> - <?php $hoje = date('d/m/Y');
-																												echo $hoje;
-																												echo " - (última atualização às " . date('H') . " h " . date('i') . " m)"; ?><a href="/?pagina=pesquisa-por-os" class=" btn btn-info pr-3 pl-3 pt-2 pb-2 ml-3 float-right text-light rounded"><i class="fa fa-search" aria-hidden="true"></i> Pesquisa por O.S</a>
+					echo $hoje;
+					echo " - (última atualização às " . date('H') . " h " . date('i') . " m)"; ?><a href="/?pagina=pesquisa-por-os" class=" btn btn-info pr-3 pl-3 pt-2 pb-2 ml-3 float-right text-light rounded"><i class="fa fa-search" aria-hidden="true"></i> Pesquisa por O.S</a>
 
 					<div barra-progresso="barraProgresso" class="progresso pr-3 pl-3 pt-1 pb-1 ml-3 float-right  rounded" title="Percentual de serviços finalizados">
 						<div></div>
@@ -75,12 +75,12 @@ if ($_SESSION['user'] == null) {
 								<th>N° Orçamento</th>
 								<th>Data solicitação</th>
 								<th>Data agendamento</th>
-								<th>Valor Final(R$)</th>
 								<th>Situação Pagto.</th>
 								<th>Status Serviço</th>
 								<th>Observações</th>
-								<th>Atualizar O.S</th>
 								<th>Visualizar Itens Orc.</th>
+								<th>Atualizar</th>
+								<th>Deletar</th>
 							</tr>
 						</thead>
 						<tfoot class="thead-light">
@@ -90,18 +90,18 @@ if ($_SESSION['user'] == null) {
 								<th>N° Orçamento</th>
 								<th>Data solicitação</th>
 								<th>Data agendamento</th>
-								<th>Valor Final(R$)</th>
 								<th>Situação Pagto.</th>
 								<th>Status Serviço</th>
 								<th>Observações</th>
-								<th>Atualizar O.S</th>
 								<th>Visualizar Itens Orc.</th>
+								<th>Atualizar</th>
+								<th>Deletar</th>
 							</tr>
 						</tfoot>
 						<tbody>
 
 							<?php
-							if ($_SESSION['user'] == "IVONILSON" || $_SESSION['user'] == "FABRICIO") {
+							if ($_SESSION['user'] == "FABRICIO") {
 
 								$quant = 0;
 								$quantOsFinalizada = 0;
@@ -116,7 +116,7 @@ if ($_SESSION['user'] == null) {
 											$quantOsFinalizada++;
 										}
 
-							?>
+								?>
 
 										<tr class="itensTabela">
 											<td><?= $value['cod_os'] ?></td>
@@ -124,29 +124,39 @@ if ($_SESSION['user'] == null) {
 											<td><?= $value['numeroOrcamento'] ?></td>
 											<td><?= date_format(date_create($value['data_cadastro']), "d/m/Y") ?></td>
 											<td><?= date_format(date_create($value['data_agendamento']), "d/m/Y") ?></td>
-											<td><?= $value['valor_final'] ?></td>
 											<td><?= $value['sit_pagamento'] ?></td>
-											<td class="status"><?= $value['status'] ?></td>
+
+											<td class="status"><?= $value['status']?></td>
+
 											<td class="text-justify"><?= $value['observacao'] ?></td>
+
+																						<td align="center">
+											<a href="/?pagina=itens-orcamento&id_orcamento=<?= $value['numeroOrcamento'] ?>" title="Itens orçamento" target="_blank" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></a>
+											</td>
+
 											<td align="center"><a href="/?pagina=editar-os&cod_os=<?= $value['cod_os'] ?>&form=os-do-dia" title="Editar"><i class="fa fa-pencil" aria-hidden="true"></a></td>
 
 											<td align="center">
-												<a href="/?pagina=itens-orcamento&id_orcamento=<?= $value['numeroOrcamento'] ?>" title="Itens orçamento" target="_blank" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></a>
+												<form method="post">
+													<input type="hidden" name="ipt-cod-delete" value="<?=  $value['cod_os'] ?>">
+
+													<input type="hidden" name="ipt-confirmacao" id="ipt-confirma">
+
+													<input type="submit" class="btn btn-danger" value='Excluir' name="btnDeletarOs" id="btnDeletarItem">
+												</form>
 											</td>
 
 											<!--<td align="center"><a href="/?pagina=historico&cod_os=<?= $value['cod_os'] ?>&form=os-do-dia" title="Histórico" target="_blank"><i class="fa fa-history" aria-hidden="true"></a></td>-->
 										</tr>
 
-										<script>
-											verificaStatus()
-										</script>
+									<script>statusOs()</script>
+
 							<?php
 									}
 								}
 							} else {
 								echo "<span class='text-danger'>USUÁRIO SEM PERMISSÃO PARA VISUALIZAR AS INFORMAÇÕES DESTA PÁGINA.</span><br><br>";
 							}
-
 
 							?>
 
@@ -159,11 +169,12 @@ if ($_SESSION['user'] == null) {
 			</div>
 			<!-- </div> -->
 		</div>
+
+		<?php require_once 'includes/bootstrap-js.php'; ?>
+
 		<!-- rodapé -->
 		<?php require_once 'includes/rodape.php'; ?>
 	</div>
-
-	<?php require_once 'includes/bootstrap-js.php'; ?>
 
 	<!-- <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>-->
 
@@ -174,8 +185,6 @@ if ($_SESSION['user'] == null) {
 		//BARRA DE PROGRESSO DOS SERVIÇOS EXECUTADOS
 		configurarBarra();
 	</script>
-
-
+	
 </body>
-
 </html>

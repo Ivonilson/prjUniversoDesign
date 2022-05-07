@@ -9,7 +9,10 @@ class crtImpressaoOrcamento {
 	{	
 		$itensOrcamento = new ItensOrcamento();
 		$resultado = $itensOrcamento->pesqItensOrcamento();
+		$resultadoServico = $itensOrcamento->pesqItensDeServico();
 		$totalizador = $itensOrcamento->totalizadorOrcamento();
 		include "view/impressao-orcamento.php";
 	}
 }
+
+?>

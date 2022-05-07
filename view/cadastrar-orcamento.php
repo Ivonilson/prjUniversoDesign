@@ -29,26 +29,30 @@ if ($_SESSION['user'] == NULL) {
 				</li>
 				<li class="breadcrumb-item">
 					<mark class="p-2 font-weight-bold">Cadastrar Orçamento</mark>
-
 				</li>
+
+				<div class="col">
+					<a href="/?pagina=pesquisa-por-orcamento" class="btn btn-danger text-light float-right font-weight-bold rounded" title="Pesquisar Orçamentos"><i class="fa fa-search"></i> Orçamento</a>
+				</div>
+
 			</ol>
 
 			<div class="row justify-content-center">
 
 				<div class="col">
-					<a href="?pagina=cadastrar-os" class="botoes-atalho-cad" title="Nova O.S"><i class="fa fa-plus " aria-hidden="true"></i> O.S </a>
+					<a href="?pagina=cadastrar-os" class="botoes-atalho-cad" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Nova O.S"><i class="fa fa-plus " aria-hidden="true"></i> O.S </a>
 				</div>
 
 				<div class="col">
-					<a href="?pagina=cadastrar-cliente" class="botoes-atalho-cad" title="Novo Cliente"><i class="fa fa-plus " aria-hidden="true"></i> Cliente </a>
+					<a href="?pagina=cadastrar-cliente" class="botoes-atalho-cad" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Novo Cliente"><i class="fa fa-plus " aria-hidden="true"></i> Cliente </a>
 				</div>
 
 				<div class="col">
-					<a href="?pagina=cadastrar-produto" class="botoes-atalho-cad" title="Novo Produto"><i class="fa fa-plus " aria-hidden="true"></i> Produto </a>
+					<a href="?pagina=cadastrar-produto" class="botoes-atalho-cad" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Novo Produto"><i class="fa fa-plus " aria-hidden="true"></i> Produto </a>
 				</div>
 
 				<div class="col">
-					<a href="?pagina=cadastrar-notificacao" class="botoes-atalho-cad" title="Cadastrar Notificação"><i class="fa fa-plus " aria-hidden="true"></i> Notificação </a>
+					<a href="?pagina=cadastrar-notificacao" class="botoes-atalho-cad" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Cadastrar Notificação"><i class="fa fa-plus " aria-hidden="true"></i> Notificação </a>
 				</div>
 
 			</div>
@@ -77,7 +81,7 @@ if ($_SESSION['user'] == NULL) {
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLongTitle">Orçamento N° <?= $UltimoOrcCadastrado['id_orcamento'] ?></h5>
+									<h5 class="modal-title" id="exampleModalLongTitle">Orçamento N° <?= $UltimoOrcCadastrado != null ? $UltimoOrcCadastrado['id_orcamento'] : '- Nenhum orçamento cadastrado.';  ?></h5>
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
@@ -86,16 +90,18 @@ if ($_SESSION['user'] == NULL) {
 
 									<div class="card">
 										<div class="card-body col">
-											<h5 class="card-title font-weight-bold text-dark">Solicitante: <?= $UltimoOrcCadastrado['nome'] ?></h5>
-											<h6 class="card-subtitle mb-2 text-muted font-weight-bold text-dark">Data de validade: <?= date_format(date_create($UltimoOrcCadastrado['data_validade']), "d/m/Y") ?></h6>
+											<h5 class="card-title font-weight-bold text-dark">Solicitante: <?= $UltimoOrcCadastrado != null ? $UltimoOrcCadastrado['nome']  : '-'  ?></h5>
+											<h6 class="card-subtitle mb-2 text-muted font-weight-bold text-dark">Data de validade: <?= $UltimoOrcCadastrado != null ? date_format(date_create($UltimoOrcCadastrado['data_validade']), "d/m/Y") : '-' ?></h6>
 
-											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Descrição: </span><span style="font-size: 22px"><?= $UltimoOrcCadastrado['trabalho_servico'] ?></span><br>
+											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Descrição: </span><span style="font-size: 22px"><?= $UltimoOrcCadastrado != null ? $UltimoOrcCadastrado['trabalho_servico'] : '-' ?></span><br>
 
-											<span class="font-weight-bold text-dark" style="font-size: 20px">Itens: </span><span style="font-size: 22px"><?= $totalizador_itens['descricao'] != null ? $totalizador_itens['descricao'] : 'Orçamento não possui itens.' ?></span><br>
+											<span class="font-weight-bold text-dark" style="font-size: 20px">Itens: </span><span style="font-size: 22px"><?=  isset($totalizador_itens) ? $totalizador_itens['descricao'] : 'Orçamento não possui itens.' ?></span><br>
 
-											<span class="font-weight-bold text-dark" style="font-size: 20px">Valor Total (R$): </span><span style="font-size: 22px"><?= $totalizador_itens['valor_total'] != null ? number_format($totalizador_itens['valor_total'], 2, ',', '.') : 0 ?></span><br>
-											<span class="font-weight-bold text-dark" style="font-size: 20px">Desconto (R$): </span><span style="font-size: 22px"><?= $totalizador_itens['desconto'] != null ? number_format($totalizador_itens['desconto'], 2, ',', '.') : 0 ?></span><br>
-											<span class="font-weight-bold text-dark" style="font-size: 20px">Total a pagar (R$): </span><span style="font-size: 22px"><?= $totalizador_itens['total_pagar'] != null ? number_format($totalizador_itens['total_pagar'], 2, ',', '.') : 0 ?></span><br>
+											<span class="font-weight-bold text-dark" style="font-size: 20px">Valor Total (R$): </span><span style="font-size: 22px"><?= isset($totalizador_itens) ? number_format($totalizador_itens['valor_total'], 2, ',', '.') : 0 ?></span><br>
+
+											<span class="font-weight-bold text-dark" style="font-size: 20px">Desconto (R$): </span><span style="font-size: 22px"><?= isset($totalizador_itens) ? number_format($totalizador_itens['desconto'], 2, ',', '.') : 0 ?></span><br>
+											
+											<span class="font-weight-bold text-dark" style="font-size: 20px">Total a pagar (R$): </span><span style="font-size: 22px"><?= isset($totalizador_itens) ? number_format($totalizador_itens['total_pagar'], 2, ',', '.') : 0 ?></span><br>
 
 											<br>
 
@@ -217,7 +223,7 @@ if ($_SESSION['user'] == NULL) {
 									foreach ($produto as $carregaProduto) {
 
 									?>
-										<option value="<?= $carregaProduto->descricao . ' (' . $carregaProduto->unidade_medida . ') ' . '/ ' . $carregaProduto->preco_unitario ?>" id="preco"><?= $carregaProduto->descricao . ' (' . $carregaProduto->unidade_medida . ') - Valor Unit.(R$) ' . $carregaProduto->preco_unitario ?>
+										<option value="<?= $carregaProduto->descricao . ' (' . $carregaProduto->unidade_medida . ')' . '/ ' .  $carregaProduto->preco_unitario . '/ - ' . $carregaProduto->tipo ?>" id="preco"><?= $carregaProduto->descricao . ' (' . $carregaProduto->unidade_medida . ') - Valor Unit.(R$) ' . $carregaProduto->preco_unitario?>
 										<?php
 									}
 										?>
@@ -362,7 +368,7 @@ if ($_SESSION['user'] == NULL) {
 							</div>
 
 							<!--CONSOLIDADO--->
-							<input type="hidden" class="form-control" name="ipt-consolidado" placeholder="..." id="consolidado">
+							<input type="text" class="form-control" name="ipt-consolidado" placeholder="..." id="consolidado">
 
 							<div class="col-12">
 								<input type="submit" name="" value="Fechar Orçamento" name="btnCadastrarOrcamento" id="botoesGravarCad">

@@ -38,13 +38,17 @@ tfoot { display:table-footer-group }
 }
 
 #navegacao li a:hover {
-   background-color: #DCDCDC;
-   font-weight: bold;
+   background-color: #800000;
+   font-weight: bold !important;
+   font-size: 16px !important;
+   color:  white !important;
 }
 
 .containerGeralImpressao {
 	width: 100% !important;
 	border: solid black 1px;
+	border-radius:  25px;
+	box-shadow: 5px 5px grey;
 	//background-color: orange;
 }	
 
@@ -55,13 +59,16 @@ tfoot { display:table-footer-group }
 
 .divLogo img {
 	width: 70%;
+	border-radius: 25px;
 	//border: solid blue 3px;
 	margin-top: 5px;
+	box-shadow: 5px 5px grey;
 }
 
 .divProposta {
 	border: solid black 3px;
-	border-radius: 5px;
+	border-radius: 25px;
+	box-shadow: 5px 5px grey;
 	margin-right: 10px;
 	margin-top: 5px;
 	padding: auto;
@@ -69,7 +76,7 @@ tfoot { display:table-footer-group }
 
 .divProposta h1 {
 	size: 10px;
-	font-size: 32px;
+	font-size: 32px ;
 	text-align: center;
 	padding-top: 18%;
 	padding-bottom: 18%;
@@ -185,3 +192,4 @@ tfoot { display:table-footer-group }
 	font-size: 12px;
 	margin-top: 0;
 }
+

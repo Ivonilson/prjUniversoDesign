@@ -30,28 +30,33 @@ if ($_SESSION['user'] == NULL) {
 				<li class="breadcrumb-item">
 					<mark class="p-2 font-weight-bold">Clientes</mark>
 				</li>
+
+				<div class="col">
+					<a href="/?pagina=cadastrar-cliente" class="btn btn-danger text-light float-right font-weight-bold rounded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Incluir novo cliente"><i class="fa fa-plus"></i> Cliente</a>
+				</div>
+
 			</ol>
 
 			<div class="row mb-3">
 
 				<div class="col mb-1">
-					<a href="?pagina=pesquisa-por-os" class="botoes-atalho-cons" title="Pesq. O.S. por código"><i class="fa fa-search" aria-hidden="true"></i> Pesq. O.S. por código </a>
+					<a href="?pagina=pesquisa-por-os" class="botoes-atalho-cons" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Pesq. O.S. por código"><i class="fa fa-search" aria-hidden="true"></i> Pesq. O.S. por código </a>
 				</div>
 
 				<div class="col mb-1">
-					<a href="?pagina=pesquisa-por-data-agendamento" class="botoes-atalho-cons" title="Pesq. por data de agendamento"><i class="fa fa-search " aria-hidden="true"></i> O.S(s) por data de agendamento </a>
+					<a href="?pagina=pesquisa-por-data-agendamento" class="botoes-atalho-cons" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Pesq. por data de agendamento"><i class="fa fa-search " aria-hidden="true"></i> O.S(s) por data de agendamento </a>
 				</div>
 
 				<div class="col mb-1">
-					<a href="?pagina=pesquisa-por-data-receb" class="botoes-atalho-cons" title="Pesq. por data de recebimento"><i class="fa fa-search " aria-hidden="true"></i> O.S(s) por data de recebimento </a>
+					<a href="?pagina=pesquisa-por-data-receb" data-bs-toggle="tooltip" data-bs-placement="bottom" class="botoes-atalho-cons" title="Pesq. por data de recebimento"><i class="fa fa-search " aria-hidden="true"></i> O.S(s) por data de recebimento </a>
 				</div>
 
 				<div class="col mb-1">
-					<a href="?pagina=pesquisa-por-orcamento" class="botoes-atalho-cons" title="Orçamentos cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Orçamentos </a>
+					<a href="?pagina=pesquisa-por-orcamento" data-bs-toggle="tooltip" data-bs-placement="bottom" class="botoes-atalho-cons" title="Orçamentos cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Orçamentos </a>
 				</div>
 
 				<div class="col mb-1">
-					<a href="?pagina=pesquisa-produto" class="botoes-atalho-cons" title="Produtos cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Produtos </a>
+					<a href="?pagina=pesquisa-produto" data-bs-toggle="tooltip" data-bs-placement="bottom" class="botoes-atalho-cons" title="Produtos cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Produtos </a>
 				</div>
 
 			</div>
@@ -102,6 +107,7 @@ if ($_SESSION['user'] == NULL) {
 								<th>E-mail</th>
 								<th>Data de cadastro</th>
 								<th>Atualizar</th>
+								<th>Deletar</th>
 							</tr>
 						</thead>
 						<tfoot class="thead-light">
@@ -117,6 +123,7 @@ if ($_SESSION['user'] == NULL) {
 								<th>E-mail</th>
 								<th>Data de cadastro</th>
 								<th>Atualizar</th>
+								<th>Deletar</th>
 							</tr>
 						</tfoot>
 						<tbody>
@@ -138,6 +145,17 @@ if ($_SESSION['user'] == NULL) {
 										<td><?= $value['email'] ?></td>
 										<td><?= date_format(date_create($value['data_cadastro']), "d/m/Y") ?></td>
 										<td align="center"><a href="/?pagina=editar-cliente&id_cliente=<?= $value['id_cliente'] ?>&form=pesquisa-cliente" title="Atualizar"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+
+										<td align="center">
+											<form method="post">
+												<input type="hidden" name="ipt-cod-delete" value="<?= $value['id_cliente'] ?>">
+
+												<input type="hidden" name="ipt-confirmacao" id="ipt-confirma">
+
+												<input type="submit" class="btn btn-danger" value='Excluir' name="btnDeletarCliente" id="btnDeletarItem">
+										</form>
+									</td>
+
 										<!--<td align="center"><a href="/?pagina=historico&cod_os=<?= $value['cod_os'] ?>&form=pesquisa-por-data-receb" title="Histórico" target="_blank"><i class="fa fa-history" aria-hidden="true"></a></td>-->
 									</tr>
 

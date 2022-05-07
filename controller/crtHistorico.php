@@ -8,3 +8,5 @@ class crtHistorico {
 		include "view/historico.php";
 	}
 }
+
+?>

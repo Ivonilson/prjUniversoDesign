@@ -16,7 +16,7 @@ class CadastrarOrcamento {
 
 			$conn = new Conn();
 
-			$statement = "INSERT INTO tbl_orcamento (id_cliente, trabalho_servico, data_validade, condicao_pagamento, meio_pagamento, solicitante, observacao, data_cadastro, usuario) VALUES (:id_cliente, :trabalho_servico, :data_validade, :condicao_pagamento, :meio_pagamento, :solicitante, :observacao, CURDATE(), :usuario)";
+			$statement = "INSERT INTO tbl_orcamento (id_orcamento, id_cliente, trabalho_servico, data_validade, condicao_pagamento, meio_pagamento, solicitante, observacao, data_cadastro, usuario) VALUES (:id_orcamento, :id_cliente, :trabalho_servico, :data_validade, :condicao_pagamento, :meio_pagamento, :solicitante, :observacao, CURDATE(), :usuario)";
 
 			$dados_cadastrar = $conn->getConn()->prepare($statement);
 
@@ -40,6 +40,7 @@ class CadastrarOrcamento {
 			//$produtos = implode('<br>', ($dados['ipt_prod']));
 			$usuario = $_SESSION['user'];
 
+			$dados_cadastrar->bindParam(':id_orcamento', $dados['ipt-cod-orcamento']);
 			$dados_cadastrar->bindParam(':id_cliente', $dados['sel-cliente']);
 			$dados_cadastrar->bindParam(':trabalho_servico', $dados['ipt-trabalho-servico']);
 			$dados_cadastrar->bindParam(':data_validade', $dados['ipt-data-validade-orc']);
@@ -91,3 +92,4 @@ class CadastrarOrcamento {
 			return $totalizador;
 		}
 	}
+?>

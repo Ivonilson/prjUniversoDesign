@@ -12,6 +12,7 @@ if ($_SESSION['user'] == NULL) {
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Pesquisa por data de agendamento</title>
 	<?php require_once 'includes/bootstrap-css.php'; ?>
+	<script src="../js/abg2.js"></script>
 </head>
 
 <body class="bg-dark fixed-nav sticky-footer" id="page-top">
@@ -30,28 +31,33 @@ if ($_SESSION['user'] == NULL) {
 				<li class="breadcrumb-item">
 					<mark class="p-2 font-weight-bold">Ordens de serviço por data de agendamento</mark>
 				</li>
+
+				<div class="col">
+					<a href="/?pagina=cadastrar-os" class="btn btn-danger text-light float-right font-weight-bold rounded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Incluir nova O.S."><i class="fa fa-plus"></i> O.S.</a>
+				</div>
+
 			</ol>
 
 			<div class="row mb-3">
 
 				<div class="col mb-1">
-					<a href="?pagina=pesquisa-por-os" class="botoes-atalho-cons" title="Pesq. O.S. por código"><i class="fa fa-search" aria-hidden="true"></i> Pesq. O.S. por código </a>
+					<a href="?pagina=pesquisa-por-os" data-bs-toggle="tooltip" data-bs-placement="bottom" class="botoes-atalho-cons" title="Pesq. O.S. por código"><i class="fa fa-search" aria-hidden="true"></i> Pesq. O.S. por código </a>
 				</div>
 
 				<div class="col mb-1">
-					<a href="?pagina=pesquisa-por-data-receb" class="botoes-atalho-cons" title="Pesq. por data de recebimento"><i class="fa fa-search " aria-hidden="true"></i> O.S(s) por data de recebimento </a>
+					<a href="?pagina=pesquisa-por-data-receb" data-bs-toggle="tooltip" data-bs-placement="bottom" class="botoes-atalho-cons" title="Pesq. por data de recebimento"><i class="fa fa-search " aria-hidden="true"></i> O.S(s) por data de recebimento </a>
 				</div>
 
 				<div class="col mb-1">
-					<a href="?pagina=pesquisa-por-orcamento" class="botoes-atalho-cons" title="Orçamentos cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Orçamentos </a>
+					<a href="?pagina=pesquisa-por-orcamento" data-bs-toggle="tooltip" data-bs-placement="bottom" class="botoes-atalho-cons" title="Orçamentos cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Orçamentos </a>
 				</div>
 
 				<div class="col mb-1">
-					<a href="?pagina=pesquisa-produto" class="botoes-atalho-cons" title="Produtos cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Produtos </a>
+					<a href="?pagina=pesquisa-produto" data-bs-toggle="tooltip" data-bs-placement="bottom" class="botoes-atalho-cons" title="Produtos cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Produtos </a>
 				</div>
 
 				<div class="col mb-1">
-					<a href="?pagina=pesquisa-cliente" class="botoes-atalho-cons" title="Clientes cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Clientes </a>
+					<a href="?pagina=pesquisa-cliente" data-bs-toggle="tooltip" data-bs-placement="bottom" class="botoes-atalho-cons" title="Clientes cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Clientes </a>
 				</div>
 
 			</div>
@@ -79,7 +85,7 @@ if ($_SESSION['user'] == NULL) {
 				<div class="col">
 
 					<!-- barra de progresso -->
-					<div barra-progresso="barraProgresso" class="col progresso pr-3 pl-3 pt-1 pb-1 ml-3 mb-1 mr-3 float-right  rounded" title="Percentual de serviços finalizados">
+					<div barra-progresso="barraProgresso" class="col progresso  pl-3 pt-2 pb-1 ml-3 mb-1 float-right  rounded" title="Percentual de serviços finalizados">
 						<div></div>
 					</div>
 					<!-- fim da barra de progresso -->
@@ -158,9 +164,9 @@ if ($_SESSION['user'] == NULL) {
 										<td align="center"><a href="/?pagina=editar-os&cod_os=<?= $value['cod_os'] ?>&form=pesquisa-por-data-receb" title="Atualizar" target=""><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
 										<!--<td align="center"><a href="/?pagina=historico&cod_os=<?= $value['cod_os'] ?>&form=pesquisa-por-data-entrega" title="Histórico" target="_blank"><i class="fa fa-history" aria-hidden="true"></a></td>-->
 									</tr>
-									<script>
-										verificaStatus()
-									</script>
+
+									<script>statusOs();</script>
+									
 							<?php
 									$conexao = null;
 								}
@@ -168,18 +174,21 @@ if ($_SESSION['user'] == NULL) {
 								echo "<span class='text-danger'></span><br><br>";
 							}
 							?>
+
 						</tbody>
 					</table>
 					<br>
-					<span id="qtdDemandas" class="status sr-only"><?= $quant ?></span>
+					<span id="qtdDemandas" class="status sr-only"><?= $quant != 0 ? $quant : '' ?></span>
 					<span id="quantOsFinalizada" class="status sr-only"><?= $quantLaudoPronto ?></span>
 				</div>
 			</div>
 		</div>
+
+		<?php require_once 'includes/bootstrap-js.php'; ?>
+
 		<!-- rodapé -->
 		<?php require_once 'includes/rodape.php'; ?>
 	</div>
-	<?php require_once 'includes/bootstrap-js.php'; ?>
 
 	<!-- BARRA DE PROGRESSO DOS SERVIÇOS EXECUTADOS -->
 	<script type="text/javascript">

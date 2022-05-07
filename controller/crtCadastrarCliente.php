@@ -28,4 +28,9 @@ class crtCadastrarCliente {
 }
 
 $crtl = new crtCadastrarCliente();
+$ultimoCliente = new CadastrarCliente();
+
 $mensagem_erro = $crtl->cadastrarCliente();
+$UltimoClienteCadastrado =$ultimoCliente->ultimoClienteCadastrado();
+
+?>

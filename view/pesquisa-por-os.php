@@ -30,28 +30,33 @@ if ($_SESSION['user'] == NULL) {
 				<li class="breadcrumb-item">
 					<mark class="p-2 font-weight-bold">Por O.S</mark>
 				</li>
+
+				<div class="col">
+					<a href="/?pagina=cadastrar-os" class="btn btn-danger text-light float-right font-weight-bold rounded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Incluir nova O.S."><i class="fa fa-plus"></i> O.S.</a>
+				</div>
+
 			</ol>
 
 			<div class="row mb-3">
 
 				<div class="col mb-1">
-					<a href="?pagina=pesquisa-por-data-receb" class="botoes-atalho-cons" title="Pesq. por data receb."><i class="fa fa-search" aria-hidden="true"></i> O.S(s) por data de recebimento </a>
+					<a href="?pagina=pesquisa-por-data-receb" class="botoes-atalho-cons" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Pesq. por data receb."><i class="fa fa-search" aria-hidden="true"></i> O.S(s) por data de recebimento </a>
 				</div>
 
 				<div class="col mb-1">
-					<a href="?pagina=pesquisa-por-data-agendamento" class="botoes-atalho-cons" title="Pesq. por data de agendamento"><i class="fa fa-search " aria-hidden="true"></i> O.S(s) por data de agendamento </a>
+					<a href="?pagina=pesquisa-por-data-agendamento" class="botoes-atalho-cons" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Pesq. por data de agendamento"><i class="fa fa-search " aria-hidden="true"></i> O.S(s) por data de agendamento </a>
 				</div>
 
 				<div class="col mb-1">
-					<a href="?pagina=pesquisa-por-orcamento" class="botoes-atalho-cons" title="Orçamentos cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Orçamentos </a>
+					<a href="?pagina=pesquisa-por-orcamento" class="botoes-atalho-cons" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Orçamentos cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Orçamentos </a>
 				</div>
 
 				<div class="col mb-1">
-					<a href="?pagina=pesquisa-produto" class="botoes-atalho-cons" title="Produtos cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Produtos </a>
+					<a href="?pagina=pesquisa-produto" class="botoes-atalho-cons" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Produtos cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Produtos </a>
 				</div>
 
 				<div class="col mb-1">
-					<a href="?pagina=pesquisa-cliente" class="botoes-atalho-cons" title="Clientes cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Clientes </a>
+					<a href="?pagina=pesquisa-cliente" class="botoes-atalho-cons" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Clientes cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Clientes </a>
 				</div>
 
 			</div>
@@ -65,14 +70,14 @@ if ($_SESSION['user'] == NULL) {
 						<div class="row">
 							<div class="input-group-prepend m-2 col-lg-5 col-md-5 col-sm-12 col-xs-12">
 								<div class="input-group-text">Número da O.S.</div>
-								<input type="text" name="ipt-cod-os" required class="form-control"><span>
+								<input type="text" name="ipt-cod-os" class="form-control"><span>
 							</div>
 						</div>
 
 						<br>
 
 						<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 mb-3">
-							<input type="submit" value="Buscar" class="btn btn-lg btn-info btn-block text-white font-weight-bold rounded">
+							<input type="submit" value="Buscar" class="btn btn-lg btn-info btn-block text-white font-weight-bold rounded" id="botoesCons">
 						</div>
 
 					</form>

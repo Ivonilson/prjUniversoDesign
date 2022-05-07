@@ -25,3 +25,5 @@ require "model/Cidade.php";
 
 	$mensagem_erro = $crtl->editarProduto();
 	$registro = $usuario->registroProduto($id_produto);
+
+?>

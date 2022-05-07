@@ -22,3 +22,5 @@
 
 	$crtl = new crtCadastrarNotificacao();
 	$mensagem_erro = $crtl->cadastrarNotificacao();
+
+	?>

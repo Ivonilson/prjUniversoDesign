@@ -33,10 +33,14 @@ switch ($pagina) {
 		include_once "view/cadastrar-os.php";
 		break;
 
+	case 'cadastrar-cidade':
+		require "controller/crtCadastrarCidade.php";
+		include_once "view/cadastrar-cidade.php";
+		break;
+
 	case 'cadastrar-produto':
 		require "controller/crtCadastrarProduto.php";
 		require_once "model/CadastrarProduto.php";
-
 		include_once "view/cadastrar-produto.php";
 		break;
 
@@ -102,8 +106,6 @@ switch ($pagina) {
 
 	case 'pesquisa-produto':
 		require "controller/crtPesquisaProduto.php";
-		$crtl = new crtPesquisaProduto();
-		$crtl->pesquisaProduto();
 		break;
 
 	case 'lista-agendamentos':
@@ -131,3 +133,5 @@ switch ($pagina) {
 		include_once "view/login.php";
 		break;
 }
+
+?>
