@@ -11,10 +11,7 @@ if ($_SESSION['user'] == NULL) {
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Cadastro de Notificacões</title>
 	<!--<link rel="stylesheet" type="text/css" href="../bibliotecas/bootstrap/css/bootstrap.min.css">-->
-	<link rel="stylesheet" type="text/css" href="../css/bootstrap2.min.css">
-	<link rel="stylesheet" type="text/css" href="../bibliotecas/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="../css/sb-admin.min.css">
-	<link rel="stylesheet" type="text/css" href="../css/abg.css">
+	<?php require_once 'includes/bootstrap-css.php' ?>
 </head>
 
 <body class="bg-dark fixed-nav sticky-footer" id="page-top">
@@ -131,7 +128,7 @@ if ($_SESSION['user'] == NULL) {
 							</select>
 						</div>
 
-						<div class="input-group col-auto mt-1">
+						<div class="input-group col-lg-6 col-md-6 col-xs-12 col-sm-12 mt-1">
 							<div class="input-group-prepend">
 								<label class="input-group-text bg-secondary text-white" for="lbl-sel-descricao">
 									Descrição
@@ -147,7 +144,7 @@ if ($_SESSION['user'] == NULL) {
 							</select>
 						</div>
 
-						<div class="input-group col-lg-4 col-md-4 col-xs-12 col-sm-12 mt-1">
+						<div class="input-group col-lg-3 col-md-3 col-xs-12 col-sm-12 mt-1">
 							<div class="input-group-prepend">
 								<div class="input-group-text bg-secondary text-white">
 									Data Limite
@@ -156,7 +153,7 @@ if ($_SESSION['user'] == NULL) {
 							<input type="date" class="form-control" name="ipt-data-limite" required>
 						</div>
 
-						<div class="input-group col-lg-4 col-md-4 col-xs-12 col-sm-12 mt-1">
+						<div class="input-group col-lg-3 col-md-3 col-xs-12 col-sm-12 mt-1">
 							<div class="input-group-prepend">
 								<div class="input-group-text bg-secondary text-white">
 									Alertar em: </div>

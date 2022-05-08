@@ -379,14 +379,17 @@ function confirmarDelecaoItem() {
 
 	botaoDeletar.forEach(clique => {
 
-		$(clique).click(function () {
+		$(clique).click(function (event) {
 
 			if (confirm('Tem certeza que deseja EXCLUIR este item?')) {
 				let contador = 0;
 				confirma.forEach(function () {
 					confirma[contador].setAttribute('value', 'true');
 					contador++;
+
 				});
+			} else {
+				event.preventDefault();
 			}
 
 		});
@@ -401,7 +404,7 @@ function confirmarDelecaoOrcamento() {
 
 	botaoDeletar.forEach(orcamento => {
 
-		$(orcamento).click(function () {
+		$(orcamento).click(function (event) {
 
 			if (confirm('Tem certeza que deseja EXCLUIR este ORÇAMENTO PERMANENTEMENTE?')) {
 				let contador = 0;
@@ -409,6 +412,9 @@ function confirmarDelecaoOrcamento() {
 					confirmaDeletarOrcamento[contador].setAttribute('value', 'true');
 					contador++;
 				});
+
+			}  else {
+				event.preventDefault();
 			}
 
 		});

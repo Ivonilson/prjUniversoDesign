@@ -34,17 +34,17 @@ class OsDoDia {
 				unset($dados['btnDeletarOs']);
 			}
 
-				$queryDeletar = "DELETE FROM tbl_os WHERE id_os = :id_os";
+				$queryDeletar = "DELETE FROM tbl_os WHERE cod_os = :cod_os";
 
 				$conn = new Conn();
 				$os = $conn->getConn()->prepare($queryDeletar);
 
-				$os->bindParam(':id_os', $dados['ipt-cod-delete']);
+				$os->bindParam(':cod_os', $dados['ipt-cod-delete']);
 
 				$os->execute();
 
 			} catch(PDOException $erro){
-				//echo "ERRO: ".$erro->getMessage();
+				echo "ERRO: ".$erro->getMessage();
 			}
 
 			if($os->rowCount()) {
@@ -53,8 +53,9 @@ class OsDoDia {
 				
 				
 			} else {
-				echo "<script>alert('ERRO ao DELETAR registro. Verifique se o cliente não está vinculado com algum orçamento. Caso esteja, a desvinculação é necessária para possibilitar a deleção do mesmo.')</script>";
+				echo "<script>alert('ERRO ao DELETAR registro. CONTATE O SUPORTE.')</script>";
 				//print_r($os->errorInfo());
+			
 			}
 
 	}

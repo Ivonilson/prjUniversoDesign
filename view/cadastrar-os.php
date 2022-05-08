@@ -83,17 +83,17 @@ if ($_SESSION['user'] == NULL) {
 									<div class="card">
 										<div class="card-body col">
 
-											<h5 class="card-title font-weight-bold text-dark">Ref. orçamento n°: <?= $UltimaOsCadastrada != null ? $UltimaOsCadastrada['id_orcamento']  : '-'  ?></h5>	
+											<h5 class="card-title font-weight-bold text-dark">Ref. orçamento n°: <?= $UltimaOsCadastrada != null ? $UltimaOsCadastrada['id_orcamento']  : '-';  ?></h5>	
 
-											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Contato: </span><span style="font-size: 22px"><?= $UltimaOsCadastrada['contato'] != null ?  $UltimaOsCadastrada['contato'] : '-' ?></span><br>
+											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Contato: </span><span style="font-size: 22px"><?= $UltimaOsCadastrada != null ?  $UltimaOsCadastrada['contato'] : '-'; ?></span><br>
 
-											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Endereço: </span><span style="font-size: 22px"><?= $UltimaOsCadastrada['endereco'] != null ?  $UltimaOsCadastrada['endereco'] : '-' ?></span><br>
+											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Endereço: </span><span style="font-size: 22px"><?= $UltimaOsCadastrada != null ?  $UltimaOsCadastrada['endereco'] : '-'; ?></span><br>
 
-											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Cidade: </span><span style="font-size: 22px"><?= $UltimaOsCadastrada['cidade_uf'] != null ?  $UltimaOsCadastrada['cidade_uf'] : '-' ?></span><br>
+											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Cidade: </span><span style="font-size: 22px"><?= $UltimaOsCadastrada != null ?  $UltimaOsCadastrada['cidade_uf'] : '-'; ?></span><br>
 
-											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Agendado para: </span><span style="font-size: 22px"><?= $UltimaOsCadastrada != null ? date_format(date_create($UltimaOsCadastrada['data_agendamento']), "d/m/Y") : '-' ?></span><br>
+											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Agendado para: </span><span style="font-size: 22px"><?= $UltimaOsCadastrada != null ? date_format(date_create($UltimaOsCadastrada['data_agendamento']), "d/m/Y") : '-'; ?></span><br>
 
-											<span class="font-weight-bold text-dark" style="font-size: 20px">Cadastrado em: </span><span style="font-size: 22px"><?= $UltimaOsCadastrada != null ? date_format(date_create($UltimaOsCadastrada['data_cadastro']), "d/m/Y") : '-' ?></span><br><br>
+											<span class="font-weight-bold text-dark" style="font-size: 20px">Cadastrado em: </span><span style="font-size: 22px"><?= $UltimaOsCadastrada != null ? date_format(date_create($UltimaOsCadastrada['data_cadastro']), "d/m/Y") : '-'; ?></span><br><br>
 
 											<div class="row">
 												<a href="/?pagina=editar-os&cod_os=<?=$UltimaOsCadastrada['cod_os'] ?>&form=cadastrar-os" class="card-link btn btn-danger  col-sm col-xs col">Editar</a>

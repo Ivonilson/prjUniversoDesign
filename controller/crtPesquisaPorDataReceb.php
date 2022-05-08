@@ -1,5 +1,7 @@
 <?php
 require "model/PesquisaPorDataReceb.php";
+require "model/OsDoDia.php";
+
 
 class crtPesquisaPorDataReceb {
 
@@ -9,4 +11,9 @@ class crtPesquisaPorDataReceb {
 	}
 }
 
+	$deletar = new OsDoDia();
+
+	if(isset($_POST['ipt-cod-delete']) && $_POST['ipt-cod-delete'] != '' && $_POST['ipt-confirmacao'] == 'true'){
+		$deletar->deletarOs();
+	}
 ?>

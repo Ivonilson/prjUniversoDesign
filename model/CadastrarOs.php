@@ -28,7 +28,7 @@ class CadastrarOS {
 
 			$conn = new Conn();
 
-			$statement = "INSERT INTO tbl_os (id_orcamento, cod_os, contato, endereco, cidade_uf, data_cadastro, data_agendamento, sit_pagamento, status, observacao) VALUES (:id_orcamento, :cod_os, :contato, :endereco, :cidade_uf, CURDATE(), :data_agendamento, :sit_pagamento, :status, :observacao)";
+			$statement = "INSERT INTO tbl_os (id_orcamento, cod_os, contato, endereco, cidade_uf, data_cadastro, data_agendamento, sit_pagamento, status, observacao) VALUES (:id_orcamento, :cod_os, :contato, :endereco, :cidade_uf, CURRENT_TIMESTAMP, :data_agendamento, :sit_pagamento, :status, :observacao)";
 
 			$dados_cadastrar = $conn->getConn()->prepare($statement);
 

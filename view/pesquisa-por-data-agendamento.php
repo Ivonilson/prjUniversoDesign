@@ -105,6 +105,7 @@ if ($_SESSION['user'] == NULL) {
 								<th>Status</th>
 								<th>Observação</th>
 								<th>Atualizar</th>
+								<th>Deletar</th>
 							</tr>
 						</thead>
 						<tfoot class="thead-light">
@@ -121,6 +122,7 @@ if ($_SESSION['user'] == NULL) {
 								<th>Status</th>
 								<th>Observação</th>
 								<th>Atualizar</th>
+								<th>Deletar</th>
 							</tr>
 						</tfoot>
 						<tbody>
@@ -162,6 +164,18 @@ if ($_SESSION['user'] == NULL) {
 										<td class="status"><?= $value['status'] ?></td>
 										<td><?= $value['observacao'] ?></td>
 										<td align="center"><a href="/?pagina=editar-os&cod_os=<?= $value['cod_os'] ?>&form=pesquisa-por-data-receb" title="Atualizar" target=""><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+
+
+										<td align="center">
+											<form method="post">
+												<input type="hidden" name="ipt-cod-delete" value="<?=  $value['cod_os'] ?>">
+
+												<input type="hidden" name="ipt-confirmacao" id="ipt-confirma">
+
+												<input type="submit" class="btn btn-danger" value='Excluir' name="btnDeletarOs" id="btnDeletarItem">
+											</form>
+										</td>
+
 										<!--<td align="center"><a href="/?pagina=historico&cod_os=<?= $value['cod_os'] ?>&form=pesquisa-por-data-entrega" title="Histórico" target="_blank"><i class="fa fa-history" aria-hidden="true"></a></td>-->
 									</tr>
 
