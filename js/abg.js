@@ -398,7 +398,7 @@ function confirmarDelecaoItem() {
 
 }
 
-function confirmarDelecaoOrcamento() {
+/*function confirmarDelecaoOrcamento() {
 	let botaoDeletar = document.querySelectorAll("#btn-del-orcamento");
 	let confirmaDeletarOrcamento = document.querySelectorAll('#orcamento-deletar');
 
@@ -409,6 +409,32 @@ function confirmarDelecaoOrcamento() {
 			if (confirm('Tem certeza que deseja EXCLUIR este ORÇAMENTO PERMANENTEMENTE?')) {
 				let contador = 0;
 				confirmaDeletarOrcamento.forEach(function () {
+					confirmaDeletarOrcamento[contador].setAttribute('value', 'true');
+					contador++;
+				});
+
+			}  else {
+				event.preventDefault();
+			}
+
+		});
+
+	});
+
+}*/
+
+
+function confirmarDelecaoOrcamento() {
+	let botaoDeletar = document.querySelectorAll("#btn-del-orcamento");
+	let confirmaDeletarOrcamento = document.querySelectorAll('#orcamento-deletar');
+
+	botaoDeletar.forEach(orcamento => {
+
+		$(orcamento).click(function (event, handle) {
+
+			if (confirm('Tem certeza que deseja EXCLUIR este ORÇAMENTO PERMANENTEMENTE?')) {
+				let contador = 0;
+				confirmaDeletarOrcamento.forEach(function (handle) {
 					confirmaDeletarOrcamento[contador].setAttribute('value', 'true');
 					contador++;
 				});
@@ -435,8 +461,6 @@ $(document).ready(function () {
 	$(".msgErroLogin").fadeIn(100).delay(2000).fadeOut(200);
 });
 
-
-
 /*Faz a leitura do clique no botão Adicionar para incluir o cabeçalho da relação de itens que estão sendo
 inseridas no orçamento*/
 $(document).ready(function () {
@@ -450,63 +474,59 @@ $(document).ready(function () {
 /*Cores padrão das telas de cadastro**/
 $(document).ready(function () {
 
-	let botoes_atalho_cad = document.querySelectorAll(".botoes-atalho-cad");
-
-	botoes_atalho_cad.forEach(item => {
-		item.setAttribute("class", "btn btn-secondary btn-block font-weight-bold rounded");
-	});
-
-	let jumbotron_tela_cadastro = document.querySelector("#jumbotron_telas_cadastro");
-	jumbotron_tela_cadastro.setAttribute("class", "jumbotron jumbotron-fluid text-white bg-secondary");
-
 	let background_tela_cadastro = document.querySelector("#background-tela-cadastro");
-	background_tela_cadastro.setAttribute("style", "background-color: #DCDCDC");
-	//background_tela_cadastro.setAttribute("style",  "background-image: url('../assets/logo.png');");
-
+	let jumbotron_tela_cadastro = document.querySelector("#jumbotron_telas_cadastro");
+	let botoes_atalho_cad = document.querySelectorAll(".botoes-atalho-cad");
 	let background_form_cad = document.querySelector(".background-form-cadastro");
-	background_form_cad.setAttribute("style", "background-color: #F8F8FF; border-style: outset; padding-bottom: 3px");
-
 	let botoes_gravar_cad = document.querySelector("#botoesGravarCad");
-	botoes_gravar_cad.setAttribute("class", "btn btn-lg btn-secondary btn-block text-white font-weight-bold rounded")
+
+	if(background_tela_cadastro != null){
+		botoes_atalho_cad.forEach(item => {
+		item.setAttribute("class", "btn btn-secondary btn-block font-weight-bold rounded");
+		});
+
+		jumbotron_tela_cadastro.setAttribute("class", "jumbotron jumbotron-fluid text-white bg-secondary");
+
+		background_tela_cadastro.setAttribute("style", "background-color: #DCDCDC");
+		//background_tela_cadastro.setAttribute("style",  "background-image: url('../assets/logo.png');");
+
+		background_form_cad.setAttribute("style", "background-color: #F8F8FF; border-style: outset; padding-bottom: 3px");
+	}
 
 });
 
 /*Cores padrão das telas de consulta**/
 $(document).ready(function () {
 
-	let botoes_atalho_cons = document.querySelectorAll(".botoes-atalho-cons");
-
-
-	botoes_atalho_cons.forEach(item => {
-		item.setAttribute("class", "btn btn-secondary btn-block font-weight-bold rounded");
-	});
-
-	/*por enquanto a função abaixo está sem uso, pois a telas de consulta não tem jumbotrom
-	let jumbotron_tela_consulta = document.querySelector("#jumbotron_telas_consulta");
-	jumbotron_tela_consulta.setAttribute("class", "jumbotron jumbotron-fluid text-white bg-info");*/
-
 	let background_tela_consulta = document.querySelector("#background-tela-consulta");
-	background_tela_consulta.setAttribute("style", "background-color: #DCDCDC");
-	//background_tela_cadastro.setAttribute("style",  "background-image: url('../assets/logo.png');");
-
+	let botoes_atalho_cons = document.querySelectorAll(".botoes-atalho-cons");
 	let background_form_cons = document.querySelector(".background-form-cons");
-	background_form_cons.setAttribute("style", "background-color: #F5F5F5; border-style: outset; padding-bottom: 3px");
-
-	/*Setando as rows das tabelas propriedades das tabelas de consulta*/
 	let row_tbl_consulta = document.querySelector("#row-tbl-consulta");
-	row_tbl_consulta.setAttribute("class", "row border-light bg-light m-1");
-
-	/*Ajuste das divs dos inputs de data das consultas*/
 	let div_ipt_data_cons = document.querySelector("#div-ipt-data-form-cons");
-	div_ipt_data_cons.setAttribute("class", "col-lg-5 col-md-4 col-sm-12 col-xs-12 mt-3");
-
-	/*Ajuste das divs dos botoes de busca das consultas*/
-	let div_btn_form_cons = document.querySelector("#div-btn-form-cons");
-	div_btn_form_cons.setAttribute("class", "col-lg-5 col-md-5 col-sm-12 col-xs-12 mb-3");
-
 	let botoes_cons = document.querySelector("#botoesCons");
-	botoes_cons.setAttribute("class", "btn btn-lg btn-secondary btn-block text-white font-weight-bold rounded");
-	//botoes_cons.setAttribute("style", "background-color: #483D8B");
+	let div_btn_form_cons = document.querySelector("#div-btn-form-cons");
+
+	if(background_tela_consulta != null){
+			botoes_atalho_cons.forEach(item => {
+			item.setAttribute("class", "btn btn-secondary btn-block font-weight-bold rounded");
+		});
+
+		background_tela_consulta.setAttribute("style", "background-color: #DCDCDC");
+		//background_tela_cadastro.setAttribute("style",  "background-image: url('../assets/logo.png');");
+		background_form_cons.setAttribute("style", "background-color: #F5F5F5; border-style: outset; padding-bottom: 3px");
+
+		/*Setando as rows das tabelas propriedades das tabelas de consulta*/
+		row_tbl_consulta.setAttribute("class", "row border-light bg-light m-1");
+
+		/*Ajuste das divs dos inputs de data das consultas*/
+		div_ipt_data_cons.setAttribute("class", "col-lg-5 col-md-4 col-sm-12 col-xs-12 mt-3");
+
+		/*Ajuste das divs dos botoes de busca das consultas*/
+		div_btn_form_cons.setAttribute("class", "col-lg-5 col-md-5 col-sm-12 col-xs-12 mb-3");
+
+		botoes_cons.setAttribute("class", "btn btn-lg btn-secondary btn-block text-white font-weight-bold rounded");
+		//botoes_cons.setAttribute("style", "background-color: #483D8B");
+	}
 });
 
 
@@ -514,25 +534,35 @@ $(document).ready(function () {
 $(document).ready(function () {
 
 	let background_tela_edicao = document.querySelector("#background-tela-edicao");
+	let background_form_edicao = document.querySelector(".background-form-edicao");
+	let background_jumbotron_telas_ed = document.querySelector("#jumbotron_telas_edicao");
+	let background_row_form_edicao = document.querySelector("#row-form-edicao");
+	let btn_edicao = document.querySelector("#btnGravarEdicao");
+
+	if(background_tela_edicao != null){
+
 	background_tela_edicao.setAttribute("style", "background-color: #DCDCDC");
 
-	let background_form_edicao = document.querySelector(".background-form-edicao");
+	
 	background_form_edicao.setAttribute("style", "background-color: #FFFFF0; border-style: outset; padding-bottom: 3px");
 
 	/*background jumbotron telas de edição*/
-	let background_jumbotron_telas_ed = document.querySelector("#jumbotron_telas_edicao");
+	
 	background_jumbotron_telas_ed.setAttribute("class", "jumbotron jumbotron-fluid text-white");
 	background_jumbotron_telas_ed.setAttribute("style", "background-color: #2F4F4F");
 
 	/*background das rows dos forms de edição*/
-	let background_row_form_edicao = document.querySelector("#row-form-edicao");
+	
 	background_row_form_edicao.setAttribute("class", "row");
 	background_row_form_edicao.setAttribute("style", "background-color: #E6E6FA");
 
 
 	/*botões de gravar alterações de edições*/
-	let btn_edicao = document.querySelector("#btnGravarEdicao");
+	
 	btn_edicao.setAttribute("class", "btn btn-info btn-block font-weight-bold rounded");
+
+	}
+
 });
 
 //mascaras campos inputs CADASTRAR CLIENTE
@@ -596,13 +626,13 @@ $(document).ready(function () {
 	});
 });
 
-//Constrói a URL depois que o DOM estiver pronto
+/*Constrói a URL depois que o DOM estiver pronto
 document.addEventListener("DOMContentLoaded", function() {
     //conteúdo que será compartilhado: Título da página + URL
     var conteudo = encodeURIComponent(document.title + "<h1>TESTE</h1>");
     //altera a URL do botão
     document.getElementById("whatsapp-share-btt").href = "https://api.whatsapp.com/send?text=" + conteudo;
-}, false);
+}, false);*/
 
 confirmarDelecaoItem();
 confirmarDelecaoOrcamento();
