@@ -398,7 +398,7 @@ function confirmarDelecaoItem() {
 
 }
 
-/*function confirmarDelecaoOrcamento() {
+function confirmarDelecaoOrcamento() {
 	let botaoDeletar = document.querySelectorAll("#btn-del-orcamento");
 	let confirmaDeletarOrcamento = document.querySelectorAll('#orcamento-deletar');
 
@@ -409,32 +409,6 @@ function confirmarDelecaoItem() {
 			if (confirm('Tem certeza que deseja EXCLUIR este ORÇAMENTO PERMANENTEMENTE?')) {
 				let contador = 0;
 				confirmaDeletarOrcamento.forEach(function () {
-					confirmaDeletarOrcamento[contador].setAttribute('value', 'true');
-					contador++;
-				});
-
-			}  else {
-				event.preventDefault();
-			}
-
-		});
-
-	});
-
-}*/
-
-
-function confirmarDelecaoOrcamento() {
-	let botaoDeletar = document.querySelectorAll("#btn-del-orcamento");
-	let confirmaDeletarOrcamento = document.querySelectorAll('#orcamento-deletar');
-
-	botaoDeletar.forEach(orcamento => {
-
-		$(orcamento).click(function (event, handle) {
-
-			if (confirm('Tem certeza que deseja EXCLUIR este ORÇAMENTO PERMANENTEMENTE?')) {
-				let contador = 0;
-				confirmaDeletarOrcamento.forEach(function (handle) {
 					confirmaDeletarOrcamento[contador].setAttribute('value', 'true');
 					contador++;
 				});
@@ -481,8 +455,9 @@ $(document).ready(function () {
 	let botoes_gravar_cad = document.querySelector("#botoesGravarCad");
 
 	if(background_tela_cadastro != null){
+
 		botoes_atalho_cad.forEach(item => {
-		item.setAttribute("class", "btn btn-secondary btn-block font-weight-bold rounded");
+			item.setAttribute("class", "btn btn-secondary btn-block font-weight-bold rounded mb-1");
 		});
 
 		jumbotron_tela_cadastro.setAttribute("class", "jumbotron jumbotron-fluid text-white bg-secondary");
@@ -491,6 +466,9 @@ $(document).ready(function () {
 		//background_tela_cadastro.setAttribute("style",  "background-image: url('../assets/logo.png');");
 
 		background_form_cad.setAttribute("style", "background-color: #F8F8FF; border-style: outset; padding-bottom: 3px");
+
+		botoes_gravar_cad.setAttribute("class", "btn btn-lg btn-secondary btn-block text-light font-weight-bold rounded");
+
 	}
 
 });
@@ -559,7 +537,7 @@ $(document).ready(function () {
 
 	/*botões de gravar alterações de edições*/
 	
-	btn_edicao.setAttribute("class", "btn btn-info btn-block font-weight-bold rounded");
+	btn_edicao.setAttribute("class", "btn btn-secondary btn-block font-weight-bold rounded");
 
 	}
 

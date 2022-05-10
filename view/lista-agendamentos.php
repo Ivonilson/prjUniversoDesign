@@ -62,7 +62,7 @@ if ($_SESSION['user'] == NULL) {
 
 				<div class="row">
 					<div class="card-body">
-						<table class="table table-bordered table-hove" id="#" width="100%" cellspacing="0">
+						<table class="table table-bordered table-hove responsive" id="#" width="100%" cellspacing="0">
 							<thead class="thead-dark">
 								<tr>
 									<th>O.S</th>
