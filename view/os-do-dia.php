@@ -58,16 +58,15 @@ if ($_SESSION['user'] == null) {
 					echo $hoje;
 					echo " - (última atualização às " . date('H') . " h " . date('i') . " m)"; ?><a href="/?pagina=pesquisa-por-os" class=" btn btn-info pr-3 pl-3 pt-2 pb-2 ml-3 float-right text-light rounded"><i class="fa fa-search" aria-hidden="true"></i> Pesquisa por O.S</a>
 
+					<div barra-progresso="barraProgresso" class="col progresso pr-3 pl-3 pt-1 pb-1 ml-3 float-right  rounded" title="Percentual de serviços finalizados">
+						<div></div>
+					</div>
+
 				</div>
 			</div>
 			<!-- <div class="container"> -->
 			<div class="row">
 				<div class="col">
-
-					<div barra-progresso="barraProgresso" class="col progresso pr-3 pl-3 pt-1 pb-1 ml-3 float-right  rounded" title="Percentual de serviços finalizados">
-						<div></div>
-					</div>
-
 					<table class="table table-bordered table-hover display" id="dataTable" width="100%" cellspacing="0">
 						<thead class="thead-light">
 							<tr>

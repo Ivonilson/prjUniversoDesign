@@ -486,7 +486,7 @@ $(document).ready(function () {
 
 	if(background_tela_consulta != null){
 			botoes_atalho_cons.forEach(item => {
-			item.setAttribute("class", "btn btn-secondary btn-block font-weight-bold rounded");
+			item.setAttribute("class", "btn btn-secondary btn-block font-weight-bold rounded mb-1");
 		});
 
 		background_tela_consulta.setAttribute("style", "background-color: #DCDCDC");
