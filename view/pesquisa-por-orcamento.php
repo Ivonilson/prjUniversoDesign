@@ -106,7 +106,7 @@ if ($_SESSION['user'] == NULL) {
 								<th>Observação</th>
 								<th>Ver Itens</th>
 								<th>Imprimir</th>
-								<th class="d-sm-none d-xs-none">Excluir</th>
+								<th class="d-xs-none">Excluir</th>
 							</tr>
 						</thead>
 						<tfoot class="thead-light">
@@ -120,7 +120,7 @@ if ($_SESSION['user'] == NULL) {
 								<th>Observação</th>
 								<th>Ver Itens</th>
 								<th>Imprimir</th>
-								<th class="d-sm-none d-xs-none">Excluir</th>
+								<th class="d-xs-none">Excluir</th>
 							</tr>
 						</tfoot>
 						<tbody>
@@ -132,9 +132,10 @@ if ($_SESSION['user'] == NULL) {
 
 								foreach ($resultado as  $value) {
 							?>
-								<form method="post">
-									<tr>
-										<td id="valor_id"><?= $value['id_orcamento']?>&nbsp&nbsp<button class="btn btn-light d-lg-none" name="btn-deletar-orcamento" id="btn-del-orcamento"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+									
+								<tr>
+									<form method="post">
+										<td id="valor_id"><?= $value['id_orcamento']?>&nbsp&nbsp<button class="btn btn-light d-lg-none" name="btn-deletar-orcamento" id="btn-del-orcamento" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
 										<td><?= $value['nome'] ?></td>
 										<td><?= $value['servico'] ?></td>
 										<td><?= date_format(date_create($value['data_cadastro']), "d/m/Y") ?></td>
@@ -145,10 +146,10 @@ if ($_SESSION['user'] == NULL) {
 										<!--<td align="center"  data-toggle="modal" data-target=".modal-ver-itens"><a href="#" title="Atualizar"><i class="fa fa-check-square-o" aria-hidden="true"></i></a></td>--->
 
 										<td align="center">
-											<a href="/?pagina=itens-orcamento&id_orcamento=<?= $value['id_orcamento'] ?>" title="Itens orçamento" target="_blank" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></a>
+											<a href="/?pagina=itens-orcamento&id_orcamento=<?= $value['id_orcamento'] ?>" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Itens orçamento" target="_blank" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></a>
 										</td>
 
-										<td align="center"><a href="/?pagina=impressao-orcamento&id_orcamento=<?= $value['id_orcamento'] ?>&form=pesquisa-por-orcamento" title="Imprimir" target="_blank" class="btn btn-default"><i class="fa fa-print" aria-hidden="true"></i></a></td>
+										<td align="center"><a href="/?pagina=impressao-orcamento&id_orcamento=<?= $value['id_orcamento'] ?>&form=pesquisa-por-orcamento" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Imprimir" target="_blank" class="btn btn-default"><i class="fa fa-print" aria-hidden="true"></i></a></td>
 
 										
 
@@ -156,11 +157,11 @@ if ($_SESSION['user'] == NULL) {
 
 											<input type="hidden" id="orcamento-deletar" name="ipt-confirma-orcamento-deletar">
 
-											<td align="center"><button class="btn btn-default d-sm-none d-xs-none" name="btn-deletar-orcamento" id="btn-del-orcamento"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+											<td align="center"><button class="btn btn-default d-xs-none" name="btn-deletar-orcamento" id="btn-del-orcamento" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+										</form>
 
 										<!--<td align="center"><a href="/?pagina=historico&cod_os=<?= $value['cod_os'] ?>&form=pesquisa-por-data-receb" title="Histórico" target="_blank"><i class="fa fa-history" aria-hidden="true"></a></td>-->
 									</tr>
-								</form>
 
 							<?php
 									$conexao = null;

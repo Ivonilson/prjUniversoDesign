@@ -80,7 +80,7 @@ if ($_SESSION['user'] == null) {
 								<th>Observações</th>
 								<th>Visualizar Itens Orc.</th>
 								<th>Atualizar</th>
-								<th>Deletar</th>
+								<th class="d-xs-none">Deletar</th>
 							</tr>
 						</thead>
 						<tfoot class="thead-light">
@@ -95,7 +95,7 @@ if ($_SESSION['user'] == null) {
 								<th>Observações</th>
 								<th>Visualizar Itens Orc.</th>
 								<th>Atualizar</th>
-								<th>Deletar</th>
+								<th class="d-xs-none">Deletar</th>
 							</tr>
 						</tfoot>
 						<tbody>
@@ -118,8 +118,9 @@ if ($_SESSION['user'] == null) {
 
 								?>
 
-										<tr class="itensTabela">
-											<td><?= $value['cod_os'] ?></td>
+									<tr class="itensTabela">
+										<form method="post">
+											<td><?= $value['cod_os'] ?>&nbsp&nbsp<button class="btn btn-light d-md-none d-lg-none d-xl-none"  value='Excluir' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir" title="Excluir" name="btnDeletarOs" id="btnDeletarItem"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
 											<td><?= $value['nome'] ?></td>
 											<td><?= $value['numeroOrcamento'] ?></td>
 											<td><?= date_format(date_create($value['data_cadastro']), "d/m/Y") ?></td>
@@ -134,20 +135,19 @@ if ($_SESSION['user'] == null) {
 											<a href="/?pagina=itens-orcamento&id_orcamento=<?= $value['numeroOrcamento'] ?>" title="Itens orçamento" target="_blank" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></a>
 											</td>
 
-											<td align="center"><a href="/?pagina=editar-os&cod_os=<?= $value['cod_os'] ?>&form=os-do-dia" title="Editar"><i class="fa fa-pencil" aria-hidden="true"></a></td>
+											<td align="center"><a href="/?pagina=editar-os&cod_os=<?= $value['cod_os'] ?>&form=os-do-dia" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Editar"><i class="fa fa-pencil" aria-hidden="true"></a></td>
 
 											<td align="center">
-												<form method="post">
 													<input type="hidden" name="ipt-cod-delete" value="<?=  $value['cod_os'] ?>">
 
 													<input type="hidden" name="ipt-confirmacao" id="ipt-confirma">
 
-													<input type="submit" class="btn btn-danger" value='Excluir' name="btnDeletarOs" id="btnDeletarItem">
-												</form>
+													<button class="btn btn-light d-xs-none"  value='Excluir' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir" title="Excluir" name="btnDeletarOs" id="btnDeletarItem"><i class="fa fa-trash" aria-hidden="true"></i></button>
 											</td>
+										</form>
 
 											<!--<td align="center"><a href="/?pagina=historico&cod_os=<?= $value['cod_os'] ?>&form=os-do-dia" title="Histórico" target="_blank"><i class="fa fa-history" aria-hidden="true"></a></td>-->
-										</tr>
+									</tr>
 
 									<script>statusOs()</script>
 

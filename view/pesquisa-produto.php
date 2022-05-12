@@ -128,7 +128,7 @@ if ($_SESSION['user'] == NULL) {
 								
 									<tr>
 									<form method="post">
-										<td><?= $value['id_prod'] ?>&nbsp&nbsp<button class=" btn btn-light btn-sm d-lg-none d-md-none d-xl-none" name="btnDeletarProduto" id="btnDeletarItem" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+										<td><?= $value['id_prod'] ?>&nbsp&nbsp<button class="btn btn-light btn-sm d-lg-none d-md-none d-xl-none" name="btnDeletarProduto" id="btnDeletarItem" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
 										<td><?= $value['descricao'] ?></td>
 										<td><?= $value['unidade_medida'] ?></td>
 										<td><?= number_format($value['preco_unitario'], 2, ',', '.') ?></td>
@@ -139,14 +139,14 @@ if ($_SESSION['user'] == NULL) {
 										<td align="center"><a href="/?pagina=editar-produto&id_prod=<?= $value['id_prod'] ?>&form=pesquisa-produto" title="Atualizar" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
 
 										
-										<td align="center d-sm-none d-xs-none">
+										<td align="center d-xs-none">
 											
 											
 											<input type="hidden" name="ipt-cod-delete" value="<?= $value['id_prod'] ?>">
 
 											<input type="hidden" name="ipt-confirmacao" id="ipt-confirma">
 
-											<input type="submit" class="btn btn-danger d-xs-none" value='Excluir' name="btnDeletarProduto" id="btnDeletarItem">
+											<button class="btn btn-light d-xs-none" value='Excluir' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir" name="btnDeletarProduto" id="btnDeletarItem"><i class="fa fa-trash" aria-hidden="true"></i></button>
 											
 										</td>
 									</form>

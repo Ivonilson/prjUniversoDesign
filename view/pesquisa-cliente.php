@@ -107,7 +107,7 @@ if ($_SESSION['user'] == NULL) {
 								<th>E-mail</th>
 								<th>Data de cadastro</th>
 								<th>Atualizar</th>
-								<th>Deletar</th>
+								<th class="d-xs-none">Deletar</th>
 							</tr>
 						</thead>
 						<tfoot class="thead-light">
@@ -123,7 +123,7 @@ if ($_SESSION['user'] == NULL) {
 								<th>E-mail</th>
 								<th>Data de cadastro</th>
 								<th>Atualizar</th>
-								<th>Deletar</th>
+								<th class="d-xs-none">Deletar</th>
 							</tr>
 						</tfoot>
 						<tbody>
@@ -135,7 +135,7 @@ if ($_SESSION['user'] == NULL) {
 							?>		
 									<tr>
 									<form method="post">
-										<td><?= $value['id_cliente'] ?></td>
+										<td><?= $value['id_cliente']?>&nbsp&nbsp<button class="btn btn-light btn-sm d-lg-none d-md-none d-xl-none" value="Excluir" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir" name="btnDeletarCliente" id="btnDeletarItem"><i class="fa fa-trash" aria-hidden="true"></button></td>
 										<td><?= $value['nome'] ?></td>
 										<td><?= $value['cpf_cnpj'] ?></td>
 										<td><?= $value['endereco'] ?></td>
@@ -145,7 +145,7 @@ if ($_SESSION['user'] == NULL) {
 										<td><?= $value['tel_cel'] ?></td>
 										<td><?= $value['email'] ?></td>
 										<td><?= date_format(date_create($value['data_cadastro']), "d/m/Y") ?></td>
-										<td align="center"><a href="/?pagina=editar-cliente&id_cliente=<?= $value['id_cliente'] ?>&form=pesquisa-cliente" title="Atualizar"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+										<td align="center"><a href="/?pagina=editar-cliente&id_cliente=<?= $value['id_cliente'] ?>&form=pesquisa-cliente" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Atualizar"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
 
 										<td align="center">
 											
@@ -153,7 +153,7 @@ if ($_SESSION['user'] == NULL) {
 
 												<input type="hidden" name="ipt-confirmacao" id="ipt-confirma">
 
-												<input type="submit" class="btn btn-danger" value='Excluir' name="btnDeletarCliente" id="btnDeletarItem">
+												<button class="btn btn-light d-xs-none" value='Excluir' name="btnDeletarCliente" id="btnDeletarItem" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir"><i class="fa fa-trash" aria-hidden="true"></i></button>
 											
 										</td>
 									</form>
