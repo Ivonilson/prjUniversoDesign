@@ -81,14 +81,14 @@ function addItem() {
 	iptTotalPagar.setAttribute('readonly', '');
 
 	let iconeExcluir = document.createElement('button');
-	iconeExcluir.className = 'form-control text-center btn btn-danger text-light btn-block';
-	iconeExcluir.setAttribute('type', 'button');
+	iconeExcluir.className = 'form-control text-center btn btn-danger text-light btn-block sr-only';
+	//iconeExcluir.setAttribute('type', 'button');
 	//iconeExcluir.setAttribute('title' , 'Excluir');
 	iconeExcluir.setAttribute('id', 'botaoExcluir');
-	iconeExcluir.innerHTML = 'Excluir';
+	//iconeExcluir.innerHTML = 'Excluir';
 
 	let divDescricao = document.createElement('div');
-	divDescricao.className = 'col-3';
+	divDescricao.className = 'col-2';
 	divDescricao.setAttribute('id', 'divDescricao');
 	let labelDescricao = document.createElement('label');
 	labelDescricao.className = 'text-light text-left ml-0';
@@ -97,6 +97,7 @@ function addItem() {
 	let divValorUnitario = document.createElement('div');
 	divValorUnitario.className = 'col-1';
 	divValorUnitario.setAttribute('id', 'divValorUnitario');
+	divValorUnitario.setAttribute('class', 'd-xs-none d-sm-none')
 	let labelValorUnitario = document.createElement('label');
 	labelValorUnitario.className = 'text-light text-left ml-0';
 	labelValorUnitario.innerHTML = 'Vl. Unit.(R$)';
@@ -104,8 +105,9 @@ function addItem() {
 	let divQuant = document.createElement('div');
 	divQuant.className = 'col-1';
 	divQuant.setAttribute('id', 'divQuant');
+	divQuant.setAttribute('class', 'd-xs-none d-sm-none');
 	let labelQuant = document.createElement('label');
-	labelQuant.className = 'text-light text-left ml-0';
+	labelQuant.className = 'text-light text-left';
 	labelQuant.innerHTML = 'Quant.';
 
 
@@ -132,8 +134,9 @@ function addItem() {
 	labelTotalPagar.innerHTML = 'A pagar (R$)';
 
 	let divIconeExcluir = document.createElement('div');
-	divIconeExcluir.className = 'col-1 botaoExcluir';
+	divIconeExcluir.className = 'col-2 botaoExcluir';
 	divIconeExcluir.setAttribute('id', 'divIconeExcluir');
+	divIconeExcluir.innerHTML = '<i class="fa fa-trash" aria-hidden="true"></i>';
 	let labelIconeExcluir = document.createElement('label');
 	labelIconeExcluir.className = 'text-light text-left ml-0';
 	labelIconeExcluir.innerHTML = 'Ação';
@@ -177,12 +180,12 @@ function addItem() {
 			subtotal = subtotal - (subtotal * desconto);
 			iptDesconto.value = valorDesconto.toFixed(3) + ' (' + (desconto * 100) + '%)';
 			iptTotalPagar.value = subtotal.toFixed(2);
-			iconeExcluir.value = 'Excluir';
+			//iconeExcluir.value = 'Excluir';
 
 		} else {
 			iptDesconto.value = 0.00;
 			iptTotalPagar.value = subtotal.toFixed(2);
-			iconeExcluir.value = 'Excluir';
+			//iconeExcluir.value = 'Excluir';
 
 		}
 
@@ -207,13 +210,13 @@ function addItem() {
 			//ipt.value += ' / Total com desc.: ' + subtotal.toFixed(2) + '<br>' ;
 			iptDesconto.value = valorDesconto.toFixed(2) + ' (' + (desconto * 100) + '%)';
 			iptTotalPagar.value = subtotal.toFixed(2);
-			iconeExcluir.value = 'Excluir';
+			//iconeExcluir.value = 'Excluir';
 
 		} else {
 			//ipt.value += ' / Total com desc.: ' + subtotal.toFixed(2) + '<br>' ;
 			iptDesconto.value = 0.00;
 			iptTotalPagar.value = subtotal.toFixed(2);
-			iconeExcluir.value = 'Excluir';
+			//iconeExcluir.value = 'Excluir';
 
 		}
 

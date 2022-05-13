@@ -260,15 +260,15 @@ if ($_SESSION['user'] == NULL) {
 							<div class="row d-none" id="itens">
 
 								<div class="d-inline" id="divDescricao">
-									<label class="text-danger col-3 text-left ml-0 pl-0">Descrição</label>
+									<label class="text-danger col-2 text-left ml-0 pl-0">Descrição</label>
 								</div>
 
 								<div class="d-inline" id="divValorUnit">
-									<label class="text-danger col-1 text-left ml-0 pl-0">Vl. Unit.(R$)</label>
+									<label class="text-danger col-1 text-left ml-0 pl-0 d-xs-none d-sm-none">Vl. Unit.(R$)</label>
 								</div>
 
 								<div class="d-inline" id="divQuant">
-									<label class="text-danger col-1 text-left ml-0 pl-0">Quant.</label>
+									<label class="text-danger col-1 text-left ml-0 pl-0 d-xs-none d-sm-none">Quant.</label>
 								</div>
 
 								<div class="d-inline" id="divTotal">
@@ -284,7 +284,7 @@ if ($_SESSION['user'] == NULL) {
 								</div>
 
 								<div class="d-inline-block" id="divIconeExcluir">
-									<label class="text-danger col-1 text-left ml-0 pl-0"></label>
+									<label class="text-danger col-2 text-left ml-0 pl-0"></label>
 								</div>
 							</div>
 

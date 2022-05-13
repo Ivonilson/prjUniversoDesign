@@ -108,14 +108,17 @@ if ($_SESSION['user'] == NULL) {
 								</span>-->
 										<span>
 											<form method="post">
-												<a href="/?pagina=editar-os&cod_os=<?= $resultado[0]['cod_os'] ?>&form=pesquisa-por-os" class="mt-1 text-dark text-decoration-none float-right border-rouded" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Atualizar">
-													<i class="fa fa-pencil" aria-hidden="true"></i></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+												
 
 												<input type="hidden" name="ipt-cod-delete" value="<?=  $resultado[0]['cod_os'] ?>">
 
 												<input type="hidden" name="ipt-confirmacao" id="ipt-confirma">
 
-												<button class="btn btn-light float-right" value='Excluir' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir" name="btnDeletarOs" id="btnDeletarItem"><i class="fa fa-trash" aria-hidden="true"></i></button>
+												<button class="btn btn-light float-right" value='Excluir' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir" name="btnDeletarOs" id="btnDeletarItem"><i class="fa fa-trash" aria-hidden="true"></i></button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+
+												<a href="/?pagina=editar-os&cod_os=<?= $resultado[0]['cod_os'] ?>&form=pesquisa-por-os" class="mt-2 text-dark text-decoration-none float-right border-rouded" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Atualizar">
+													<i class="fa fa-pencil" aria-hidden="true"></i></a>
 											</form>
 										</span>
 									</div>
