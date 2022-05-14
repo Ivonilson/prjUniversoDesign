@@ -78,7 +78,7 @@ if ($_SESSION['user'] == NULL) {
 							</div>
 
 						<?php
-						} elseif ($mensagem_erro == "ERRO. Contate do Suporte.") {
+						} elseif ($mensagem_erro == "ERRO. Provavelmente a O.S. que está tentando cadastrar já exista no sistema. Caso o problema persista, contate o Suporte.") {
 						?>
 
 							<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
@@ -100,7 +100,7 @@ if ($_SESSION['user'] == NULL) {
 						?>
 
 					<!-- Modal -->
-					<div class="modal fade offset-3 col-6 offset-3" id="md-ultima-os" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+					<div class="modal fade offset-0 col-12 offset-0" id="md-ultima-os" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">

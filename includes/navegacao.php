@@ -229,7 +229,7 @@
 	</nav>
 
 	<!-- MODAL DAS NOTIFICAÇÕES -->
-	<div class="modal fade offset-4 col-4 offset-4" tabindex="-1" id="modalNotificacoes" role="dialog" aria-labelledby="notificacoes" aria-hidden="true">
+	<div class="modal fade offset-0 col-12 offset-0" tabindex="-1" id="modalNotificacoes" role="dialog" aria-labelledby="notificacoes" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -279,7 +279,7 @@
 							<input type="hidden" name="ipt-id-notificacao" value="<?=$dados->id_notificacao?>">
 							<input type="hidden" name="pagina" value="editar-notificacao">
 
-							<div class="input-group col-auto" >
+							<div class="input-group col mb-2" >
 								<div class="input-group-prepend">
 									<label class="input-group-text bg-info text-white">Ação</label>
 								</div>
@@ -290,14 +290,14 @@
 								</select>	
 							</div>
 
-							<div class="input-group col-auto mt-1 mb-1 d-none" id="div-adiar">
+							<div class="input-group col mb-2 d-none" id="div-adiar">
 								<div class="input-group-prepend">
 									<label class="input-group-text bg-info text-white">Adiar para</label>
 								</div>
 								<input type="date" class="form-control" name="ipt-data-adiada">
 							</div>
 
-							<div class="input-group col-auto mt-1 mb-1">
+							<div class="input-group col mt-1">
 								<input type="submit" class="btn btn-info text-white btn-block" name="btnGravar" value="Gravar">
 							</div>
 						</form>

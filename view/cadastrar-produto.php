@@ -100,11 +100,11 @@ if ($_SESSION['user'] == NULL) {
 
 
 					<!-- Modal -->
-					<div class="modal fade offset-3 col-6 offset-3" id="md-ultimo-produto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+					<div class="modal fade offset-0 col-12 offset-0" id="md-ultimo-produto" tabindex="-1" role="dialog" aria-labelledby="mdCadastrarProduto" aria-hidden="true">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLongTitle">Código do Produto/Serviço: <?= $UltimoProdutoCadastrado != null ? $UltimoProdutoCadastrado['id_prod'] : '- Nenhum produto cadastrado.';  ?></h5>
+									<h5 class="modal-title" id="mdCadastrarProduto">Código: <?= $UltimoProdutoCadastrado != null ? $UltimoProdutoCadastrado['id_prod'] : '- Nenhum produto cadastrado.';  ?></h5>
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
@@ -127,9 +127,9 @@ if ($_SESSION['user'] == NULL) {
 											<br>
 
 											<div class="row">
-												<a href="/?pagina=editar-produto&id_prod=<?=$UltimoProdutoCadastrado['id_prod'] ?>&form=cadastrar-produto" class="card-link btn btn-danger  col-sm col-xs col">Editar</a>
+												<a href="/?pagina=editar-produto&id_prod=<?=$UltimoProdutoCadastrado['id_prod'] ?>&form=cadastrar-produto" class="btn btn-danger  col-sm col-xs mr-1 mb-1">Editar</a>
 
-												<a href="/?pagina=pesquisa-produto" class="card-link btn btn-info  col-sm col-xs col">Pesquisar Produtos</a>
+												<a href="/?pagina=pesquisa-produto" class="btn btn-info  col-sm col-xs mb-1">Pesquisar Produtos</a>
 											</div>
 
 										</div>

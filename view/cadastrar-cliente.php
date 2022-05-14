@@ -110,11 +110,11 @@ if ($_SESSION['user'] == null) {
 
 
 					<!-- Modal -->
-					<div class="modal fade offset-3 col-6 offset-3" id="md-ultimo-cliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+					<div class="modal fade offset-0 col-12 offset-0" id="md-ultimo-cliente" tabindex="-1" role="dialog" aria-labelledby="mdCadastrarCliente" aria-hidden="true">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLongTitle">Código Cliente: <?= $UltimoClienteCadastrado != null ? $UltimoClienteCadastrado['id_cliente'] : '- Nenhum cliente cadastrado.';  ?></h5>
+									<h5 class="modal-title" id="mdCadastrarCliente">Código: <?= $UltimoClienteCadastrado != null ? $UltimoClienteCadastrado['id_cliente'] : '- Nenhum cliente cadastrado.';  ?></h5>
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
@@ -145,9 +145,9 @@ if ($_SESSION['user'] == null) {
 											<br>
 
 											<div class="row">
-												<a href="/?pagina=editar-cliente&id_cliente=<?=$UltimoClienteCadastrado['id_cliente'] ?>&form=cadastrar-cliente" class="card-link btn btn-danger  col-sm col-xs col">Editar</a>
+												<a href="/?pagina=editar-cliente&id_cliente=<?=$UltimoClienteCadastrado['id_cliente'] ?>&form=cadastrar-cliente" class="btn btn-danger  col-sm col-xs mr-1 mb-1">Editar</a>
 
-												<a href="/?pagina=pesquisa-cliente" class="card-link btn btn-info  col-sm col-xs col">Pesquisar Clientes</a>
+												<a href="/?pagina=pesquisa-cliente" class="btn btn-info  col-sm col-xs mb-1">Pesquisar Clientes</a>
 											</div>
 
 										</div>

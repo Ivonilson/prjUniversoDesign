@@ -41,7 +41,7 @@ class PesquisaPorOrcamento {
 		$orcamento->execute();
 
 		} catch(PDOException $error){
-			echo "Erro: ".$error->getMessage();
+			//echo "Erro: ".$error->getMessage();
 		}
 
 		if($orcamento->rowCount())

@@ -28,7 +28,7 @@ require "model/Cidade.php";
 			$codigo = $codigoDisponivel->gerarCodigoOs();
 			$mensagem_erro = "Ordem de Serviço cadastrada com Sucesso!";
 		} else {
-			$mensagem_erro = "ERRO. Contate do Suporte.";
+			$mensagem_erro = "ERRO. Provavelmente a O.S. que está tentando cadastrar já exista no sistema. Caso o problema persista, contate o Suporte.";
 		}
 		
 	} elseif(filter_input(INPUT_POST, 'sel-orcamento') == '-') { 

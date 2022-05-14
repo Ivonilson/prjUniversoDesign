@@ -77,11 +77,11 @@ if ($_SESSION['user'] == NULL) {
 					</div>
 
 					<!-- Modal -->
-					<div class="modal fade offset-3 col-6 offset-3" id="md-ultimo-orcamento" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+					<div class="modal fade offset-3 col-6 offset-3" id="md-ultimo-orcamento" tabindex="-1" role="dialog" aria-labelledby="mdCadastrarOrcamento" aria-hidden="true">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLongTitle">Orçamento N° <?= $UltimoOrcCadastrado != null ? $UltimoOrcCadastrado['id_orcamento'] : '- Nenhum orçamento cadastrado.';  ?></h5>
+									<h5 class="modal-title" id="mdCadastrarOrcamento">Orçamento N° <?= $UltimoOrcCadastrado != null ? $UltimoOrcCadastrado['id_orcamento'] : '- Nenhum orçamento cadastrado.';  ?></h5>
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
@@ -106,9 +106,9 @@ if ($_SESSION['user'] == NULL) {
 											<br>
 
 											<div class="row">
-												<a href="/?pagina=itens-orcamento&id_orcamento=<?= $UltimoOrcCadastrado['id_orcamento'] ?>" target="_blank" class="card-link btn btn-danger  col-sm col-xs col-4">Editar</a>
+												<a href="/?pagina=itens-orcamento&id_orcamento=<?= $UltimoOrcCadastrado['id_orcamento'] ?>" target="_blank" class="btn btn-danger  col-sm col-xs mr-1 mb-1">Editar</a>
 
-												<a href="/?pagina=impressao-orcamento&id_orcamento=<?= $UltimoOrcCadastrado['id_orcamento'] ?>" target="_blank" class="card-link btn btn-info  col-md col-sm col-xs col-4">Imprimir</a>
+												<a href="/?pagina=impressao-orcamento&id_orcamento=<?= $UltimoOrcCadastrado['id_orcamento'] ?>" target="_blank" class="btn btn-info  col-sm col-xs mb-1">Imprimir</a>
 											</div>
 
 										</div>
