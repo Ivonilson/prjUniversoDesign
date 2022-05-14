@@ -9,7 +9,7 @@
 
 		try{
 			$conn = new Conn();
-			$statement = "SELECT MAX(id_os) as ultima FROM tbl_os";
+			$statement = "SELECT MAX(cod_os) as ultima FROM tbl_os";
 			$dado = $conn->getConn()->query($statement);
 			$resultado = $dado->fetch(PDO::FETCH_ASSOC);
 			return $resultado;

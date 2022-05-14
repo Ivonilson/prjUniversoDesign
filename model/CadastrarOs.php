@@ -8,9 +8,11 @@ class CadastrarOS {
 		{
 			$ultimaOs = new DadosAuxiliares();
 			$resultado = $ultimaOs->carregaOs();
+			
+			$arr_cod = explode("/", $resultado['ultima']);
+			$codigo = $arr_cod[0];
 			$anoAtual = date('Y');
-
-			$Os = ++$resultado['ultima'].'/'.$anoAtual;
+			$Os = ++$codigo.'/'.$anoAtual;
 			return $Os;
 		}
 
