@@ -76,6 +76,38 @@ if ($_SESSION['user'] == null) {
 						</div>
 					</div>
 
+					<?php
+						if ($mensagem_erro == "Cadastrado realizado com sucesso!") {
+						?>
+
+							<div class="alert alert-success font-weight-bold alertaCadOsOk col-12 text-center" role="alert">
+								<img src="../assets/ok.png">
+								<h5><strong><?= $mensagem_erro ?></strong></h5>
+							</div>
+
+						<?php
+						} elseif ($mensagem_erro == "ERRO. Provavelmente o cliente com este CPF/CNPJ já esteja cadastrado. Por favor verifique o CPF que está tentando cadastrar. Caso o problema persista, contate o Suporte.") {
+						?>
+
+							<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
+								<img src="../assets/error.png">
+								<h5><strong><?= $mensagem_erro ?></strong></h5>
+							</div>
+
+						<?php
+
+						} elseif ($mensagem_erro == "Erro ao cadastrar. Verifique se o campo PRODUTO possui uma descrição válida. Caso o problema persista, contate o Suporte.") {
+						?>
+
+							<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
+								<img src="../assets/error.png">
+								<h5><strong><?= $mensagem_erro ?></strong></h5>
+							</div>
+
+						<?php
+						}
+						?>
+
 
 					<!-- Modal -->
 					<div class="modal fade offset-3 col-6 offset-3" id="md-ultimo-cliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -219,39 +251,6 @@ if ($_SESSION['user'] == null) {
 						</div>
 
 						<input type="submit" id="botoesGravarCad" value="Gravar Cliente" name="btnCadastrarCliente">
-
-
-						<?php
-						if ($mensagem_erro == "Cadastrado realizado com sucesso!") {
-						?>
-
-							<div class="alert alert-success font-weight-bold alertaCadOsOk col-12 text-center" role="alert">
-								<img src="../assets/ok.png">
-								<h5><strong><?= $mensagem_erro ?></strong></h5>
-							</div>
-
-						<?php
-						} elseif ($mensagem_erro == "ERRO. Provavelmente o cliente com este CPF/CNPJ já esteja cadastrado. Por favor verifique o CPF que está tentando cadastrar. Caso o problema persista, contate o Suporte.") {
-						?>
-
-							<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
-								<img src="../assets/error.png">
-								<h5><strong><?= $mensagem_erro ?></strong></h5>
-							</div>
-
-						<?php
-
-						} elseif ($mensagem_erro == "Erro ao cadastrar. Verifique se o campo PRODUTO possui uma descrição válida. Caso o problema persista, contate o Suporte.") {
-						?>
-
-							<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
-								<img src="../assets/error.png">
-								<h5><strong><?= $mensagem_erro ?></strong></h5>
-							</div>
-
-						<?php
-						}
-						?>
 
 					</div>
 				</form>

@@ -88,31 +88,31 @@ function addItem() {
 	//iconeExcluir.innerHTML = 'Excluir';
 
 	let divDescricao = document.createElement('div');
-	divDescricao.className = 'col-2';
+	divDescricao.className = 'col-4  ml-2 pl-0 ';
 	divDescricao.setAttribute('id', 'divDescricao');
 	let labelDescricao = document.createElement('label');
 	labelDescricao.className = 'text-light text-left ml-0';
 	labelDescricao.innerHTML = 'Descrição';
 
 	let divValorUnitario = document.createElement('div');
-	divValorUnitario.className = 'col-1';
+	divValorUnitario.className = 'col-1  ml-0 pl-0';
 	divValorUnitario.setAttribute('id', 'divValorUnitario');
-	divValorUnitario.setAttribute('class', 'd-xs-none d-sm-none')
+	divValorUnitario.setAttribute('class', 'd-none')
 	let labelValorUnitario = document.createElement('label');
 	labelValorUnitario.className = 'text-light text-left ml-0';
 	labelValorUnitario.innerHTML = 'Vl. Unit.(R$)';
 
 	let divQuant = document.createElement('div');
-	divQuant.className = 'col-1';
+	divQuant.className = 'col-1  ml-0 pl-0';
 	divQuant.setAttribute('id', 'divQuant');
-	divQuant.setAttribute('class', 'd-xs-none d-sm-none');
+	divQuant.setAttribute('class', 'd-none');
 	let labelQuant = document.createElement('label');
 	labelQuant.className = 'text-light text-left';
 	labelQuant.innerHTML = 'Quant.';
 
 
 	let divTotal = document.createElement('div');
-	divTotal.className = 'col-2';
+	divTotal.className = 'col-2  ml-0 pl-0';
 	divTotal.setAttribute('id', 'divTotal');
 	let labelTotal = document.createElement('label');
 	labelTotal.className = 'text-light text-left ml-0';
@@ -120,23 +120,26 @@ function addItem() {
 
 
 	let divDesconto = document.createElement('div');
-	divDesconto.className = 'col-2';
+	divDesconto.className = 'col-2  ml-0 pl-0';
 	divDesconto.setAttribute('id', 'divDesconto');
 	let labelDesconto = document.createElement('label');
 	labelDesconto.className = 'text-light text-left ml-0';
 	labelDesconto.innerHTML = 'Desconto (R$)';
 
 	let divTotalPagar = document.createElement('div');
-	divTotalPagar.className = 'col-2';
+	divTotalPagar.className = 'col-2  ml-0 pl-0';
 	divTotalPagar.setAttribute('id', 'divTotalPagar');
 	let labelTotalPagar = document.createElement('label');
 	labelTotalPagar.className = 'text-light text-left ml-0';
 	labelTotalPagar.innerHTML = 'A pagar (R$)';
 
-	let divIconeExcluir = document.createElement('div');
-	divIconeExcluir.className = 'col-2 botaoExcluir';
-	divIconeExcluir.setAttribute('id', 'divIconeExcluir');
-	divIconeExcluir.innerHTML = '<i class="fa fa-trash" aria-hidden="true"></i>';
+	let divIconeExcluir = document.createElement('button');
+	divIconeExcluir.className = 'col-1 botaoExcluir btn btn-light ml-0 pl-0 form-control';
+	//divIconeExcluir.setAttribute('id', 'divIconeExcluir');
+	//divIconeExcluir.setAttribute('data-bs-toggle', 'tooltip');
+	//divIconeExcluir.setAttribute('data-bs-placement', 'bottom');
+	//divIconeExcluir.setAttribute('title', 'Excluir');
+	divIconeExcluir.innerHTML = '&nbsp&nbsp<i class="fa fa-trash" aria-hidden="true"></i>';
 	let labelIconeExcluir = document.createElement('label');
 	labelIconeExcluir.className = 'text-light text-left ml-0';
 	labelIconeExcluir.innerHTML = 'Ação';

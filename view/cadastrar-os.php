@@ -68,6 +68,37 @@ if ($_SESSION['user'] == NULL) {
 
 					</div>
 
+					<?php
+						if ($mensagem_erro == "Ordem de Serviço cadastrada com Sucesso!") {
+						?>
+
+							<div class="alert alert-success font-weight-bold alertaCadOsOk col-12 text-center" role="alert">
+								<img src="../assets/ok.png">
+								<h5><strong><?= $mensagem_erro ?></strong></h5>
+							</div>
+
+						<?php
+						} elseif ($mensagem_erro == "ERRO. Contate do Suporte.") {
+						?>
+
+							<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
+								<img src="../assets/error.png">
+								<h5><strong><?= $mensagem_erro ?></strong></h5>
+							</div>
+
+						<?php
+						} elseif ($mensagem_erro == "Um Orçamento precisa ser selecionado para a ordem de serviço. Selecione um orçamento e Tente Novamente.") {
+						?>
+
+							<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
+								<img src="../assets/error.png">
+								<h5><strong><?= $mensagem_erro ?></strong></h5>
+							</div>
+
+						<?php
+						}
+						?>
+
 					<!-- Modal -->
 					<div class="modal fade offset-3 col-6 offset-3" id="md-ultima-os" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 						<div class="modal-dialog" role="document">
@@ -280,37 +311,6 @@ if ($_SESSION['user'] == NULL) {
 						</div>
 
 						<input type="submit" value="Gravar O.S." name="btnCadastrar" id="botoesGravarCad">
-
-						<?php
-						if ($mensagem_erro == "Ordem de Serviço cadastrada com Sucesso!") {
-						?>
-
-							<div class="alert alert-success font-weight-bold alertaCadOsOk col-12 text-center" role="alert">
-								<img src="../assets/ok.png">
-								<h5><strong><?= $mensagem_erro ?></strong></h5>
-							</div>
-
-						<?php
-						} elseif ($mensagem_erro == "ERRO. Contate do Suporte.") {
-						?>
-
-							<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
-								<img src="../assets/error.png">
-								<h5><strong><?= $mensagem_erro ?></strong></h5>
-							</div>
-
-						<?php
-						} elseif ($mensagem_erro == "Um Orçamento precisa ser selecionado para a ordem de serviço. Selecione um orçamento e Tente Novamente.") {
-						?>
-
-							<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
-								<img src="../assets/error.png">
-								<h5><strong><?= $mensagem_erro ?></strong></h5>
-							</div>
-
-						<?php
-						}
-						?>
 
 					</div>
 				</form>

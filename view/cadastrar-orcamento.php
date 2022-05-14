@@ -205,6 +205,38 @@ if ($_SESSION['user'] == NULL) {
 								<input type="date" class="form-control  mb-2" name="ipt-data-validade-orc" id="inlineFormInputDataValidade">
 							</div>
 
+							<!-- criada dinamicamente -->
+							<div class="row d-none bg-danger" id="itens">
+
+								<div class="d-inline" id="divDescricao">
+									<label class="text-danger col-4 text-left ml-0 pl-0">Descrição</label>
+								</div>
+
+								<div class="d-inline" id="divValorUnit">
+									<label class="text-danger col-1 text-left ml-0 pl-0 d-xs-none d-sm-none">Vl. Unit.(R$)</label>
+								</div>
+
+								<div class="d-inline" id="divQuant">
+									<label class="text-danger col-1 text-left ml-0 pl-0 d-xs-none d-sm-none">Quant.</label>
+								</div>
+
+								<div class="d-inline" id="divTotal">
+									<label class="text-danger col-2 text-left ml-0 pl-0">Total (R$)</label>
+								</div>
+
+								<div class="d-inline" id="divDesconto">
+									<label class="text-danger col-2 text-left ml-0 pl-0">Desc.(R$)</label>
+								</div>
+
+								<div class="d-inline" id="divTotalPagar">
+									<label class="text-danger col-2 text-left ml-0 pl-0">A pagar (R$)</label>
+								</div>
+
+								<div class="d-inline d-none" id="divIconeExcluir">
+									<label class="text-danger col-1 text-left ml-0 pl-0"></label>
+								</div>
+							</div>
+
 							<!--<div class="col-lg-1 col-md-12 col-sm-12 col-xs-12">
 							<input type="button" class="col-12 btn btn-success text-white mt-4" value="Atualizar" name="btnAtualizarItens" onclick="totalSemDesc()">
 						</div>-->
@@ -253,39 +285,6 @@ if ($_SESSION['user'] == NULL) {
 
 							<div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
 								<input type="button" class="col-12 btn btn-success text-white mt-4 btnAdd" value="Adicionar" name="btnAdicionarItem" onclick="addItem()" id="btnAdicionar">
-							</div>
-
-
-							<!-- criada dinamicamente -->
-							<div class="row d-none" id="itens">
-
-								<div class="d-inline" id="divDescricao">
-									<label class="text-danger col-2 text-left ml-0 pl-0">Descrição</label>
-								</div>
-
-								<div class="d-inline" id="divValorUnit">
-									<label class="text-danger col-1 text-left ml-0 pl-0 d-xs-none d-sm-none">Vl. Unit.(R$)</label>
-								</div>
-
-								<div class="d-inline" id="divQuant">
-									<label class="text-danger col-1 text-left ml-0 pl-0 d-xs-none d-sm-none">Quant.</label>
-								</div>
-
-								<div class="d-inline" id="divTotal">
-									<label class="text-danger col-2 text-left ml-0 pl-0">Total (R$)</label>
-								</div>
-
-								<div class="d-inline" id="divDesconto">
-									<label class="text-danger col-2 text-left ml-0 pl-0">Desc.(R$)</label>
-								</div>
-
-								<div class="d-inline" id="divTotalPagar">
-									<label class="text-danger col-2 text-left ml-0 pl-0">A pagar (R$)</label>
-								</div>
-
-								<div class="d-inline-block" id="divIconeExcluir">
-									<label class="text-danger col-2 text-left ml-0 pl-0"></label>
-								</div>
 							</div>
 
 							<!-- DIV DE RESUMO DE VALORES -->
@@ -368,7 +367,7 @@ if ($_SESSION['user'] == NULL) {
 							</div>
 
 							<!--CONSOLIDADO--->
-							<input type="text" class="form-control" name="ipt-consolidado" placeholder="..." id="consolidado">
+							<input type="text" class="form-control d-none" name="ipt-consolidado" placeholder="..." id="consolidado">
 
 							<div class="col-12">
 								<input type="submit" name="" value="Fechar Orçamento" name="btnCadastrarOrcamento" id="botoesGravarCad">

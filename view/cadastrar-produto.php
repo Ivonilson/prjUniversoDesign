@@ -66,6 +66,38 @@ if ($_SESSION['user'] == NULL) {
 						</div>	
 					</div>
 
+					<?php
+						if ($mensagem_erro == "Produto Cadastrado com sucesso!") {
+						?>
+
+							<div class="alert alert-success font-weight-bold alertaCadOsOk col-12 text-center" role="alert">
+								<img src="../assets/ok.png">
+								<h5><strong><?= $mensagem_erro ?></strong></h5>
+							</div>
+
+						<?php
+						} elseif ($mensagem_erro == "ERRO. Verifique se o código que está tentando cadastrar já exista no sistema ou contate o Suporte.") {
+						?>
+
+							<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
+								<img src="../assets/error.png">
+								<h5><strong><?= $mensagem_erro ?></strong></h5>
+							</div>
+
+						<?php
+
+						} elseif ($mensagem_erro == "Erro ao cadastrar. Verifique se o campo PRODUTO possui uma descrição válida. Caso o problema persista, contate o Suporte.") {
+						?>
+
+							<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
+								<img src="../assets/error.png">
+								<h5><strong><?= $mensagem_erro ?></strong></h5>
+							</div>
+
+						<?php
+						}
+						?>
+
 
 					<!-- Modal -->
 					<div class="modal fade offset-3 col-6 offset-3" id="md-ultimo-produto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -169,38 +201,6 @@ if ($_SESSION['user'] == NULL) {
 						</div>
 
 						<input type="submit" value="Gravar Produto" name="btnCadastrarProduto" id="botoesGravarCad">
-
-						<?php
-						if ($mensagem_erro == "Produto Cadastrado com sucesso!") {
-						?>
-
-							<div class="alert alert-success font-weight-bold alertaCadOsOk col-12 text-center" role="alert">
-								<img src="../assets/ok.png">
-								<h5><strong><?= $mensagem_erro ?></strong></h5>
-							</div>
-
-						<?php
-						} elseif ($mensagem_erro == "ERRO. Verifique se o código que está tentando cadastrar já exista no sistema ou contate o Suporte.") {
-						?>
-
-							<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
-								<img src="../assets/error.png">
-								<h5><strong><?= $mensagem_erro ?></strong></h5>
-							</div>
-
-						<?php
-
-						} elseif ($mensagem_erro == "Erro ao cadastrar. Verifique se o campo PRODUTO possui uma descrição válida. Caso o problema persista, contate o Suporte.") {
-						?>
-
-							<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
-								<img src="../assets/error.png">
-								<h5><strong><?= $mensagem_erro ?></strong></h5>
-							</div>
-
-						<?php
-						}
-						?>
 
 					</div>
 				</form>

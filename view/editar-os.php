@@ -45,7 +45,35 @@ if ($_SESSION['user'] == NULL) {
 						</div>
 					</div>
 
-					<?php
+						<?php
+								if ($mensagem_erro == "Ordem de Serviço atualizada com Sucesso!") {
+								?>
+
+									<div class="alert alert-success font-weight-bold alertaCadOsOk col-12 text-center" role="alert">
+										<img src="../assets/ok.png">
+										<h5><strong><?= $mensagem_erro ?></strong></h5>
+									</div>
+
+									<script>
+										setInterval(function() {
+										window.location.href = "/?pagina=<?= $_GET['form'] ?>"}, 3000)
+									</script>
+
+								<?php
+
+								} else if ($mensagem_erro == "ERRO. Verifique se você REALMENTE alterou alguma coisa ou Contate o Suporte.") {
+								?>
+
+									<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
+										<img src="../assets/error.png">
+										<h5><strong><?= $mensagem_erro ?></strong></h5>
+									</div>
+
+								<?php
+								}
+								?>
+
+						<?php
 
 					if ($_SESSION['user']) {
 						$os = filter_input(INPUT_GET, 'cod_os');
@@ -201,34 +229,6 @@ if ($_SESSION['user'] == NULL) {
 								</div>
 
 								<input type="submit" name="btnEditarOs" value="GRAVAR" id="btnGravarEdicao">
-
-								<?php
-								if ($mensagem_erro == "Ordem de Serviço atualizada com Sucesso!") {
-								?>
-
-									<div class="alert alert-success font-weight-bold alertaCadOsOk col-12 text-center" role="alert">
-										<img src="../assets/ok.png">
-										<h5><strong><?= $mensagem_erro ?></strong></h5>
-									</div>
-
-									<script>
-										setInterval(function() {
-										window.location.href = "/?pagina=<?= $_GET['form'] ?>"}, 3000)
-									</script>
-
-								<?php
-
-								} else if ($mensagem_erro == "ERRO. Verifique se você REALMENTE alterou alguma coisa ou Contate o Suporte.") {
-								?>
-
-									<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
-										<img src="../assets/error.png">
-										<h5><strong><?= $mensagem_erro ?></strong></h5>
-									</div>
-
-								<?php
-								}
-								?>
 
 							</div>
 
