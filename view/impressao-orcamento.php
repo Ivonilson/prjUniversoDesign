@@ -81,8 +81,7 @@ if ($_SESSION['user'] == NULL) {
 						</div>
 					</div>
 
-
-					<table class="table table-bordered table-hover tabela-impressao table-sm" width="100%" cellspacing="0">
+					<table class="table table-bordered table-hover tabela-impressao table-sm table-responsive" width="100%" cellspacing="0">
 						<thead class="thead-light">
 							<tr>
 								<th>Descrição</th>

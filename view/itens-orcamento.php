@@ -56,7 +56,7 @@ if ($_SESSION['user'] == NULL) {
 							<th>Desconto(R$)</th>
 							<th>Total a Pagar(R$)</th>
 							<th>Alterar Desconto</th>
-							<th>Excluir</th>
+							<th class="d-xs-none">Deletar</th>
 						</tr>
 					</thead>
 					<tfoot class="thead-dark">
@@ -68,7 +68,7 @@ if ($_SESSION['user'] == NULL) {
 							<th>Desconto(R$)</th>
 							<th>Total a Pagar(R$)</th>
 							<th>AAlterar Desconto</th>
-							<th>Excluir</th>
+							<th class="d-xs-none">Deletar</th>
 						</tr>
 					</tfoot>
 					<tbody>
@@ -80,8 +80,9 @@ if ($_SESSION['user'] == NULL) {
 
 							foreach ($resultado as  $item) {
 						?>
-								<tr>
-									<td><?= $item['descricao'] ?></td>
+							<tr>
+								<form method="post">
+									<td><?= $item['descricao'] ?>&nbsp&nbsp<button class="btn btn-light d-md-none d-lg-none d-xl-none" value='Excluir' name="btnDeletarItensOrcamento" id="btnDeletarItem" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
 									<td><?= number_format($item['valor_unitario'], 2, ',', '.') ?></td>
 									<td><?= $item['quantidade'] ?></td>
 									<td><?= number_format($item['valor_total'], 3, ',', '.') ?></td>
@@ -94,18 +95,14 @@ if ($_SESSION['user'] == NULL) {
 									</td>
 
 									<td align="center">
-
-										<form method="post">
 											<input type="hidden" name="ipt-cod-delete" value="<?= $item['id'] ?>">
 
 											<input type="hidden" name="ipt-confirmacao" id="ipt-confirma">
 
-											<input type="submit" value='Excluir' name="btnDeletarItensOrcamento" id="btnDeletarItem">
-										</form>
-
+											<button class="btn btn-light d-xs-none" value='Excluir' name="btnDeletarItensOrcamento" id="btnDeletarItem" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir"><i class="fa fa-trash" aria-hidden="true"></i></button>
 									</td>
-
-								</tr>
+								</form>
+							</tr>
 
 								<!-- MODAL EDITAR ITEM --->
 								<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="<?= $contador ?>">
