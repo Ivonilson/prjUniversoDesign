@@ -170,7 +170,7 @@ function addItem() {
 	if (altura > 0) {
 		let subtotal = (((parseFloat(largura) * parseFloat(altura)) * parseFloat(valor_produto[1])) * parseFloat(qtdItens));
 		ipt.value = nome_produto;
-		iptProduto.value = nome_produto + ' (' + largura + ' larg. X ' + altura + ' alt. = ' + parseFloat(largura) * parseFloat(altura) + ' m²)' +  valor_produto[2];
+		iptProduto.value = nome_produto + ' (' + largura + ' larg. X ' + altura + ' alt. = ' + (parseFloat(largura) * parseFloat(altura)).toFixed(2) + ' m²)' +  valor_produto[2];
 		iptValorUnit.value = valor_produto[1];
 		iptQuant.value = qtdItens;
 		let desconto = document.getElementById('percentualDesconto').value / 100;
