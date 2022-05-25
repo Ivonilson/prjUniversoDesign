@@ -20,11 +20,11 @@
 					<ul class="sidenav-second-level collapse" id="collapseRegistro" data-parent="#linksaccordion" style="background-color: #F5FFFA">
 
 						<li>
-							<a href="/?pagina=cadastrar-os" target="opcoes-menu" >Cadastrar O.S.</a>
+							<a href="/?pagina=cadastrar-orcamento" target="opcoes-menu" >Novo Orçamento</a>
 						</li>
 
 						<li>
-							<a href="/?pagina=cadastrar-orcamento" target="opcoes-menu" >Novo Orçamento</a>
+							<a href="/?pagina=cadastrar-os" target="opcoes-menu" >Cadastrar O.S.</a>
 						</li>
 
 						<li>

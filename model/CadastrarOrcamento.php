@@ -74,7 +74,7 @@ class CadastrarOrcamento {
 		{
 			$conn = new Conn();
 
-			$statement = "SELECT tbl_orcamento.id_orcamento AS id_orcamento, tbl_orcamento.trabalho_servico AS trabalho_servico, tbl_orcamento.data_validade AS data_validade, tbl_cliente.nome AS nome FROM tbl_orcamento INNER JOIN tbl_cliente ON tbl_orcamento.id_cliente = tbl_cliente.id_cliente ORDER BY id_orcamento DESC LIMIT 1";
+			$statement = "SELECT tbl_orcamento.id_orcamento AS id_orcamento, tbl_orcamento.trabalho_servico AS trabalho_servico, tbl_orcamento.data_validade AS data_validade, tbl_orcamento.data_cadastro AS data_cadastro, tbl_cliente.nome AS nome FROM tbl_orcamento INNER JOIN tbl_cliente ON tbl_orcamento.id_cliente = tbl_cliente.id_cliente ORDER BY id_orcamento DESC LIMIT 1";
 
 			$ultimo = $conn->getConn()->query($statement);
 			$resultado = $ultimo->fetch(PDO::FETCH_ASSOC);

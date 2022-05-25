@@ -30,15 +30,14 @@ class EditarOs {
 
 			$conn = new Conn();
 
-			$statement = "UPDATE tbl_os SET cod_os = :cod_os, id_orcamento = :id_orcamento, 
-			cidade_uf = :cidade_uf, endereco = :endereco,
+			$statement = "UPDATE tbl_os SET  cidade_uf = :cidade_uf, endereco = :endereco,
 			sit_pagamento = :sit_pagamento, data_agendamento = :data_agendamento, 
 			status = :status, contato = :contato, observacao = :observacao WHERE cod_os = :cod_os";
 
 			$dados_editar = $conn->getConn()->prepare($statement);
 
 			$dados_editar->bindParam(':cod_os', $dados['ipt-os']);
-			$dados_editar->bindParam(':id_orcamento', $dados['ipt-orcamento']);
+			//$dados_editar->bindParam(':id_orcamento', $dados['ipt-orcamento']);
 			$dados_editar->bindParam(':data_agendamento', $dados['ipt-data-agendamento']);
 			$dados_editar->bindParam(':cidade_uf', $dados['sel-cidade-uf']);
 			$dados_editar->bindParam(':endereco', $dados['ipt-endereco']);

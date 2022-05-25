@@ -91,6 +91,7 @@ if ($_SESSION['user'] == NULL) {
 									<div class="card">
 										<div class="card-body col">
 											<h5 class="card-title font-weight-bold text-dark">Solicitante: <?= $UltimoOrcCadastrado != null ? $UltimoOrcCadastrado['nome']  : '-'  ?></h5>
+											<h6 class="card-subtitle mb-2 text-muted font-weight-bold text-dark">Cadastrado em: <?= $UltimoOrcCadastrado != null ? date_format(date_create($UltimoOrcCadastrado['data_cadastro']), "d/m/Y") : '-' ?></h6>
 											<h6 class="card-subtitle mb-2 text-muted font-weight-bold text-dark">Data de validade: <?= $UltimoOrcCadastrado != null ? date_format(date_create($UltimoOrcCadastrado['data_validade']), "d/m/Y") : '-' ?></h6>
 
 											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Descrição: </span><span style="font-size: 22px"><?= $UltimoOrcCadastrado != null ? $UltimoOrcCadastrado['trabalho_servico'] : '-' ?></span><br>

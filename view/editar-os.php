@@ -101,7 +101,7 @@ if ($_SESSION['user'] == NULL) {
 												N° ORCAMENTO
 											</div>
 										</div>
-										<input type="text" class="form-control" name="ipt-orcamento" value="<?= $registro->id_orcamento ?>">
+										<input type="text" class="form-control" name="ipt-orcamento" value="<?= $registro->id_orcamento ?>" disabled>
 									</div>
 								</div>
 
