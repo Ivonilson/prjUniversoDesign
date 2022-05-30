@@ -70,14 +70,14 @@ if ($_SESSION['user'] == NULL) {
 								<h4>Cadastrar Orçamento</h4>
 							</div>
 
-							<div class="col text-right mb-0">
-								<button type="button" class="text-light btn btn-secondary" data-toggle="modal" data-target="#md-ultimo-orcamento">Ver Último orçamento resumido</button>
+							<div class="col text-left mb-0">
+								<button type="button" class="text-light btn btn-secondary col" data-toggle="modal" data-target="#md-ultimo-orcamento">Ver Último orç. resumido</button>
 							</div>
 						</div>
 					</div>
 
 					<!-- Modal -->
-					<div class="modal fade offset-3 col-6 offset-3" id="md-ultimo-orcamento" tabindex="-1" role="dialog" aria-labelledby="mdCadastrarOrcamento" aria-hidden="true">
+					<div class="modal fade offset-1 col-10 offset-1" id="md-ultimo-orcamento" tabindex="-1" role="dialog" aria-labelledby="mdCadastrarOrcamento" aria-hidden="true">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
