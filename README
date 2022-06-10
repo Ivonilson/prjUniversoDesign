@@ -1,0 +1,9 @@
+/** Aplicação para geração de orçamentos, ordens de serviços, cadastro de clientes e produtos **/
+/** Será disponibilizado (está em desenvolvimento) módulo para fluxo de caixa **/
+
+/** 
+Informações para BD
+- o campo cod_os na tbl_os deve ser Unique
+- o campo AUTO_INCREMENT id_os na tbl_os deve iniciar em 1
+
+**/

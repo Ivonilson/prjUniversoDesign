@@ -112,7 +112,7 @@
 		// override these in your code to change the default behavior and style
 		$.blockUI.defaults = {
 			// message displayed when blocking (use null for no message)
-			message:  '<h1> Aguarde...</h1>',
+			message:  '<h5> Aguarde...</h5>',
 			//message: '<img src="assets/universo.jpg"',
 
 			title: null,		// title string; only used when theme == true

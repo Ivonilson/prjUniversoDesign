@@ -26,8 +26,9 @@ if ($_SESSION['user'] == NULL) {
 						<img src="../assets/universo.jpg" style="width: 99%; height: 99%;">
 					</div>
 					<div class="col-6 divProposta p-3 text-center">
-						<h2>PROPOSTA</h2>
-						<h2>ORÇAMENTO / SERVIÇO</h2>
+						<h2 style="font-size: 3vw;">PROPOSTA</h2>
+						<h3 style="font-size: 3vw;">ORÇAMENTO</h3>
+						<h3 style="font-size: 3vw;">SERVIÇO</h3>
 					</div>
 				</div>
 
