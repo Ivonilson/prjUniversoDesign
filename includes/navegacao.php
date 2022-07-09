@@ -12,96 +12,125 @@
 			<ul class="navbar-nav navbar-sidenav accordion bg-light pl-1 pr-1">
 
 				<li class="nav-item" id="navegacao">
-					<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseRegistro">
-						<i class="fa fa-sticky-note-o"></i>
-						<span class="nav-link-text">Registros</span>
+					<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseOrcamentos">
+						<i class="fa fa-file-text-o" aria-hidden="true"></i>
+						<span class="nav-link-text">Orçamentos</span>
 					</a>
 
-					<ul class="sidenav-second-level collapse" id="collapseRegistro" data-parent="#linksaccordion" style="background-color: #F5FFFA">
+					<ul class="sidenav-second-level collapse" id="collapseOrcamentos" data-parent="#linksaccordion" style="background-color: #F5FFFA">
 
 						<li>
 							<a href="/?pagina=cadastrar-orcamento" target="opcoes-menu" >Novo Orçamento</a>
 						</li>
 
 						<li>
+							<a href="/?pagina=pesquisa-por-orcamento">Consultar Orçamento</a>
+						</li>
+
+					</ul>
+
+				</li>
+
+				<li class="nav-item" id="navegacao">
+					<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseOs">
+						<i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+						<span class="nav-link-text">Ordem de Serviço</span>
+					</a>
+
+					<ul class="sidenav-second-level collapse" id="collapseOs" data-parent="#linksaccordion" style="background-color: #F5FFFA">
+
+						<li>
 							<a href="/?pagina=cadastrar-os" target="opcoes-menu" >Cadastrar O.S.</a>
 						</li>
 
 						<li>
-							<a href="/?pagina=cadastrar-produto" target="opcoes-menu" >Cadastrar Produto</a>
+							<a href="/?pagina=os-do-dia">O.S(s) Vencendo Hoje</a>
 						</li>
+
+						<li>
+							<a href="/?pagina=pesquisa-por-data-receb">Ordens de serviço por data de recebimento</a>
+						</li>
+
+						<li>
+							<a href="/?pagina=pesquisa-por-data-agendamento">Ordens de serviço por data de agendamento</a>
+						</li>
+
+						<li>
+							<a href="/?pagina=pesquisa-por-os">O.S por código</a>
+						</li>
+
+					</ul>
+
+				</li>
+
+				<li class="nav-item" id="navegacao">
+					<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseClientes">
+						<i class="fa fa-address-book-o" aria-hidden="true"></i>
+						<span class="nav-link-text">Clientes</span>
+					</a>
+
+					<ul class="sidenav-second-level collapse" id="collapseClientes" data-parent="#linksaccordion" style="background-color: #F5FFFA">
 
 						<li>
 							<a href="/?pagina=cadastrar-cliente" target="opcoes-menu" >Cadastrar Cliente</a>
 						</li>
 
 						<li>
+							<a href="/?pagina=pesquisa-cliente">Consultar Cliente</a>
+						</li>
+
+					</ul>
+
+				</li>
+
+				<li class="nav-item" id="navegacao">
+					<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseProdutos">
+						<i class="fa fa-tags" aria-hidden="true"></i>
+						<span class="nav-link-text">Produtos</span>
+					</a>
+
+					<ul class="sidenav-second-level collapse" id="collapseProdutos" data-parent="#linksaccordion" style="background-color: #F5FFFA">
+
+						<li>
+							<a href="/?pagina=cadastrar-produto" target="opcoes-menu" >Cadastrar Produto</a>
+						</li>
+
+						<li>
+							<a href="/?pagina=pesquisa-produto">Consultar Produto</a>
+						</li>
+
+					</ul>
+
+				</li>
+
+				<li class="nav-item" id="navegacao">
+					<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseNotificacoes">
+						<i class="fa fa-bell" aria-hidden="true"></i>
+						<span class="nav-link-text">Notificações</span>
+					</a>
+
+					<ul class="sidenav-second-level collapse" id="collapseNotificacoes" data-parent="#linksaccordion" style="background-color: #F5FFFA">
+
+						<li>
 							<a href="/?pagina=cadastrar-notificacao" target="opcoes-menu" >Cadastrar Notificação</a>
 						</li>
 
 					</ul>
+
 				</li>
 
 				<li class="nav-item" id="navegacao">
-					<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapsePesquisas">
-						<i  class="fa fa-search" aria-hidden="true"></i>
-						<span class="nav-link-text">Consultas</span>
-					</a>
-					<ul class="sidenav-second-level collapse" id="collapsePesquisas" data-parent="#linksaccordion" style="background-color: #F5FFFA">
-						<li>
-							<a href="/?pagina=pesquisa-por-orcamento">Orçamentos</a>
-						</li>
-						<li>
-							<a href="/?pagina=os-do-dia">O.S(s) Vencendo Hoje</a>
-						</li>
-						<li>
-							<a href="/?pagina=pesquisa-por-data-receb">Ordens de serviço por data de recebimento</a>
-						</li>
-						<li>
-							<a href="/?pagina=pesquisa-por-data-agendamento">Ordens de serviço por data de agendamento</a>
-						</li>
-						<li>
-							<a href="/?pagina=pesquisa-por-os">O.S por código</a>
-						</li>
-						<li>
-							<a href="/?pagina=pesquisa-cliente">Clientes</a>
-						</li>
-						<li>
-							<a href="/?pagina=pesquisa-produto">Produtos</a>
-						</li>
-						<!--<li>
-							<a href="">Histórico da Ordem de Serviço</a>
-						</li>-->
-					</ul>
-				</li>
-
-				<li class="nav-item" id="navegacao">
-					<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseListas">
-						<i class="fa fa-tasks"></i>
-						<span class="nav-link-text">Agendamentos</span>
-					</a>
-
-					<ul class="sidenav-second-level collapse" id="collapseListas" data-parent="#linksaccordion" style="background-color: #F5FFFA">
-
-						<li>
-							<a href="/?pagina=lista-agendamentos">Visitas agendadas</a>
-						</li>
-
-					</ul>
-				</li>
-
-				<li class="nav-item" id="navegacao">
-					<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseFinaceiro">
-						<i class="fa fa-tasks"></i>
+					<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseFinanceiro">
+						<i class="fa fa-calculator" aria-hidden="true"></i>
 						<span class="nav-link-text">Financeiro</span>
 					</a>
 
-					<ul class="sidenav-second-level collapse" id="collapseFinaceiro" data-parent="#linksaccordion" style="background-color: #F5FFFA">
+					<ul class="sidenav-second-level collapse" id="collapseFinanceiro" data-parent="#linksaccordion" style="background-color: #F5FFFA">
 
 						<li>
-							<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseDespesa">Controle de Caixa</a>
+							<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseDespesaLancamentos">Controle de Caixa - Lançamentos</a>
 
-							<ul class="sidenav-second-level collapse" id="collapseDespesa" data-parent="#linksaccordion" style="background-color: #F5FFFA">
+							<ul class="sidenav-second-level collapse" id="collapseDespesaLancamentos" data-parent="#linksaccordion" style="background-color: #F5FFFA">
 
 								<li>
 									<a href="/?pagina=lancar-despesa">Lançar Despesa</a>
@@ -109,6 +138,19 @@
 
 								<li>
 									<a href="/?pagina=lancar-receita">Lançar Receita</a>
+								</li>
+
+							</ul>
+
+						</li>
+
+						<li>
+							<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseDespesaConsultas">Controle de Caixa - Consultas</a>
+
+							<ul class="sidenav-second-level collapse" id="collapseDespesaConsultas" data-parent="#linksaccordion" style="background-color: #F5FFFA">
+
+								<li>
+									<a href="/?pagina=controle-caixa-relatorio">Relatórios</a>
 								</li>
 
 							</ul>
@@ -126,6 +168,21 @@
 
 							</ul>
 
+						</li>
+
+					</ul>
+				</li>
+
+				<li class="nav-item" id="navegacao">
+					<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseListas">
+						<i class="fa fa-tasks"></i>
+						<span class="nav-link-text">Agendamentos</span>
+					</a>
+
+					<ul class="sidenav-second-level collapse" id="collapseListas" data-parent="#linksaccordion" style="background-color: #F5FFFA">
+
+						<li>
+							<a href="/?pagina=lista-agendamentos">Visitas agendadas</a>
 						</li>
 
 					</ul>

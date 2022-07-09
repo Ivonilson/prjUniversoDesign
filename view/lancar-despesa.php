@@ -115,6 +115,8 @@ if ($_SESSION['user'] == NULL) {
 
 											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Valor(R$): </span><span style="font-size: 22px"><?= $UltimaDespesaCadastrada != null ?  number_format($UltimaDespesaCadastrada['valor'], 2, ',' , '.') : '-'; ?></span><br>
 
+											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Forma de pagamento: </span><span style="font-size: 22px"><?= $UltimaDespesaCadastrada != null ?  $UltimaDespesaCadastrada['forma_pagamento'] : '-'; ?></span><br>
+
 											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Data de Ref.: </span><span style="font-size: 22px"><?= $UltimaDespesaCadastrada != null ? date_format(date_create($UltimaDespesaCadastrada['data_referencia']), "d/m/Y") : '-'; ?></span><br>
 
 											<span class="font-weight-bold text-dark" style="font-size: 20px">Cadastrado em: </span><span style="font-size: 22px"><?= $UltimaDespesaCadastrada != null ? date_format(date_create($UltimaDespesaCadastrada['data_processamento']), "d/m/Y") : '-'; ?></span><br><br>
@@ -209,7 +211,7 @@ if ($_SESSION['user'] == NULL) {
 										FORMA DE PAGAMENTO
 									</label>
 								</div>
-								<select class="custom-select" name="sel-descricao" disabled>
+								<select class="custom-select" name="sel-forma-pagamento">
 									<option value="-">Selecione</option>
 									<option value="DINHEIRO">DINHEIRO</option>
 									<option value="PIX">PIX</option>

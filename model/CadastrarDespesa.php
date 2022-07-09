@@ -33,7 +33,7 @@ class CadastrarDespesa {
 
 			$conn = new Conn();
 
-			$statement = "INSERT INTO tbl_despesa (id_despesa, tipo, descricao, detalhamento, valor, data_referencia, data_processamento, usuario) VALUES (:id_despesa, :tipo, :descricao, :detalhamento, :valor, :data_referencia, CURRENT_TIMESTAMP, :usuario)";
+			$statement = "INSERT INTO tbl_despesa (id_despesa, tipo, descricao, detalhamento, valor, forma_pagamento, data_referencia, data_processamento, usuario) VALUES (:id_despesa, :tipo, :descricao, :detalhamento, :valor, :forma_pagamento, :data_referencia, CURRENT_TIMESTAMP, :usuario)";
 
 			$dados_cadastrar = $conn->getConn()->prepare($statement);
 
@@ -61,6 +61,7 @@ class CadastrarDespesa {
 			$dados_cadastrar->bindParam(':descricao', $dados['sel-descricao']);
 			$dados_cadastrar->bindParam(':detalhamento', $detalhamento);
 			$dados_cadastrar->bindParam(':valor', $valor);
+			$dados_cadastrar->bindParam(':forma_pagamento', $dados['sel-forma-pagamento']);
 			$dados_cadastrar->bindParam(':data_referencia', $dados['ipt-data-referencia']);
 			$dados_cadastrar->bindParam(':usuario', $_SESSION['user']);
 			
@@ -88,7 +89,7 @@ class CadastrarDespesa {
 		{
 			$conn = new Conn();
 
-			$statement = "SELECT id_despesa, tipo, descricao, detalhamento, valor, data_referencia, data_processamento, usuario FROM tbl_despesa ORDER BY data_processamento DESC LIMIT 1";
+			$statement = "SELECT id_despesa, tipo, descricao, detalhamento, valor, forma_pagamento, data_referencia, data_processamento, usuario FROM tbl_despesa ORDER BY data_processamento DESC LIMIT 1";
 
 			$ultimo = $conn->getConn()->query($statement);
 			$resultado = $ultimo->fetch(PDO::FETCH_ASSOC);
