@@ -33,6 +33,12 @@ switch ($pagina) {
 		include_once "view/cadastrar-os.php";
 		break;
 
+	case 'lancar-despesa':
+		require "controller/crtLancarDespesa.php";
+		//require_once "model/LancarDespesa.php";
+		include_once "view/lancar-despesa.php";
+		break;
+
 	case 'cadastrar-cidade':
 		require "controller/crtCadastrarCidade.php";
 		include_once "view/cadastrar-cidade.php";

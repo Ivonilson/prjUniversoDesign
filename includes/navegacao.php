@@ -90,6 +90,47 @@
 					</ul>
 				</li>
 
+				<li class="nav-item" id="navegacao">
+					<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseFinaceiro">
+						<i class="fa fa-tasks"></i>
+						<span class="nav-link-text">Financeiro</span>
+					</a>
+
+					<ul class="sidenav-second-level collapse" id="collapseFinaceiro" data-parent="#linksaccordion" style="background-color: #F5FFFA">
+
+						<li>
+							<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseDespesa">Controle de Caixa</a>
+
+							<ul class="sidenav-second-level collapse" id="collapseDespesa" data-parent="#linksaccordion" style="background-color: #F5FFFA">
+
+								<li>
+									<a href="/?pagina=lancar-despesa">Lançar Despesa</a>
+								</li>
+
+								<li>
+									<a href="/?pagina=lancar-receita">Lançar Receita</a>
+								</li>
+
+							</ul>
+
+						</li>
+
+						<li>
+							<a href="/?pagina=fluxo-de-caixa" href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseResultados">Fluxo de Caixa</a>
+
+							<ul class="sidenav-second-level collapse" id="collapseResultados" data-parent="#linksaccordion" style="background-color: #F5FFFA">
+
+								<li>
+									<a href="/?pagina=resultados-caixa">Resultados</a>
+								</li>
+
+							</ul>
+
+						</li>
+
+					</ul>
+				</li>
+
 				<!--
 				<li class="nav-item">
 					<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseFerramentas">
