@@ -91,7 +91,7 @@ if ($_SESSION['user'] == NULL) {
 									<!--<td align="center"  data-toggle="modal" data-target=".modal-ver-itens"><a href="#" title="Atualizar"><i class="fa fa-check-square-o" aria-hidden="true"></i></a></td>--->
 
 									<td align="center">
-										<button class="btn btn-default" data-toggle="modal" data-target="#<?= $contador ?>"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+										<a href="#" class="btn btn-default" data-toggle="modal" data-target="#<?= $contador ?>"><i class="fa fa-pencil" aria-hidden="true"></i></a>
 									</td>
 
 									<td align="center">

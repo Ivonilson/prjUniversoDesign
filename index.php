@@ -86,6 +86,12 @@ switch ($pagina) {
 		$crtl->pesquisaPorDataReceb();
 		break;
 
+	case 'controle-caixa-relatorio':
+			require "controller/crtPesquisaControleCaixaPorPeriodo.php";
+			$crtl = new crtPesquisaControleCaixaPorPeriodo();
+			$crtl->pesqControleCaixaPorPeriodo();
+			break;
+
 	case 'pesquisa-por-data-agendamento':
 		require "controller/crtPesquisaPorDataAgendamento.php";
 		$crtl = new crtPesquisaPorDataAgendamento();
