@@ -28,7 +28,7 @@ if ($_SESSION['user'] == NULL) {
 				<li class="breadcrumb-item">
 					Financeiro
 				</li>
-                <li class="breadcrumb-item">
+				<li class="breadcrumb-item">
 					Controle de Caixa - Consultas
 				</li>
 				<li class="breadcrumb-item">
@@ -41,7 +41,7 @@ if ($_SESSION['user'] == NULL) {
 
 			</ol>
 
-            <!--
+			<!--
 			<div class="row mb-3">
 
 				<div class="col mb-1">
@@ -88,6 +88,36 @@ if ($_SESSION['user'] == NULL) {
 			<div id="row-tbl-consulta">
 				<div class="col">
 
+					<?php
+					
+					if ($mensagem_erro == "Despesa atualizada com sucesso!") {
+					?>
+
+						<div class="alert alert-success font-weight-bold alertaCadOsOk col-12 text-center" role="alert">
+							<img src="../assets/ok.png">
+							<h5><strong><?= $mensagem_erro ?></strong></h5>
+						</div>
+
+						<script>
+							setInterval(function() {
+								window.location.href = "/?pagina=controle-caixa-relatorio"
+							}, 3000)
+						</script>
+
+					<?php
+
+					} else if ($mensagem_erro == "ERRO. Verifique se você REALMENTE alterou alguma coisa ou Contate o Suporte.") {
+					?>
+
+						<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
+							<img src="../assets/error.png">
+							<h5><strong><?= $mensagem_erro ?></strong></h5>
+						</div>
+
+					<?php
+					}
+					?>
+
 					<table class="table table-bordered table-hover display" id="dataTable" width="100%" cellspacing="0">
 						<thead class="thead-light">
 							<tr>
@@ -99,14 +129,14 @@ if ($_SESSION['user'] == NULL) {
 								<th>Forma de Pagamento</th>
 								<th>Data de referência</th>
 								<th>Data do lançamento</th>
-                                <th>Usuário</th>
+								<th>Usuário</th>
 								<th>Atualizar</th>
 								<th class="d-xs-none">Deletar</th>
 							</tr>
 						</thead>
 						<tfoot class="thead-light">
 							<tr>
-                                <th>Cod. Despesa</th>
+								<th>Cod. Despesa</th>
 								<th>Tipo</th>
 								<th>Descrição</th>
 								<th>Detalhamento</th>
@@ -114,7 +144,7 @@ if ($_SESSION['user'] == NULL) {
 								<th>Forma de Pagamento</th>
 								<th>Data de referência</th>
 								<th>Data do lançamento</th>
-                                <th>Usuário</th>
+								<th>Usuário</th>
 								<th>Atualizar</th>
 								<th class="d-xs-none">Deletar</th>
 							</tr>
@@ -124,6 +154,7 @@ if ($_SESSION['user'] == NULL) {
 
 							$dados = new PesquisaControleCaixaPorPeriodo();
 							$valor_total = 0;
+							$contador = 0;
 
 							$data_inicial = filter_input(INPUT_POST, 'data_inicial');
 							$data_final = filter_input(INPUT_POST, 'data_final');
@@ -131,41 +162,119 @@ if ($_SESSION['user'] == NULL) {
 
 							$resultado = $dados->pesquisaControleCaixaPorPeriodo();
 
-							if ($resultado || isset($_POST['data_inicial'])){
+							if ($resultado || isset($_POST['data_inicial'])) {
 								echo "<strong>Periodo de Pesquisa: <mark>" . date_format(date_create($data_inicial), "d/m/Y") . " a " . date_format(date_create($data_final), "d/m/Y") . "</mark></strong><br><br>";
 							}
 
 							if ($resultado != NULL) {
 
 								foreach ($resultado as  $value) {
-                                
-                                $valor_total += $value['valor'];
-							?>
-								<tr>
-									<form method="post">
-										<td><?= $value['id_despesa'] ?>&nbsp&nbsp<button class="btn btn-light d-md-none d-lg-none d-xl-none" value='Excluir' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir" name="btnDeletarOs" id="btnDeletarItem"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
-										<td><?= $value['tipo'] ?></td>
-										<td><?= $value['descricao'] ?></td>
-										<td><?= $value['detalhamento'] ?></td>
-										<td><?= number_format($value['valor'], 2, ',' , '.') ?></td>
-                                        <td><?= $value['forma_pagamento'] ?></td>
-										<td><?= date_format(date_create($value['data_referencia']), "d/m/Y") ?></td>
-										<td><?= date_format(date_create($value['data_processamento']), "d/m/Y") ?></td>
-                                        <td><?= $value['usuario'] ?></td>
-			
-										<td align="center"><a href="/?pagina=editar-os&id_despesa=<?= $value['id_despesa'] ?>&form=pesquisa-por-data-receb" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Atualizar" target="_blank"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
 
-										<td align="center">
-												<input type="hidden" name="ipt-cod-delete" value="<?=  $value['id_despesa'] ?>">
+									$contador++;
+
+									$valor_total += $value['valor'];
+							?>
+									<tr>
+										<form method="post">
+											<td><?= $value['id_despesa'] ?>&nbsp&nbsp<button class="btn btn-light d-md-none d-lg-none d-xl-none" value='Excluir' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir" name="btnDeletarOs" id="btnDeletarItem"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+											<td><?= $value['tipo'] ?></td>
+											<td><?= $value['descricao'] ?></td>
+											<td><?= $value['detalhamento'] ?></td>
+											<td><?= number_format($value['valor'], 2, ',', '.') ?></td>
+											<td><?= $value['forma_pagamento'] ?></td>
+											<td><?= date_format(date_create($value['data_referencia']), "d/m/Y") ?></td>
+											<td><?= date_format(date_create($value['data_processamento']), "d/m/Y") ?></td>
+											<td><?= $value['usuario'] ?></td>
+
+											<td align="center"><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Atualizar" data-toggle="modal" data-target="#<?= $contador ?>"><i class="fa fa-pencil" aria-hidden="true" id="#<?= $contador ?>"></i></a></td>
+
+											<td align="center">
+												<input type="hidden" name="ipt-cod-delete" value="<?= $value['id_despesa'] ?>">
 
 												<input type="hidden" name="ipt-confirmacao" id="ipt-confirma">
 
 												<button class="btn btn-light d-xs-none" value='Excluir' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir" name="btnDeletarOs" id="btnDeletarItem"><i class="fa fa-trash" aria-hidden="true"></i></button>
-										</td>
-									</form>
+											</td>
+										</form>
 
 										<!--<td align="center"><a href="/?pagina=historico&cod_os=<?= $value['cod_os'] ?>&form=pesquisa-por-data-receb" title="Histórico" target="_blank"><i class="fa fa-history" aria-hidden="true"></a></td>-->
-								</tr>
+									</tr>
+
+									<!-- MODAL EDITAR DESPESA --->
+									<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="<?= $contador ?>">
+										<div class="modal-dialog modal-lg">
+											<div class="modal-content">
+
+												<div class="modal-body">
+													<div class="row justify-content-center">
+
+														<h3 class="text-primary col-12 text-center mt-5">Alterando a despesa <label class="border p-3 text-danger font-weight-bold"><?= $value['id_despesa'] ?></label></h3>
+
+														<form method="post">
+
+															<div class="col-12">
+																<label class="text-danger font-weight-bold readonly">Código</label>
+																<br>
+																<input class="form-control" type="text" name="ipt-id-despesa" value="<?= $value['id_despesa'] ?>">
+															</div>
+
+															<div class="col-12">
+																<label class="text-danger font-weight-bold readonly">Tipo</label>
+																<br>
+																<select name="sel-tipo" class="form-control">
+																	<option value="<?= $value['tipo'] ?>"><?= $value['tipo'] ?></option>
+																	<option value="FIXA">FIXA</option>
+																	<option value="VARIÁVEL">VARIÁVEL</option>
+																</select>
+															</div>
+
+															<div class="col-12">
+																<label class="text-danger font-weight-bold readonly">Descrição</label>
+																<br>
+																<select name="sel-descricao" class="form-control">
+																	<option value="<?= $value['descricao'] ?>"><?= $value['descricao'] ?></option>
+																	<option value="CONTA DE ENERGIA ELÉTRICA">CONTA DE ENERGIA ELÉTRICA</option>
+																	<option value="CONTA DE ÁGUA">CONTA DE ÁGUA</option>
+																	<option value="SUPRIMENTOS">SUPRIMENTOS</option>
+																	<option value="MANUTENÇÃO">MANUTENÇÃO</option>
+																	<option value="COMBUSTÍVEL">COMBUSTÍVEL</option>
+																</select>
+															</div>
+
+															<div class="col-12">
+																<label class="text-danger font-weight-bold readonly">Detalhamento</label>
+																<br>
+																<input class="form-control" type="text" name="ipt-detalhamento" value="<?= $value['detalhamento'] ?>">
+															</div>
+
+															<div class="col-12">
+																<label class="text-danger font-weight-bold">Valor (R$)</label>
+																<br>
+																<input class="form-control" type="text" name="ipt-valor" value="<?= number_format($value['valor'], 2, ',', '.') ?>">
+															</div>
+
+															<div class="col-12">
+																<label class="text-danger font-weight-bold readonly">Forma de Pagamento</label>
+																<br>
+																<input class="form-control" type="text" name="ipt-forma_pagamento" value="<?= $value['forma_pagamento'] ?>">
+															</div>
+
+															<div class="col-12">
+																<label class="text-danger text-light">-</label>
+																<br>
+																<input class="form-control btn btn-success" type="submit" name="btnEditarDespesa" value="Gravar" style="font-weight: bold !important;">
+															</div>
+
+														</form>
+
+													</div>
+
+												</div>
+
+											</div>
+										</div>
+									</div>
+
 
 							<?php
 									$conexao = null;
@@ -176,11 +285,11 @@ if ($_SESSION['user'] == NULL) {
 							?>
 						</tbody>
 					</table>
-                    <div>
-                    <span style="font-weight: bold;">
-                        Valor total para o período: R$ <?= number_format($valor_total, 2, ',' , '.') ?>
-                    </span>
-                </div>
+					<div>
+						<span style="font-weight: bold;">
+							Valor total para o período: R$ <?= number_format($valor_total, 2, ',', '.') ?>
+						</span>
+					</div>
 					<br>
 				</div>
 			</div>
