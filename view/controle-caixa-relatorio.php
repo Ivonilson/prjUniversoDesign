@@ -89,6 +89,8 @@ if ($_SESSION['user'] == NULL) {
 				<div class="col">
 
 					<?php
+
+					//$mensagem_erro = "";
 					
 					if ($mensagem_erro == "Despesa atualizada com sucesso!") {
 					?>
@@ -115,7 +117,7 @@ if ($_SESSION['user'] == NULL) {
 						</div>
 
 					<?php
-					}
+					} 
 					?>
 
 					<table class="table table-bordered table-hover display" id="dataTable" width="100%" cellspacing="0">
@@ -152,15 +154,12 @@ if ($_SESSION['user'] == NULL) {
 						<tbody>
 							<?php
 
-							$dados = new PesquisaControleCaixaPorPeriodo();
+							
 							$valor_total = 0;
 							$contador = 0;
 
 							$data_inicial = filter_input(INPUT_POST, 'data_inicial');
 							$data_final = filter_input(INPUT_POST, 'data_final');
-
-
-							$resultado = $dados->pesquisaControleCaixaPorPeriodo();
 
 							if ($resultado || isset($_POST['data_inicial'])) {
 								echo "<strong>Periodo de Pesquisa: <mark>" . date_format(date_create($data_inicial), "d/m/Y") . " a " . date_format(date_create($data_final), "d/m/Y") . "</mark></strong><br><br>";
@@ -211,6 +210,12 @@ if ($_SESSION['user'] == NULL) {
 														<h3 class="text-primary col-12 text-center mt-5">Alterando a despesa <label class="border p-3 text-danger font-weight-bold"><?= $value['id_despesa'] ?></label></h3>
 
 														<form method="post">
+
+															<div class="col-12">
+																<input class="form-control " type="text" name="data_inicial" value="<?= $data_inicial ?>">
+																<br>
+																<input class="form-control" type="text" name="data_final" value="<?= $data_final ?>">
+															</div>
 
 															<div class="col-12">
 																<label class="text-danger font-weight-bold readonly">Código</label>

@@ -86,10 +86,8 @@ switch ($pagina) {
 		break;
 
 	case 'controle-caixa-relatorio':
-			require "controller/crtEditarDespesa.php";
-			require "controller/crtPesquisaControleCaixaPorPeriodo.php";
-			$crtl = new crtPesquisaControleCaixaPorPeriodo();
-			$crtl->pesqControleCaixaPorPeriodo();
+			require_once "controller/crtPesquisaControleCaixaPorPeriodo.php";
+			include "view/controle-caixa-relatorio.php";
 			break;
 
 	case 'pesquisa-por-data-agendamento':
