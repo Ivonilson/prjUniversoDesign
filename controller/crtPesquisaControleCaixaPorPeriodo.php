@@ -6,8 +6,7 @@ class crtPesquisaControleCaixaPorPeriodo {
 
 	public function pesqControleCaixaPorPeriodo()
 	{	
-		$mensagem_erro = "";
-		
+
 		$dados = new PesquisaControleCaixaPorPeriodo();
 		$dataSet = $dados->pesquisaControleCaixaPorPeriodo();
 		return $dataSet;
@@ -18,17 +17,23 @@ class crtPesquisaControleCaixaPorPeriodo {
 	{	
 		if(filter_input(INPUT_POST, 'ipt-id-despesa') != 'INDEFINIDO' && filter_input(INPUT_POST, 'sel-tipo') != '') {
 			$usuario = new EditarDespesa();
+
 			if($usuario->edDespesa()) {
 				return "Despesa atualizada com sucesso!";
+				//return $resultado;
 			} else {
-	
 				return "ERRO. Verifique se você REALMENTE alterou alguma coisa ou Contate o Suporte.";
+				//return $resultado;
 			}
 		}
+	}
 
-		$recarregar = new crtPesquisaControleCaixaPorPeriodo();
-		$resultado = $recarregar->pesqControleCaixaPorPeriodo();
-
+	public function recarregarDados(){
+		if(filter_input(INPUT_POST, 'ipt-id-despesa') != 'INDEFINIDO' && filter_input(INPUT_POST, 'sel-tipo') != '') {
+			$recarregar = new crtPesquisaControleCaixaPorPeriodo();
+			$resultado = $recarregar->pesqControleCaixaPorPeriodo();
+			return $resultado;
+		}
 	}
 
 }
@@ -38,8 +43,7 @@ $crtl = new crtPesquisaControleCaixaPorPeriodo();
 
 $resultado = $crtl->pesqControleCaixaPorPeriodo();
 $mensagem_erro = $editarDespesa->editarDespesa();
-
-
+$resultado = $editarDespesa->recarregarDados();
 
 	/*$deletar = new OsDoDia();
 
