@@ -19,35 +19,40 @@ class crtPesquisaControleCaixaPorPeriodo {
 			$usuario = new EditarDespesa();
 
 			if($usuario->edDespesa()) {
-				return "Despesa atualizada com sucesso!";
-				//return $resultado;
+				$recarregar = new crtPesquisaControleCaixaPorPeriodo();
+				$resultado = $recarregar->pesqControleCaixaPorPeriodo();
+				$retorno = [$resultado , "Despesa atualizada com sucesso!"];
+				return $retorno;
+				
 			} else {
-				return "ERRO. Verifique se você REALMENTE alterou alguma coisa ou Contate o Suporte.";
-				//return $resultado;
+				$recarregar = new crtPesquisaControleCaixaPorPeriodo();
+				$resultado = $recarregar->pesqControleCaixaPorPeriodo();
+				$retorno = [$resultado , "ERRO. Verifique se você REALMENTE alterou alguma coisa ou Contate o Suporte."];
+				return $retorno;
 			}
 		}
 	}
-
-	public function recarregarDados(){
-		if(filter_input(INPUT_POST, 'ipt-id-despesa') != 'INDEFINIDO' && filter_input(INPUT_POST, 'sel-tipo') != '') {
-			$recarregar = new crtPesquisaControleCaixaPorPeriodo();
-			$resultado = $recarregar->pesqControleCaixaPorPeriodo();
-			return $resultado;
-		}
-	}
-
 }
 
 $editarDespesa = new crtPesquisaControleCaixaPorPeriodo();
 $crtl = new crtPesquisaControleCaixaPorPeriodo();
+$deletar = new crtPesquisaControleCaixaPorPeriodo();
 
-$resultado = $crtl->pesqControleCaixaPorPeriodo();
-$mensagem_erro = $editarDespesa->editarDespesa();
-$resultado = $editarDespesa->recarregarDados();
+$retorno [0] = $crtl->pesqControleCaixaPorPeriodo();
+$retorno [1] = "";
 
-	/*$deletar = new OsDoDia();
+if($editarDespesa->editarDespesa()){
+	$retorno = $editarDespesa->editarDespesa();
+}
 
-	if(isset($_POST['ipt-cod-delete']) && $_POST['ipt-cod-delete'] != '' && $_POST['ipt-confirmacao'] == 'true'){
-		$deletar->deletarOs();
-	}*/
+if(isset($_POST['ipt-id-despesa']) && $_POST['ipt-id-despesa'] != '' && $_POST['ipt-confirmacao'] == 'true'){
+	$recarregar = new PesquisaControleCaixaPorPeriodo();
+	$deletar = new EditarDespesa();
+
+	if($deletar->deletarDespesa()) {
+		$resultado = $recarregar->pesquisaControleCaixaPorPeriodo();
+		$retorno  = [$resultado , "Registro deletado com sucesso..."];
+	};
+}
+
 ?>

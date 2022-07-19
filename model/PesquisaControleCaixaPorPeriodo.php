@@ -26,7 +26,7 @@ class PesquisaControleCaixaPorPeriodo {
 				*/
 
 				$resultadoPorPeriodo = $dadosPorPeriodo->fetchAll(PDO::FETCH_ASSOC);
-
+				
 				return $resultadoPorPeriodo;
 
 		} catch(PDOException $e) {

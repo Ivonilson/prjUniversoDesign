@@ -90,34 +90,41 @@ if ($_SESSION['user'] == NULL) {
 
 					<?php
 
-					//$mensagem_erro = "";
 					
-					if ($mensagem_erro == "Despesa atualizada com sucesso!") {
+					if ($retorno[1] == "Despesa atualizada com sucesso!") {
 					?>
 
 						<div class="alert alert-success font-weight-bold alertaCadOsOk col-12 text-center" role="alert">
 							<img src="../assets/ok.png">
-							<h5><strong><?= $mensagem_erro ?></strong></h5>
+							<h5><strong><?=$retorno[1] ?></strong></h5>
 						</div>
 
 						<script>
-							setInterval(function() {
+							/*setInterval(function() {
 								window.location.href = "/?pagina=controle-caixa-relatorio"
-							}, 3000)
+							}, 3000)*/
 						</script>
 
 					<?php
 
-					} else if ($mensagem_erro == "ERRO. Verifique se você REALMENTE alterou alguma coisa ou Contate o Suporte.") {
+					} else if ($retorno[1] == "ERRO. Verifique se você REALMENTE alterou alguma coisa ou Contate o Suporte.") {
 					?>
 
 						<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
 							<img src="../assets/error.png">
-							<h5><strong><?= $mensagem_erro ?></strong></h5>
+							<h5><strong><?= $retorno[1] ?></strong></h5>
 						</div>
 
 					<?php
-					} 
+					}  else if ($retorno[1] == "Registro deletado com sucesso...") {
+					?>
+						<div class="alert alert-success font-weight-bold alertaCadOsOk col-12 text-center" role="alert">
+							<img src="../assets/ok.png">
+						<h5><strong><?= $retorno[1] ?></strong></h5>
+						</div>
+
+					<?php
+						} 
 					?>
 
 					<table class="table table-bordered table-hover display" id="dataTable" width="100%" cellspacing="0">
@@ -161,13 +168,13 @@ if ($_SESSION['user'] == NULL) {
 							$data_inicial = filter_input(INPUT_POST, 'data_inicial');
 							$data_final = filter_input(INPUT_POST, 'data_final');
 
-							if ($resultado || isset($_POST['data_inicial'])) {
+							if ($retorno[0] || isset($_POST['data_inicial'])) {
 								echo "<strong>Periodo de Pesquisa: <mark>" . date_format(date_create($data_inicial), "d/m/Y") . " a " . date_format(date_create($data_final), "d/m/Y") . "</mark></strong><br><br>";
 							}
 
-							if ($resultado != NULL) {
+							if ($retorno[0] != NULL) {
 
-								foreach ($resultado as  $value) {
+								foreach ($retorno[0] as  $value) {
 
 									$contador++;
 
@@ -188,9 +195,13 @@ if ($_SESSION['user'] == NULL) {
 											<td align="center"><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Atualizar" data-toggle="modal" data-target="#<?= $contador ?>"><i class="fa fa-pencil" aria-hidden="true" id="#<?= $contador ?>"></i></a></td>
 
 											<td align="center">
-												<input type="hidden" name="ipt-cod-delete" value="<?= $value['id_despesa'] ?>">
+												<input type="hidden" name="ipt-id-despesa" value="<?= $value['id_despesa'] ?>">
 
 												<input type="hidden" name="ipt-confirmacao" id="ipt-confirma">
+
+												<input class="form-control " type="hidden" name="data_inicial" value="<?= $data_inicial ?>">
+													
+												<input class="form-control" type="hidden" name="data_final" value="<?= $data_final ?>">
 
 												<button class="btn btn-light d-xs-none" value='Excluir' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir" name="btnDeletarOs" id="btnDeletarItem"><i class="fa fa-trash" aria-hidden="true"></i></button>
 											</td>

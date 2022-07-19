@@ -59,13 +59,7 @@ class EditarDespesa {
 			$dados_editar->bindParam(':valor', $dados['ipt-valor']);
 			$dados_editar->bindParam(':forma_pagamento', $dados['ipt-forma_pagamento']);
 
-			$dados_editar->execute();
-
-			} catch (PDOException $erro) {
-				echo "ERRO: ".$erro->getMessage();
-			}	
-
-			if($dados_editar->rowCount()) {
+			if($dados_editar->execute()) {
 				//echo "<script>alert('Registro ATUALIZADO com SUCESSO.')</script>";
 				//echo "<script>window.location.href = '/?pagina=controle-caixa-relatorio&data_inicial=".$dados['data_inicial']."&data_final=".$dados['data_final']."'</script>";
 				//echo "<script>window.location.href = '../view/demandas-do-dia.php'</script>";
@@ -77,6 +71,34 @@ class EditarDespesa {
 				return false;
 			}
 
+			} catch (PDOException $erro) {
+				echo "ERRO: ".$erro->getMessage();
+			}	
+
+		}
+
+
+		public function deletarDespesa()
+		{
+			$id_despesa = filter_input(INPUT_POST, 'ipt-id-despesa');
+
+			try {
+
+				$conn = new Conn();
+				$statement = "DELETE FROM tbl_despesa WHERE id_despesa = '$id_despesa'";
+				$deletar = $conn->getConn()->prepare($statement);
+				
+				if($deletar->execute()) {
+					return true;
+					//echo "<script>alert('Registro DELETADO com SUCESSO.')</script>";
+				} else {
+					return false;
+					//echo "<script>alert('ERRO. REGISTRO NÃO FOI DELETADO.')</script>";
+				}
+
+			} catch (PDOException $error) {
+				echo "Erro: ".$error->getMessage();
+			}
 		}
 
 			/*public function registroAlteracoes($cod_os_alteracao)
