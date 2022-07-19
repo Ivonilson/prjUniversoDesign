@@ -34,7 +34,7 @@ switch ($pagina) {
 		break;
 
 	case 'lancar-despesa':
-		require "controller/crtLancarDespesa.php";
+		require "controller/crtDespesa.php";
 		include_once "view/lancar-despesa.php";
 		break;
 
@@ -86,7 +86,7 @@ switch ($pagina) {
 		break;
 
 	case 'controle-caixa-relatorio':
-			require_once "controller/crtPesquisaControleCaixaPorPeriodo.php";
+			require_once "controller/crtDespesa.php";
 			include "view/controle-caixa-relatorio.php";
 			break;
 
