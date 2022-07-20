@@ -65,7 +65,7 @@ if ($_SESSION['user'] == NULL) {
 						</div>
 
 						<div class="col text-right mb-0">
-								<button type="button" class="text-light btn btn-secondary" data-toggle="modal" data-target="#md-ultima-despesa">Ver última despesa lançada</button>
+								<button type="button" class="text-light btn btn-secondary" data-toggle="modal" data-target="#md-ultima-despesa">Ver última receita lançada</button>
 						</div>
 
 					</div>
@@ -97,7 +97,7 @@ if ($_SESSION['user'] == NULL) {
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLongTitle">Receita: <?= $UltimaReceitaCadastrada != null ? $UltimaReceitaCadastrada['id_despesa'] : '- Nenhuma despesa cadastrada.';  ?></h5>
+									<h5 class="modal-title" id="exampleModalLongTitle">Receita: <?= $UltimaReceitaCadastrada != null ? $UltimaReceitaCadastrada['id_receita'] : '- Nenhuma receita cadastrada.';  ?></h5>
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
@@ -120,7 +120,7 @@ if ($_SESSION['user'] == NULL) {
 											<span class="font-weight-bold text-dark" style="font-size: 20px">Cadastrado em: </span><span style="font-size: 22px"><?= $UltimaReceitaCadastrada != null ? date_format(date_create($UltimaReceitaCadastrada['data_processamento']), "d/m/Y") : '-'; ?></span><br><br>
 
 											<div class="row">
-												<a href="/?pagina=editar-receita&id_receita=<?=$UltimaReceitaCadastrada['id_despesa'] ?>&form=lancar-despesa" class="card-link btn btn-danger  col-sm col-xs col">Editar</a>
+												<a href="/?pagina=editar-receita&id_receita=<?=$UltimaReceitaCadastrada['id_receita'] ?>&form=lancar-receita" class="card-link btn btn-danger  col-sm col-xs col">Editar</a>
 
 												<a href="/?pagina=pesquisa-receita" class="card-link btn btn-info  col-sm col-xs col">Pesquisar Receitas</a>
 											</div>

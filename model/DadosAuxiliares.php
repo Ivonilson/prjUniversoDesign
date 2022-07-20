@@ -36,6 +36,22 @@
 
 		}
 
+		function carregaReceita()
+		{
+
+		try{
+			$conn = new Conn();
+			$statement = "SELECT MAX(id) as ultima FROM tbl_receita";
+			$dado = $conn->getConn()->query($statement);
+			$resultado = $dado->fetch(PDO::FETCH_ASSOC);
+			return $resultado;
+
+			} catch(PDOException $erro){
+				echo "ERRO: ".$erro->getMessage();
+			}
+
+		}
+
 		//Cadastro de Orçamento
 		function carregaIdOrcamento()
 		{

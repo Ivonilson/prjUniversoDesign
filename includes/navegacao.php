@@ -142,6 +142,10 @@
 											<a href="/?pagina=despesa-por-periodo">Despesas por período</a>
 										</li>
 
+										<li>
+											<a href="/?pagina=receita-por-periodo">Receitas por período</a>
+										</li>
+
 									</ul>
 
 								</li>

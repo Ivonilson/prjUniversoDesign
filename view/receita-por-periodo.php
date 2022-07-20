@@ -10,7 +10,7 @@ if ($_SESSION['user'] == NULL) {
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Despesas por período</title>
+	<title>Receitas por período</title>
 	<?php require_once 'includes/bootstrap-css.php'; ?>
 	<script src="../js/abg2.js"></script>
 </head>
@@ -35,11 +35,11 @@ if ($_SESSION['user'] == NULL) {
 					Relatórios
 				</li>
 				<li class="breadcrumb-item">
-					<mark class="p-2 font-weight-bold">Despesas por periodo</mark>
+					<mark class="p-2 font-weight-bold">Receitas por periodo</mark>
 				</li>
 
 				<div class="col">
-					<a href="/?pagina=lancar-despesa" class="btn btn-danger text-light float-right font-weight-bold rounded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Incluir nova despesa"><i class="fa fa-plus"></i> Despesa</a>
+					<a href="/?pagina=lancar-receita" class="btn btn-danger text-light float-right font-weight-bold rounded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Incluir nova receita"><i class="fa fa-plus"></i>  Receita</a>
 				</div>
 
 			</ol>
@@ -72,7 +72,7 @@ if ($_SESSION['user'] == NULL) {
 
 			<div class="card mb-1">
 				<div class="card-header">
-					<i class="fa fa-table"></i> <span class="font-weight-bold text-lg">Despesas por período</span>
+					<i class="fa fa-table"></i> <span class="font-weight-bold text-lg">Receitas por período</span>
 					<br>
 					<br>
 					<form method="post" class="background-form-cons">
@@ -94,7 +94,7 @@ if ($_SESSION['user'] == NULL) {
 					<?php
 
 					
-					if ($retorno[1] == "Despesa atualizada com sucesso!") {
+					if ($retorno[1] == "Receita atualizada com sucesso!") {
 					?>
 
 						<div class="alert alert-success font-weight-bold alertaCadOsOk col-12 text-center" role="alert">
@@ -133,9 +133,8 @@ if ($_SESSION['user'] == NULL) {
 					<table class="table table-bordered table-hover display" id="dataTable" width="100%" cellspacing="0">
 						<thead class="thead-light">
 							<tr>
-								<th>Cod. Despesa</th>
+								<th>Cod. Receita</th>
 								<th>Tipo</th>
-								<th>Descrição</th>
 								<th>Detalhamento</th>
 								<th>Valor(R$)</th>
 								<th>Forma de Pagamento</th>
@@ -147,10 +146,8 @@ if ($_SESSION['user'] == NULL) {
 							</tr>
 						</thead>
 						<tfoot class="thead-light">
-							<tr>
-								<th>Cod. Despesa</th>
+								<th>Cod. Receita</th>
 								<th>Tipo</th>
-								<th>Descrição</th>
 								<th>Detalhamento</th>
 								<th>Valor(R$)</th>
 								<th>Forma de Pagamento</th>
@@ -185,9 +182,8 @@ if ($_SESSION['user'] == NULL) {
 							?>
 									<tr>
 										<form method="post">
-											<td><?= $value['id_despesa'] ?>&nbsp&nbsp<button class="btn btn-light d-md-none d-lg-none d-xl-none" value='Excluir' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir" name="btnDeletarOs" id="btnDeletarItem"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+											<td><?= $value['id_receita'] ?>&nbsp&nbsp<button class="btn btn-light d-md-none d-lg-none d-xl-none" value='Excluir' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir" name="btnDeletarOs" id="btnDeletarItem"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
 											<td><?= $value['tipo'] ?></td>
-											<td><?= $value['descricao'] ?></td>
 											<td><?= $value['detalhamento'] ?></td>
 											<td><?= number_format($value['valor'], 2, ',', '.') ?></td>
 											<td><?= $value['forma_pagamento'] ?></td>
@@ -198,7 +194,7 @@ if ($_SESSION['user'] == NULL) {
 											<td align="center"><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Atualizar" data-toggle="modal" data-target="#<?= $contador ?>"><i class="fa fa-pencil" aria-hidden="true" id="#<?= $contador ?>"></i></a></td>
 
 											<td align="center">
-												<input type="hidden" name="ipt-id-despesa" value="<?= $value['id_despesa'] ?>">
+												<input type="hidden" name="ipt-id-receita" value="<?= $value['id_receita'] ?>">
 
 												<input type="hidden" name="ipt-confirmacao" id="ipt-confirma">
 
@@ -213,7 +209,7 @@ if ($_SESSION['user'] == NULL) {
 										<!--<td align="center"><a href="/?pagina=historico&cod_os=<?= $value['cod_os'] ?>&form=pesquisa-por-data-receb" title="Histórico" target="_blank"><i class="fa fa-history" aria-hidden="true"></a></td>-->
 									</tr>
 
-									<!-- MODAL EDITAR DESPESA --->
+									<!-- MODAL EDITAR RECEITA --->
 									<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="<?= $contador ?>">
 										<div class="modal-dialog modal-lg">
 											<div class="modal-content">
@@ -221,7 +217,7 @@ if ($_SESSION['user'] == NULL) {
 												<div class="modal-body">
 													<div class="row justify-content-center">
 
-														<h3 class="text-primary col-12 text-center mt-5">Alterando a despesa <label class="border p-3 text-danger font-weight-bold"><?= $value['id_despesa'] ?></label></h3>
+														<h3 class="text-primary col-12 text-center mt-5">Alterando a receita <label class="border p-3 text-danger font-weight-bold"><?= $value['id_receita'] ?></label></h3>
 
 														<form method="post">
 
@@ -234,7 +230,7 @@ if ($_SESSION['user'] == NULL) {
 															<div class="col-12">
 																<label class="text-danger font-weight-bold readonly">Código</label>
 																<br>
-																<input class="form-control" type="text" name="ipt-id-despesa-edicao" value="<?= $value['id_despesa'] ?>">
+																<input class="form-control" type="text" name="ipt-id-receita-edicao" value="<?= $value['id_receita'] ?>">
 															</div>
 
 															<div class="col-12">
@@ -242,21 +238,9 @@ if ($_SESSION['user'] == NULL) {
 																<br>
 																<select name="sel-tipo-edicao" class="form-control">
 																	<option value="<?= $value['tipo'] ?>"><?= $value['tipo'] ?></option>
-																	<option value="FIXA">FIXA</option>
-																	<option value="VARIÁVEL">VARIÁVEL</option>
-																</select>
-															</div>
-
-															<div class="col-12">
-																<label class="text-danger font-weight-bold readonly">Descrição</label>
-																<br>
-																<select name="sel-descricao" class="form-control">
-																	<option value="<?= $value['descricao'] ?>"><?= $value['descricao'] ?></option>
-																	<option value="CONTA DE ENERGIA ELÉTRICA">CONTA DE ENERGIA ELÉTRICA</option>
-																	<option value="CONTA DE ÁGUA">CONTA DE ÁGUA</option>
-																	<option value="SUPRIMENTOS">SUPRIMENTOS</option>
-																	<option value="MANUTENÇÃO">MANUTENÇÃO</option>
-																	<option value="COMBUSTÍVEL">COMBUSTÍVEL</option>
+																	<option value="VENDA/PRODUTO">VENDA/PRODUTO</option>
+																	<option value="SERVIÇO">SERVIÇO</option>
+                                                                    <option value="APORTE">APORTE</option>
 																</select>
 															</div>
 
@@ -281,7 +265,7 @@ if ($_SESSION['user'] == NULL) {
 															<div class="col-12">
 																<label class="text-danger text-light">-</label>
 																<br>
-																<input class="form-control btn btn-success" type="submit" name="btnEditarDespesa" value="Gravar" style="font-weight: bold !important;">
+																<input class="form-control btn btn-success" type="submit" name="btnEditarReceita" value="Gravar" style="font-weight: bold !important;">
 															</div>
 
 														</form>

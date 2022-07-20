@@ -69,7 +69,7 @@ require "model/Receita.php";
 	$retorno [0] = $crtl->pesqControleCaixaPorPeriodo();
 	$retorno [1] = "";
 
-	if($editarDespesa->editarReceita()){
+	if($editarReceita->editarReceita()){
 		$retorno = $editarReceita->editarReceita();
 	}
 

@@ -95,6 +95,11 @@ switch ($pagina) {
 			include "view/despesa-por-periodo.php";
 			break;
 
+	case 'receita-por-periodo':
+				require_once "controller/crtReceita.php";
+				include "view/receita-por-periodo.php";
+				break;
+
 	case 'pesquisa-por-data-agendamento':
 		require "controller/crtPesquisaPorDataAgendamento.php";
 		$crtl = new crtPesquisaPorDataAgendamento();
