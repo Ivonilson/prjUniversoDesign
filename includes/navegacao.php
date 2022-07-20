@@ -104,22 +104,6 @@
 				</li>
 
 				<li class="nav-item" id="navegacao">
-					<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseNotificacoes">
-						<i class="fa fa-bell" aria-hidden="true"></i>
-						<span class="nav-link-text">Notificações</span>
-					</a>
-
-					<ul class="sidenav-second-level collapse" id="collapseNotificacoes" data-parent="#linksaccordion" style="background-color: #F5FFFA">
-
-						<li>
-							<a href="/?pagina=cadastrar-notificacao" target="opcoes-menu" >Cadastrar Notificação</a>
-						</li>
-
-					</ul>
-
-				</li>
-
-				<li class="nav-item" id="navegacao">
 					<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseFinanceiro">
 						<i class="fa fa-calculator" aria-hidden="true"></i>
 						<span class="nav-link-text">Financeiro</span>
@@ -150,7 +134,16 @@
 							<ul class="sidenav-second-level collapse" id="collapseDespesaConsultas" data-parent="#linksaccordion" style="background-color: #F5FFFA">
 
 								<li>
-									<a href="/?pagina=controle-caixa-relatorio">Relatórios</a>
+									<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseDespesaRelatorios">Relatórios</a>
+
+									<ul class="sidenav-second-level collapse" id="collapseDespesaRelatorios" data-parent="#linksaccordion" style="background-color: #F5FFFA">
+
+										<li>
+											<a href="/?pagina=despesa-por-periodo">Despesas por período</a>
+										</li>
+
+									</ul>
+
 								</li>
 
 							</ul>
@@ -186,6 +179,22 @@
 						</li>
 
 					</ul>
+				</li>
+
+				<li class="nav-item" id="navegacao">
+					<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseNotificacoes">
+						<i class="fa fa-bell" aria-hidden="true"></i>
+						<span class="nav-link-text">Notificações</span>
+					</a>
+
+					<ul class="sidenav-second-level collapse" id="collapseNotificacoes" data-parent="#linksaccordion" style="background-color: #F5FFFA">
+
+						<li>
+							<a href="/?pagina=cadastrar-notificacao" target="opcoes-menu" >Cadastrar Notificação</a>
+						</li>
+
+					</ul>
+
 				</li>
 
 				<!--

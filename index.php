@@ -38,6 +38,11 @@ switch ($pagina) {
 		include_once "view/lancar-despesa.php";
 		break;
 
+	case 'lancar-receita':
+			require "controller/crtReceita.php";
+			include_once "view/lancar-receita.php";
+			break;
+
 	case 'cadastrar-cidade':
 		require "controller/crtCadastrarCidade.php";
 		include_once "view/cadastrar-cidade.php";
@@ -85,9 +90,9 @@ switch ($pagina) {
 		$crtl->pesquisaPorDataReceb();
 		break;
 
-	case 'controle-caixa-relatorio':
+	case 'despesa-por-periodo':
 			require_once "controller/crtDespesa.php";
-			include "view/controle-caixa-relatorio.php";
+			include "view/despesa-por-periodo.php";
 			break;
 
 	case 'pesquisa-por-data-agendamento':

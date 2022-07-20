@@ -57,8 +57,8 @@ class Despesa {
 			//$produtos = implode('<br> ', ($dados['sel-prod']));
 
 			$dados_cadastrar->bindParam(':id_despesa', $dados['ipt-cod']);
-			$dados_cadastrar->bindParam(':tipo', $dados['sel-tipo']);
-			$dados_cadastrar->bindParam(':descricao', $dados['sel-descricao']);
+			$dados_cadastrar->bindParam(':tipo', $dados['sel-tipo-lancar']);
+			$dados_cadastrar->bindParam(':descricao', $dados['sel-descricao-lancar']);
 			$dados_cadastrar->bindParam(':detalhamento', $detalhamento);
 			$dados_cadastrar->bindParam(':valor', $valor);
 			$dados_cadastrar->bindParam(':forma_pagamento', $dados['sel-forma-pagamento']);
@@ -176,8 +176,8 @@ class Despesa {
 			.'Observações I/G: '."<mark>".$dados['ta-observacoesig']."</mark>".'<br>'
 			.'<hr>';*/
 
-			$dados_editar->bindParam(':id_despesa', $dados['ipt-id-despesa']);
-			$dados_editar->bindParam(':tipo', $dados['sel-tipo']);
+			$dados_editar->bindParam(':id_despesa', $dados['ipt-id-despesa-edicao']);
+			$dados_editar->bindParam(':tipo', $dados['sel-tipo-edicao']);
 			$dados_editar->bindParam(':descricao', $dados['sel-descricao']);
 			$dados_editar->bindParam(':detalhamento', $dados['ipt-detalhamento']);
 			$dados_editar->bindParam(':valor', $dados['ipt-valor']);

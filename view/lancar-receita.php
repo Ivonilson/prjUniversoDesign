@@ -9,7 +9,7 @@ if ($_SESSION['user'] == NULL) {
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Lançar Despesa</title>
+	<title>Lançar Receita</title>
 	<?php require_once 'includes/bootstrap-css.php'; ?>
 </head>
 
@@ -27,7 +27,7 @@ if ($_SESSION['user'] == NULL) {
 					Financeiro
 				</li>
 				<li class="breadcrumb-item">
-					<mark class="p-2 font-weight-bold">Lançar Despesa</mark>
+					<mark class="p-2 font-weight-bold">Lançar Receita</mark>
 				</li>
 			</ol>
 
@@ -61,7 +61,7 @@ if ($_SESSION['user'] == NULL) {
 
 					<div id="jumbotron_telas_cadastro">
 						<div class="container">
-							<h4>Lançar Despesa</h4>
+							<h4>Lançar Receita</h4>
 						</div>
 
 						<div class="col text-right mb-0">
@@ -71,7 +71,7 @@ if ($_SESSION['user'] == NULL) {
 					</div>
 
 					<?php
-						if ($mensagem_erro == "Despesa lançada com sucesso!") {
+						if ($mensagem_erro == "Receita lançada com sucesso!") {
 						?>
 
 							<div class="alert alert-success font-weight-bold alertaCadOsOk col-12 text-center" role="alert">
@@ -97,7 +97,7 @@ if ($_SESSION['user'] == NULL) {
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLongTitle">Despesa: <?= $UltimaDespesaCadastrada != null ? $UltimaDespesaCadastrada['id_despesa'] : '- Nenhuma despesa cadastrada.';  ?></h5>
+									<h5 class="modal-title" id="exampleModalLongTitle">Receita: <?= $UltimaReceitaCadastrada != null ? $UltimaReceitaCadastrada['id_despesa'] : '- Nenhuma despesa cadastrada.';  ?></h5>
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
@@ -107,24 +107,22 @@ if ($_SESSION['user'] == NULL) {
 									<div class="card">
 										<div class="card-body col">
 
-											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Tipo: </span><span style="font-size: 22px"><?= $UltimaDespesaCadastrada != null ?  $UltimaDespesaCadastrada['tipo'] : '-'; ?></span><br>
+											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Tipo: </span><span style="font-size: 22px"><?= $UltimaReceitaCadastrada != null ?  $UltimaReceitaCadastrada['tipo'] : '-'; ?></span><br>
 
-											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Descrição: </span><span style="font-size: 22px"><?= $UltimaDespesaCadastrada != null ?  $UltimaDespesaCadastrada['descricao'] : '-'; ?></span><br>
+											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Detalhamento: </span><span style="font-size: 22px"><?= $UltimaReceitaCadastrada != null ?  $UltimaReceitaCadastrada['detalhamento'] : '-'; ?></span><br>
 
-											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Detalhamento: </span><span style="font-size: 22px"><?= $UltimaDespesaCadastrada != null ?  $UltimaDespesaCadastrada['detalhamento'] : '-'; ?></span><br>
+											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Valor(R$): </span><span style="font-size: 22px"><?= $UltimaReceitaCadastrada != null ?  number_format($UltimaReceitaCadastrada['valor'], 2, ',' , '.') : '-'; ?></span><br>
 
-											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Valor(R$): </span><span style="font-size: 22px"><?= $UltimaDespesaCadastrada != null ?  number_format($UltimaDespesaCadastrada['valor'], 2, ',' , '.') : '-'; ?></span><br>
+											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Forma de pagamento: </span><span style="font-size: 22px"><?= $UltimaReceitaCadastrada != null ?  $UltimaReceitaCadastrada['forma_pagamento'] : '-'; ?></span><br>
 
-											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Forma de pagamento: </span><span style="font-size: 22px"><?= $UltimaDespesaCadastrada != null ?  $UltimaDespesaCadastrada['forma_pagamento'] : '-'; ?></span><br>
+											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Data de Ref.: </span><span style="font-size: 22px"><?= $UltimaReceitaCadastrada != null ? date_format(date_create($UltimaReceitaCadastrada['data_referencia']), "d/m/Y") : '-'; ?></span><br>
 
-											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Data de Ref.: </span><span style="font-size: 22px"><?= $UltimaDespesaCadastrada != null ? date_format(date_create($UltimaDespesaCadastrada['data_referencia']), "d/m/Y") : '-'; ?></span><br>
-
-											<span class="font-weight-bold text-dark" style="font-size: 20px">Cadastrado em: </span><span style="font-size: 22px"><?= $UltimaDespesaCadastrada != null ? date_format(date_create($UltimaDespesaCadastrada['data_processamento']), "d/m/Y") : '-'; ?></span><br><br>
+											<span class="font-weight-bold text-dark" style="font-size: 20px">Cadastrado em: </span><span style="font-size: 22px"><?= $UltimaReceitaCadastrada != null ? date_format(date_create($UltimaReceitaCadastrada['data_processamento']), "d/m/Y") : '-'; ?></span><br><br>
 
 											<div class="row">
-												<a href="/?pagina=editar-despesa&cod_os=<?=$UltimaDespesaCadastrada['id_despesa'] ?>&form=lancar-despesa" class="card-link btn btn-danger  col-sm col-xs col">Editar</a>
+												<a href="/?pagina=editar-receita&id_receita=<?=$UltimaReceitaCadastrada['id_despesa'] ?>&form=lancar-despesa" class="card-link btn btn-danger  col-sm col-xs col">Editar</a>
 
-												<a href="/?pagina=pesquisa-despesa" class="card-link btn btn-info  col-sm col-xs col">Pesquisar Despesas</a>
+												<a href="/?pagina=pesquisa-receita" class="card-link btn btn-info  col-sm col-xs col">Pesquisar Receitas</a>
 											</div>
 
 										</div>
@@ -145,14 +143,14 @@ if ($_SESSION['user'] == NULL) {
 					<div class="form-row align-items-center">
 
 						<div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
-							<label class="sr-only" for="inlineFormInputOs">Nº O.S</label>
+							<label class="sr-only" for="inlineFormInputOs">Id despesa</label>
 
 							<input type="hidden" class="form-control mb-2" id="inlineFormInputOs" placeholder="Nº O.S" value="<?= $codigo ?>" name="ipt-cod" required>
 
 							<?php //var_dump($codigo); 
 							?>
 
-							<input type="text" class="form-control mb-2" id="inlineFormInputOs" placeholder="Nº O.S" value="<?= $codigo ?>" disabled>
+							<input type="text" class="form-control mb-2" id="inlineFormInputOs" placeholder="Id receita" value="<?= $codigo ?>" disabled>
 
 						</div>
 
@@ -165,26 +163,9 @@ if ($_SESSION['user'] == NULL) {
 								</div>
 								<select class="custom-select" name="sel-tipo-lancar">
 									<option value="-">Selecione</option>
-									<option value="FIXA">FIXA</option>
-									<option value="VARIÁVEL">VARIÁVEL</option>
-								</select>
-							</div>
-						</div>
-
-						<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-							<div class="input-group mb-2">
-								<div class="input-group-prepend">
-									<label class="input-group-text bg-secondary text-white" for="select-descricao">
-										DESCRIÇÃO
-									</label>
-								</div>
-								<select class="custom-select" name="sel-descricao-lancar">
-									<option value="-">Selecione</option>
-									<option value="CONTA DE ENERGIA ELÉTRICA">CONTA DE ENERGIA ELÉTRICA</option>
-									<option value="CONTA DE ÁGUA">CONTA DE ÁGUA</option>
-									<option value="SUPRIMENTOS">SUPRIMENTOS</option>
-									<option value="MANUTENÇÃO">MANUTENÇÃO</option>
-									<option value="COMBUSTÍVEL">COMBUSTÍVEL</option>
+									<option value="VENDA/PRODUTO">VENDA/PRODUTO</option>
+									<option value="SERVIÇO">SERVIÇO</option>
+                                    <option value="APORTE">APORTE</option>
 								</select>
 							</div>
 						</div>
@@ -192,8 +173,8 @@ if ($_SESSION['user'] == NULL) {
 						<div class="form-row align-items-center">
 
 							<div class="col-12">
-								<label class="sr-only" for="inlineFormInputDetalhamento">Detalhamento da despesa</label>
-								<textarea type="text" class="form-control mb-2" id="inlineFormInputDetalhamento" cols="140" rows="6" placeholder="Digite aqui o detalhamento da despesa..." name="ta-detalhamento"></textarea>
+								<label class="sr-only" for="inlineFormInputDetalhamento">Detalhamento da receita</label>
+								<textarea type="text" class="form-control mb-2" id="inlineFormInputDetalhamento" cols="140" rows="6" placeholder="Digite aqui o detalhamento da receita..." name="ta-detalhamento"></textarea>
 							</div>
 
 						</div>
@@ -203,7 +184,6 @@ if ($_SESSION['user'] == NULL) {
 							<input type="text" class="form-control mb-2" id="inlineFormInputEndereco" placeholder="Valor em R$ " name="ipt-valor" required>
 						</div>
 
-						<!-- FALTA IMPLEMENTAR ESSE ITEM ABAIXO -->
 						<div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
 							<div class="input-group mb-2">
 								<div class="input-group-prepend">

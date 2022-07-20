@@ -10,7 +10,7 @@ if ($_SESSION['user'] == NULL) {
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Contr. Caixa - Relatórios</title>
+	<title>Despesas por período</title>
 	<?php require_once 'includes/bootstrap-css.php'; ?>
 	<script src="../js/abg2.js"></script>
 </head>
@@ -32,7 +32,10 @@ if ($_SESSION['user'] == NULL) {
 					Controle de Caixa - Consultas
 				</li>
 				<li class="breadcrumb-item">
-					<mark class="p-2 font-weight-bold">Relatórios</mark>
+					Relatórios
+				</li>
+				<li class="breadcrumb-item">
+					<mark class="p-2 font-weight-bold">Despesas por periodo</mark>
 				</li>
 
 				<div class="col">
@@ -231,13 +234,13 @@ if ($_SESSION['user'] == NULL) {
 															<div class="col-12">
 																<label class="text-danger font-weight-bold readonly">Código</label>
 																<br>
-																<input class="form-control" type="text" name="ipt-id-despesa" value="<?= $value['id_despesa'] ?>">
+																<input class="form-control" type="text" name="ipt-id-despesa-edicao" value="<?= $value['id_despesa'] ?>">
 															</div>
 
 															<div class="col-12">
 																<label class="text-danger font-weight-bold readonly">Tipo</label>
 																<br>
-																<select name="sel-tipo" class="form-control">
+																<select name="sel-tipo-edicao" class="form-control">
 																	<option value="<?= $value['tipo'] ?>"><?= $value['tipo'] ?></option>
 																	<option value="FIXA">FIXA</option>
 																	<option value="VARIÁVEL">VARIÁVEL</option>

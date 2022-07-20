@@ -22,18 +22,18 @@ require "model/Despesa.php";
 
 		public function editarDespesa()
 		{	
-			if(filter_input(INPUT_POST, 'ipt-id-despesa') != 'INDEFINIDO' && filter_input(INPUT_POST, 'sel-tipo') != '') {
+			if(filter_input(INPUT_POST, 'ipt-id-despesa-edicao') != 'INDEFINIDO' && filter_input(INPUT_POST, 'sel-tipo-edicao') != '') {
 			$usuario = new Despesa();
 
 				if($usuario->edDespesa()) {
-					$recarregar = new crtDespesa();
-					$resultado = $recarregar->pesqControleCaixaPorPeriodo();
+					$recarregar = new Despesa();
+					$resultado = $recarregar->pesquisaControleCaixaPorPeriodo();
 					$retorno = [$resultado , "Despesa atualizada com sucesso!"];
 					return $retorno;
 				
 				} else {
 					$recarregar = new Despesa();
-					$resultado = $recarregar->pesqControleCaixaPorPeriodo();
+					$resultado = $recarregar->pesquisaControleCaixaPorPeriodo();
 					$retorno = [$resultado , "ERRO. Verifique se você REALMENTE alterou alguma coisa ou Contate o Suporte."];
 				return $retorno;
 				}
@@ -47,7 +47,7 @@ require "model/Despesa.php";
 
 	$mensagem_erro = '';
 
-	if(filter_input(INPUT_POST, 'sel-tipo') != '' && filter_input(INPUT_POST, 'sel-descricao') != '-') {
+	if(filter_input(INPUT_POST, 'sel-tipo-lancar') != '' && filter_input(INPUT_POST, 'sel-descricao-lancar') != '-') {
 		if($crtl->CadastrarDespesa()){
 			$codigo = $codigoDisponivel->gerarCodigoDespesa();
 			$mensagem_erro = "Despesa lançada com sucesso!";
@@ -73,7 +73,7 @@ require "model/Despesa.php";
 		$retorno = $editarDespesa->editarDespesa();
 	}
 
-	if(isset($_POST['ipt-id-despesa']) && $_POST['ipt-id-despesa'] != '' && $_POST['ipt-confirmacao'] == 'true'){
+	if(isset($_POST['ipt-id-despesa']) && $_POST['ipt-id-despesa'] != '' && isset($_POST['ipt-confirmacao']) && $_POST['ipt-confirmacao'] == 'true'){
 		$recarregar = new Despesa();
 		$deletar = new Despesa();
 
