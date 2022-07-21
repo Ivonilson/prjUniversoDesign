@@ -47,7 +47,7 @@ require "model/Despesa.php";
 
 	$mensagem_erro = '';
 
-	if(filter_input(INPUT_POST, 'sel-tipo-lancar') != '' && filter_input(INPUT_POST, 'sel-descricao-lancar') != '-') {
+	if(filter_input(INPUT_POST, 'sel-tipo-lancar') != '' && filter_input(INPUT_POST, 'sel-grupo-lancar') != '-') {
 		if($crtl->CadastrarDespesa()){
 			$codigo = $codigoDisponivel->gerarCodigoDespesa();
 			$mensagem_erro = "Despesa lançada com sucesso!";

@@ -33,7 +33,7 @@ class Despesa {
 
 			$conn = new Conn();
 
-			$statement = "INSERT INTO tbl_despesa (id_despesa, tipo, descricao, detalhamento, valor, forma_pagamento, data_referencia, data_processamento, usuario) VALUES (:id_despesa, :tipo, :descricao, :detalhamento, :valor, :forma_pagamento, :data_referencia, CURRENT_TIMESTAMP, :usuario)";
+			$statement = "INSERT INTO tbl_despesa (id_despesa, tipo, grupo, detalhamento, valor, forma_pagamento, data_referencia, data_processamento, usuario) VALUES (:id_despesa, :tipo, :grupo, :detalhamento, :valor, :forma_pagamento, :data_referencia, CURRENT_TIMESTAMP, :usuario)";
 
 			$dados_cadastrar = $conn->getConn()->prepare($statement);
 
@@ -58,7 +58,7 @@ class Despesa {
 
 			$dados_cadastrar->bindParam(':id_despesa', $dados['ipt-cod']);
 			$dados_cadastrar->bindParam(':tipo', $dados['sel-tipo-lancar']);
-			$dados_cadastrar->bindParam(':descricao', $dados['sel-descricao-lancar']);
+			$dados_cadastrar->bindParam(':grupo', $dados['sel-grupo-lancar']);
 			$dados_cadastrar->bindParam(':detalhamento', $detalhamento);
 			$dados_cadastrar->bindParam(':valor', $valor);
 			$dados_cadastrar->bindParam(':forma_pagamento', $dados['sel-forma-pagamento']);
@@ -89,7 +89,7 @@ class Despesa {
 		{
 			$conn = new Conn();
 
-			$statement = "SELECT id_despesa, tipo, descricao, detalhamento, valor, forma_pagamento, data_referencia, data_processamento, usuario FROM tbl_despesa ORDER BY data_processamento DESC LIMIT 1";
+			$statement = "SELECT id_despesa, tipo, grupo, detalhamento, valor, forma_pagamento, data_referencia, data_processamento, usuario FROM tbl_despesa ORDER BY data_processamento DESC LIMIT 1";
 
 			$ultimo = $conn->getConn()->query($statement);
 			$resultado = $ultimo->fetch(PDO::FETCH_ASSOC);
@@ -105,7 +105,7 @@ class Despesa {
 		//echo $data_final;
 
 		try {
-				$querySelect = "SELECT id_despesa, tipo, descricao, detalhamento, valor, forma_pagamento, data_referencia, data_processamento, usuario from tbl_despesa  WHERE data_referencia >= '$data_inicial' AND data_referencia <= '$data_final'";
+				$querySelect = "SELECT id_despesa, tipo, grupo, detalhamento, valor, forma_pagamento, data_referencia, data_processamento, usuario from tbl_despesa  WHERE data_referencia >= '$data_inicial' AND data_referencia <= '$data_final'";
 
 				/*$querySelect = "SELECT cod_os, id_orcamento, contato, endereco, cidade_uf, data_cadastro, data_agendamento, sit_pagamento, status, observacao  FROM tbl_os WHERE data_cadastro >= '$data_inicial' AND data_cadastro <= '$data_final'";*/
 
@@ -141,7 +141,7 @@ class Despesa {
 
 			$conn = new Conn();
 
-			$statement = "UPDATE tbl_despesa SET tipo = :tipo, descricao = :descricao, detalhamento = :detalhamento, valor = :valor, forma_pagamento = :forma_pagamento WHERE id_despesa = :id_despesa";
+			$statement = "UPDATE tbl_despesa SET tipo = :tipo, grupo = :grupo, detalhamento = :detalhamento, valor = :valor, forma_pagamento = :forma_pagamento WHERE id_despesa = :id_despesa";
 
 			$dados_editar = $conn->getConn()->prepare($statement);
 
@@ -178,7 +178,7 @@ class Despesa {
 
 			$dados_editar->bindParam(':id_despesa', $dados['ipt-id-despesa-edicao']);
 			$dados_editar->bindParam(':tipo', $dados['sel-tipo-edicao']);
-			$dados_editar->bindParam(':descricao', $dados['sel-descricao']);
+			$dados_editar->bindParam(':grupo', $dados['sel-grupo']);
 			$dados_editar->bindParam(':detalhamento', $dados['ipt-detalhamento']);
 			$dados_editar->bindParam(':valor', $dados['ipt-valor']);
 			$dados_editar->bindParam(':forma_pagamento', $dados['ipt-forma_pagamento']);

@@ -109,7 +109,7 @@ if ($_SESSION['user'] == NULL) {
 
 											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Tipo: </span><span style="font-size: 22px"><?= $UltimaDespesaCadastrada != null ?  $UltimaDespesaCadastrada['tipo'] : '-'; ?></span><br>
 
-											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Descrição: </span><span style="font-size: 22px"><?= $UltimaDespesaCadastrada != null ?  $UltimaDespesaCadastrada['descricao'] : '-'; ?></span><br>
+											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Grupo: </span><span style="font-size: 22px"><?= $UltimaDespesaCadastrada != null ?  $UltimaDespesaCadastrada['grupo'] : '-'; ?></span><br>
 
 											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Detalhamento: </span><span style="font-size: 22px"><?= $UltimaDespesaCadastrada != null ?  $UltimaDespesaCadastrada['detalhamento'] : '-'; ?></span><br>
 
@@ -174,11 +174,11 @@ if ($_SESSION['user'] == NULL) {
 						<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 							<div class="input-group mb-2">
 								<div class="input-group-prepend">
-									<label class="input-group-text bg-secondary text-white" for="select-descricao">
-										DESCRIÇÃO
+									<label class="input-group-text bg-secondary text-white" for="select-grupo">
+										GRUPO
 									</label>
 								</div>
-								<select class="custom-select" name="sel-descricao-lancar">
+								<select class="custom-select" name="sel-grupo-lancar">
 									<option value="-">Selecione</option>
 									<option value="CONTA DE ENERGIA ELÉTRICA">CONTA DE ENERGIA ELÉTRICA</option>
 									<option value="CONTA DE ÁGUA">CONTA DE ÁGUA</option>

@@ -135,7 +135,7 @@ if ($_SESSION['user'] == NULL) {
 							<tr>
 								<th>Cod. Despesa</th>
 								<th>Tipo</th>
-								<th>Descrição</th>
+								<th>Grupo</th>
 								<th>Detalhamento</th>
 								<th>Valor(R$)</th>
 								<th>Forma de Pagamento</th>
@@ -150,7 +150,7 @@ if ($_SESSION['user'] == NULL) {
 							<tr>
 								<th>Cod. Despesa</th>
 								<th>Tipo</th>
-								<th>Descrição</th>
+								<th>Grupo</th>
 								<th>Detalhamento</th>
 								<th>Valor(R$)</th>
 								<th>Forma de Pagamento</th>
@@ -187,7 +187,7 @@ if ($_SESSION['user'] == NULL) {
 										<form method="post">
 											<td><?= $value['id_despesa'] ?>&nbsp&nbsp<button class="btn btn-light d-md-none d-lg-none d-xl-none" value='Excluir' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir" name="btnDeletarOs" id="btnDeletarItem"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
 											<td><?= $value['tipo'] ?></td>
-											<td><?= $value['descricao'] ?></td>
+											<td><?= $value['grupo'] ?></td>
 											<td><?= $value['detalhamento'] ?></td>
 											<td><?= number_format($value['valor'], 2, ',', '.') ?></td>
 											<td><?= $value['forma_pagamento'] ?></td>
@@ -248,10 +248,10 @@ if ($_SESSION['user'] == NULL) {
 															</div>
 
 															<div class="col-12">
-																<label class="text-danger font-weight-bold readonly">Descrição</label>
+																<label class="text-danger font-weight-bold readonly">Grupo</label>
 																<br>
-																<select name="sel-descricao" class="form-control">
-																	<option value="<?= $value['descricao'] ?>"><?= $value['descricao'] ?></option>
+																<select name="sel-grupo" class="form-control">
+																	<option value="<?= $value['grupo'] ?>"><?= $value['grupo'] ?></option>
 																	<option value="CONTA DE ENERGIA ELÉTRICA">CONTA DE ENERGIA ELÉTRICA</option>
 																	<option value="CONTA DE ÁGUA">CONTA DE ÁGUA</option>
 																	<option value="SUPRIMENTOS">SUPRIMENTOS</option>
