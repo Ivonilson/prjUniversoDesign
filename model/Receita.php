@@ -8,7 +8,11 @@ class Receita {
 		{
 			$ultimaReceita = new DadosAuxiliares();
 			$resultado = $ultimaReceita->carregaReceita();
-			
+
+			if($resultado['ultima'] == null){
+				$resultado['ultima'] = 0;
+			}
+
 			$arr_cod = explode("/", $resultado['ultima']);
 			$codigo = $arr_cod[0];
 			$anoAtual = date('Y');

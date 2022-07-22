@@ -150,7 +150,7 @@ if ($_SESSION['user'] == NULL) {
 							<?php //var_dump($codigo); 
 							?>
 
-							<input type="text" class="form-control mb-2" id="inlineFormInputOs" placeholder="Id receita" value="<?= $codigo ?>" disabled>
+							<input type="text" class="form-control mb-2" id="inlineFormInputOs" value="<?= $codigo ?>" disabled>
 
 						</div>
 
@@ -163,8 +163,9 @@ if ($_SESSION['user'] == NULL) {
 								</div>
 								<select class="custom-select" name="sel-tipo-lancar">
 									<option value="-">Selecione</option>
-									<option value="VENDA/PRODUTO">VENDA/PRODUTO</option>
 									<option value="SERVIÇO">SERVIÇO</option>
+									<option value="VENDA LOJA">VENDA LOJA</option>
+									<option value="VENDA INTERNET">VENDA INTERNET</option>
                                     <option value="APORTE">APORTE</option>
 								</select>
 							</div>
