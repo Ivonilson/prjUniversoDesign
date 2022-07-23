@@ -70,6 +70,7 @@ require "model/Receita.php";
 	$retorno [1] = "";
 
 	if($editarReceita->editarReceita()){
+		$UltimaReceitaCadastrada = $ultimaReceita->ultimaReceitaCadastrada();
 		$retorno = $editarReceita->editarReceita();
 	}
 

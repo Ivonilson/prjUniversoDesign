@@ -238,9 +238,10 @@ if ($_SESSION['user'] == NULL) {
 																<br>
 																<select name="sel-tipo-edicao" class="form-control">
 																	<option value="<?= $value['tipo'] ?>"><?= $value['tipo'] ?></option>
-																	<option value="VENDA/PRODUTO">VENDA/PRODUTO</option>
 																	<option value="SERVIÇO">SERVIÇO</option>
-                                                                    <option value="APORTE">APORTE</option>
+																	<option value="VENDA LOJA">VENDA LOJA</option>
+																	<option value="VENDA INTERNET">VENDA INTERNET</option>
+																	<option value="APORTE">APORTE</option>
 																</select>
 															</div>
 

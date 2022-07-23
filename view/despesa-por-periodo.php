@@ -252,11 +252,19 @@ if ($_SESSION['user'] == NULL) {
 																<br>
 																<select name="sel-grupo" class="form-control">
 																	<option value="<?= $value['grupo'] ?>"><?= $value['grupo'] ?></option>
-																	<option value="CONTA DE ENERGIA ELÉTRICA">CONTA DE ENERGIA ELÉTRICA</option>
-																	<option value="CONTA DE ÁGUA">CONTA DE ÁGUA</option>
-																	<option value="SUPRIMENTOS">SUPRIMENTOS</option>
-																	<option value="MANUTENÇÃO">MANUTENÇÃO</option>
-																	<option value="COMBUSTÍVEL">COMBUSTÍVEL</option>
+																	<option value="FORNECEDORES">FORNECEDORES</option>
+																	<option value="ENERGIA">ENERGIA</option>
+																	<option value="TELEFONIA">TELEFONIA</option>
+																	<option value="ÁGUA">ÁGUA</option>
+																	<option value="INFORMÁTICA">INFORMÁTICA</option>
+																	<option value="MANUTENÇÃO DE EQUIPAMENTOS">MANUTENÇÃO DE EQUIPAMENTOS</option>
+																	<option value="IMPOSTOS">IMPOSTOS</option>
+																	<option value="SALÁRIOS">SALÁRIOS</option>
+																	<option value="PRÓ-LABORE">PRÓ-LABORE</option>
+																	<option value="CONTADOR">CONTADOR</option>
+																	<option value="ALUGUÉIS">ALUGUÉIS</option>
+																	<option value="MARKETING">MARKETING</option>
+																	<option value="SEGUROS">SEGUROS</option>
 																</select>
 															</div>
 

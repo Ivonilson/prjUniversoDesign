@@ -8,6 +8,10 @@ class Despesa {
 		{
 			$ultimaDespesa = new DadosAuxiliares();
 			$resultado = $ultimaDespesa->carregaDespesa();
+
+			if($resultado['ultima'] == null){
+				$resultado['ultima'] = 0;
+			}
 			
 			$arr_cod = explode("/", $resultado['ultima']);
 			$codigo = $arr_cod[0];

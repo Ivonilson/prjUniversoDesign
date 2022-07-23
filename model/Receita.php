@@ -144,7 +144,7 @@ class Receita {
 
 			$conn = new Conn();
 
-			$statement = "UPDATE tbl_receita SET tipo = :tipo, detalhamento = :detalhamento, valor = :valor, forma_pagamento = :forma_pagamento WHERE id_receita = :id_receita";
+			$statement = "UPDATE tbl_receita SET tipo = :tipo, detalhamento = :detalhamento, valor = :valor, forma_pagamento = :forma_pagamento, data_referencia = :data_referencia WHERE id_receita = :id_receita";
 
 			$dados_editar = $conn->getConn()->prepare($statement);
 
@@ -184,6 +184,7 @@ class Receita {
 			$dados_editar->bindParam(':detalhamento', $dados['ipt-detalhamento']);
 			$dados_editar->bindParam(':valor', $dados['ipt-valor']);
 			$dados_editar->bindParam(':forma_pagamento', $dados['ipt-forma_pagamento']);
+			$dados_editar->bindParam(':data_referencia', $dados['ipt-data-referencia']);
 
 			if($dados_editar->execute()) {
 				//echo "<script>alert('Registro ATUALIZADO com SUCESSO.')</script>";

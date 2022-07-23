@@ -211,7 +211,7 @@ if ($_SESSION['user'] == NULL) {
 							<input type="text" class="form-control mb-2" id="inlineFormInputEndereco" placeholder="Valor em R$ " name="ipt-valor" required>
 						</div>
 
-						<!-- FALTA IMPLEMENTAR ESSE ITEM ABAIXO -->
+						
 						<div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
 							<div class="input-group mb-2">
 								<div class="input-group-prepend">

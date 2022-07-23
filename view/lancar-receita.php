@@ -120,7 +120,7 @@ if ($_SESSION['user'] == NULL) {
 											<span class="font-weight-bold text-dark" style="font-size: 20px">Cadastrado em: </span><span style="font-size: 22px"><?= $UltimaReceitaCadastrada != null ? date_format(date_create($UltimaReceitaCadastrada['data_processamento']), "d/m/Y") : '-'; ?></span><br><br>
 
 											<div class="row">
-												<a href="/?pagina=editar-receita&id_receita=<?=$UltimaReceitaCadastrada['id_receita'] ?>&form=lancar-receita" class="card-link btn btn-danger  col-sm col-xs col">Editar</a>
+												<a href="#" class="card-link btn btn-danger  col-sm col-xs col" data-toggle="modal" data-target="#md-editar">Editar</a>
 
 												<a href="/?pagina=pesquisa-receita" class="card-link btn btn-info  col-sm col-xs col">Pesquisar Receitas</a>
 											</div>
@@ -218,6 +218,80 @@ if ($_SESSION['user'] == NULL) {
 
 				</form>
 			</div>
+									<!-- MODAL EDITAR RECEITA --->
+									<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="md-editar">
+										<div class="modal-dialog modal-lg">
+											<div class="modal-content">
+
+												<div class="modal-body">
+													<div class="row justify-content-center">
+
+														<h3 class="text-primary col-12 text-center mt-5">Alterando a receita <label class="border p-3 text-danger font-weight-bold"><?= $UltimaReceitaCadastrada['id_receita'] ?></label></h3>
+
+														<form method="post">
+
+															<div class="col-12">
+																<label class="text-danger font-weight-bold readonly">Código</label>
+																<br>
+																<input class="form-control" type="text" value="<?= $UltimaReceitaCadastrada['id_receita'] ?>" disabled>
+																<input class="form-control" type="hidden" name="ipt-id-receita-edicao" value="<?= $UltimaReceitaCadastrada['id_receita'] ?>">
+															</div>
+
+															<div class="col-12">
+																<label class="text-danger font-weight-bold readonly">Tipo</label>
+																<br>
+																<select name="sel-tipo-edicao" class="form-control">
+																	<option value="<?= $UltimaReceitaCadastrada['tipo'] ?>"><?= $UltimaReceitaCadastrada['tipo'] ?></option>
+																	<option value="SERVIÇO">SERVIÇO</option>
+																	<option value="VENDA LOJA">VENDA LOJA</option>
+																	<option value="VENDA INTERNET">VENDA INTERNET</option>
+																	<option value="APORTE">APORTE</option>
+																</select>
+															</div>
+
+															<div class="col-12">
+																<label class="text-danger font-weight-bold readonly">Detalhamento</label>
+																<br>
+																<input class="form-control" type="text" name="ipt-detalhamento" value="<?= $UltimaReceitaCadastrada['detalhamento'] ?>">
+															</div>
+
+															<div class="col-12">
+																<label class="text-danger font-weight-bold">Valor (R$)</label>
+																<br>
+																<input class="form-control" type="text" name="ipt-valor" value="<?= number_format($UltimaReceitaCadastrada['valor'], 2, ',', '.') ?>">
+															</div>
+
+															<div class="col-12">
+																<label class="text-danger font-weight-bold readonly">Forma de Pagamento</label>
+																<br>
+																<input class="form-control" type="text" name="ipt-forma_pagamento" value="<?= $UltimaReceitaCadastrada['forma_pagamento'] ?>">
+															</div>
+
+															<div class="col-12">
+																<label class="text-danger font-weight-bold readonly">Data de Referência</label>
+																<br>
+																<input class="form-control" type="date" name="ipt-data-referencia" value="<?= date_format(date_create($UltimaReceitaCadastrada['data_referencia']), "Y-m-d") ?>">
+															</div>
+
+
+															<div class="col-12">
+																<label class="text-danger text-light">-</label>
+																<br>
+																<input class="form-control btn btn-success" type="submit" name="btnEditarReceita" value="Gravar" style="font-weight: bold !important;">
+															</div>
+
+														</form>
+
+													</div>
+
+												</div>
+
+											</div>
+										</div>
+									</div>			
+
+
+																	
 
 			<?php require_once 'includes/rodape.php'; ?>
 
