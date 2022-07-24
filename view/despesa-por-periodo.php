@@ -314,7 +314,7 @@ if ($_SESSION['user'] == NULL) {
 					</table>
 					<div>
 						<span style="font-weight: bold;">
-							Valor total para o período: R$ <?= number_format($valor_total, 2, ',', '.') ?>
+							Total de DESPESAS no período selecionado: R$ <?= number_format($valor_total, 2, ',', '.') ?>
 						</span>
 					</div>
 					<br>

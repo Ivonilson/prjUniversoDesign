@@ -70,6 +70,7 @@ require "model/Despesa.php";
 	$retorno [1] = "";
 
 	if($editarDespesa->editarDespesa()){
+		$UltimaDespesaCadastrada = $ultimaDespesa->ultimaDespesaCadastrada();
 		$retorno = $editarDespesa->editarDespesa();
 	}
 

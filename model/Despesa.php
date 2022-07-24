@@ -137,6 +137,9 @@ class Despesa {
 			$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 			//$form = filter_input(INPUT_GET, 'form');
 
+			$valor = str_replace(',' , '.', $dados['ipt-valor']);
+			$detalhamento = strtoupper($dados['ta-detalhamento']);
+
 			if (!empty($dados['btnEditarDespesa'])) {
 				unset($dados['btnEditarDespesa']);
 			}
@@ -182,9 +185,9 @@ class Despesa {
 
 			$dados_editar->bindParam(':id_despesa', $dados['ipt-id-despesa-edicao']);
 			$dados_editar->bindParam(':tipo', $dados['sel-tipo-edicao']);
-			$dados_editar->bindParam(':grupo', $dados['sel-grupo']);
-			$dados_editar->bindParam(':detalhamento', $dados['ipt-detalhamento']);
-			$dados_editar->bindParam(':valor', $dados['ipt-valor']);
+			$dados_editar->bindParam(':grupo', $dados['sel-grupo-edicao']);
+			$dados_editar->bindParam(':detalhamento', $detalhamento);
+			$dados_editar->bindParam(':valor', $valor);
 			$dados_editar->bindParam(':forma_pagamento', $dados['ipt-forma_pagamento']);
 
 			if($dados_editar->execute()) {

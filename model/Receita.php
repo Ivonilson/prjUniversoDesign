@@ -132,9 +132,13 @@ class Receita {
 	}
 
 	public function edReceita()
+	
 	{
 			$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 			//$form = filter_input(INPUT_GET, 'form');
+
+			$valor = str_replace(',' , '.', $dados['ipt-valor']);
+			$detalhamento = strtoupper($dados['ta-detalhamento']);			
 
 			if (!empty($dados['btnEditarReceita'])) {
 				unset($dados['btnEditarReceita']);
@@ -181,8 +185,8 @@ class Receita {
 
 			$dados_editar->bindParam(':id_receita', $dados['ipt-id-receita-edicao']);
 			$dados_editar->bindParam(':tipo', $dados['sel-tipo-edicao']);
-			$dados_editar->bindParam(':detalhamento', $dados['ipt-detalhamento']);
-			$dados_editar->bindParam(':valor', $dados['ipt-valor']);
+			$dados_editar->bindParam(':detalhamento',$detalhamento);
+			$dados_editar->bindParam(':valor', $valor);
 			$dados_editar->bindParam(':forma_pagamento', $dados['ipt-forma_pagamento']);
 			$dados_editar->bindParam(':data_referencia', $dados['ipt-data-referencia']);
 
