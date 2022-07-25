@@ -39,9 +39,19 @@ switch ($pagina) {
 		break;
 
 	case 'lancar-receita':
-			require "controller/crtReceita.php";
-			include_once "view/lancar-receita.php";
-			break;
+		require "controller/crtReceita.php";
+		include_once "view/lancar-receita.php";
+		break;
+
+	case 'lancar-planejamento':
+		require "controller/crtPlanejamento.php";
+		include_once "view/lancar-planejamento.php";
+		break;
+
+	case 'planejamento':
+		require_once "controller/crtPlanejamento.php";
+		include_once "view/planejamento.php";
+		break;
 
 	case 'cadastrar-cidade':
 		require "controller/crtCadastrarCidade.php";
@@ -91,14 +101,14 @@ switch ($pagina) {
 		break;
 
 	case 'despesa-por-periodo':
-			require_once "controller/crtDespesa.php";
-			include "view/despesa-por-periodo.php";
-			break;
+		require_once "controller/crtDespesa.php";
+		include "view/despesa-por-periodo.php";
+		break;
 
 	case 'receita-por-periodo':
-				require_once "controller/crtReceita.php";
-				include "view/receita-por-periodo.php";
-				break;
+		require_once "controller/crtReceita.php";
+		include "view/receita-por-periodo.php";
+		break;
 
 	case 'pesquisa-por-data-agendamento':
 		require "controller/crtPesquisaPorDataAgendamento.php";
@@ -153,5 +163,3 @@ switch ($pagina) {
 		include_once "view/login.php";
 		break;
 }
-
-?>
