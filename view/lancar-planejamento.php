@@ -29,6 +29,11 @@ if ($_SESSION['user'] == NULL) {
 				<li class="breadcrumb-item">
 					<mark class="p-2 font-weight-bold">Planejamento</mark>
 				</li>
+
+				<div class="col">
+					<a href="/?pagina=planejamento" class="btn btn-danger text-light float-right font-weight-bold rounded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Incluir mês/ano"><i class="fa fa-search"></i>  Ver planejamento</a>
+				</div>
+
 			</ol>
 
 			<div class="row justify-content-center">
@@ -80,7 +85,7 @@ if ($_SESSION['user'] == NULL) {
 							</div>
 
 						<?php
-						} elseif ($mensagem_erro == "ERRO. Tente novamente. Caso o problema persista, contate o Suporte.") {
+						} elseif ($mensagem_erro == "ERRO. Verifique se o mês/ano que está tentando cadastrar já exista no sistema e tente novamente. Caso o problema persista, contate o Suporte.") {
 						?>
 
 							<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
@@ -89,7 +94,7 @@ if ($_SESSION['user'] == NULL) {
 							</div>
 
 						<?php
-						}
+						} 
 						?>
 
 						<!-- Modal último planejamento lançado -->
@@ -153,6 +158,8 @@ if ($_SESSION['user'] == NULL) {
 
 							<input type="submit" value="Gravar" name="btnCadastrar" id="botoesGravarCad">
 
+							<?php var_dump($UltimoPlanejamentoCadastrado); ?>
+
 					</form>
 				</div>
 
@@ -183,7 +190,7 @@ if ($_SESSION['user'] == NULL) {
                                 <div class="col-12">
 									<label class="text-danger font-weight-bold">Mês/Ano</label>
 									<br>
-									<input class="form-control" type="text" name="ipt-mes-ano-planejado" value="<?= $UltimoPlanejamentoCadastrado['mes_ano_planejado'] ?>">
+									<input class="form-control" type="text" name="ipt-mes-ano-planejado-edicao" value="<?= $UltimoPlanejamentoCadastrado['mes_ano_planejado'] ?>">
 								</div>
 
 								<div class="col-12">

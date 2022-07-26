@@ -47,18 +47,23 @@ require "model/Planejamento.php";
 	$crtl = new crtPlanejamento();
 	$deletar = new crtPlanejamento();
 
-    if(filter_input(INPUT_POST, 'ipt-mes-ano-planejado') != '' && filter_input(INPUT_POST, 'ipt-mes-ano-planejado') != '-') {
+	$ultimoPlanejamento = new Planejamento();
+	$UltimoPlanejamentoCadastrado =  $ultimoPlanejamento->ultimoPlanejamentoCadastrado();
+
+	if(!$UltimoPlanejamentoCadastrado) {
+		$UltimoPlanejamentoCadastrado['mes_ano_planejado'] = '';
+	}
+
+    if(filter_input(INPUT_POST, 'ipt-mes-ano-planejado') != $UltimoPlanejamentoCadastrado['mes_ano_planejado']  && filter_input(INPUT_POST, 'ipt-mes-ano-planejado') != '' && filter_input(INPUT_POST, 'ipt-mes-ano-planejado') != '-') {
 		if($crtl->CadastrarPlanejamento()){
 			$mensagem_erro = "Planejamento lançado com sucesso!";
 		} else {
-			$mensagem_erro = "ERRO. Tente novamente. Caso o problema persista, contate o Suporte.";
+			$mensagem_erro = "ERRO. Verifique se o mês/ano que está tentando cadastrar já exista no sistema e tente novamente. Caso o problema persista, contate o Suporte.";
 		}
-		
-	} elseif(filter_input(INPUT_POST, 'ipt-mes-ano-planejado') == '-') { 
-		$mensagem_erro = "ERRO. Tente novamente. Caso o problema persista, contate o Suporte.";
+	} elseif(filter_input(INPUT_POST, 'ipt-mes-ano-planejado') != null && filter_input(INPUT_POST, 'ipt-mes-ano-planejado') == $UltimoPlanejamentoCadastrado['mes_ano_planejado']) {
+		$mensagem_erro = "ERRO. Verifique se o mês/ano que está tentando cadastrar já exista no sistema e tente novamente. Caso o problema persista, contate o Suporte.";
 	}
 
-	$ultimoPlanejamento = new Planejamento();
 	$UltimoPlanejamentoCadastrado = $ultimoPlanejamento->ultimoPlanejamentoCadastrado();
 
 	$retorno [0] = $crtl->pesqPlanejamento();

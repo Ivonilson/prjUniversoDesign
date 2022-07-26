@@ -20,8 +20,9 @@ class Planejamento {
 			try {
 
 			$conn = new Conn();
-
-			$statement = "INSERT INTO tbl_planejamento_anual_receita_despesa (mes_ano_planejado, valor_receita, valor_despesa, data_processamento, usuario) VALUES (:mes_ano_planejado, :valor_receita, :valor_despesa, CURRENT_TIMESTAMP, :usuario)";
+			
+			
+			$statement =  "INSERT INTO tbl_planejamento_anual_receita_despesa (mes_ano_planejado, valor_receita, valor_despesa, data_processamento, usuario) VALUES (:mes_ano_planejado, :valor_receita, :valor_despesa, CURRENT_TIMESTAMP, :usuario)";
 
 			$dados_cadastrar = $conn->getConn()->prepare($statement);
 
@@ -158,7 +159,7 @@ class Planejamento {
 			.'<hr>';*/
 
 			$dados_editar->bindParam(':id_plan_rec_desp', $dados['ipt-id-planejamento-edicao']);
-			$dados_editar->bindParam(':mes_ano_planejado', $dados['ipt-mes-ano-planejado']);
+			$dados_editar->bindParam(':mes_ano_planejado', $dados['ipt-mes-ano-planejado-edicao']);
 			$dados_editar->bindParam(':valor_receita',$valor_receita);
 			$dados_editar->bindParam(':valor_despesa', $valor_despesa);
 

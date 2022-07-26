@@ -36,7 +36,7 @@ if ($_SESSION['user'] == NULL) {
 				</li>
 
                 <div class="col">
-					<a href="/?pagina=lancar-planejamento" class="btn btn-danger text-light float-right font-weight-bold rounded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Incluir mês/ano"><i class="fa fa-plus"></i> Lançar mês/ano</a>
+					<a href="/?pagina=lancar-planejamento" class="btn btn-danger text-light float-right font-weight-bold rounded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Incluir mês/ano"><i class="fa fa-plus"></i>  Lançar planejamento</a>
 				</div>
 
 			</ol>
@@ -194,7 +194,7 @@ if ($_SESSION['user'] == NULL) {
 															<div class="col-12">
 																<label class="text-danger font-weight-bold readonly">Mês/Ano</label>
 																<br>
-																<input class="form-control" type="text" name="ipt-mes-ano-planejado" value="<?= $value['mes_ano_planejado'] ?>">
+																<input class="form-control" type="text" name="ipt-mes-ano-planejado-edicao" value="<?= $value['mes_ano_planejado'] ?>">
 															</div>
 
 															<div class="col-12">
