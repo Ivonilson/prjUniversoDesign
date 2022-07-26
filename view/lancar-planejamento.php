@@ -160,9 +160,9 @@ if ($_SESSION['user'] == NULL) {
 
 							<?php 
 							
-								var_dump($UltimoPlanejamentoCadastrado); 
-								echo "<br>";
-								var_dump($mes_ano_existe);
+								//var_dump($UltimoPlanejamentoCadastrado); 
+								//echo "<br>";
+								//var_dump($mes_ano_existe);
 							
 							?>
 

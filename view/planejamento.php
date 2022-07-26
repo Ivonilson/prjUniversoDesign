@@ -235,13 +235,52 @@ if ($_SESSION['user'] == NULL) {
 							?>
 						</tbody>
 					</table>
-					<div>
-						<span style="font-weight: bold;">
-							Total de receitas planejadas: R$ <?= number_format($valor_total_receita, 2, ',', '.') ?>
-                            <br>
-                            Total de despesas planejadas: R$ <?= number_format($valor_total_despesa, 2, ',', '.') ?>
-						</span>
-					</div>
+					
+					<br>
+
+					<div class="card-deck">
+						<div class="card">
+							<!--<img class="card-img-top" src=".../100px180/" alt="Card image cap">-->
+							<div class="card-body">
+							<h5 class="card-title">Total de receitas planejadas: R$ <?= number_format($valor_total_receita, 2, ',', '.') ?></h5>
+							<!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+							</div>
+							<div class="card-footer">
+							<small class="text-muted">Informações processadas em <?= date_format(date_create($value['data_processamento']), "d/m/Y") ?> </small>
+							</div>
+						</div>
+						<div class="card">
+							<!--<img class="card-img-top" src=".../100px180/" alt="Card image cap">-->
+							<div class="card-body">
+							<h5 class="card-title">Total de despesas planejadas: R$ <?= number_format($valor_total_despesa, 2, ',', '.') ?></h5>
+							<!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+							</div>
+							<div class="card-footer">
+							<small class="text-muted">Informações processadas em <?= date_format(date_create($value['data_processamento']), "d/m/Y") ?> </small>
+							</div>
+						</div>
+						<div class="card">
+							<!--<img class="card-img-top" src=".../100px180/" alt="Card image cap">-->
+							<div class="card-body">
+							<h5 class="card-title">Lucro anual planejado: R$ <?= number_format($valor_total_receita - $valor_total_despesa, 2, ',', '.') ?></h5>
+							<!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+							</div>
+							<div class="card-footer">
+							<span class="text-info font-weight-bold" style="font-size: 18px">Taxa de lucro:  <?= number_format(100 - ($valor_total_despesa / $valor_total_receita) * 100, 2, ',' , '.') ?>% </span>
+							</div>
+						</div>
+						<div class="card">
+							<!--<img class="card-img-top" src=".../100px180/" alt="Card image cap">-->
+							<div class="card-body">
+							<h5 class="card-title">Lucro médio mensal planejado: R$ <?= number_format(($valor_total_receita - $valor_total_despesa) / 12, 2, ',', '.') ?></h5>
+							<!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+							</div>
+							<div class="card-footer">
+							<span class="text-danger font-italic" style="font-size: 18px"> Média referente a 12 meses (Janeiro a Dezembro) </span>
+							</div>
+						</div>
+					</div>	
+
 					<br>
 				</div>
 			</div>
