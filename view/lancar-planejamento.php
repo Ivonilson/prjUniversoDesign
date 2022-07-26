@@ -158,7 +158,13 @@ if ($_SESSION['user'] == NULL) {
 
 							<input type="submit" value="Gravar" name="btnCadastrar" id="botoesGravarCad">
 
-							<?php var_dump($UltimoPlanejamentoCadastrado); ?>
+							<?php 
+							
+								var_dump($UltimoPlanejamentoCadastrado); 
+								echo "<br>";
+								var_dump($mes_ano_existe);
+							
+							?>
 
 					</form>
 				</div>

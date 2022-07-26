@@ -79,6 +79,16 @@ class Planejamento {
 			return $resultado;
 		}
 
+		function MesAnoJaExiste($mes_ano){
+			$conn = new Conn();
+
+			$statement = "SELECT  mes_ano_planejado FROM tbl_planejamento_anual_receita_despesa WHERE mes_ano_planejado = '$mes_ano'";
+
+			$verifica = $conn->getConn()->query($statement);
+			$resultado = $verifica->fetch(PDO::FETCH_ASSOC);
+			return $resultado;
+		}
+
 	function pesquisaPlanejamento()
 	{
 		
