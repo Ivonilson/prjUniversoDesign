@@ -12,6 +12,7 @@ class Planejamento {
             
 			$valor_receita = str_replace(',' , '.', $dados['ipt-valor-receita']);
             $valor_despesa = str_replace(',' , '.', $dados['ipt-valor-despesa']);
+			$mes_ano = $dados['sel-form-sel-mes']."/".$dados['sel-form-sel-ano'];
 
 			if (!empty($dados['btnCadastrar'])) {
 				unset($dados['btnCadastrar']);
@@ -22,7 +23,7 @@ class Planejamento {
 			$conn = new Conn();
 			
 			
-			$statement =  "INSERT INTO tbl_planejamento_anual_receita_despesa (mes_ano_planejado, valor_receita, valor_despesa, data_processamento, usuario) VALUES (:mes_ano_planejado, :valor_receita, :valor_despesa, CURRENT_TIMESTAMP, :usuario)";
+			$statement =  "INSERT INTO tbl_planejamento_anual_receita_despesa (mes, ano, mes_ano_planejado, valor_receita, valor_despesa, data_processamento, usuario) VALUES (:mes, :ano, :mes_ano_planejado, :valor_receita, :valor_despesa, CURRENT_TIMESTAMP, :usuario)";
 
 			$dados_cadastrar = $conn->getConn()->prepare($statement);
 
@@ -42,8 +43,10 @@ class Planejamento {
 			.'Status da demanda: '.$dados['sel-status'].'<br>'
 			.'Observações: '.$dados['ta-observacoes'].'<br>'
 			.'<hr>';*/
-
-			$dados_cadastrar->bindParam(':mes_ano_planejado', $dados['ipt-mes-ano-planejado']);
+			
+			$dados_cadastrar->bindParam(':mes', $dados['sel-form-sel-mes']);
+			$dados_cadastrar->bindParam(':ano', $dados['sel-form-sel-ano']);
+			$dados_cadastrar->bindParam(':mes_ano_planejado', $mes_ano);
 			$dados_cadastrar->bindParam(':valor_receita', $valor_receita);
 			$dados_cadastrar->bindParam(':valor_despesa', $valor_despesa);
 			$dados_cadastrar->bindParam(':usuario', $_SESSION['user']);
@@ -72,7 +75,7 @@ class Planejamento {
 		{
 			$conn = new Conn();
 
-			$statement = "SELECT id_plan_rec_desp, mes_ano_planejado, valor_receita, valor_despesa, data_processamento, usuario FROM tbl_planejamento_anual_receita_despesa ORDER BY data_processamento DESC LIMIT 1";
+			$statement = "SELECT id_plan_rec_desp, ano, mes, mes_ano_planejado, valor_receita, valor_despesa, data_processamento, usuario FROM tbl_planejamento_anual_receita_despesa ORDER BY data_processamento DESC LIMIT 1";
 
 			$ultimo = $conn->getConn()->query($statement);
 			$resultado = $ultimo->fetch(PDO::FETCH_ASSOC);
@@ -93,7 +96,7 @@ class Planejamento {
 	{
 		
 		try {
-				$querySelect = "SELECT id_plan_rec_desp, mes_ano_planejado, valor_receita, valor_despesa, data_processamento, usuario from tbl_planejamento_anual_receita_despesa";
+				$querySelect = "SELECT id_plan_rec_desp, ano, mes, mes_ano_planejado, valor_receita, valor_despesa, data_processamento, usuario from tbl_planejamento_anual_receita_despesa";
 
 				/*$querySelect = "SELECT cod_os, id_orcamento, contato, endereco, cidade_uf, data_cadastro, data_agendamento, sit_pagamento, status, observacao  FROM tbl_os WHERE data_cadastro >= '$data_inicial' AND data_cadastro <= '$data_final'";*/
 
@@ -124,6 +127,7 @@ class Planejamento {
 
 			$valor_receita = str_replace(',' , '.', $dados['ipt-valor-receita']);
             $valor_despesa = str_replace(',' , '.', $dados['ipt-valor-despesa']);
+			$mes_ano = $dados['sel-form-sel-mes-edicao']."/".$dados['sel-form-sel-ano-edicao'];
 
 			if (!empty($dados['btnEditarPlanejado'])) {
 				unset($dados['btnEditarPlanejado']);
@@ -133,7 +137,7 @@ class Planejamento {
 
 			$conn = new Conn();
 
-			$statement = "UPDATE tbl_planejamento_anual_receita_despesa SET mes_ano_planejado = :mes_ano_planejado, valor_receita = :valor_receita, valor_despesa = :valor_despesa WHERE id_plan_rec_desp = :id_plan_rec_desp";
+			$statement = "UPDATE tbl_planejamento_anual_receita_despesa SET mes = :mes, ano = :ano, mes_ano_planejado = :mes_ano_planejado, valor_receita = :valor_receita, valor_despesa = :valor_despesa WHERE id_plan_rec_desp = :id_plan_rec_desp";
 
 			$dados_editar = $conn->getConn()->prepare($statement);
 
@@ -169,7 +173,9 @@ class Planejamento {
 			.'<hr>';*/
 
 			$dados_editar->bindParam(':id_plan_rec_desp', $dados['ipt-id-planejamento-edicao']);
-			$dados_editar->bindParam(':mes_ano_planejado', $dados['ipt-mes-ano-planejado-edicao']);
+			$dados_editar->bindParam(':mes', $dados['sel-form-sel-mes-edicao']);
+			$dados_editar->bindParam(':ano', $dados['sel-form-sel-ano-edicao']);
+			$dados_editar->bindParam(':mes_ano_planejado', $mes_ano);
 			$dados_editar->bindParam(':valor_receita',$valor_receita);
 			$dados_editar->bindParam(':valor_despesa', $valor_despesa);
 

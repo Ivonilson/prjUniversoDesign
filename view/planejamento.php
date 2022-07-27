@@ -35,8 +35,8 @@ if ($_SESSION['user'] == NULL) {
 					<mark class="p-2 font-weight-bold">Planejamento</mark>
 				</li>
 
-                <div class="col">
-					<a href="/?pagina=lancar-planejamento" class="btn btn-danger text-light float-right font-weight-bold rounded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Incluir mês/ano"><i class="fa fa-plus"></i>  Lançar planejamento</a>
+				<div class="col">
+					<a href="/?pagina=lancar-planejamento" class="btn btn-danger text-light float-right font-weight-bold rounded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Incluir mês/ano"><i class="fa fa-plus"></i> Lançar planejamento</a>
 				</div>
 
 			</ol>
@@ -72,13 +72,13 @@ if ($_SESSION['user'] == NULL) {
 
 					<?php
 
-					
+
 					if ($retorno[1] == "Planejamento atualizado com sucesso!") {
 					?>
 
 						<div class="alert alert-success font-weight-bold alertaCadOsOk col-12 text-center" role="alert">
 							<img src="../assets/ok.png">
-							<h5><strong><?=$retorno[1] ?></strong></h5>
+							<h5><strong><?= $retorno[1] ?></strong></h5>
 						</div>
 
 						<script>
@@ -98,47 +98,47 @@ if ($_SESSION['user'] == NULL) {
 						</div>
 
 					<?php
-					}  else if ($retorno[1] == "Registro deletado com sucesso...") {
+					} else if ($retorno[1] == "Registro deletado com sucesso...") {
 					?>
 						<div class="alert alert-success font-weight-bold alertaCadOsOk col-12 text-center" role="alert">
 							<img src="../assets/ok.png">
-						<h5><strong><?= $retorno[1] ?></strong></h5>
+							<h5><strong><?= $retorno[1] ?></strong></h5>
 						</div>
 
 					<?php
-						} 
+					}
 					?>
 
 					<table class="table table-bordered table-hover display" id="dataTable" width="100%" cellspacing="0">
 						<thead class="thead-light">
 							<tr>
-                                <th>ID</th>
+								<th>ID</th>
 								<th>Mês/Ano</th>
 								<th>Valor Receita(R$)</th>
 								<th>Valor Despesa (R$)</th>
-                                <th>Data de Processamento</th>
+								<th>Data de Processamento</th>
 								<th>Usuário</th>
 								<th>Atualizar</th>
 								<th class="d-xs-none">Deletar</th>
 							</tr>
 						</thead>
 						<tfoot class="thead-light">
-                                <th>ID</th>
-                                <th>Mês/Ano</th>
-								<th>Valor Receita(R$)</th>
-								<th>Valor Despesa (R$)</th>
-                                <th>Data de Processamento</th>
-								<th>Usuário</th>
-								<th>Atualizar</th>
-								<th class="d-xs-none">Deletar</th>
+							<th>ID</th>
+							<th>Mês/Ano</th>
+							<th>Valor Receita(R$)</th>
+							<th>Valor Despesa (R$)</th>
+							<th>Data de Processamento</th>
+							<th>Usuário</th>
+							<th>Atualizar</th>
+							<th class="d-xs-none">Deletar</th>
 							</tr>
 						</tfoot>
 						<tbody>
 							<?php
 
-							
+
 							$valor_total_receita = 0;
-                            $valor_total_despesa = 0;
+							$valor_total_despesa = 0;
 							$contador = 0;
 
 							if ($retorno[0] != NULL) {
@@ -148,14 +148,14 @@ if ($_SESSION['user'] == NULL) {
 									$contador++;
 
 									$valor_total_receita += $value['valor_receita'];
-                                    $valor_total_despesa += $value['valor_despesa'];
+									$valor_total_despesa += $value['valor_despesa'];
 							?>
 									<tr>
 										<form method="post">
-                                            <td><?= $value['id_plan_rec_desp'] ?></td>
+											<td><?= $value['id_plan_rec_desp'] ?></td>
 											<td><?= $value['mes_ano_planejado'] ?></td>
 											<td><?= number_format($value['valor_receita'], 2, ',', '.') ?></td>
-                                            <td><?= number_format($value['valor_despesa'], 2, ',', '.') ?></td>
+											<td><?= number_format($value['valor_despesa'], 2, ',', '.') ?></td>
 											<td><?= date_format(date_create($value['data_processamento']), "d/m/Y") ?></td>
 											<td><?= $value['usuario'] ?></td>
 
@@ -192,10 +192,48 @@ if ($_SESSION['user'] == NULL) {
 															</div>
 
 															<div class="col-12">
-																<label class="text-danger font-weight-bold readonly">Mês/Ano</label>
-																<br>
-																<input class="form-control" type="text" name="ipt-mes-ano-planejado-edicao" value="<?= $value['mes_ano_planejado'] ?>">
+																<div class="input-group mb-2">
+																	<div class="input-group-prepend">
+																		<label class="input-group-text bg-secondary text-white">
+																			MÊS
+																		</label>
+																	</div>
+																	<select class="custom-select" name="sel-form-sel-mes-edicao">
+																		<option value="<?= $UltimoPlanejamentoCadastrado['mes'] ?>"><?= $UltimoPlanejamentoCadastrado['mes'] ?></option>
+																		<option value="JANEIRO">JANEIRO</option>
+																		<option value="FEVEREIRO">FEVEREIRO</option>
+																		<option value="MARÇO">MARÇO</option>
+																		<option value="ABRIL">ABRIL</option>
+																		<option value="MAIO">MAIO</option>
+																		<option value="JUNHO">JUNHO</option>
+																		<option value="JULHO">JULHO</option>
+																		<option value="AGOSTO">AGOSTO</option>
+																		<option value="SETEMBRO">SETEMBRO</option>
+																		<option value="OUTUBRO">OUTUBRO</option>
+																		<option value="NOVEMBRO">NOVEMBRO</option>
+																		<option value="DEZEMBRO">DEZEMBRO</option>
+																	</select>
+																</div>
 															</div>
+
+															<div class="col-12">
+																<div class="input-group mb-2">
+																	<div class="input-group-prepend">
+																		<label class="input-group-text bg-secondary text-white">
+																			ANO
+																		</label>
+																	</div>
+																	<select class="custom-select" name="sel-form-sel-ano-edicao">
+																		<option value="<?= $UltimoPlanejamentoCadastrado['ano'] ?>"><?= $UltimoPlanejamentoCadastrado['ano'] ?></option>
+																		<option value="2022">2022</option>
+																		<option value="2023">2023</option>
+																		<option value="2024">2024</option>
+																		<option value="2025">2025</option>
+																		<option value="2026">2026</option>
+																	</select>
+																</div>
+															</div>
+
 
 															<div class="col-12">
 																<label class="text-danger font-weight-bold">Valor Receita (R$)</label>
@@ -203,7 +241,7 @@ if ($_SESSION['user'] == NULL) {
 																<input class="form-control" type="text" name="ipt-valor-receita" value="<?= number_format($value['valor_receita'], 2, ',', '') ?>">
 															</div>
 
-                                                            <div class="col-12">
+															<div class="col-12">
 																<label class="text-danger font-weight-bold">Valor Despesa (R$)</label>
 																<br>
 																<input class="form-control" type="text" name="ipt-valor-despesa" value="<?= number_format($value['valor_despesa'], 2, ',', '') ?>">
@@ -235,51 +273,51 @@ if ($_SESSION['user'] == NULL) {
 							?>
 						</tbody>
 					</table>
-					
+
 					<br>
 
 					<div class="card-deck">
 						<div class="card">
 							<!--<img class="card-img-top" src=".../100px180/" alt="Card image cap">-->
 							<div class="card-body">
-							<h5 class="card-title">Total de receitas planejadas: R$ <?= number_format($valor_total_receita, 2, ',', '.') ?></h5>
-							<!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+								<h5 class="card-title">Total de receitas planejadas: R$ <?= number_format($valor_total_receita, 2, ',', '.') ?></h5>
+								<!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
 							</div>
 							<div class="card-footer">
-							<small class="text-muted">Informações processadas em <?= date_format(date_create($value['data_processamento']), "d/m/Y") ?> </small>
+								<small class="text-muted">Informações processadas em <?= date_format(date_create($value['data_processamento']), "d/m/Y") ?> </small>
 							</div>
 						</div>
 						<div class="card">
 							<!--<img class="card-img-top" src=".../100px180/" alt="Card image cap">-->
 							<div class="card-body">
-							<h5 class="card-title">Total de despesas planejadas: R$ <?= number_format($valor_total_despesa, 2, ',', '.') ?></h5>
-							<!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+								<h5 class="card-title">Total de despesas planejadas: R$ <?= number_format($valor_total_despesa, 2, ',', '.') ?></h5>
+								<!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
 							</div>
 							<div class="card-footer">
-							<small class="text-muted">Informações processadas em <?= date_format(date_create($value['data_processamento']), "d/m/Y") ?> </small>
+								<small class="text-muted">Informações processadas em <?= date_format(date_create($value['data_processamento']), "d/m/Y") ?> </small>
 							</div>
 						</div>
 						<div class="card">
 							<!--<img class="card-img-top" src=".../100px180/" alt="Card image cap">-->
 							<div class="card-body">
-							<h5 class="card-title">Lucro anual planejado: R$ <?= number_format($valor_total_receita - $valor_total_despesa, 2, ',', '.') ?></h5>
-							<!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+								<h5 class="card-title">Lucro anual planejado: R$ <?= number_format($valor_total_receita - ($valor_total_despesa * 2), 2, ',', '.') ?></h5>
+								<!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
 							</div>
 							<div class="card-footer">
-							<span class="text-info font-weight-bold" style="font-size: 18px">Taxa de lucro:  <?= number_format(100 - ($valor_total_despesa / $valor_total_receita) * 100, 2, ',' , '.') ?>% </span>
+								<span class="text-info font-weight-bold" style="font-size: 18px">Taxa de retorno: <?= number_format(((($valor_total_receita - $valor_total_despesa)) -  $valor_total_despesa) /  $valor_total_despesa, 2, ',', '.') ?>% </span>
 							</div>
 						</div>
 						<div class="card">
 							<!--<img class="card-img-top" src=".../100px180/" alt="Card image cap">-->
 							<div class="card-body">
-							<h5 class="card-title">Lucro médio mensal planejado: R$ <?= number_format(($valor_total_receita - $valor_total_despesa) / 12, 2, ',', '.') ?></h5>
-							<!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+								<h5 class="card-title">Lucro médio mensal planejado: R$ <?= number_format(($valor_total_receita - ($valor_total_despesa * 2)) / 12, 2, ',', '.') ?></h5>
+								<!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
 							</div>
 							<div class="card-footer">
-							<span class="text-danger font-italic" style="font-size: 18px"> Média referente a 12 meses (Janeiro a Dezembro) </span>
+								<span class="text-danger font-italic" style="font-size: 18px"> Média referente a 12 meses (Janeiro a Dezembro) </span>
 							</div>
 						</div>
-					</div>	
+					</div>
 
 					<br>
 				</div>

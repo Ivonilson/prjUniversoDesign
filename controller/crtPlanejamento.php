@@ -49,15 +49,15 @@ require "model/Planejamento.php";
 	$ultimoPlanejamento = new Planejamento();
 	$mes_ano = new Planejamento();
 
-	$mes_ano_existe = $mes_ano->MesAnoJaExiste(filter_input(INPUT_POST, 'ipt-mes-ano-planejado'));
+	$mes_ano_existe = $mes_ano->MesAnoJaExiste(filter_input(INPUT_POST, 'sel-form-sel-mes')."/".filter_input(INPUT_POST, 'sel-form-sel-ano'));
 
-    if(!$mes_ano_existe  && filter_input(INPUT_POST, 'ipt-mes-ano-planejado') != '' && filter_input(INPUT_POST, 'ipt-mes-ano-planejado') != '-') {
+    if(!$mes_ano_existe  && filter_input(INPUT_POST, 'sel-form-sel-mes') != '' && filter_input(INPUT_POST, 'sel-form-sel-mes') != '-') {
 		if($crtl->CadastrarPlanejamento()){
 			$mensagem_erro = "Planejamento lançado com sucesso!";
 		} else {
 			$mensagem_erro = "ERRO. Verifique se o mês/ano que está tentando cadastrar já exista no sistema e tente novamente. Caso o problema persista, contate o Suporte.";
 		}
-	} elseif(filter_input(INPUT_POST, 'ipt-mes-ano-planejado') != null) {
+	} elseif(filter_input(INPUT_POST, 'sel-form-sel-mes') != null) {
 		$mensagem_erro = "ERRO. Verifique se o mês/ano que está tentando cadastrar já exista no sistema e tente novamente. Caso o problema persista, contate o Suporte.";
 	}
 

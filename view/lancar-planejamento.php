@@ -31,7 +31,7 @@ if ($_SESSION['user'] == NULL) {
 				</li>
 
 				<div class="col">
-					<a href="/?pagina=planejamento" class="btn btn-danger text-light float-right font-weight-bold rounded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Incluir mês/ano"><i class="fa fa-search"></i>  Ver planejamento</a>
+					<a href="/?pagina=planejamento" class="btn btn-danger text-light float-right font-weight-bold rounded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Incluir mês/ano"><i class="fa fa-search"></i> Ver planejamento</a>
 				</div>
 
 			</ol>
@@ -94,7 +94,7 @@ if ($_SESSION['user'] == NULL) {
 							</div>
 
 						<?php
-						} 
+						}
 						?>
 
 						<!-- Modal último planejamento lançado -->
@@ -141,29 +141,72 @@ if ($_SESSION['user'] == NULL) {
 
 						<div class="form-row align-items-center">
 
-                            <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+							<!--<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
 								<label class="sr-only" for="inlineFormInputEndereco">MÊS/ANO</label>
 								<input type="text" class="form-control mb-2" id="inlineFormInputEndereco" placeholder="Ex: JANEIRO/2022 " name="ipt-mes-ano-planejado" required>
+							</div>-->
+
+							<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<label class="input-group-text bg-secondary text-white">
+											MÊS
+										</label>
+									</div>
+									<select class="custom-select" name="sel-form-sel-mes">
+										<option value="-">Selecione</option>
+										<option value="JANEIRO">JANEIRO</option>
+										<option value="FEVEREIRO">FEVEREIRO</option>
+										<option value="MARÇO">MARÇO</option>
+										<option value="ABRIL">ABRIL</option>
+										<option value="MAIO">MAIO</option>
+										<option value="JUNHO">JUNHO</option>
+										<option value="JULHO">JULHO</option>
+										<option value="AGOSTO">AGOSTO</option>
+										<option value="SETEMBRO">SETEMBRO</option>
+										<option value="OUTUBRO">OUTUBRO</option>
+										<option value="NOVEMBRO">NOVEMBRO</option>
+										<option value="DEZEMBRO">DEZEMBRO</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<label class="input-group-text bg-secondary text-white">
+											ANO
+										</label>
+									</div>
+									<select class="custom-select" name="sel-form-sel-ano">
+										<option value="-">Selecione</option>
+										<option value="2022">2022</option>
+										<option value="2023">2023</option>
+										<option value="2024">2024</option>
+										<option value="2025">2025</option>
+										<option value="2026">2026</option>
+									</select>
+								</div>
 							</div>
 
 							<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
 								<label class="sr-only" for="inlineFormInputEndereco">VALOR RECEITA (R$)</label>
-								<input type="text" class="form-control mb-2" id="inlineFormInputEndereco" placeholder="Valor em R$ " name="ipt-valor-receita" required>
+								<input type="text" class="form-control mb-2" id="inlineFormInputEndereco" placeholder="Valor Receita em R$ " name="ipt-valor-receita" required>
 							</div>
 
-                            <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+							<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
 								<label class="sr-only" for="inlineFormInputEndereco">VALOR DESPESA (R$)</label>
-								<input type="text" class="form-control mb-2" id="inlineFormInputEndereco" placeholder="Valor em R$ " name="ipt-valor-despesa" required>
+								<input type="text" class="form-control mb-2" id="inlineFormInputEndereco" placeholder="Valor Despesa em R$ " name="ipt-valor-despesa" required>
 							</div>
 
 							<input type="submit" value="Gravar" name="btnCadastrar" id="botoesGravarCad">
 
-							<?php 
-							
-								//var_dump($UltimoPlanejamentoCadastrado); 
-								//echo "<br>";
-								//var_dump($mes_ano_existe);
-							
+							<?php
+
+							//var_dump($UltimoPlanejamentoCadastrado); 
+							//echo "<br>";
+							//var_dump($mes_ano_existe);
+
 							?>
 
 					</form>
@@ -186,32 +229,69 @@ if ($_SESSION['user'] == NULL) {
 
 							<form method="post">
 
-								<div class="col-12">
+								<div class="col-12 mb-2">
 									<label class="text-danger font-weight-bold readonly">ID</label>
 									<br>
 									<input class="form-control" type="text" value="<?= $UltimoPlanejamentoCadastrado['id_plan_rec_desp'] ?>" disabled>
 									<input class="form-control" type="hidden" name="ipt-id-planejamento-edicao" value="<?= $UltimoPlanejamentoCadastrado['id_plan_rec_desp'] ?>">
 								</div>
 
-                                <div class="col-12">
-									<label class="text-danger font-weight-bold">Mês/Ano</label>
-									<br>
-									<input class="form-control" type="text" name="ipt-mes-ano-planejado-edicao" value="<?= $UltimoPlanejamentoCadastrado['mes_ano_planejado'] ?>">
+								<div class="col-12">
+									<div class="input-group mb-2">
+										<div class="input-group-prepend">
+											<label class="input-group-text bg-secondary text-white">
+												MÊS
+											</label>
+										</div>
+										<select class="custom-select" name="sel-form-sel-mes-edicao">
+											<option value="<?= $UltimoPlanejamentoCadastrado['mes'] ?>"><?= $UltimoPlanejamentoCadastrado['mes'] ?></option>
+											<option value="JANEIRO">JANEIRO</option>
+											<option value="FEVEREIRO">FEVEREIRO</option>
+											<option value="MARÇO">MARÇO</option>
+											<option value="ABRIL">ABRIL</option>
+											<option value="MAIO">MAIO</option>
+											<option value="JUNHO">JUNHO</option>
+											<option value="JULHO">JULHO</option>
+											<option value="AGOSTO">AGOSTO</option>
+											<option value="SETEMBRO">SETEMBRO</option>
+											<option value="OUTUBRO">OUTUBRO</option>
+											<option value="NOVEMBRO">NOVEMBRO</option>
+											<option value="DEZEMBRO">DEZEMBRO</option>
+										</select>
+									</div>
 								</div>
 
 								<div class="col-12">
-									<label class="text-danger font-weight-bold">Valor Receita (R$)</label>
-									<br>
-									<input class="form-control" type="text" name="ipt-valor-receita" value="<?= number_format($UltimoPlanejamentoCadastrado['valor_receita'], 2, ',' , '') ?>">
+									<div class="input-group mb-2">
+										<div class="input-group-prepend">
+											<label class="input-group-text bg-secondary text-white">
+												ANO
+											</label>
+										</div>
+										<select class="custom-select" name="sel-form-sel-ano-edicao">
+											<option value="<?= $UltimoPlanejamentoCadastrado['ano'] ?>"><?= $UltimoPlanejamentoCadastrado['ano'] ?></option>
+											<option value="2022">2022</option>
+											<option value="2023">2023</option>
+											<option value="2024">2024</option>
+											<option value="2025">2025</option>
+											<option value="2026">2026</option>
+										</select>
+									</div>
 								</div>
 
-                                <div class="col-12">
+								<div class="col-12 mb-2">
+									<label class="text-danger font-weight-bold">Valor Receita (R$)</label>
+									<br>
+									<input class="form-control" type="text" name="ipt-valor-receita" value="<?= number_format($UltimoPlanejamentoCadastrado['valor_receita'], 2, ',', '') ?>">
+								</div>
+
+								<div class="col-12 mb-2">
 									<label class="text-danger font-weight-bold">Valor Despesa (R$)</label>
 									<br>
 									<input class="form-control" type="text" name="ipt-valor-despesa" value="<?= number_format($UltimoPlanejamentoCadastrado['valor_despesa'], 2, ',', '') ?>">
 								</div>
 
-								<div class="col-12">
+								<div class="col-12 mb-2">
 									<label class="text-danger text-light">-</label>
 									<br>
 									<input class="form-control btn btn-success" type="submit" name="btnEditarPlanejado" value="Gravar" style="font-weight: bold !important;">
