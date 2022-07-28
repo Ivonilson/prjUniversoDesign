@@ -38,8 +38,27 @@ if ($_SESSION['user'] == NULL) {
 				<div class="col">
 					<a href="/?pagina=lancar-planejamento" class="btn btn-danger text-light float-right font-weight-bold rounded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Incluir mês/ano"><i class="fa fa-plus"></i> Lançar planejamento</a>
 				</div>
-
 			</ol>
+
+			<div class="row justify-content-md-center">
+					<div class="col-offset-5 col-2 col-offset-5">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<label class="text-dark float-right input-group-text font-weight-bold">Ano referência</label>
+							</div>
+							<select class="float-right custom-select" name="" id="">
+								<?php 
+									foreach($anoRetornado as $value){ 
+								?>
+								<option value=""><?= $value['ano'] ?></option>
+								<?php
+									}
+								?>
+
+							</select>
+						</div>
+					</div>
+				</div>
 
 			<!--
 			<div class="row mb-3">
@@ -280,37 +299,37 @@ if ($_SESSION['user'] == NULL) {
 						<div class="card">
 							<!--<img class="card-img-top" src=".../100px180/" alt="Card image cap">-->
 							<div class="card-body">
-								<h5 class="card-title">Total de receitas planejadas: R$ <?= number_format($valor_total_receita, 2, ',', '.') ?></h5>
+								<h5 class="card-title">Total de receitas planejadas: R$ <?= $valor_total_receita != null ? number_format($valor_total_receita, 2, ',', '.') : '0' ?></h5>
 								<!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
 							</div>
 							<div class="card-footer">
-								<small class="text-muted">Informações processadas em <?= date_format(date_create($value['data_processamento']), "d/m/Y") ?> </small>
+								<small class="text-muted">Informações processadas em <?= $valor_total_receita != null ? date_format(date_create($value['data_processamento']), "d/m/Y") : '-' ?> </small>
 							</div>
 						</div>
 						<div class="card">
 							<!--<img class="card-img-top" src=".../100px180/" alt="Card image cap">-->
 							<div class="card-body">
-								<h5 class="card-title">Total de despesas planejadas: R$ <?= number_format($valor_total_despesa, 2, ',', '.') ?></h5>
+								<h5 class="card-title">Total de despesas planejadas: R$ <?= $valor_total_receita != null ? number_format($valor_total_despesa, 2, ',', '.') : '0' ?></h5>
 								<!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
 							</div>
 							<div class="card-footer">
-								<small class="text-muted">Informações processadas em <?= date_format(date_create($value['data_processamento']), "d/m/Y") ?> </small>
+								<small class="text-muted">Informações processadas em <?= $valor_total_receita != null ? date_format(date_create($value['data_processamento']), "d/m/Y") : '-' ?> </small>
 							</div>
 						</div>
 						<div class="card">
 							<!--<img class="card-img-top" src=".../100px180/" alt="Card image cap">-->
 							<div class="card-body">
-								<h5 class="card-title">Lucro anual planejado: R$ <?= number_format($valor_total_receita - ($valor_total_despesa * 2), 2, ',', '.') ?></h5>
+								<h5 class="card-title">Lucro anual planejado: R$ <?= $valor_total_receita != null ? number_format($valor_total_receita - $valor_total_despesa, 2, ',', '.') : '0' ?></h5>
 								<!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
 							</div>
 							<div class="card-footer">
-								<span class="text-info font-weight-bold" style="font-size: 18px">Taxa de retorno: <?= number_format(((($valor_total_receita - $valor_total_despesa)) -  $valor_total_despesa) /  $valor_total_despesa, 2, ',', '.') ?>% </span>
+								<span class="text-info font-weight-bold" style="font-size: 18px">Taxa de retorno: <?= $valor_total_receita != null ? number_format(((($valor_total_receita - $valor_total_despesa) / $valor_total_receita ) * 100), 2, ',', '.') : '0' ?>% </span>
 							</div>
 						</div>
 						<div class="card">
 							<!--<img class="card-img-top" src=".../100px180/" alt="Card image cap">-->
 							<div class="card-body">
-								<h5 class="card-title">Lucro médio mensal planejado: R$ <?= number_format(($valor_total_receita - ($valor_total_despesa * 2)) / 12, 2, ',', '.') ?></h5>
+								<h5 class="card-title">Lucro médio mensal planejado: R$ <?= $valor_total_receita != null ? number_format(($valor_total_receita - $valor_total_despesa ) / 12, 2, ',', '.') : '0' ?></h5>
 								<!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
 							</div>
 							<div class="card-footer">

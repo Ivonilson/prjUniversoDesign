@@ -48,6 +48,9 @@ require "model/Planejamento.php";
 	$deletar = new crtPlanejamento();
 	$ultimoPlanejamento = new Planejamento();
 	$mes_ano = new Planejamento();
+	$ano = new Planejamento();
+
+	$anoRetornado = $ano->pesquisaAnoPlanejamento();
 
 	$mes_ano_existe = $mes_ano->MesAnoJaExiste(filter_input(INPUT_POST, 'sel-form-sel-mes')."/".filter_input(INPUT_POST, 'sel-form-sel-ano'));
 
@@ -76,10 +79,11 @@ require "model/Planejamento.php";
 		$recarregar = new Planejamento();
 		$deletar = new Planejamento();
 
-	if($deletar->deletarPlanejamento()) {
+		if($deletar->deletarPlanejamento()) {
 		$resultado = $recarregar->pesquisaPlanejamento();
 		$retorno  = [$resultado , "Registro deletado com sucesso..."];
-	};
-}
+		};
+	}
+
 
 ?>

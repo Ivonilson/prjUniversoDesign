@@ -60,8 +60,6 @@ if ($_SESSION['user'] == NULL) {
 
 				<br>
 
-				<div class="row" id="background-tela-cadastro">
-
 					<form class="container background-form-cadastro" method="post">
 
 						<div id="jumbotron_telas_cadastro">
@@ -138,6 +136,7 @@ if ($_SESSION['user'] == NULL) {
 								</div>
 							</div>
 						</div>
+						
 
 						<div class="form-row align-items-center">
 
@@ -148,7 +147,7 @@ if ($_SESSION['user'] == NULL) {
 
 							<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
 								<div class="input-group mb-2">
-									<div class="input-group-prepend">
+									<div class="input-group-pre	pend">
 										<label class="input-group-text bg-secondary text-white">
 											MÊS
 										</label>
@@ -212,9 +211,12 @@ if ($_SESSION['user'] == NULL) {
 					</form>
 				</div>
 
+				<div class="row" id="background-tela-cadastro">
+
 				<?php require_once 'includes/rodape.php'; ?>
 
 			</div>
+			
 		</div>
 
 		<!-- MODAL EDITAR PLANEJAMENTO --->

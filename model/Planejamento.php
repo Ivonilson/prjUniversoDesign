@@ -119,6 +119,35 @@ class Planejamento {
 
 	}
 
+	function pesquisaAnoPlanejamento()
+	{
+		
+		try {
+				$querySelect = "SELECT DISTINCT ano from tbl_planejamento_anual_receita_despesa";
+
+				/*$querySelect = "SELECT cod_os, id_orcamento, contato, endereco, cidade_uf, data_cadastro, data_agendamento, sit_pagamento, status, observacao  FROM tbl_os WHERE data_cadastro >= '$data_inicial' AND data_cadastro <= '$data_final'";*/
+
+				$conn = new Conn();
+				$buscaAno = $conn->getConn()->query($querySelect);
+
+				/* bindParam não está funcionando, verificar o por que.
+				$dadosPorDataRecb->bindParam(':dataInicial', $data_inicial);
+				$dadosPorDataReceb->bindParam(':dataFinal', $data_final);
+				*/
+
+				$resultado = $buscaAno->fetchAll(PDO::FETCH_ASSOC);
+				
+				return $resultado;
+
+		} catch(PDOException $e) {
+			echo "ERRO: ".$e->getMessage();
+		}
+		
+
+	}
+
+
+
 	public function edPlanejamento()
 	
 	{
