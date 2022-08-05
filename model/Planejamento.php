@@ -130,11 +130,6 @@ class Planejamento {
 				$conn = new Conn();
 				$buscaAno = $conn->getConn()->query($querySelect);
 
-				/* bindParam não está funcionando, verificar o por que.
-				$dadosPorDataRecb->bindParam(':dataInicial', $data_inicial);
-				$dadosPorDataReceb->bindParam(':dataFinal', $data_final);
-				*/
-
 				$resultado = $buscaAno->fetchAll(PDO::FETCH_ASSOC);
 				
 				return $resultado;
