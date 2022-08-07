@@ -41,7 +41,7 @@ if ($_SESSION['user'] == NULL) {
 			</ol>
 
 			<div class="row justify-content-md-center">
-					<div class="col-offset-5 col-2 col-offset-5">
+					<div class="col-2">
 						<div class="input-group">
 							<div class="input-group-prepend">
 								<label class="text-dark float-right input-group-text font-weight-bold">Ano referência</label>
@@ -56,6 +56,7 @@ if ($_SESSION['user'] == NULL) {
 								?>
 
 							</select>
+							<button class="btn btn-info col form-control">Carregar</button>
 						</div>
 					</div>
 				</div>
