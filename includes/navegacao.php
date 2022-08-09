@@ -163,7 +163,7 @@
 							</li>
 
 							<li>
-								<a href="/?pagina=resultados-caixa">Resultados</a>
+								<a href="/?pagina=resultados">Resultados</a>
 							</li>
 
 						</ul>

@@ -41,25 +41,26 @@ if ($_SESSION['user'] == NULL) {
 			</ol>
 
 			<div class="row justify-content-md-center">
-					<div class="col-2">
-						<div class="input-group">
-							<div class="input-group-prepend">
-								<label class="text-dark float-right input-group-text font-weight-bold">Ano referência</label>
-							</div>
-							<select class="float-right custom-select" name="" id="">
-								<?php 
-									foreach($anoRetornado as $value){ 
-								?>
-								<option value=""><?= $value['ano'] ?></option>
-								<?php
-									}
-								?>
-
-							</select>
-							<button class="btn btn-info col form-control">Carregar</button>
+				<div class="col-2">
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<label class="text-dark float-right input-group-text font-weight-bold">Ano referência</label>
 						</div>
+						<select class="float-right custom-select" name="" id="">
+							<?php 
+								foreach($anoRetornado as $value){ 
+							?>
+							<option value=""><?= $value['ano'] ?></option>
+							<?php
+								}
+							?>
+						</select>
 					</div>
 				</div>
+					<div class="col-1">
+						<button class="btn btn-info col form-control">Carregar</button>
+					</div>
+			</div>
 
 			<!--
 			<div class="row mb-3">
@@ -143,14 +144,15 @@ if ($_SESSION['user'] == NULL) {
 							</tr>
 						</thead>
 						<tfoot class="thead-light">
-							<th>ID</th>
-							<th>Mês/Ano</th>
-							<th>Valor Receita(R$)</th>
-							<th>Valor Despesa (R$)</th>
-							<th>Data de Processamento</th>
-							<th>Usuário</th>
-							<th>Atualizar</th>
-							<th class="d-xs-none">Deletar</th>
+							<tr>
+								<th>ID</th>
+								<th>Mês/Ano</th>
+								<th>Valor Receita(R$)</th>
+								<th>Valor Despesa (R$)</th>
+								<th>Data de Processamento</th>
+								<th>Usuário</th>
+								<th>Atualizar</th>
+								<th class="d-xs-none">Deletar</th>
 							</tr>
 						</tfoot>
 						<tbody>
