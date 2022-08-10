@@ -232,7 +232,8 @@ if ($_SESSION['user'] == NULL) {
 									$total_desp_planejadas += $value['valor_despesa_planejada'];
 									$total_desp_executadas += $valorDespesa;
 									$meta_card_despesas = ($total_desp_executadas / $total_desp_planejadas) * 100;
-									$meta_card_lucro = ($total_rec_executadas / $total_rec_planejadas) * 100;
+
+									$meta_card_lucro_anual = (($total_rec_executadas - $total_desp_executadas) / ($total_rec_planejadas - $total_desp_planejadas)) * 100;
 
 									$meta_card_lucro_mensal = ((($total_rec_executadas - $total_desp_executadas)/12) / 
 									(($total_rec_planejadas - $total_desp_planejadas)/12)) * 100;
@@ -278,7 +279,7 @@ if ($_SESSION['user'] == NULL) {
 							<div class="card-body">
 								<h5 class="card-title">Lucro anual planejado: R$ <?=  $total_rec_planejadas != null ? number_format(($total_rec_planejadas - $total_desp_planejadas), 2, ',', '.') : '0' ?></h5>
 								<h5 class="card-title">Lucro anual executado: R$ <?= $total_rec_executadas != null ? number_format($total_rec_executadas - $total_desp_executadas, 2, ',', '.') : '0' ?></h5>
-                                <h5 class="card-title">Percentual anual atingido na meta de lucro: <?= $meta_card_lucro != null ? number_format($meta_card_lucro, 2, ',', '.').'%' : '0%' ?></h5>
+                                <h5 class="card-title">Percentual anual atingido na meta de lucro: <?= $meta_card_lucro_anual != null ? number_format($meta_card_lucro_anual, 2, ',', '.').'%' : '0%' ?></h5>
                                 <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
 							</div>
 							<div class="card-footer">
