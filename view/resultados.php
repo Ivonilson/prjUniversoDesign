@@ -126,32 +126,50 @@ if ($_SESSION['user'] == NULL) {
 						<tbody>
 							<?php
 
-							//$valor_total_receita_planejada = 0;
-                           // $valor_total_receita_executada = 0;
-							//$valor_total_despesa_planejada = 0;
-                           // $valor_total_despesa_executada = 0;
-                           
-                           $mes = ["01" => "JANEIRO", "02" => "FEVEREIRO", "03" => "MARÇO", "04" => "ABRIL",
-                                  "05" => "MAIO", "06" => "JUNHO", "07" => "JULHO", "08" => "AGOSTO", 
-                                  "09" => "SETEMBRO", "10" => "OUTUBRO", "11" => "NOVEMBRO", "12" => "DEZEMBRO"
-                            ];
+							 $mes = ["01" => "JANEIRO", "02" => "FEVEREIRO", "03" => "MARÇO", "04" => "ABRIL",
+									   "05" => "MAIO", "06" => "JUNHO", "07" => "JULHO", "08" => "AGOSTO", "09" => "SETEMBRO",
+									   "10" => "OUTUBRO", "11" => "NOVEMBRO", "12" => "DEZEMBRO"
+									  ];
 
-                           $valor = 0;
-                           $numero_mes = 0;
-                           $contador = 1;
+							$contador = count($receitasExecutadas);
+							$controle = 0;
+							$valor = 0;
 
 							if ($resultados != NULL) {
 
 								foreach ($resultados as $value) {
+									//$numero_mes = substr($receitasExecutadas[$controle]['data_referencia'], 5, 2);
 
-                                    $numero_mes = substr($receitasExecutadas["$contador"]['data_referencia'], 5, 2 );
+									while($controle < $contador) {
 
-							?>
+										if($mes[substr($receitasExecutadas[$controle]['data_referencia'], 5, 2)].'/'.
+										substr($receitasExecutadas[$controle]['data_referencia'], 0, 4) == $value['mes_ano_planejado']){
+											$valor += $receitasExecutadas[$controle]['valor'];
+										}
+
+										echo "<br>";
+										//echo $valor;
+										echo "<br>";
+										echo $controle;
+										echo "<br>";
+										//echo $mes[substr($receitasExecutadas[$controle]['data_referencia'], 5, 2)].'/'.
+										//substr($receitasExecutadas[$controle]['data_referencia'], 0, 4);
+										echo "<br>";
+										//echo $mes[substr($receitasExecutadas[$controle]['data_referencia'], 5, 2)].'/'.
+										//substr($receitasExecutadas[$controle]['data_referencia'], 0, 4);
+										echo "<br>";
+										
+										$controle++;
+									}
+
+								?>
 									<tr>
                                         <td class="sr-only"><?= $value['id_plan_rec_desp'] ?></td>
 										<td><?= $value['mes_ano_planejado'] ?></td>
 										<td><?= number_format($value['valor_receita_planejada'], 2, ',', '.') ?></td>
-										<td><?php if($numero_mes.'/'.substr($receitasExecutadas["$contador"]["data_referencia"], 0, 4 ) == $value['mes_ano_planejado'] ) { $valor = $receitasExecutadas["$contador"]["valor"];  echo number_format($valor, 2, ',', '.');}  ?></td>
+
+										<td><?=number_format($valor, 2, ',', '.');?></td>
+
                                         <td><?= number_format($value['saldo_despesa'], 2, ',', '.') ?></td>
                                         <td></td>
                                         <td><?= number_format($value['valor_despesa_planejada'], 2, ',', '.') ?></td>
@@ -165,8 +183,8 @@ if ($_SESSION['user'] == NULL) {
 							<?php
 									$conexao = null;
 
-                                    $contador++;
 								}
+
 							} else {
 								echo "<span class='text-danger'></span><br><br>";
 							}
