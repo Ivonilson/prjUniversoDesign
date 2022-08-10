@@ -221,7 +221,7 @@ if ($_SESSION['user'] == NULL) {
 																		</label>
 																	</div>
 																	<select class="custom-select" name="sel-form-sel-mes-edicao">
-																		<option value="<?= $UltimoPlanejamentoCadastrado['mes'] ?>"><?= $UltimoPlanejamentoCadastrado['mes'] ?></option>
+																		<option value="<?= $value['mes'] ?>"><?= $value['mes'] ?></option>
 																		<option value="JANEIRO">JANEIRO</option>
 																		<option value="FEVEREIRO">FEVEREIRO</option>
 																		<option value="MARÇO">MARÇO</option>
@@ -246,7 +246,7 @@ if ($_SESSION['user'] == NULL) {
 																		</label>
 																	</div>
 																	<select class="custom-select" name="sel-form-sel-ano-edicao">
-																		<option value="<?= $UltimoPlanejamentoCadastrado['ano'] ?>"><?= $UltimoPlanejamentoCadastrado['ano'] ?></option>
+																		<option value="<?= $value['ano'] ?>"><?= $value['ano'] ?></option>
 																		<option value="2022">2022</option>
 																		<option value="2023">2023</option>
 																		<option value="2024">2024</option>

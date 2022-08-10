@@ -97,13 +97,13 @@ if ($_SESSION['user'] == NULL) {
 								<th>Mês/Ano</th>
 								<th>Receita Planejada (R$)</th>
                                 <th>Receita Executada (R$)</th>
-                                <th></th>
+                                <th>Meta Receitas</th>
                                 <th></th>
                                 <th>Despesa Planejada (R$)</th>
                                 <th>Despesa Executada (R$)</th>
+								<th>Meta Despesas</th>
                                 <th></th>
-                                <th></th>
-								<th>Saldo (R$)</th>
+								<th>Retorno (R$)</th>
 								<th>Status</th>
 							</tr>
 						</thead>
@@ -113,13 +113,13 @@ if ($_SESSION['user'] == NULL) {
                                 <th>Mês/Ano</th>
 								<th>Receita Planejada (R$)</th>
                                 <th>Receita Executada (R$)</th>
-                                <th></th>
+                                <th>Meta Receitas</th>
                                 <th></th>
                                 <th>Despesa Planejada (R$)</th>
                                 <th>Despesa Executada (R$)</th>
+								<th>Meta Despesas</th>
                                 <th></th>
-                                <th></th>
-								<th>Saldo (R$)</th>
+								<th>Retorno (R$)</th>
 								<th>Status</th>
 							</tr>
 						</tfoot>
@@ -131,35 +131,71 @@ if ($_SESSION['user'] == NULL) {
 									   "10" => "OUTUBRO", "11" => "NOVEMBRO", "12" => "DEZEMBRO"
 									  ];
 
-							$contador = count($receitasExecutadas);
-							$controle = 0;
-							$valor = 0;
+							$contadorReceitas = count($receitasExecutadas);
+							$contadorDespesas = count($despesasExecutadas);
+
+							$total_rec_planejadas = 0;
+							$total_rec_executadas = 0;
+							$meta_card_receitas = 0;
+
+							$total_desp_planejadas = 0;
+							$total_desp_executadas = 0;
+							$meta_card_despesas = 0;
+							
 
 							if ($resultados != NULL) {
 
 								foreach ($resultados as $value) {
 									//$numero_mes = substr($receitasExecutadas[$controle]['data_referencia'], 5, 2);
 
-									while($controle < $contador) {
+									$controleReceita = 0;
+									$valorReceita = 0;
 
-										if($mes[substr($receitasExecutadas[$controle]['data_referencia'], 5, 2)].'/'.
-										substr($receitasExecutadas[$controle]['data_referencia'], 0, 4) == $value['mes_ano_planejado']){
-											$valor += $receitasExecutadas[$controle]['valor'];
+									$controleDespesa = 0;
+									$valorDespesa = 0;									
+
+									while($controleReceita < $contadorReceitas) {
+
+										if($mes[substr($receitasExecutadas[$controleReceita]['data_referencia'], 5, 2)].'/'.
+										substr($receitasExecutadas[$controleReceita]['data_referencia'], 0, 4) == $value['mes_ano_planejado']){
+											$valorReceita += $receitasExecutadas[$controleReceita]['valor'];
 										}
 
-										echo "<br>";
+										//echo "<br>";
 										//echo $valor;
-										echo "<br>";
-										echo $controle;
-										echo "<br>";
+										//echo "<br>";
+										//echo $controle;
+										//echo "<br>";
 										//echo $mes[substr($receitasExecutadas[$controle]['data_referencia'], 5, 2)].'/'.
 										//substr($receitasExecutadas[$controle]['data_referencia'], 0, 4);
-										echo "<br>";
+										//echo "<br>";
 										//echo $mes[substr($receitasExecutadas[$controle]['data_referencia'], 5, 2)].'/'.
 										//substr($receitasExecutadas[$controle]['data_referencia'], 0, 4);
-										echo "<br>";
+										//echo "<br>";
 										
-										$controle++;
+										$controleReceita++;
+									}
+
+									while($controleDespesa < $contadorDespesas) {
+
+										if($mes[substr($despesasExecutadas[$controleDespesa]['data_referencia'], 5, 2)].'/'.
+										substr($despesasExecutadas[$controleDespesa]['data_referencia'], 0, 4) == $value['mes_ano_planejado']){
+											$valorDespesa += $despesasExecutadas[$controleDespesa]['valor'];
+										}
+
+										//echo "<br>";
+										//echo $valor;
+										//echo "<br>";
+										//echo $controle;
+										//echo "<br>";
+										//echo $mes[substr($receitasExecutadas[$controle]['data_referencia'], 5, 2)].'/'.
+										//substr($receitasExecutadas[$controle]['data_referencia'], 0, 4);
+										//echo "<br>";
+										//echo $mes[substr($receitasExecutadas[$controle]['data_referencia'], 5, 2)].'/'.
+										//substr($receitasExecutadas[$controle]['data_referencia'], 0, 4);
+										//echo "<br>";
+										
+										$controleDespesa++;
 									}
 
 								?>
@@ -168,20 +204,38 @@ if ($_SESSION['user'] == NULL) {
 										<td><?= $value['mes_ano_planejado'] ?></td>
 										<td><?= number_format($value['valor_receita_planejada'], 2, ',', '.') ?></td>
 
-										<td><?=number_format($valor, 2, ',', '.');?></td>
+										<td><?=number_format($valorReceita, 2, ',', '.');?></td>
 
-                                        <td><?= number_format($value['saldo_despesa'], 2, ',', '.') ?></td>
+										<td><?= number_format((($valorReceita / $value['valor_receita_planejada']) * 100), 2, ',' , '.').'%' ?>
+										</td>
+
                                         <td></td>
                                         <td><?= number_format($value['valor_despesa_planejada'], 2, ',', '.') ?></td>
-										<td><?= number_format($value['valor'], 2, ',', '.') ?></td>
-                                        <td><?= number_format($value['saldo_receita'], 2, ',', '.') ?></td>
+
+										<td><?=number_format($valorDespesa, 2, ',', '.');?></td>
+
+										<td><?= number_format((($valorDespesa / $value['valor_despesa_planejada']) * 100), 2, ',' , '.').'%' ?>
+										</td>
+
                                         <td></td>
-										<td><?= number_format($value['saldo'], 2, ',', '.') ?></td>
+										<td><?= number_format(($valorReceita -$valorDespesa), 2, ',', '.') ?></td>
 										<td>Fazer via JS</td>
 									</tr>
 
 							<?php
 									$conexao = null;
+
+									$total_rec_planejadas += $value['valor_receita_planejada'];
+									$total_rec_executadas += $valorReceita;
+									$meta_card_receitas = ($total_rec_executadas / $total_rec_planejadas) * 100;
+
+									$total_desp_planejadas += $value['valor_despesa_planejada'];
+									$total_desp_executadas += $valorDespesa;
+									$meta_card_despesas = ($total_desp_executadas / $total_desp_planejadas) * 100;
+									$meta_card_lucro = ($total_rec_executadas / $total_rec_planejadas) * 100;
+
+									$meta_card_lucro_mensal = ((($total_rec_executadas - $total_desp_executadas)/12) / 
+									(($total_rec_planejadas - $total_desp_planejadas)/12)) * 100;
 
 								}
 
@@ -198,9 +252,9 @@ if ($_SESSION['user'] == NULL) {
 						<div class="card">
 							<!--<img class="card-img-top" src=".../100px180/" alt="Card image cap">-->
 							<div class="card-body">
-								<h5 class="card-title">Total de receitas planejadas: R$ <?=  $valor_total_receita_planejada != null ? number_format( $valor_total_receita_planejada, 2, ',', '.') : '0' ?></h5>
-								<h5 class="card-title">Total de receitas executadas: R$ <?= $valor_total_receita_executada != null ? number_format($valor_total_receita_executada, 2, ',', '.') : '0' ?></h5>
-                                <h5 class="card-title">Saldo: R$ <?= $saldo != null ? number_format($saldo, 2, ',', '.') : '0' ?></h5>
+								<h5 class="card-title">Total de receitas planejadas: R$ <?=  $total_rec_planejadas != null ? number_format($total_rec_planejadas, 2, ',', '.') : '0' ?></h5>
+								<h5 class="card-title">Total de receitas executadas: R$ <?= $total_rec_executadas != null ? number_format($total_rec_executadas, 2, ',', '.') : '0' ?></h5>
+                                <h5 class="card-title">Percentual anual atingido nas metas de receitas:  <?= $meta_card_receitas != null ? number_format($meta_card_receitas, 2, ',', '.').'%' : '0%' ?></h5>
                                 <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
 							</div>
 							<div class="card-footer">
@@ -210,8 +264,9 @@ if ($_SESSION['user'] == NULL) {
 						<div class="card">
 							<!--<img class="card-img-top" src=".../100px180/" alt="Card image cap">-->
 							<div class="card-body">
-								<h5 class="card-title">Total de despesas planejadas: R$ <?=  $valor_total_despesa_planejada != null ? number_format( $valor_total_receita_planejada, 2, ',', '.') : '0' ?></h5>
-								<h5 class="card-title">Total de despesa executadas: R$ <?= $valor_total_receita_executada != null ? number_format($valor_total_receita_executada, 2, ',', '.') : '0' ?></h5>
+								<h5 class="card-title">Total de despesas planejadas: R$ <?=  $total_desp_planejadas != null ? number_format( $total_desp_planejadas, 2, ',', '.') : '0' ?></h5>
+								<h5 class="card-title">Total de despesa executadas: R$ <?= $total_desp_executadas != null ? number_format($total_desp_executadas, 2, ',', '.') : '0' ?></h5>
+								<h5 class="card-title">Percentual anual atingido nas metas de despesas:  <?= $meta_card_despesas != null ? number_format($meta_card_despesas, 2, ',', '.').'%' : '0%' ?></h5>
                                 <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
 							</div>
 							<div class="card-footer">
@@ -221,9 +276,9 @@ if ($_SESSION['user'] == NULL) {
 						<div class="card">
 							<!--<img class="card-img-top" src=".../100px180/" alt="Card image cap">-->
 							<div class="card-body">
-								<h5 class="card-title">Lucro anual planejado: R$ <?= $valor_total_receita_planejada != null ? number_format($valor_total_receita_planejada - $valor_total_despesa_planejada, 2, ',', '.') : '0' ?></h5>
-								<h5 class="card-title">Lucro anual executado: R$ <?= $valor_total_receita_executada != null ? number_format($valor_total_receita_executada - $valor_total_despesa_planejada, 2, ',', '.') : '0' ?></h5>
-                                <h5 class="card-title">Saldo: R$ <?= $saldo != null ? number_format($saldo, 2, ',', '.') : '0' ?></h5>
+								<h5 class="card-title">Lucro anual planejado: R$ <?=  $total_rec_planejadas != null ? number_format(($total_rec_planejadas - $total_desp_planejadas), 2, ',', '.') : '0' ?></h5>
+								<h5 class="card-title">Lucro anual executado: R$ <?= $total_rec_executadas != null ? number_format($total_rec_executadas - $total_desp_executadas, 2, ',', '.') : '0' ?></h5>
+                                <h5 class="card-title">Percentual anual atingido na meta de lucro: <?= $meta_card_lucro != null ? number_format($meta_card_lucro, 2, ',', '.').'%' : '0%' ?></h5>
                                 <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
 							</div>
 							<div class="card-footer">
@@ -233,8 +288,9 @@ if ($_SESSION['user'] == NULL) {
 						<div class="card">
 							<!--<img class="card-img-top" src=".../100px180/" alt="Card image cap">-->
 							<div class="card-body">
-								<h5 class="card-title">Saldo mensal planejado: R$ <?= $valor_total_receita_planejada != null ? number_format($valor_total_receita_planejada - $valor_total_despesa_planejada, 2, ',', '.') : '0' ?></h5>
-								<h5 class="card-title">Saldo mensal executado: R$ <?= $valor_total_receita_executada != null ? number_format($valor_total_receita_executada - $valor_total_despesa_planejada, 2, ',', '.') : '0' ?></h5>
+								<h5 class="card-title">Lucro mensal planejado: R$ <?= $total_rec_planejadas != null ? number_format(($total_rec_planejadas - $total_desp_planejadas)/12, 2, ',', '.') : '0' ?></h5>
+								<h5 class="card-title">Lucro mensal executado: R$ <?=$total_rec_executadas != null ? number_format(($total_rec_executadas - $total_desp_executadas)/12, 2, ',', '.') : '0' ?></h5>
+								<h5 class="card-title">Percentual mensal atingido na meta de lucro: <?= $meta_card_lucro_mensal != null ? number_format($meta_card_lucro_mensal, 2, ',', '.').'%' : '0%' ?></h5>
                                 <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
 							</div>
 							<div class="card-footer">
