@@ -259,22 +259,24 @@ if ($_SESSION['user'] == NULL) {
 					<div class="modal-body">
 						<div class="row justify-content-center">
 
-							<h3 class="text-primary col-12 text-center mt-5">Alterando a despesa <label class="border p-3 text-danger font-weight-bold"><?= $UltimaDespesaCadastrada['id_despesa'] ?></label></h3>
+							<?php //var_dump($UltimaDespesaCadastrada['id_despesa']) ?>
+
+							<h3 class="text-primary col-12 text-center mt-5">Alterando a despesa <label class="border p-3 text-danger font-weight-bold"><?= $UltimaDespesaCadastrada != NULL ? $UltimaDespesaCadastrada['id_despesa'] : "Nenhuma despesa cadastrada." ?></label></h3>
 
 							<form method="post">
 
 								<div class="col-12">
 									<label class="text-danger font-weight-bold readonly">Código</label>
 									<br>
-									<input class="form-control" type="text" value="<?= $UltimaDespesaCadastrada['id_despesa'] ?>" disabled>
-									<input class="form-control" type="hidden" name="ipt-id-despesa-edicao" value="<?= $UltimaDespesaCadastrada['id_despesa'] ?>">
+									<input class="form-control" type="text" value="<?= $UltimaDespesaCadastrada != NULL ? $UltimaDespesaCadastrada['id_despesa'] : "Nenhuma despesa cadastrada." ?>" disabled>
+									<input class="form-control" type="hidden" name="ipt-id-despesa-edicao" value="<?= $UltimaDespesaCadastrada != NULL ? $UltimaDespesaCadastrada['id_despesa'] : '-' ?>">
 								</div>
 
 								<div class="col-12">
 									<label class="text-danger font-weight-bold readonly">Tipo</label>
 									<br>
 									<select name="sel-tipo-edicao" class="form-control">
-										<option value="<?= $UltimaDespesaCadastrada['tipo'] ?>"><?= $UltimaDespesaCadastrada['tipo'] ?></option>
+										<option value="<?= $UltimaDespesaCadastrada != NULL ? $UltimaDespesaCadastrada['tipo'] : '-' ?>"><?= $UltimaDespesaCadastrada != NULL ? $UltimaDespesaCadastrada['tipo'] : '-' ?></option>
 										<option value="FIXA">FIXA</option>
 										<option value="VARIÁVEL">VARIÁVEL</option>
 									</select>
@@ -284,7 +286,7 @@ if ($_SESSION['user'] == NULL) {
 									<label class="text-danger font-weight-bold readonly">Grupo</label>
 									<br>
 									<select name="sel-grupo-edicao" class="form-control">
-										<option value="<?= $UltimaDespesaCadastrada['grupo'] ?>"><?= $UltimaDespesaCadastrada['grupo'] ?></option>
+										<option value="<?= $UltimaDespesaCadastrada != NULL ? $UltimaDespesaCadastrada['grupo'] : '-' ?>"><?= $UltimaDespesaCadastrada != NULL ? $UltimaDespesaCadastrada['grupo'] : '-' ?></option>
 										<option value="FORNECEDORES">FORNECEDORES</option>
 										<option value="ENERGIA">ENERGIA</option>
 										<option value="TELEFONIA">TELEFONIA</option>
@@ -303,25 +305,25 @@ if ($_SESSION['user'] == NULL) {
 
 								<div class="col-12">
 									<label class="text-danger font-weight-bold" for="inlineFormInputDetalhamento">Detalhamento da despesa</label>
-									<textarea type="text" class="form-control mb-2" id="inlineFormInputDetalhamento" cols="140" rows="6" name="ta-detalhamento"><?=$UltimaDespesaCadastrada['detalhamento']?></textarea>
+									<textarea type="text" class="form-control mb-2" id="inlineFormInputDetalhamento" cols="140" rows="6" name="ta-detalhamento"><?= $UltimaDespesaCadastrada != NULL ? $UltimaDespesaCadastrada['detalhamento'] : '-' ?></textarea>
 								</div>
 
 								<div class="col-12">
 									<label class="text-danger font-weight-bold">Valor (R$)</label>
 									<br>
-									<input class="form-control" type="text" name="ipt-valor" value="<?= number_format($UltimaDespesaCadastrada['valor'], 2, ',', '') ?>">
+									<input class="form-control" type="text" name="ipt-valor" value="<?= $UltimaDespesaCadastrada != NULL ? number_format($UltimaDespesaCadastrada['valor'], 2, ',', '') : '-' ?>">
 								</div>
 
 								<div class="col-12">
 									<label class="text-danger font-weight-bold readonly">Forma de Pagamento</label>
 									<br>
-									<input class="form-control" type="text" name="ipt-forma_pagamento" value="<?= $UltimaDespesaCadastrada['forma_pagamento'] ?>">
+									<input class="form-control" type="text" name="ipt-forma_pagamento" value="<?= $UltimaDespesaCadastrada != NULL ? $UltimaDespesaCadastrada['forma_pagamento'] : '-' ?>">
 								</div>
 
 								<div class="col-12">
 									<label class="text-danger font-weight-bold readonly">Data de Referência</label>
 									<br>
-									<input class="form-control" type="date" name="ipt-data-referencia" value="<?= date_format(date_create($UltimaDespesaCadastrada['data_referencia']), "Y-m-d") ?>">
+									<input class="form-control" type="date" name="ipt-data-referencia" value="<?= $UltimaDespesaCadastrada != NULL ? date_format(date_create($UltimaDespesaCadastrada['data_referencia']), "Y-m-d") : '-' ?>">
 								</div>
 
 

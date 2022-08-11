@@ -221,22 +221,22 @@ if ($_SESSION['user'] == NULL) {
 							<div class="modal-body">
 								<div class="row justify-content-center">
 
-									<h3 class="text-primary col-12 text-center mt-5">Alterando a receita <label class="border p-3 text-danger font-weight-bold"><?= $UltimaReceitaCadastrada['id_receita'] ?></label></h3>
+									<h3 class="text-primary col-12 text-center mt-5">Alterando a receita <label class="border p-3 text-danger font-weight-bold"><?= $UltimaReceitaCadastrada != NULL ? $UltimaReceitaCadastrada['id_receita'] : 'Nenhuma receita cadastrada.' ?></label></h3>
 
 									<form method="post">
 
 										<div class="col-12">
 											<label class="text-danger font-weight-bold readonly">Código</label>
 											<br>
-											<input class="form-control" type="text" value="<?= $UltimaReceitaCadastrada['id_receita'] ?>" disabled>
-											<input class="form-control" type="hidden" name="ipt-id-receita-edicao" value="<?= $UltimaReceitaCadastrada['id_receita'] ?>">
+											<input class="form-control" type="text" value="<?= $UltimaReceitaCadastrada != NULL ? $UltimaReceitaCadastrada['id_receita'] : 'Nenhuma receita cadastrada.' ?>" disabled>
+											<input class="form-control" type="hidden" name="ipt-id-receita-edicao" value="<?= $UltimaReceitaCadastrada != NULL ? $UltimaReceitaCadastrada['id_receita'] : 'Nenhuma receita cadastrada.' ?>">
 										</div>
 
 										<div class="col-12">
 											<label class="text-danger font-weight-bold readonly">Tipo</label>
 											<br>
 											<select name="sel-tipo-edicao" class="form-control">
-												<option value="<?= $UltimaReceitaCadastrada['tipo'] ?>"><?= $UltimaReceitaCadastrada['tipo'] ?></option>
+												<option value="<?= $UltimaReceitaCadastrada != NULL ? $UltimaReceitaCadastrada['tipo'] : '-' ?>"><?= $UltimaReceitaCadastrada != NULL ? $UltimaReceitaCadastrada['tipo'] : '-' ?></option>
 												<option value="SERVIÇO">SERVIÇO</option>
 												<option value="VENDA LOJA">VENDA LOJA</option>
 												<option value="VENDA INTERNET">VENDA INTERNET</option>
@@ -246,25 +246,25 @@ if ($_SESSION['user'] == NULL) {
 
 										<div class="col-12">
 											<label class="text-danger font-weight-bold" for="inlineFormInputDetalhamento">Detalhamento da receita</label>
-											<textarea type="text" class="form-control mb-2" id="inlineFormInputDetalhamento" cols="140" rows="6" name="ta-detalhamento"><?= $UltimaReceitaCadastrada['detalhamento'] ?></textarea>
+											<textarea type="text" class="form-control mb-2" id="inlineFormInputDetalhamento" cols="140" rows="6" name="ta-detalhamento"><?= $UltimaReceitaCadastrada != NULL ? $UltimaReceitaCadastrada['detalhamento'] : '-' ?></textarea>
 										</div>
 
 										<div class="col-12">
 											<label class="text-danger font-weight-bold">Valor (R$)</label>
 											<br>
-											<input class="form-control" type="text" name="ipt-valor" value="<?= number_format($UltimaReceitaCadastrada['valor'], 2, ',', '') ?>">
+											<input class="form-control" type="text" name="ipt-valor" value="<?= $UltimaReceitaCadastrada != NULL ? number_format($UltimaReceitaCadastrada['valor'], 2, ',', '') : '-' ?>">
 										</div>
 
 										<div class="col-12">
 											<label class="text-danger font-weight-bold readonly">Forma de Pagamento</label>
 											<br>
-											<input class="form-control" type="text" name="ipt-forma_pagamento" value="<?= $UltimaReceitaCadastrada['forma_pagamento'] ?>">
+											<input class="form-control" type="text" name="ipt-forma_pagamento" value="<?= $UltimaReceitaCadastrada != NULL ? $UltimaReceitaCadastrada['forma_pagamento'] : '-' ?>">
 										</div>
 
 										<div class="col-12">
 											<label class="text-danger font-weight-bold readonly">Data de Referência</label>
 											<br>
-											<input class="form-control" type="date" name="ipt-data-referencia" value="<?= date_format(date_create($UltimaReceitaCadastrada['data_referencia']), "Y-m-d") ?>">
+											<input class="form-control" type="date" name="ipt-data-referencia" value="<?= $UltimaReceitaCadastrada != NULL ? date_format(date_create($UltimaReceitaCadastrada['data_referencia']), "Y-m-d") : '-' ?>">
 										</div>
 
 
