@@ -141,7 +141,9 @@ if ($_SESSION['user'] == NULL) {
 							$total_desp_planejadas = 0;
 							$total_desp_executadas = 0;
 							$meta_card_despesas = 0;
-							
+
+							$meta_card_lucro_mensal = 0;
+							$meta_card_lucro_anual = 0;
 
 							if ($resultados != NULL) {
 
@@ -152,7 +154,8 @@ if ($_SESSION['user'] == NULL) {
 									$valorReceita = 0;
 
 									$controleDespesa = 0;
-									$valorDespesa = 0;									
+									$valorDespesa = 0;	
+							
 
 									while($controleReceita < $contadorReceitas) {
 
@@ -233,10 +236,11 @@ if ($_SESSION['user'] == NULL) {
 									$total_desp_executadas += $valorDespesa;
 									$meta_card_despesas = ($total_desp_executadas / $total_desp_planejadas) * 100;
 
-									$meta_card_lucro_anual = (($total_rec_executadas - $total_desp_executadas) / ($total_rec_planejadas - $total_desp_planejadas)) * 100;
+									$meta_card_lucro_anual = $total_rec_planejadas != $total_desp_planejadas  ? (($total_rec_executadas - $total_desp_executadas) / 
+									($total_rec_planejadas - $total_desp_planejadas)) * 100 : 100.00;
 
-									$meta_card_lucro_mensal = ((($total_rec_executadas - $total_desp_executadas)/12) / 
-									(($total_rec_planejadas - $total_desp_planejadas)/12)) * 100;
+									$meta_card_lucro_mensal = $total_rec_planejadas != $total_desp_planejadas ? ((($total_rec_executadas - $total_desp_executadas)/12) / 
+									(($total_rec_planejadas - $total_desp_planejadas)/12)) * 100 : 100.00;
 
 								}
 
