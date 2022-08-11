@@ -225,16 +225,19 @@ if ($_SESSION['user'] == NULL) {
 
 														<form method="post">
 
-															<div class="col-12">
-																<input class="form-control " type="text" name="data_inicial" value="<?= $data_inicial ?>">
-																<br>
-																<input class="form-control" type="text" name="data_final" value="<?= $data_final ?>">
-															</div>
+															<input type="hidden" name="data_inicial" value="<?= filter_input(INPUT_POST, 'data_inicial') ?>">
+															<input type="hidden" name="data_final" value="<?= filter_input(INPUT_POST, 'data_final') ?>">
 
 															<div class="col-12">
 																<label class="text-danger font-weight-bold readonly">Código</label>
 																<br>
 																<input class="form-control" type="text" name="ipt-id-despesa-edicao" value="<?= $value['id_despesa'] ?>">
+															</div>
+
+															<div class="col-12">
+																<label class="text-danger font-weight-bold readonly">Data de referência</label>
+																<br>
+																<input class="form-control" type="date" name="ipt-data-referencia" value="<?= date_format(date_create($value['data_referencia']), "Y-m-d") ?>">
 															</div>
 
 															<div class="col-12">
@@ -250,7 +253,7 @@ if ($_SESSION['user'] == NULL) {
 															<div class="col-12">
 																<label class="text-danger font-weight-bold readonly">Grupo</label>
 																<br>
-																<select name="sel-grupo" class="form-control">
+																<select name="sel-grupo-edicao" class="form-control">
 																	<option value="<?= $value['grupo'] ?>"><?= $value['grupo'] ?></option>
 																	<option value="FORNECEDORES">FORNECEDORES</option>
 																	<option value="ENERGIA">ENERGIA</option>
@@ -271,13 +274,13 @@ if ($_SESSION['user'] == NULL) {
 															<div class="col-12">
 																<label class="text-danger font-weight-bold readonly">Detalhamento</label>
 																<br>
-																<input class="form-control" type="text" name="ipt-detalhamento" value="<?= $value['detalhamento'] ?>">
+																<input class="form-control" type="text" name="ta-detalhamento" value="<?= $value['detalhamento'] ?>">
 															</div>
 
 															<div class="col-12">
 																<label class="text-danger font-weight-bold">Valor (R$)</label>
 																<br>
-																<input class="form-control" type="text" name="ipt-valor" value="<?= number_format($value['valor'], 2, ',', '.') ?>">
+																<input class="form-control" type="text" name="ipt-valor" value="<?= number_format($value['valor'], 2, ',', '') ?>">
 															</div>
 
 															<div class="col-12">

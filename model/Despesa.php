@@ -148,7 +148,7 @@ class Despesa {
 
 			$conn = new Conn();
 
-			$statement = "UPDATE tbl_despesa SET tipo = :tipo, grupo = :grupo, detalhamento = :detalhamento, valor = :valor, forma_pagamento = :forma_pagamento WHERE id_despesa = :id_despesa";
+			$statement = "UPDATE tbl_despesa SET tipo = :tipo, grupo = :grupo, detalhamento = :detalhamento, valor = :valor, forma_pagamento = :forma_pagamento, data_referencia = :data_referencia WHERE id_despesa = :id_despesa";
 
 			$dados_editar = $conn->getConn()->prepare($statement);
 
@@ -189,6 +189,7 @@ class Despesa {
 			$dados_editar->bindParam(':detalhamento', $detalhamento);
 			$dados_editar->bindParam(':valor', $valor);
 			$dados_editar->bindParam(':forma_pagamento', $dados['ipt-forma_pagamento']);
+			$dados_editar->bindParam(':data_referencia', $dados['ipt-data-referencia']);
 
 			if($dados_editar->execute()) {
 				//echo "<script>alert('Registro ATUALIZADO com SUCESSO.')</script>";

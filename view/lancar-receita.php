@@ -252,7 +252,7 @@ if ($_SESSION['user'] == NULL) {
 										<div class="col-12">
 											<label class="text-danger font-weight-bold">Valor (R$)</label>
 											<br>
-											<input class="form-control" type="text" name="ipt-valor" value="<?= number_format($UltimaReceitaCadastrada['valor'], 2, ',', '.') ?>">
+											<input class="form-control" type="text" name="ipt-valor" value="<?= number_format($UltimaReceitaCadastrada['valor'], 2, ',', '') ?>">
 										</div>
 
 										<div class="col-12">
