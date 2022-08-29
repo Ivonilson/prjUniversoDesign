@@ -41,6 +41,35 @@ if ($_SESSION['user'] == NULL) {
 						</div>
 					</div>
 
+					<?php
+						if ($mensagem_erro == "Cliente atualizado com Sucesso!") {
+						?>
+
+							<div class="alert alert-success font-weight-bold alertaCadOsOk col-12 text-center" role="alert">
+								<img src="../assets/ok.png">
+								<h5><strong><?= $mensagem_erro ?></strong></h5>
+							</div>
+
+							<script>
+								setInterval(function() {
+									window.location.href = "/?pagina=<?= $_GET['form'] ?>&palavra_chave=todos"
+								}, 3000)
+							</script>
+
+						<?php
+
+						} else if ($mensagem_erro == "ERRO. Verifique se você REALMENTE alterou alguma coisa ou Contate o Suporte.") {
+						?>
+
+							<div class="alert alert-warning font-weight-bold text-danger alertaCadOsNoOk col-12 text-center" role="alert">
+								<img src="../assets/error.png">
+								<h5><strong><?= $mensagem_erro ?></strong></h5>
+							</div>
+
+						<?php
+						}
+						?>
+
 					<div class="form-row align-items-center">
 
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
