@@ -5,7 +5,8 @@ include "controller/crtValidarUsuario.php";
 require "model/CadastrarNotificacao.php";
 require "model/EditarNotificacao.php";
 
-$pagina = isset($_GET['pagina']) ? $_GET['pagina'] : "login";
+//$pagina = isset($_GET['pagina']) ? $_GET['pagina'] : "login";
+ $pagina = isset($_GET['pagina']) ? $_GET['pagina'] : $pagina = 'site';
 
 switch ($pagina) {
 
@@ -166,5 +167,9 @@ switch ($pagina) {
 	case 'logout':
 		unset($_SESSION['user']);
 		include_once "view/login.php";
+		break;
+	
+	case 'site': 
+		include "site/index.html";
 		break;
 }
