@@ -70,13 +70,21 @@ if ($_SESSION['user'] == NULL) {
 					<br>
 					<form method="post" class="background-form-cons">
 						<div id="div-ipt-data-form-cons">
-							<span>Data Inicial:&nbsp&nbsp</span><input type="date" name="data_inicial">&nbsp&nbsp&nbsp<span>Data final:&nbsp&nbsp</span><input type="date" name="data_final">
-							<br><br>
-						</div>
-						<div id="div-btn-form-cons">
-							<input type="submit" value="Buscar" id="botoesCons">
-						</div>
 
+							<div class="row">
+								<div class="col-6 mt-2 mb-2 xs-col-12">
+									<span>Data Inicial:&nbsp&nbsp</span><input type="date" name="data_inicial">
+								</div>	
+								<div class="col-6 mt-2 mb-2 xs-col-12">
+									Data final:&nbsp&nbsp</span><input type="date" name="data_final">
+								</div>	
+							</div>
+
+							<div id="div-btn-form-cons">
+								<input type="submit" value="Buscar" id="botoesCons">
+							</div>
+
+						</div>
 					</form>
 				</div>
 			</div>

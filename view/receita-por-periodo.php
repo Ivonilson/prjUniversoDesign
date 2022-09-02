@@ -39,7 +39,8 @@ if ($_SESSION['user'] == NULL) {
 				</li>
 
 				<div class="col">
-					<a href="/?pagina=lancar-receita" class="btn btn-danger text-light float-right font-weight-bold rounded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Incluir nova receita"><i class="fa fa-plus"></i>  Receita</a>
+					<a href="/?pagina=despesa-por-periodo" class="btn btn-info text-light float-right font-weight-bold rounded ml-1 mt-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Despesas por período"><i class="fa fa-search"></i>  Despesas por período</a>
+					<a href="/?pagina=lancar-receita" class="btn btn-danger text-light float-right font-weight-bold rounded mt-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Incluir nova receita"><i class="fa fa-plus"></i>  Receita</a>
 				</div>
 
 			</ol>
@@ -76,14 +77,23 @@ if ($_SESSION['user'] == NULL) {
 					<br>
 					<br>
 					<form method="post" class="background-form-cons">
-						<div id="div-ipt-data-form-cons">
-							<span>Data Inicial:&nbsp&nbsp</span><input type="date" name="data_inicial">&nbsp&nbsp&nbsp<span>Data final:&nbsp&nbsp</span><input type="date" name="data_final">
-							<br><br>
-						</div>
 
-						<div id="div-btn-form-cons">
-							<input type="submit" value="Buscar" id="botoesCons">
+						<div id="div-ipt-data-form-cons">
+							<div class="row">
+								<div class="col-6 mt-2 mb-2 xs-col-12">
+									<span>Data Inicial:&nbsp&nbsp</span><input type="date" name="data_inicial">
+								</div>
+								<div class="col-6 mt-2 mb-2 xs-col-12">
+									<span>Data final:&nbsp&nbsp</span><input type="date" name="data_final">
+								</div>
+							</div>
+
+							<div id="div-btn-form-cons">
+								<input type="submit" value="Buscar" id="botoesCons">
+							</div>
+
 						</div>
+						
 					</form>
 				</div>
 			</div>

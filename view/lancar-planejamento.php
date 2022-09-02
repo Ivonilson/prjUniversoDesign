@@ -30,8 +30,9 @@ if ($_SESSION['user'] == NULL) {
 					<mark class="p-2 font-weight-bold">Planejamento</mark>
 				</li>
 
-				<div class="col">
-					<a href="/?pagina=planejamento" class="btn btn-danger text-light float-right font-weight-bold rounded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Incluir mês/ano"><i class="fa fa-search"></i> Ver planejamento</a>
+				<div class="col mt-2">
+					<a href="/?pagina=resultados" class="btn btn-info text-light float-right font-weight-bold rounded ml-1 mt-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Resultados"><i class="fa fa-search"></i> Ver resultados</a>
+					<a href="/?pagina=planejamento" class="btn btn-danger text-light float-right font-weight-bold rounded mt-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Incluir mês/ano"><i class="fa fa-search"></i> Ver planejamento</a>
 				</div>
 
 			</ol>

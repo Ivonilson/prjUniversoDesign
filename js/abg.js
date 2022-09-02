@@ -471,7 +471,7 @@ $(document).ready(function () {
 		background_tela_cadastro.setAttribute("style", "background-color: #DCDCDC");
 		//background_tela_cadastro.setAttribute("style",  "background-image: url('../assets/logo.png');");
 
-		background_form_cad.setAttribute("style", "background-color: #F8F8FF; border-style: outset; padding-bottom: 3px");
+		background_form_cad.setAttribute("style", "background-color: #F8F8FF; padding-bottom: 3px");
 
 		botoes_gravar_cad.setAttribute("class", "btn btn-lg btn-secondary btn-block text-light font-weight-bold rounded");
 
@@ -497,7 +497,7 @@ $(document).ready(function () {
 
 		background_tela_consulta.setAttribute("style", "background-color: #DCDCDC");
 		//background_tela_cadastro.setAttribute("style",  "background-image: url('../assets/logo.png');");
-		background_form_cons.setAttribute("style", "background-color: #F5F5F5; border-style: outset; padding-bottom: 3px");
+		background_form_cons.setAttribute("style", "background-color: #F5F5F5; padding-bottom: 3px");
 
 		/*Setando as rows das tabelas propriedades das tabelas de consulta*/
 		row_tbl_consulta.setAttribute("class", "row border-light bg-light m-1");
@@ -506,7 +506,7 @@ $(document).ready(function () {
 		div_ipt_data_cons.setAttribute("class", "col-lg-5 col-md-4 col-sm-12 col-xs-12 mt-3");
 
 		/*Ajuste das divs dos botoes de busca das consultas*/
-		div_btn_form_cons.setAttribute("class", "col-lg-5 col-md-5 col-sm-12 col-xs-12 mb-3");
+		div_btn_form_cons.setAttribute("class", "col-12 mb-3");
 
 		botoes_cons.setAttribute("class", "btn btn-lg btn-secondary btn-block text-white font-weight-bold rounded");
 		//botoes_cons.setAttribute("style", "background-color: #483D8B");

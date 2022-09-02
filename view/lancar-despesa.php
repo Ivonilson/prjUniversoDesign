@@ -29,6 +29,11 @@ if ($_SESSION['user'] == NULL) {
 				<li class="breadcrumb-item">
 					<mark class="p-2 font-weight-bold">Lançar Despesa</mark>
 				</li>
+
+				<div class="col mt-2">
+					<a href="/?pagina=despesa-por-periodo" class="btn btn-info text-light float-right font-weight-bold rounded mt-2 ml-1" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Despesas por período"><i class="fa fa-search"></i> Despesas por período</a>
+					<a href="/?pagina=lancar-receita" class="btn btn-danger text-light float-right font-weight-bold rounded mt-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Lançar receita"><i class="fa fa-plus"></i> Lançar receita</a>
+				</div>
 			</ol>
 
 			<div class="row justify-content-center">

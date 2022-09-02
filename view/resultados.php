@@ -34,18 +34,18 @@ if ($_SESSION['user'] == NULL) {
 				<li class="breadcrumb-item">
 					<mark class="p-2 font-weight-bold">Resultados</mark>
 				</li>
-				<div class="col">
+				<div class="col mt-2">
 					<a href="/?pagina=lancar-planejamento" class="btn btn-danger text-light float-right font-weight-bold rounded" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Incluir mês/ano"><i class="fa fa-plus"></i> Lançar planejamento</a>
 				</div>
 			</ol>
 
-			<div class="row justify-content-md-center">
-				<div class="col-2">
+			<div class="row justify-content-center mb-3">
+				<div class="col-3">
 					<div class="input-group">
 						<div class="input-group-prepend">
 							<label class="text-dark float-right input-group-text font-weight-bold">Ano referência</label>
 						</div>
-						<select class="float-right custom-select" name="" id="">
+						<select class="float-right custom-select col-3" name="" id="" style="min-width: 100px">
 							<?php 
 								foreach($anoRetornado as $value){ 
 							?>
@@ -56,13 +56,13 @@ if ($_SESSION['user'] == NULL) {
 						</select>
 					</div>
 				</div>
-					<div class="col-1">
-						<button class="btn btn-info col form-control">Carregar</button>
+					<div class="col-3 ml-5">
+						<button class="btn btn-info btn-block">Carregar</button>
 					</div>
 			</div>
 
 			<!--
-			<div class="row mb-3">
+			<div class="row mb-4">
 
 				<div class="col mb-1">
 					<a href="?pagina=pesquisa-por-os" data-bs-toggle="tooltip" data-bs-placement="bottom" class="botoes-atalho-cons" title="Pesq. O.S. por código"><i class="fa fa-search" aria-hidden="true"></i> Pesq. O.S. por código </a>

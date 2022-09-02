@@ -809,6 +809,12 @@ section {
   background: url("../img/universo.jpg") center center no-repeat;
   background-size: contain;
   min-height: 300px;
+  max-width: 550px;
+  margin-left: 10px;
+}
+
+.imagem {
+  border-radius: 10px !important;
 }
 
 .about .play-btn {
