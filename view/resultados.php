@@ -41,24 +41,26 @@ if ($_SESSION['user'] == NULL) {
 
 			<div class="row justify-content-center mb-3">
 				<div class="col-3">
+				<form method="post">
 					<div class="input-group">
 						<div class="input-group-prepend">
 							<label class="text-dark float-right input-group-text font-weight-bold">Ano referência</label>
 						</div>
-						<select class="float-right custom-select col-3" name="" id="" style="min-width: 100px">
+						<select class="float-right custom-select col-3" name="sel-carregar-ano" id="" style="min-width: 100px">
 							<?php 
 								foreach($anoRetornado as $value){ 
 							?>
-							<option value=""><?= $value['ano'] ?></option>
+							<option value="<?= $value['ano'] ?>"><?= $value['ano'] ?></option>
 							<?php
 								}
 							?>
 						</select>
 					</div>
 				</div>
-					<div class="col-3 ml-5">
-						<button class="btn btn-info btn-block">Carregar</button>
-					</div>
+						<div class="col-3 ml-5">
+							<button class="btn btn-info btn-block">Carregar</button>
+						</div>
+				</form>
 			</div>
 
 			<!--
@@ -104,7 +106,7 @@ if ($_SESSION['user'] == NULL) {
 								<th>Meta Despesas</th>
                                 <th></th>
 								<th>Retorno (R$)</th>
-								<th>Status</th>
+								<!-- <th>Status</th> -->
 							</tr>
 						</thead>
 						<tfoot class="thead-light">
@@ -120,7 +122,7 @@ if ($_SESSION['user'] == NULL) {
 								<th>Meta Despesas</th>
                                 <th></th>
 								<th>Retorno (R$)</th>
-								<th>Status</th>
+								<!-- <th>Status</th> -->
 							</tr>
 						</tfoot>
 						<tbody>
@@ -222,7 +224,7 @@ if ($_SESSION['user'] == NULL) {
 
                                         <td></td>
 										<td><?= number_format(($valorReceita -$valorDespesa), 2, ',', '.') ?></td>
-										<td>Fazer via JS</td>
+										<!-- <td>Fazer via JS</td> -->
 									</tr>
 
 							<?php

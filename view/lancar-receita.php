@@ -196,7 +196,7 @@ if ($_SESSION['user'] == NULL) {
 										<option value="DINHEIRO">DINHEIRO</option>
 										<option value="PIX">PIX</option>
 										<option value="CARTÃO DE CRÉDITO">CARTÃO DE CRÉDITO</option>
-										<option value="BOLETO">BOLET</option>
+										<option value="BOLETO">BOLETO</option>
 										<option value="TRANSFERÊNCIA BANCÁRIA">TRANSFERÊNCIA BANCÁRIA</option>
 									</select>
 								</div>

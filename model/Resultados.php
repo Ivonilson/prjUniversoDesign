@@ -6,9 +6,14 @@ class Resultados {
 
 	function pesquisaResultados()
 	{
+		if(filter_input(INPUT_POST, 'sel-carregar-ano') != null){
+			$ano = filter_input(INPUT_POST, 'sel-carregar-ano');
+		} else {
+			$ano = date('Y');
+		}
 		
 		try {
-				$querySelect = "SELECT  id_plan_rec_desp, mes_ano_planejado, valor_receita as valor_receita_planejada, valor_despesa as valor_despesa_planejada from tbl_planejamento_anual_receita_despesa ORDER BY id_plan_rec_desp ASC";
+				$querySelect = "SELECT  id_plan_rec_desp, mes_ano_planejado, valor_receita as valor_receita_planejada, valor_despesa as valor_despesa_planejada from tbl_planejamento_anual_receita_despesa WHERE ano = $ano ORDER BY id_plan_rec_desp ASC";
 
 				/*$querySelect = "SELECT cod_os, id_orcamento, contato, endereco, cidade_uf, data_cadastro, data_agendamento, sit_pagamento, status, observacao  FROM tbl_os WHERE data_cadastro >= '$data_inicial' AND data_cadastro <= '$data_final'";*/
 
