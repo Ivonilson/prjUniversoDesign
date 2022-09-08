@@ -42,15 +42,17 @@ if ($_SESSION['user'] == NULL) {
 
 			<div class="row justify-content-center mb-3">
 				<div class="col-3">
+				<form method="post">
 					<div class="input-group">
 						<div class="input-group-prepend">
 							<label class="text-dark float-right input-group-text font-weight-bold">Ano referência</label>
 						</div>
-						<select class="float-right custom-select col-3" name="" id="" style="min-width: 100px">
+						<select class="float-right custom-select col-3" name="sel-carregar-ano-plan" id="" style="min-width: 100px">
+							<option value="<?= $retorno[0][0]['ano'] ?>"><?= $retorno[0][0]['ano'] ?></option>
 							<?php 
 								foreach($anoRetornado as $value){ 
 							?>
-							<option value=""><?= $value['ano'] ?></option>
+							<option value="<?= $value['ano'] ?>"><?= $value['ano'] ?></option>
 							<?php
 								}
 							?>
@@ -60,6 +62,7 @@ if ($_SESSION['user'] == NULL) {
 					<div class="col-3 ml-5">
 						<button class="btn btn-info btn-block">Carregar</button>
 					</div>
+				</form>
 			</div>
 
 			<!--

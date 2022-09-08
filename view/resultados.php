@@ -41,12 +41,15 @@ if ($_SESSION['user'] == NULL) {
 
 			<div class="row justify-content-center mb-3">
 				<div class="col-3">
+
 				<form method="post">
 					<div class="input-group">
 						<div class="input-group-prepend">
 							<label class="text-dark float-right input-group-text font-weight-bold">Ano referência</label>
 						</div>
 						<select class="float-right custom-select col-3" name="sel-carregar-ano" id="" style="min-width: 100px">
+							<option value="<?= $resultados[0]['ano'] ?>"><?= $resultados[0]['ano'] ?></option>
+
 							<?php 
 								foreach($anoRetornado as $value){ 
 							?>

@@ -94,9 +94,14 @@ class Planejamento {
 
 	function pesquisaPlanejamento()
 	{
+		if(filter_input(INPUT_POST, 'sel-carregar-ano-plan') != null){
+			$ano = filter_input(INPUT_POST, 'sel-carregar-ano-plan');
+		} else {
+			$ano = date('Y');
+		}
 		
 		try {
-				$querySelect = "SELECT id_plan_rec_desp, ano, mes, mes_ano_planejado, valor_receita, valor_despesa, data_processamento, usuario from tbl_planejamento_anual_receita_despesa";
+				$querySelect = "SELECT id_plan_rec_desp, ano, mes, mes_ano_planejado, valor_receita, valor_despesa, data_processamento, usuario from tbl_planejamento_anual_receita_despesa WHERE ano = '$ano' ORDER BY id_plan_rec_desp ASC";
 
 				/*$querySelect = "SELECT cod_os, id_orcamento, contato, endereco, cidade_uf, data_cadastro, data_agendamento, sit_pagamento, status, observacao  FROM tbl_os WHERE data_cadastro >= '$data_inicial' AND data_cadastro <= '$data_final'";*/
 
