@@ -495,7 +495,7 @@ $(document).ready(function () {
 			item.setAttribute("class", "btn btn-secondary btn-block font-weight-bold rounded mb-1");
 		});
 
-		background_tela_consulta.setAttribute("style", "background-color: #DCDCDC");
+		background_tela_consulta.setAttribute("style", "background-color: #F8F8FF");
 		//background_tela_cadastro.setAttribute("style",  "background-image: url('../assets/logo.png');");
 		background_form_cons.setAttribute("style", "background-color: #F5F5F5; padding-bottom: 3px");
 
