@@ -145,6 +145,10 @@
 										<a href="/?pagina=receita-por-periodo">Receitas por período</a>
 									</li>
 
+									<li>
+										<a href="/?pagina=resultados-controle">Resultados</a>
+									</li>
+
 								</ul>
 
 							</li>
@@ -153,8 +157,8 @@
 
 					</li>
 
-					<li>
-						<a href="/?pagina=fluxo-de-caixa" href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseResultados">Fluxo de Caixa</a>
+					<!-- <li>
+						<a href="/?pagina=fluxo-de-caixa" href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseResultados" >Fluxo de Caixa</a>
 
 						<ul class="sidenav-second-level collapse" id="collapseResultados" data-parent="#linksaccordion" style="background-color: #F5FFFA">
 
@@ -168,7 +172,7 @@
 
 						</ul>
 
-					</li>
+					</li>-->
 
 				</ul>
 			</li>

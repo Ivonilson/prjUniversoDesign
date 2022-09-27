@@ -59,6 +59,11 @@ switch ($pagina) {
 		include_once "view/resultados.php";
 		break;
 
+	case 'resultados-controle':
+		require_once "controller/crtResultados.php";
+		include_once "view/resultados-controle.php";
+		break;
+
 	case 'cadastrar-cidade':
 		require "controller/crtCadastrarCidade.php";
 		include_once "view/cadastrar-cidade.php";

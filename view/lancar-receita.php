@@ -31,6 +31,7 @@ if ($_SESSION['user'] == NULL) {
 				</li>
 
 				<div class="col mt-2">
+					<a href="/?pagina=resultados-controle" class="btn btn-info text-light float-right font-weight-bold rounded mt-2 ml-1" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Resultados Controle de Caixa"><i class="fa fa-search"></i> Ver resultados</a>
 					<a href="/?pagina=receita-por-periodo" class="btn btn-info text-light float-right font-weight-bold rounded mt-2 ml-1" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Receitas por período"><i class="fa fa-search"></i> Receitas por período</a>
 					<a href="/?pagina=lancar-despesa" class="btn btn-danger text-light float-right font-weight-bold rounded mt-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Lançar despesa"><i class="fa fa-plus"></i> Lançar despesa</a>
 				</div>
