@@ -49,7 +49,6 @@ if ($_SESSION['user'] == NULL) {
 				<table class="table table-bordered table-hover display nowrap" id="dataTable" width="100%" cellspacing="0">
 					<thead class="thead-dark">
 						<tr>
-							<th></th>
 							<th>Descrição</th>
 							<th>Valor unit.(R$)</th>
 							<th>Quant.</th>
@@ -62,7 +61,6 @@ if ($_SESSION['user'] == NULL) {
 					</thead>
 					<tfoot class="thead-dark">
 						<tr>
-							<th></th>
 							<th>Descrição</th>
 							<th>Valor unit.(R$)</th>
 							<th>Quant.</th>
