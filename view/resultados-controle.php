@@ -51,7 +51,7 @@ if ($_SESSION['user'] == NULL) {
 							<label class="text-dark float-right input-group-text font-weight-bold">Ano referência</label>
 						</div>
 						<select class="float-right custom-select col-3" name="sel-carregar-ano" id="" style="min-width: 100px">
-							<option value="<?= $resultados[0]['ano'] ?>"><?= $resultados[0]['ano'] ?></option>
+							<option value="<?= $anoRetornado[0]['ano'] ?>"><?= $anoRetornado[0]['ano'] ?></option>
 
 							<?php 
 								foreach($anoRetornado as $value){ 
@@ -101,8 +101,7 @@ if ($_SESSION['user'] == NULL) {
 					<table class="table table-bordered table-hover display" id="dataTable" width="100%" cellspacing="0">
 						<thead class="thead-light">
 							<tr>
-                                <th>ID</th>
-								<th>Mês/Ano</th>
+								<th>Mês</th>
                                 <th>Receitas Executadas (R$)</th>
                                 <th>Despesas Executadas (R$)</th>
 								<th>Retorno (R$)</th>
@@ -111,8 +110,7 @@ if ($_SESSION['user'] == NULL) {
 						</thead>
 						<tfoot class="thead-light">
                             <tr>
-                                <th>ID</th>
-                                <th>Mês/Ano</th>
+                                <th>Mês</th>
                                 <th>Receitas Executadas (R$)</th>
                                 <th>Despesas Executadas (R$)</th>
 								<th>Retorno (R$)</th>
@@ -136,9 +134,9 @@ if ($_SESSION['user'] == NULL) {
 
 							$meta_card_lucro_mensal = 0;
 
-							if ($resultados != NULL) {
+							if ($receitasExecutadas != NULL) {
 
-								foreach ($resultados as $value) {
+								foreach ($receitasExecutadas as $value) {
 									//$numero_mes = substr($receitasExecutadas[$controle]['data_referencia'], 5, 2);
 
 									$controleReceita = 0;
@@ -146,32 +144,31 @@ if ($_SESSION['user'] == NULL) {
 
 									$controleDespesa = 0;
 									$valorDespesa = 0;	
-							
 
 									while($controleReceita < $contadorReceitas) {
 
-										if($mes[substr($receitasExecutadas[$controleReceita]['data_referencia'], 5, 2)].'/'.
-										substr($receitasExecutadas[$controleReceita]['data_referencia'], 0, 4) == $value['mes_ano_planejado']){
+										if($mes[substr($receitasExecutadas[$controleReceita]['data_referencia'], 5, 2)] == 'JANEIRO'){
 											$valorReceita += $receitasExecutadas[$controleReceita]['valor'];
+											$controleReceita++;
 										}
 
 										$controleReceita++;
+									
 									}
 
 									while($controleDespesa < $contadorDespesas) {
 
-										if($mes[substr($despesasExecutadas[$controleDespesa]['data_referencia'], 5, 2)].'/'.
+										/*if($mes[substr($despesasExecutadas[$controleDespesa]['data_referencia'], 5, 2)].'/'.
 										substr($despesasExecutadas[$controleDespesa]['data_referencia'], 0, 4) == $value['mes_ano_planejado']){
 											$valorDespesa += $despesasExecutadas[$controleDespesa]['valor'];
-										}
+										}*/
 										
 										$controleDespesa++;
 									}
 
 								?>
 									<tr>
-                                        <td class="sr-only"><?= $value['id_plan_rec_desp'] ?></td>
-										<td><?= $value['mes_ano_planejado'] ?></td>
+										<td><? echo $mes[substr($receitasExecutadas[$controleReceita]['data_referencia'], 5, 2)]; ?></td>
 
 										<td><?=number_format($valorReceita, 2, ',', '.');?></td>
 
