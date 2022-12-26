@@ -4,60 +4,30 @@ require_once "Conn.php";
 
 class Resultados {
 
-	function pesquisaResultados()
-	{
+	function anosDisponiveis(){
+		try  {
+
+			$querySelect = "SELECT DISTINCT ano from tbl_receita ORDER BY ano";
+			$conn = new Conn();
+			$execucao = $conn->getConn()->query($querySelect);
+			$resultados =$execucao->fetchAll(PDO::FETCH_ASSOC);
+			return $resultados;
+		} catch(PDOException $e) {
+			echo "Erro: ".$e->getMessage();
+		}
+	}
+
+    function pesquisaReceitasExecutadas()
+    {
 		if(filter_input(INPUT_POST, 'sel-carregar-ano') != null){
 			$ano = filter_input(INPUT_POST, 'sel-carregar-ano');
 		} else {
 			$ano = date('Y');
 		}
 		
-		try {
-				$querySelect = "SELECT  id_plan_rec_desp, mes_ano_planejado, valor_receita as valor_receita_planejada, valor_despesa as valor_despesa_planejada, ano from tbl_planejamento_anual_receita_despesa WHERE ano = $ano ORDER BY id_plan_rec_desp ASC";
-
-				$conn = new Conn();
-				$dadosResultados = $conn->getConn()->query($querySelect);
-
-				/* bindParam não está funcionando, verificar o por que.
-				$dadosPorDataRecb->bindParam(':dataInicial', $data_inicial);
-				$dadosPorDataReceb->bindParam(':dataFinal', $data_final);
-				*/
-
-				$resultados = $dadosResultados->fetchAll(PDO::FETCH_ASSOC);
-				
-				return $resultados;
-
-		} catch(PDOException $e) {
-			echo "ERRO: ".$e->getMessage();
-		}
-		
-
-	}
-
-	function pesquisaAnoResultados()
-	{
-		
-		try {
-				$querySelect = "SELECT DISTINCT ano from tbl_receita";
-
-				$conn = new Conn();
-				$buscaAno = $conn->getConn()->query($querySelect);
-
-				$resultado = $buscaAno->fetchAll(PDO::FETCH_ASSOC);
-				
-				return $resultado;
-
-		} catch(PDOException $e) {
-			echo "ERRO: ".$e->getMessage();
-		}
-
-	}
-
-    function pesquisaReceitasExecutadas()
-    {
         try {
 
-            $querySelect = "SELECT  valor, data_referencia, ano from tbl_receita";
+            $querySelect = "SELECT  valor, data_referencia, ano from tbl_receita WHERE ano = $ano";
 
             $conn = new Conn();
             $dadosResultados = $conn->getConn()->query($querySelect);
@@ -78,11 +48,15 @@ class Resultados {
 
 	function pesquisaDespesasExecutadas()
     {
+		if(filter_input(INPUT_POST, 'sel-carregar-ano') != null){
+			$ano = filter_input(INPUT_POST, 'sel-carregar-ano');
+		} else {
+			$ano = date('Y');
+		}
+
         try {
 
-            $querySelect = "SELECT  valor, data_referencia from tbl_despesa";
-
-            /*$querySelect = "SELECT cod_os, id_orcamento, contato, endereco, cidade_uf, data_cadastro, data_agendamento, sit_pagamento, status, observacao  FROM tbl_os WHERE data_cadastro >= '$data_inicial' AND data_cadastro <= '$data_final'";*/
+            $querySelect = "SELECT  valor, data_referencia, ano from tbl_despesa WHERE ano = $ano";
 
             $conn = new Conn();
             $dadosResultados = $conn->getConn()->query($querySelect);

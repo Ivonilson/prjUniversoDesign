@@ -51,10 +51,10 @@ if ($_SESSION['user'] == NULL) {
 							<label class="text-dark float-right input-group-text font-weight-bold">Ano referência</label>
 						</div>
 						<select class="float-right custom-select col-3" name="sel-carregar-ano" id="" style="min-width: 100px">
-							<option value="<?= $anoRetornado[0]['ano'] ?>"><?= $anoRetornado[0]['ano'] ?></option>
+							<option value="<?= $receitasExecutadas[0]['ano'] ?>"><?= $receitasExecutadas[0]['ano'] ?></option>
 
 							<?php 
-								foreach($anoRetornado as $value){ 
+								foreach($anos as $value){ 
 							?>
 							<option value="<?= $value['ano'] ?>"><?= $value['ano'] ?></option>
 							<?php
@@ -122,17 +122,18 @@ if ($_SESSION['user'] == NULL) {
 						<tbody>
 							<?php
 
-							 $mes = ["01" => "JANEIRO", "02" => "FEVEREIRO", "03" => "MARÇO", "04" => "ABRIL",
+							 $mes = ["01" => "JANEIRO", "02" => "FEVEREIRO", "03" => "MARCO", "04" => "ABRIL",
 									   "05" => "MAIO", "06" => "JUNHO", "07" => "JULHO", "08" => "AGOSTO", "09" => "SETEMBRO",
 									   "10" => "OUTUBRO", "11" => "NOVEMBRO", "12" => "DEZEMBRO"
 									  ];
 
 							$contadorReceitas = count($receitasExecutadas);
 							$contadorDespesas = count($despesasExecutadas);
-							$controleReceita = 0;
-							$controleDespesa = 0;
 							$valorReceita = 0;
 							$valorDespesa = 0;	
+							$controleReceita = 0;
+							$controleDespesa = 0;
+
 							$receitaJaneiro = 0;
 							$receitaFevereiro = 0;
 							$receitaMarco = 0;
@@ -145,6 +146,19 @@ if ($_SESSION['user'] == NULL) {
 							$receitaOutubro = 0;
 							$receitaNovembro = 0;
 							$receitaDezembro = 0;
+	
+							$despesaJaneiro = 0;
+							$despesaFevereiro = 0;
+							$despesaMarco = 0;
+							$despesaAbril = 0;
+							$despesaMaio = 0;
+							$despesaJunho = 0;
+							$despesaJulho = 0;
+							$despesaAgosto = 0;
+							$despesaSetembro = 0;
+							$despesaOutubro = 0;
+							$despesaNovembro = 0;
+							$despesaDezembro = 0;
 
 							$total_rec_executadas = 0;
 
@@ -155,12 +169,6 @@ if ($_SESSION['user'] == NULL) {
 							if ($receitasExecutadas != NULL) {
 
 								foreach ($receitasExecutadas as $value) {
-
-									//var_dump($receitasExecutadas);
-									//echo ($value['valor']);
-
-									//echo "mes:" . $mes[substr($receitasExecutadas[$controleReceita]['data_referencia'], 5, 2)];
-									//echo "mes:" . substr($receitasExecutadas[$controleReceita]['data_referencia'], 5, 2);
 
 									switch($mes[substr($receitasExecutadas[$controleReceita]['data_referencia'], 5, 2)]) {
 										case 'JANEIRO':
@@ -212,39 +220,73 @@ if ($_SESSION['user'] == NULL) {
 												break;
 
 									}
-
-									/*while($controleReceita <= $contadorReceitas) {
-										if($mes[substr($receitasExecutadas[$controleReceita]['data_referencia'], 5, 2)] == 'DEZEMBRO'){
-										   $valorReceita += $receitasExecutadas[$controleReceita]['valor'];
-										}
-										
-									}*/
-
-									/*while($controleDespesa < $contadorDespesas) {
-
-										if($mes[substr($despesasExecutadas[$controleDespesa]['data_referencia'], 5, 2)].'/'.
-										substr($despesasExecutadas[$controleDespesa]['data_referencia'], 0, 4) == $value['mes_ano_planejado']){
-											$valorDespesa += $despesasExecutadas[$controleDespesa]['valor'];
-										}
-										
-										$controleDespesa++;
-									}*/
-
-								?>
-
-							<?php	
 									$valorReceita += $value['valor'];
 									$controleReceita++;
-									$conexao = null;
 
 								}
+									$total_rec_executadas += $valorReceita;
 
-								$total_rec_executadas += $valorReceita;
-								$total_desp_executadas += $valorDespesa;
+								foreach($despesasExecutadas as $value){
 
-							} else {
-								echo "<span class='text-danger'></span><br><br>";
-							}
+									switch($mes[substr($despesasExecutadas[$controleDespesa]['data_referencia'], 5, 2)]) {
+										case 'JANEIRO':
+											$despesaJaneiro += $value['valor'];
+											break;
+
+										case 'FEVEREIRO':
+											$despesaFevereiro += $value['valor'];
+											break;
+
+										case 'MARCO':
+												$despesaMarco += $value['valor'];
+												break;
+
+										case 'ABRIL':
+											$despesaAbril += $value['valor'];
+											break;
+
+										case 'MAIO':
+											$despesaMaio += $value['valor'];
+											break;
+
+										case 'JUNHO':
+											$despesaJunho += $value['valor'];
+											break;
+
+										case 'JULHO':
+											$despesaJulho += $value['valor'];
+											break;
+
+										case 'AGOSTO':
+											$despesaAgosto += $value['valor'];
+											break;
+
+										case 'SETEMBRO':
+											$despesaFevereiro += $value['valor'];
+											break;
+
+										case 'OUTUBRO':
+											$despesaOutubro += $value['valor'];
+											break;
+
+										case 'NOVEMBRO':
+											$despesaNovembro += $value['valor'];
+											break;
+
+										case 'DEZEMBRO':
+												$despesaDezembro += $value['valor'];
+												break;
+									}
+
+									$valorDespesa += $value['valor'];
+									$controleDespesa++;
+								}
+								
+									$total_desp_executadas += $valorDespesa;
+
+								} else {
+									echo "<span class='text-danger'></span><br><br>";
+								}
 							?>
 
 							<tr>
@@ -253,9 +295,9 @@ if ($_SESSION['user'] == NULL) {
 
 								<td><?=number_format($receitaJaneiro, 2, ',', '.');?></td>
 
-								<td><?=number_format($valorDespesa, 2, ',', '.');?></td>
+								<td><?=number_format($despesaJaneiro, 2, ',', '.');?></td>
 
-								<td><?= number_format(($valorReceita - $valorDespesa), 2, ',', '.') ?></td>
+								<td><?= number_format(($receitaJaneiro - $despesaJaneiro), 2, ',', '.') ?></td>
 								<!-- <td>Fazer via JS</td> -->
 							</tr>
 
@@ -265,9 +307,9 @@ if ($_SESSION['user'] == NULL) {
 
 								<td><?=number_format($receitaFevereiro, 2, ',', '.');?></td>
 
-								<td><?=number_format($valorDespesa, 2, ',', '.');?></td>
+								<td><?=number_format($despesaFevereiro, 2, ',', '.');?></td>
 
-								<td><?= number_format(($valorReceita - $valorDespesa), 2, ',', '.') ?></td>
+								<td><?= number_format(($receitaFevereiro - $despesaFevereiro), 2, ',', '.') ?></td>
 								<!-- <td>Fazer via JS</td> -->
 							</tr>
 
@@ -277,9 +319,9 @@ if ($_SESSION['user'] == NULL) {
 
 								<td><?=number_format($receitaMarco, 2, ',', '.');?></td>
 
-								<td><?=number_format($valorDespesa, 2, ',', '.');?></td>
+								<td><?=number_format($despesaMarco, 2, ',', '.');?></td>
 
-								<td><?= number_format(($valorReceita - $valorDespesa), 2, ',', '.') ?></td>
+								<td><?= number_format(($receitaMarco - $despesaMarco), 2, ',', '.') ?></td>
 								<!-- <td>Fazer via JS</td> -->
 							</tr>
 
@@ -289,9 +331,9 @@ if ($_SESSION['user'] == NULL) {
 
 								<td><?=number_format($receitaAbril, 2, ',', '.');?></td>
 
-								<td><?=number_format($valorDespesa, 2, ',', '.');?></td>
+								<td><?=number_format($despesaAbril, 2, ',', '.');?></td>
 
-								<td><?= number_format(($valorReceita - $valorDespesa), 2, ',', '.') ?></td>
+								<td><?= number_format(($receitaAbril - $despesaAbril), 2, ',', '.') ?></td>
 								<!-- <td>Fazer via JS</td> -->
 							</tr>
 
@@ -301,9 +343,9 @@ if ($_SESSION['user'] == NULL) {
 
 								<td><?=number_format($receitaMaio, 2, ',', '.');?></td>
 
-								<td><?=number_format($valorDespesa, 2, ',', '.');?></td>
+								<td><?=number_format($despesaMaio, 2, ',', '.');?></td>
 
-								<td><?= number_format(($valorReceita - $valorDespesa), 2, ',', '.') ?></td>
+								<td><?= number_format(($receitaMaio - $despesaMaio), 2, ',', '.') ?></td>
 								<!-- <td>Fazer via JS</td> -->
 							</tr>
 
@@ -313,9 +355,9 @@ if ($_SESSION['user'] == NULL) {
 
 								<td><?=number_format($receitaJunho, 2, ',', '.');?></td>
 
-								<td><?=number_format($valorDespesa, 2, ',', '.');?></td>
+								<td><?=number_format($despesaJunho, 2, ',', '.');?></td>
 
-								<td><?= number_format(($valorReceita - $valorDespesa), 2, ',', '.') ?></td>
+								<td><?= number_format(($receitaJunho - $despesaJunho), 2, ',', '.') ?></td>
 								<!-- <td>Fazer via JS</td> -->
 							</tr>
 
@@ -325,9 +367,9 @@ if ($_SESSION['user'] == NULL) {
 
 								<td><?=number_format($receitaJulho, 2, ',', '.');?></td>
 
-								<td><?=number_format($valorDespesa, 2, ',', '.');?></td>
+								<td><?=number_format($despesaJulho, 2, ',', '.');?></td>
 
-								<td><?= number_format(($receitaJulho - $valorDespesa), 2, ',', '.') ?></td>
+								<td><?= number_format(($receitaJulho - $despesaJulho), 2, ',', '.') ?></td>
 								<!-- <td>Fazer via JS</td> -->
 							</tr>
 
@@ -337,9 +379,9 @@ if ($_SESSION['user'] == NULL) {
 
 								<td><?=number_format($receitaAgosto, 2, ',', '.');?></td>
 
-								<td><?=number_format($valorDespesa, 2, ',', '.');?></td>
+								<td><?=number_format($despesaAgosto, 2, ',', '.');?></td>
 
-								<td><?= number_format(($valorReceita - $valorDespesa), 2, ',', '.') ?></td>
+								<td><?= number_format(($receitaAgosto - $despesaAgosto), 2, ',', '.') ?></td>
 								<!-- <td>Fazer via JS</td> -->
 							</tr>
 
@@ -349,9 +391,9 @@ if ($_SESSION['user'] == NULL) {
 
 								<td><?=number_format($receitaSetembro, 2, ',', '.');?></td>
 
-								<td><?=number_format($valorDespesa, 2, ',', '.');?></td>
+								<td><?=number_format($despesaSetembro, 2, ',', '.');?></td>
 
-								<td><?= number_format(($valorReceita - $valorDespesa), 2, ',', '.') ?></td>
+								<td><?= number_format(($receitaSetembro - $despesaSetembro), 2, ',', '.') ?></td>
 								<!-- <td>Fazer via JS</td> -->
 							</tr>
 
@@ -361,9 +403,9 @@ if ($_SESSION['user'] == NULL) {
 
 								<td><?=number_format($receitaOutubro, 2, ',', '.');?></td>
 
-								<td><?=number_format($valorDespesa, 2, ',', '.');?></td>
+								<td><?=number_format($despesaOutubro, 2, ',', '.');?></td>
 
-								<td><?= number_format(($valorReceita - $valorDespesa), 2, ',', '.') ?></td>
+								<td><?= number_format(($receitaOutubro - $despesaOutubro), 2, ',', '.') ?></td>
 								<!-- <td>Fazer via JS</td> -->
 							</tr>
 
@@ -373,9 +415,9 @@ if ($_SESSION['user'] == NULL) {
 
 								<td><?=number_format($receitaNovembro, 2, ',', '.');?></td>
 
-								<td><?=number_format($valorDespesa, 2, ',', '.');?></td>
+								<td><?=number_format($despesaNovembro, 2, ',', '.');?></td>
 
-								<td><?= number_format(($valorReceita - $valorDespesa), 2, ',', '.') ?></td>
+								<td><?= number_format(($receitaNovembro - $despesaNovembro), 2, ',', '.') ?></td>
 								<!-- <td>Fazer via JS</td> -->
 							</tr>
 
@@ -385,9 +427,9 @@ if ($_SESSION['user'] == NULL) {
 
 								<td><?=number_format($receitaDezembro, 2, ',', '.');?></td>
 
-								<td><?=number_format($valorDespesa, 2, ',', '.');?></td>
+								<td><?=number_format($despesaDezembro, 2, ',', '.');?></td>
 
-								<td><?= number_format(($valorReceita - $valorDespesa), 2, ',', '.') ?></td>
+								<td><?= number_format(($receitaDezembro - $despesaDezembro), 2, ',', '.') ?></td>
 								<!-- <td>Fazer via JS</td> -->
 							</tr>
 

@@ -28,6 +28,7 @@ class Despesa {
 
 			$valor = str_replace(',' , '.', $dados['ipt-valor']);
 			$detalhamento = strtoupper($dados['ta-detalhamento']);
+			$ano = substr($dados['ipt-data-referencia'], 0, 4);
 
 			if (!empty($dados['btnCadastrar'])) {
 				unset($dados['btnCadastrar']);
@@ -37,7 +38,7 @@ class Despesa {
 
 			$conn = new Conn();
 
-			$statement = "INSERT INTO tbl_despesa (id_despesa, tipo, grupo, detalhamento, valor, forma_pagamento, data_referencia, data_processamento, usuario) VALUES (:id_despesa, :tipo, :grupo, :detalhamento, :valor, :forma_pagamento, :data_referencia, CURRENT_TIMESTAMP, :usuario)";
+			$statement = "INSERT INTO tbl_despesa (id_despesa, tipo, grupo, detalhamento, valor, forma_pagamento, data_referencia, data_processamento, ano, usuario) VALUES (:id_despesa, :tipo, :grupo, :detalhamento, :valor, :forma_pagamento, :data_referencia, CURRENT_TIMESTAMP, :ano, :usuario)";
 
 			$dados_cadastrar = $conn->getConn()->prepare($statement);
 
@@ -67,6 +68,7 @@ class Despesa {
 			$dados_cadastrar->bindParam(':valor', $valor);
 			$dados_cadastrar->bindParam(':forma_pagamento', $dados['sel-forma-pagamento']);
 			$dados_cadastrar->bindParam(':data_referencia', $dados['ipt-data-referencia']);
+			$dados_cadastrar->bindParam(':ano', $ano);
 			$dados_cadastrar->bindParam(':usuario', $_SESSION['user']);
 			
 			$dados_cadastrar->execute();

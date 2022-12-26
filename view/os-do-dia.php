@@ -80,7 +80,7 @@ if ($_SESSION['user'] == null) {
 								<th>Observações</th>
 								<th>Visualizar Itens Orc.</th>
 								<th>Atualizar</th>
-								<th class="d-xs-none">Deletar</th>
+							    <!-- <th class="d-xs-none">Deletar</th> -->
 							</tr>
 						</thead>
 						<tfoot class="thead-light">
@@ -95,7 +95,7 @@ if ($_SESSION['user'] == null) {
 								<th>Observações</th>
 								<th>Visualizar Itens Orc.</th>
 								<th>Atualizar</th>
-								<th class="d-xs-none">Deletar</th>
+								<!-- <th class="d-xs-none">Deletar</th> -->
 							</tr>
 						</tfoot>
 						<tbody>
@@ -142,7 +142,7 @@ if ($_SESSION['user'] == null) {
 
 													<input type="hidden" name="ipt-confirmacao" id="ipt-confirma">
 
-													<button class="btn btn-light d-xs-none"  value='Excluir' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir" title="Excluir" name="btnDeletarOs" id="btnDeletarItem"><i class="fa fa-trash" aria-hidden="true"></i></button>
+													<!-- <button class="btn btn-light d-xs-none"  value='Excluir' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir" title="Excluir" name="btnDeletarOs" id="btnDeletarItem"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
 											</td>
 										</form>
 
