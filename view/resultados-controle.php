@@ -101,6 +101,7 @@ if ($_SESSION['user'] == NULL) {
 					<table class="table table-bordered table-hover display" id="dataTable" width="100%" cellspacing="0">
 						<thead class="thead-light">
 							<tr>
+								<th class="sr-only"></th>
 								<th>Mês</th>
                                 <th>Receitas Executadas (R$)</th>
                                 <th>Despesas Executadas (R$)</th>
@@ -110,6 +111,7 @@ if ($_SESSION['user'] == NULL) {
 						</thead>
 						<tfoot class="thead-light">
                             <tr>
+								<th class="sr-only"></th>
                                 <th>Mês</th>
                                 <th>Receitas Executadas (R$)</th>
                                 <th>Despesas Executadas (R$)</th>
@@ -127,6 +129,22 @@ if ($_SESSION['user'] == NULL) {
 
 							$contadorReceitas = count($receitasExecutadas);
 							$contadorDespesas = count($despesasExecutadas);
+							$controleReceita = 0;
+							$controleDespesa = 0;
+							$valorReceita = 0;
+							$valorDespesa = 0;	
+							$receitaJaneiro = 0;
+							$receitaFevereiro = 0;
+							$receitaMarco = 0;
+							$receitaAbril = 0;
+							$receitaMaio = 0;
+							$receitaJunho = 0;
+							$receitaJulho = 0;
+							$receitaAgosto = 0;
+							$receitaSetembro = 0;
+							$receitaOutubro = 0;
+							$receitaNovembro = 0;
+							$receitaDezembro = 0;
 
 							$total_rec_executadas = 0;
 
@@ -137,59 +155,242 @@ if ($_SESSION['user'] == NULL) {
 							if ($receitasExecutadas != NULL) {
 
 								foreach ($receitasExecutadas as $value) {
-									//$numero_mes = substr($receitasExecutadas[$controle]['data_referencia'], 5, 2);
 
-									$controleReceita = 0;
-									$valorReceita = 0;
+									//var_dump($receitasExecutadas);
+									//echo ($value['valor']);
 
-									$controleDespesa = 0;
-									$valorDespesa = 0;	
+									//echo "mes:" . $mes[substr($receitasExecutadas[$controleReceita]['data_referencia'], 5, 2)];
+									//echo "mes:" . substr($receitasExecutadas[$controleReceita]['data_referencia'], 5, 2);
 
-									while($controleReceita < $contadorReceitas) {
+									switch($mes[substr($receitasExecutadas[$controleReceita]['data_referencia'], 5, 2)]) {
+										case 'JANEIRO':
+											$receitaJaneiro += $value['valor'];
+											break;
 
-										if($mes[substr($receitasExecutadas[$controleReceita]['data_referencia'], 5, 2)] == 'JANEIRO'){
-											$valorReceita += $receitasExecutadas[$controleReceita]['valor'];
-											$controleReceita++;
-										}
+										case 'FEVEREIRO':
+											$receitaFevereiro += $value['valor'];
+											break;
 
-										$controleReceita++;
-									
+										case 'MARCO':
+												$receitaMarco += $value['valor'];
+												break;
+
+										case 'ABRIL':
+											$receitaAbril += $value['valor'];
+											break;
+
+										case 'MAIO':
+											$receitaMaio += $value['valor'];
+											break;
+
+										case 'JUNHO':
+											$receitaJunho += $value['valor'];
+											break;
+
+										case 'JULHO':
+											$receitaJulho += $value['valor'];
+											break;
+
+										case 'AGOSTO':
+											$receitaAgosto += $value['valor'];
+											break;
+
+										case 'SETEMBRO':
+											$receitaFevereiro += $value['valor'];
+											break;
+
+										case 'OUTUBRO':
+											$receitaOutubro += $value['valor'];
+											break;
+
+										case 'NOVEMBRO':
+											$receitaNovembro += $value['valor'];
+											break;
+
+										case 'DEZEMBRO':
+												$receitaDezembro += $value['valor'];
+												break;
+
 									}
 
-									while($controleDespesa < $contadorDespesas) {
+									/*while($controleReceita <= $contadorReceitas) {
+										if($mes[substr($receitasExecutadas[$controleReceita]['data_referencia'], 5, 2)] == 'DEZEMBRO'){
+										   $valorReceita += $receitasExecutadas[$controleReceita]['valor'];
+										}
+										
+									}*/
 
-										/*if($mes[substr($despesasExecutadas[$controleDespesa]['data_referencia'], 5, 2)].'/'.
+									/*while($controleDespesa < $contadorDespesas) {
+
+										if($mes[substr($despesasExecutadas[$controleDespesa]['data_referencia'], 5, 2)].'/'.
 										substr($despesasExecutadas[$controleDespesa]['data_referencia'], 0, 4) == $value['mes_ano_planejado']){
 											$valorDespesa += $despesasExecutadas[$controleDespesa]['valor'];
-										}*/
+										}
 										
 										$controleDespesa++;
-									}
+									}*/
 
 								?>
-									<tr>
-										<td><? echo $mes[substr($receitasExecutadas[$controleReceita]['data_referencia'], 5, 2)]; ?></td>
 
-										<td><?=number_format($valorReceita, 2, ',', '.');?></td>
-
-										<td><?=number_format($valorDespesa, 2, ',', '.');?></td>
-
-										<td><?= number_format(($valorReceita -$valorDespesa), 2, ',', '.') ?></td>
-										<!-- <td>Fazer via JS</td> -->
-									</tr>
-
-							<?php
+							<?php	
+									$valorReceita += $value['valor'];
+									$controleReceita++;
 									$conexao = null;
-								
-									$total_rec_executadas += $valorReceita;
-									$total_desp_executadas += $valorDespesa;
 
 								}
+
+								$total_rec_executadas += $valorReceita;
+								$total_desp_executadas += $valorDespesa;
 
 							} else {
 								echo "<span class='text-danger'></span><br><br>";
 							}
 							?>
+
+							<tr>
+								<td class="sr-only">01</td>
+								<td>JANEIRO</td>
+
+								<td><?=number_format($receitaJaneiro, 2, ',', '.');?></td>
+
+								<td><?=number_format($valorDespesa, 2, ',', '.');?></td>
+
+								<td><?= number_format(($valorReceita - $valorDespesa), 2, ',', '.') ?></td>
+								<!-- <td>Fazer via JS</td> -->
+							</tr>
+
+							<tr>
+								<td class="sr-only">02</td>
+								<td>FEVEREIRO</td>
+
+								<td><?=number_format($receitaFevereiro, 2, ',', '.');?></td>
+
+								<td><?=number_format($valorDespesa, 2, ',', '.');?></td>
+
+								<td><?= number_format(($valorReceita - $valorDespesa), 2, ',', '.') ?></td>
+								<!-- <td>Fazer via JS</td> -->
+							</tr>
+
+							<tr>
+								<td class="sr-only">03</td>
+								<td>MARÇO</td>
+
+								<td><?=number_format($receitaMarco, 2, ',', '.');?></td>
+
+								<td><?=number_format($valorDespesa, 2, ',', '.');?></td>
+
+								<td><?= number_format(($valorReceita - $valorDespesa), 2, ',', '.') ?></td>
+								<!-- <td>Fazer via JS</td> -->
+							</tr>
+
+							<tr>
+								<td class="sr-only">04</td>
+								<td>ABRIL</td>
+
+								<td><?=number_format($receitaAbril, 2, ',', '.');?></td>
+
+								<td><?=number_format($valorDespesa, 2, ',', '.');?></td>
+
+								<td><?= number_format(($valorReceita - $valorDespesa), 2, ',', '.') ?></td>
+								<!-- <td>Fazer via JS</td> -->
+							</tr>
+
+							<tr>
+								<td class="sr-only">05</td>
+								<td>MAIO</td>
+
+								<td><?=number_format($receitaMaio, 2, ',', '.');?></td>
+
+								<td><?=number_format($valorDespesa, 2, ',', '.');?></td>
+
+								<td><?= number_format(($valorReceita - $valorDespesa), 2, ',', '.') ?></td>
+								<!-- <td>Fazer via JS</td> -->
+							</tr>
+
+							<tr>
+								<td class="sr-only">06</td>
+								<td>JUNHO</td>
+
+								<td><?=number_format($receitaJunho, 2, ',', '.');?></td>
+
+								<td><?=number_format($valorDespesa, 2, ',', '.');?></td>
+
+								<td><?= number_format(($valorReceita - $valorDespesa), 2, ',', '.') ?></td>
+								<!-- <td>Fazer via JS</td> -->
+							</tr>
+
+							<tr>
+								<td class="sr-only">07</td>
+								<td>JULHO</td>
+
+								<td><?=number_format($receitaJulho, 2, ',', '.');?></td>
+
+								<td><?=number_format($valorDespesa, 2, ',', '.');?></td>
+
+								<td><?= number_format(($receitaJulho - $valorDespesa), 2, ',', '.') ?></td>
+								<!-- <td>Fazer via JS</td> -->
+							</tr>
+
+							<tr>
+								<td class="sr-only">08</td>
+								<td>AGOSTO</td>
+
+								<td><?=number_format($receitaAgosto, 2, ',', '.');?></td>
+
+								<td><?=number_format($valorDespesa, 2, ',', '.');?></td>
+
+								<td><?= number_format(($valorReceita - $valorDespesa), 2, ',', '.') ?></td>
+								<!-- <td>Fazer via JS</td> -->
+							</tr>
+
+							<tr>
+								<td class="sr-only">09</td>
+								<td>SETEMBRO</td>
+
+								<td><?=number_format($receitaSetembro, 2, ',', '.');?></td>
+
+								<td><?=number_format($valorDespesa, 2, ',', '.');?></td>
+
+								<td><?= number_format(($valorReceita - $valorDespesa), 2, ',', '.') ?></td>
+								<!-- <td>Fazer via JS</td> -->
+							</tr>
+
+							<tr>
+								<td class="sr-only">10</td>
+								<td>OUTUBRO</td>
+
+								<td><?=number_format($receitaOutubro, 2, ',', '.');?></td>
+
+								<td><?=number_format($valorDespesa, 2, ',', '.');?></td>
+
+								<td><?= number_format(($valorReceita - $valorDespesa), 2, ',', '.') ?></td>
+								<!-- <td>Fazer via JS</td> -->
+							</tr>
+
+							<tr>
+								<td class="sr-only">11</td>
+								<td>NOVEMBRO</td>
+
+								<td><?=number_format($receitaNovembro, 2, ',', '.');?></td>
+
+								<td><?=number_format($valorDespesa, 2, ',', '.');?></td>
+
+								<td><?= number_format(($valorReceita - $valorDespesa), 2, ',', '.') ?></td>
+								<!-- <td>Fazer via JS</td> -->
+							</tr>
+
+							<tr>
+								<td class="sr-only">12</td>
+								<td>DEZEMBRO</td>
+
+								<td><?=number_format($receitaDezembro, 2, ',', '.');?></td>
+
+								<td><?=number_format($valorDespesa, 2, ',', '.');?></td>
+
+								<td><?= number_format(($valorReceita - $valorDespesa), 2, ',', '.') ?></td>
+								<!-- <td>Fazer via JS</td> -->
+							</tr>
+
 						</tbody>
 					</table>
 
