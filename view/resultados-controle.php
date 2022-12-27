@@ -19,9 +19,12 @@ if ($_SESSION['user'] == NULL) {
 	<!-- NAVEGAÇÃO -->
 	<?php require_once 'includes/navegacao.php'; ?>
 
+	<!-- Abertura da DIV de impressão-->
+	<div id="imprimir">
+
 	<div class="content-wrapper" id="background-tela-consulta">
 		<div class="container-fluid">
-			<ol class="breadcrumb">
+			<ol class="breadcrumb d-print-none">
 				<li class="breadcrumb-item">
 					<a href="?pagina=os-do-dia" class="text-decoration-none">Início</a>
 				</li>
@@ -42,18 +45,15 @@ if ($_SESSION['user'] == NULL) {
 				</div>
 			</ol>
 
-		<!-- Abertura da DIV de impressão-->
-		<div id="imprimir">
-
 			<div class="row justify-content-center mb-3">
-				<div class="col-4">
+				<div class="col-10 float-left ml-0">
 				
 				<form method="post">
-					<div class="input-group">
+					<div class="input-group col-4">
 						<div class="input-group-prepend">
 							<label class="text-dark float-right input-group-text font-weight-bold">Ano referência</label>
 						</div>
-						<select class="float-right custom-select col-3" name="sel-carregar-ano" id="" style="min-width: 100px">
+						<select class=" custom-select" name="sel-carregar-ano" id="">
 							<option value="<?= $receitasExecutadas[0]['ano'] ?>"><?= $receitasExecutadas[0]['ano'] ?></option>
 
 							<?php 
@@ -65,41 +65,15 @@ if ($_SESSION['user'] == NULL) {
 							?>
 						</select>
 					</div>
+					<div class="col-4 mt-1">
+						<button class="btn btn-info btn-block d-print-none">Carregar</button>
+					</div>
 				</div>
-						<div class="col-2 ml-5">
-							<button class="btn btn-info btn-block d-print-none">Carregar</button>
-						</div>
 				</form>
-						<div class="col-2 ml-5">
+						<div class="col-2">
 							<button class="btn btn-danger btn-block d-print-none" onclick="window.print()">Imprimir</button>
 						</div>
 			</div>
-
-			<!--
-			<div class="row mb-4">
-
-				<div class="col mb-1">
-					<a href="?pagina=pesquisa-por-os" data-bs-toggle="tooltip" data-bs-placement="bottom" class="botoes-atalho-cons" title="Pesq. O.S. por código"><i class="fa fa-search" aria-hidden="true"></i> Pesq. O.S. por código </a>
-				</div>
-
-				<div class="col mb-1">
-					<a href="?pagina=pesquisa-por-data-agendamento" class="botoes-atalho-cons" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Pesq. por data de agendamento"><i class="fa fa-search " aria-hidden="true"></i> O.S(s) por data de agendamento </a>
-				</div>
-
-				<div class="col mb-1">
-					<a href="?pagina=pesquisa-por-orcamento" class="botoes-atalho-cons" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Orçamentos cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Orçamentos </a>
-				</div>
-
-				<div class="col mb-1">
-					<a href="?pagina=pesquisa-produto" class="botoes-atalho-cons" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Produtos cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Produtos </a>
-				</div>
-
-				<div class="col mb-1">
-					<a href="?pagina=pesquisa-cliente" class="botoes-atalho-cons" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Clientes cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Clientes </a>
-				</div>
-
-			</div>
-            -->
 
 			<div id="row-tbl-consulta">
 				<div class="col">
@@ -210,7 +184,7 @@ if ($_SESSION['user'] == NULL) {
 											break;
 
 										case 'SETEMBRO':
-											$receitaFevereiro += $value['valor'];
+											$receitaSetembro += $value['valor'];
 											break;
 
 										case 'OUTUBRO':
@@ -268,7 +242,7 @@ if ($_SESSION['user'] == NULL) {
 											break;
 
 										case 'SETEMBRO':
-											$despesaFevereiro += $value['valor'];
+											$despesaSetembro += $value['valor'];
 											break;
 
 										case 'OUTUBRO':
@@ -448,37 +422,37 @@ if ($_SESSION['user'] == NULL) {
 						<div class="card">
 							<!--<img class="card-img-top" src=".../100px180/" alt="Card image cap">-->
 							<div class="card-body">
-								<h5 class="card-title text-info">Total de receitas: R$ <?= $total_rec_executadas != null ? number_format($total_rec_executadas, 2, ',', '.') : '0' ?></h5>
+								<h6 class="card-title text-info">Total de receitas: R$ <?= $total_rec_executadas != null ? number_format($total_rec_executadas, 2, ',', '.') : '0' ?></h6>
 							</div>
 							<div class="card-footer">
-								<small class="text-muted">&copyAbg Soluções  </small>
+								<small class="text-muted">&copyUniverso Design - <?= date('Y') ?>  </small>
 							</div>
 						</div>
 						<div class="card">
 							<!--<img class="card-img-top" src=".../100px180/" alt="Card image cap">-->
 							<div class="card-body">
-								<h5 class="card-title text-danger">Total de despesas: R$ <?= $total_desp_executadas != null ? number_format($total_desp_executadas, 2, ',', '.') : '0' ?></h5>
+								<h6 class="card-title text-danger">Total de despesas: R$ <?= $total_desp_executadas != null ? number_format($total_desp_executadas, 2, ',', '.') : '0' ?></h6>
 							</div>
 							<div class="card-footer">
-								<small class="text-muted">&copyAbg Soluções  </small>
+								<small class="text-muted">&copyUniverso Design - <?= date('Y') ?>  </small>
 							</div>
 						</div>
 						<div class="card">
 							<!--<img class="card-img-top" src=".../100px180/" alt="Card image cap">-->
 							<div class="card-body">
-								<h5 class="card-title text-success">Lucro anual: R$ <?=number_format($total_rec_executadas - $total_desp_executadas, 2, ',', '.') ?></h5>
+								<h6 class="card-title text-success">Lucro anual: R$ <?=number_format($total_rec_executadas - $total_desp_executadas, 2, ',', '.') ?></h6>
 							</div>
 							<div class="card-footer">
-								<small class="text-muted">&copyAbg Soluções  </small>
+								<small class="text-muted">&copyUniverso Design - <?= date('Y') ?>  </small>
 							</div>
 						</div>
 						<div class="card">
 							<!--<img class="card-img-top" src=".../100px180/" alt="Card image cap">-->
 							<div class="card-body">
-								<h5 class="card-title text-success">Lucro mensal médio: R$ <?=number_format(($total_rec_executadas - $total_desp_executadas)/12, 2, ',', '.') ?></h5>
+								<h6 class="card-title text-success">Lucro mensal médio: R$ <?=number_format(($total_rec_executadas - $total_desp_executadas)/12, 2, ',', '.') ?></h6>
 							</div>
 							<div class="card-footer">
-								<small class="text-muted">&copyAbg Soluções  </small>
+								<small class="text-muted">&copyUniverso Design - <?= date('Y') ?>  </small>
 							</div>
 						</div>
 					</div>
@@ -488,10 +462,11 @@ if ($_SESSION['user'] == NULL) {
 			</div>
 
 		</div>
-		<!-- fechamento da DIV de impressão-->
-
-		</div>
 	</div>
+
+	</div>
+	<!-- fechamento da DIV de impressão-->
+
 </div>
 	<?php require_once 'includes/bootstrap-js.php'; ?>
 	<!-- rodapé -->

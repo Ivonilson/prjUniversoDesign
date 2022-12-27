@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="background-color: #2F4F4F;">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top d-print-none" id="mainNav" style="background-color: #2F4F4F;">
 	<a href="/?pagina=os-do-dia" class="navbar-brand text-light font-weight-bold text-lg" style="font-size: 22px; font-family: Bradley Hand, cursive">Universo Design</a>
 
 	<div class="bg-light mb-2">

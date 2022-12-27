@@ -19,9 +19,12 @@ if ($_SESSION['user'] == NULL) {
 	<!-- NAVEGAÇÃO -->
 	<?php require_once 'includes/navegacao.php'; ?>
 
+	<!-- inicio DIV impressão -->
+	<div id="imprimir" class="border bg-danger">
+
 	<div class="content-wrapper" id="background-tela-consulta">
 		<div class="container-fluid">
-			<ol class="breadcrumb">
+			<ol class="breadcrumb d-print-none">
 				<li class="breadcrumb-item">
 					<a href="?pagina=os-do-dia" class="text-decoration-none">Início</a>
 				</li>
@@ -45,39 +48,13 @@ if ($_SESSION['user'] == NULL) {
 				</div>
 
 			</ol>
-
-			<!--
-			<div class="row mb-3">
-
-				<div class="col mb-1">
-					<a href="?pagina=pesquisa-por-os" data-bs-toggle="tooltip" data-bs-placement="bottom" class="botoes-atalho-cons" title="Pesq. O.S. por código"><i class="fa fa-search" aria-hidden="true"></i> Pesq. O.S. por código </a>
-				</div>
-
-				<div class="col mb-1">
-					<a href="?pagina=pesquisa-por-data-agendamento" class="botoes-atalho-cons" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Pesq. por data de agendamento"><i class="fa fa-search " aria-hidden="true"></i> O.S(s) por data de agendamento </a>
-				</div>
-
-				<div class="col mb-1">
-					<a href="?pagina=pesquisa-por-orcamento" class="botoes-atalho-cons" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Orçamentos cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Orçamentos </a>
-				</div>
-
-				<div class="col mb-1">
-					<a href="?pagina=pesquisa-produto" class="botoes-atalho-cons" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Produtos cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Produtos </a>
-				</div>
-
-				<div class="col mb-1">
-					<a href="?pagina=pesquisa-cliente" class="botoes-atalho-cons" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Clientes cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Clientes </a>
-				</div>
-
-			</div>
-            -->
-
+			
 			<div class="card mb-1">
 				<div class="card-header">
 					<i class="fa fa-table"></i> <span class="font-weight-bold text-lg">Receitas por período</span>
 					<br>
 					<br>
-					<form method="post" class="background-form-cons">
+					<form method="post" class="background-form-cons d-print-none">
 
 						<div id="div-ipt-data-form-cons">
 							<div class="row">
@@ -141,6 +118,10 @@ if ($_SESSION['user'] == NULL) {
 						} 
 					?>
 
+					<div class="col-12 text-right d-print-none">
+						<button class="btn btn-danger" onclick="window.print()">Imprimir</button>
+					</div>
+
 					<table class="table table-bordered table-hover display" id="dataTable" width="100%" cellspacing="0">
 						<thead class="thead-light">
 							<tr>
@@ -152,8 +133,8 @@ if ($_SESSION['user'] == NULL) {
 								<th>Data de referência</th>
 								<th>Data do lançamento</th>
 								<th>Usuário</th>
-								<th>Atualizar</th>
-								<th class="d-xs-none">Deletar</th>
+								<th class="d-print-none">Atualizar</th>
+								<th class="d-xs-none d-print-none">Deletar</th>
 							</tr>
 						</thead>
 						<tfoot class="thead-light">
@@ -165,8 +146,8 @@ if ($_SESSION['user'] == NULL) {
 								<th>Data de referência</th>
 								<th>Data do lançamento</th>
 								<th>Usuário</th>
-								<th>Atualizar</th>
-								<th class="d-xs-none">Deletar</th>
+								<th class="d-print-none">Atualizar</th>
+								<th class="d-xs-none d-print-none">Deletar</th>
 							</tr>
 						</tfoot>
 						<tbody>
@@ -202,7 +183,7 @@ if ($_SESSION['user'] == NULL) {
 											<td><?= date_format(date_create($value['data_processamento']), "d/m/Y") ?></td>
 											<td><?= $value['usuario'] ?></td>
 
-											<td align="center"><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Atualizar" data-toggle="modal" data-target="#<?= $contador ?>"><i class="fa fa-pencil" aria-hidden="true" id="#<?= $contador ?>"></i></a></td>
+											<td align="center" class="d-print-none"><a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Atualizar" data-toggle="modal" data-target="#<?= $contador ?>"><i class="fa fa-pencil" aria-hidden="true" id="#<?= $contador ?>"></i></a></td>
 
 											<td align="center">
 												<input type="hidden" name="ipt-id-receita" value="<?= $value['id_receita'] ?>">
@@ -213,7 +194,7 @@ if ($_SESSION['user'] == NULL) {
 													
 												<input class="form-control" type="hidden" name="data_final" value="<?= $data_final ?>">
 
-												<button class="btn btn-light d-xs-none" value='Excluir' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir" name="btnDeletarOs" id="btnDeletarItem"><i class="fa fa-trash" aria-hidden="true"></i></button>
+												<button class="btn btn-light d-xs-none d-print-none" value='Excluir' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir" name="btnDeletarOs" id="btnDeletarItem"><i class="fa fa-trash" aria-hidden="true"></i></button>
 											</td>
 										</form>
 
@@ -311,12 +292,16 @@ if ($_SESSION['user'] == NULL) {
 					<br>
 				</div>
 			</div>
+
 		</div>
 
 		<?php require_once 'includes/bootstrap-js.php'; ?>
 
 		<!-- rodapé -->
 		<?php require_once 'includes/rodape.php'; ?>
+	</div>
+	</div>
+	<!-- fechamento da DIV de impressão> -->
 	</div>
 </body>
 

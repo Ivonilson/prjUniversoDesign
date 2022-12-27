@@ -19,9 +19,12 @@ if ($_SESSION['user'] == NULL) {
 	<!-- NAVEGAÇÃO -->
 	<?php require_once 'includes/navegacao.php'; ?>
 
+	<!-- inicio DIV impressão -->
+	<div id="imprimir" class="border bg-danger">
+
 	<div class="content-wrapper" id="background-tela-consulta">
 		<div class="container-fluid">
-			<ol class="breadcrumb">
+			<ol class="breadcrumb d-print-none">
 				<li class="breadcrumb-item">
 					<a href="?pagina=os-do-dia" class="text-decoration-none">Início</a>
 				</li>
@@ -38,41 +41,12 @@ if ($_SESSION['user'] == NULL) {
 					<mark class="p-2 font-weight-bold">Despesas por periodo</mark>
 				</li>
 
-				<div class="col">
+				<div class="col d-print-none">
 				<a href="/?pagina=resultados-controle" class="btn btn-info text-light float-right font-weight-bold rounded mt-2 ml-1" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Resultados Controle de Caixa"><i class="fa fa-search"></i> Ver resultados</a>
 				<a href="/?pagina=receita-por-periodo" class="btn btn-info text-light float-right font-weight-bold rounded mt-2 ml-1" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Receitas por período"><i class="fa fa-search"></i> Receitas por período</a>
 					<a href="/?pagina=lancar-despesa" class="btn btn-danger text-light float-right font-weight-bold rounded mt-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Incluir nova despesa"><i class="fa fa-plus"></i> Despesa</a>
 				</div>
 			</ol>
-
-			<!--
-			<div class="row mb-3">
-
-				<div class="col mb-1">
-					<a href="?pagina=pesquisa-por-os" data-bs-toggle="tooltip" data-bs-placement="bottom" class="botoes-atalho-cons" title="Pesq. O.S. por código"><i class="fa fa-search" aria-hidden="true"></i> Pesq. O.S. por código </a>
-				</div>
-
-				<div class="col mb-1">
-					<a href="?pagina=pesquisa-por-data-agendamento" class="botoes-atalho-cons" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Pesq. por data de agendamento"><i class="fa fa-search " aria-hidden="true"></i> O.S(s) por data de agendamento </a>
-				</div>
-
-				<div class="col mb-1">
-					<a href="?pagina=pesquisa-por-orcamento" class="botoes-atalho-cons" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Orçamentos cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Orçamentos </a>
-				</div>
-
-				<div class="col mb-1">
-					<a href="?pagina=pesquisa-produto" class="botoes-atalho-cons" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Produtos cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Produtos </a>
-				</div>
-
-				<div class="col mb-1">
-					<a href="?pagina=pesquisa-cliente" class="botoes-atalho-cons" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Clientes cadastrados"><i class="fa fa-search " aria-hidden="true"></i> Clientes </a>
-				</div>
-
-			</div>
-            -->
-
-			<!-- inicio DIV impressão -->
-			<div id="imprimir">
 
 			<div class="card mb-1">
 				<div class="card-header">
@@ -142,6 +116,10 @@ if ($_SESSION['user'] == NULL) {
 					<?php
 						} 
 					?>
+
+					<div class="col-12 text-right d-print-none">
+						<button class="btn btn-danger" onclick="window.print()">Imprimir</button>
+					</div>
 
 					<table class="table table-bordered table-hover display" id="dataTable" width="100%" cellspacing="0">
 						<thead class="thead-light">
@@ -336,11 +314,13 @@ if ($_SESSION['user'] == NULL) {
 					<br>
 				</div>
 
-				
-				</div>
-			<!-- fechamento da DIV de impressão> -->
+				</div>	
 			</div>
+
 		</div>
+		
+		</div>
+		<!-- fechamento da DIV de impressão> -->
 
 		<?php require_once 'includes/bootstrap-js.php'; ?>
 
