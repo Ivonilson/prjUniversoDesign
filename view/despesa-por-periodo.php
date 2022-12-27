@@ -71,12 +71,16 @@ if ($_SESSION['user'] == NULL) {
 			</div>
             -->
 
+			<!-- inicio DIV impressão -->
+			<div id="imprimir">
+
 			<div class="card mb-1">
 				<div class="card-header">
 					<i class="fa fa-table"></i> <span class="font-weight-bold text-lg">Despesas por período</span>
 					<br>
 					<br>
-					<form method="post" class="background-form-cons">
+
+					<form method="post" class="background-form-cons d-print-none">
 
 						<div id="div-ipt-data-form-cons">
 							<div class="row">
@@ -331,6 +335,10 @@ if ($_SESSION['user'] == NULL) {
 					</div>
 					<br>
 				</div>
+
+				
+				</div>
+			<!-- fechamento da DIV de impressão> -->
 			</div>
 		</div>
 

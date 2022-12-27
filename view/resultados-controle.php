@@ -42,9 +42,12 @@ if ($_SESSION['user'] == NULL) {
 				</div>
 			</ol>
 
-			<div class="row justify-content-center mb-3">
-				<div class="col-3">
+		<!-- Abertura da DIV de impressão-->
+		<div id="imprimir">
 
+			<div class="row justify-content-center mb-3">
+				<div class="col-4">
+				
 				<form method="post">
 					<div class="input-group">
 						<div class="input-group-prepend">
@@ -63,10 +66,13 @@ if ($_SESSION['user'] == NULL) {
 						</select>
 					</div>
 				</div>
-						<div class="col-3 ml-5">
-							<button class="btn btn-info btn-block">Carregar</button>
+						<div class="col-2 ml-5">
+							<button class="btn btn-info btn-block d-print-none">Carregar</button>
 						</div>
 				</form>
+						<div class="col-2 ml-5">
+							<button class="btn btn-danger btn-block d-print-none" onclick="window.print()">Imprimir</button>
+						</div>
 			</div>
 
 			<!--
@@ -480,13 +486,16 @@ if ($_SESSION['user'] == NULL) {
 					<br>
 				</div>
 			</div>
+
 		</div>
+		<!-- fechamento da DIV de impressão-->
 
-		<?php require_once 'includes/bootstrap-js.php'; ?>
-
-		<!-- rodapé -->
-		<?php require_once 'includes/rodape.php'; ?>
+		</div>
 	</div>
+</div>
+	<?php require_once 'includes/bootstrap-js.php'; ?>
+	<!-- rodapé -->
+	<?php require_once 'includes/rodape.php'; ?>
 </body>
 
 </html>

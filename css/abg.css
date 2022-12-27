@@ -1,29 +1,6 @@
-@media print {
-
-body {
-  visibility: hidden;
-}
-
-table { page-break-after:auto }
-tr    { page-break-inside:avoid; page-break-after:auto }
-thead { display:table-header-group }
-tfoot { display:table-footer-group }
-
-  #imprimir, #imprimir * {
-    visibility: visible;
-  }
-
-  #imprimir {
-    margin-left: 0;
-    margin-top: 0;
-    margin-right: 0;
-  }
-}
-
 .progresso {
 	height:44px;
 	width: 500px;
-	//border: solid 1px #FF6347;
 }
 
 .progresso > div {
@@ -49,7 +26,6 @@ tfoot { display:table-footer-group }
 	border: solid black 1px;
 	border-radius:  25px;
 	box-shadow: 5px 5px grey;
-	//background-color: orange;
 }	
 
 .tabela-impressao {
@@ -60,7 +36,6 @@ tfoot { display:table-footer-group }
 .divLogo img {
 	width: 70%;
 	border-radius: 25px;
-	//border: solid blue 3px;
 	margin-top: 5px;
 	box-shadow: 5px 5px grey;
 }
@@ -88,7 +63,6 @@ tfoot { display:table-footer-group }
 
 .informacoesIniciais {
 	margin-top: 20px;
-	//border: solid red 3px;
 	padding-top: 5px;
 }
 
@@ -119,13 +93,17 @@ tfoot { display:table-footer-group }
 #validadeProposta {
 	font-size: 20px;
 	font-weight: bold;
-	border: solid black 2px;
+	border: solid black 1px;
 	border-radius: 10px;
 	padding-top: 3px;
 	padding-bottom: 3px;
 	padding-left: 6px;
 	padding-right: 6px;
 	text-align: center;
+}
+
+ .bordasImpressao {
+	border: solid black 1px !important;
 }
 
 #gerente {
@@ -172,7 +150,6 @@ tfoot { display:table-footer-group }
 	font-weight: bold;
 	text-align: center;
 }
-
 
 /*.linhaPreco {
 	border: solid red 5px;

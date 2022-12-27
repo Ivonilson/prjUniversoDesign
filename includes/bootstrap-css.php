@@ -6,3 +6,4 @@
 	<link rel="stylesheet" type="text/css" href="../css/sb-admin.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/sb-admin.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/abg.css">
+	<link rel="stylesheet" type="text/css" href="../css/print.css" media="print">

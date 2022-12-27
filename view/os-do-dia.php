@@ -80,7 +80,7 @@ if ($_SESSION['user'] == null) {
 								<th>Observações</th>
 								<th>Visualizar Itens Orc.</th>
 								<th>Atualizar</th>
-							    <!-- <th class="d-xs-none">Deletar</th> -->
+							    <th class="d-xs-none">Deletar</th>
 							</tr>
 						</thead>
 						<tfoot class="thead-light">
@@ -95,7 +95,7 @@ if ($_SESSION['user'] == null) {
 								<th>Observações</th>
 								<th>Visualizar Itens Orc.</th>
 								<th>Atualizar</th>
-								<!-- <th class="d-xs-none">Deletar</th> -->
+								<th class="d-xs-none">Deletar</th>
 							</tr>
 						</tfoot>
 						<tbody>
@@ -142,7 +142,7 @@ if ($_SESSION['user'] == null) {
 
 													<input type="hidden" name="ipt-confirmacao" id="ipt-confirma">
 
-													<!-- <button class="btn btn-light d-xs-none"  value='Excluir' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir" title="Excluir" name="btnDeletarOs" id="btnDeletarItem"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+													<button disabled class="btn btn-light d-xs-none"  value='Excluir' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir" name="btnDeletarOs" id="btnDeletarItem"><i class="fa fa-trash" aria-hidden="true"></i></button>
 											</td>
 										</form>
 
@@ -169,22 +169,19 @@ if ($_SESSION['user'] == null) {
 			</div>
 			<!-- </div> -->
 		</div>
-
-		<?php require_once 'includes/bootstrap-js.php'; ?>
-
-		<!-- rodapé -->
-		<?php require_once 'includes/rodape.php'; ?>
 	</div>
 
 	<!-- <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>-->
 
+	<?php require_once 'includes/bootstrap-js.php'; ?>
+
+	<!-- rodapé -->
+	<?php require_once 'includes/rodape.php'; ?>
 	<script type="text/javascript">
 		//REFRESH AUTOMÁTICO 
 		Redirect();
-
 		//BARRA DE PROGRESSO DOS SERVIÇOS EXECUTADOS
 		configurarBarra();
 	</script>
-	
 </body>
 </html>

@@ -41,56 +41,56 @@ if ($_SESSION['user'] == NULL) {
 					<div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
 						<div class="input-group mb-2">
 							<div class="input-group-prepend">
-								<div class="input-group-text font-weight-bold">
+								<div class="input-group-text font-weight-bold bordasImpressao">
 									Orç. n°
 								</div>
 							</div>
-							<input type="text" disabled class="form-control bg-light" value="<?= $resultado != null ? $resultado[0]['id_orcamento'] : $_GET['id_orcamento'] ?>">
+							<input type="text" disabled class="form-control bg-light bordasImpressao " value="<?= $resultado != null ? $resultado[0]['id_orcamento'] : $_GET['id_orcamento'] ?>">
 						</div>
 					</div>
 
 					<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
 						<div class="input-group mb-2">
 							<div class="input-group-prepend">
-								<div class="input-group-text font-weight-bold">
+								<div class="input-group-text font-weight-bold bordasImpressao">
 									Cliente
 								</div>
 							</div>
-							<input type="text" disabled class="form-control bg-light" value="<?= $resultado != null ? $resultado[0]['nome_cliente'] : 'Orçamento sem itens' ?>">
+							<input type="text" disabled class="form-control bg-light bordasImpressao " value="<?= $resultado != null ? $resultado[0]['nome_cliente'] : 'Orçamento sem itens' ?>">
 						</div>
 					</div>
 
 					<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
 						<div class="input-group mb-2">
 							<div class="input-group-prepend">
-								<div class="input-group-text font-weight-bold">
+								<div class="input-group-text font-weight-bold bordasImpressao">
 									Registrado em
 								</div>
 							</div>
-							<input type="text" disabled class="form-control bg-light" value="<?= $resultado != null ? date_format(date_create($resultado[0]['data_cadastro']), "d/m/Y") : '-' ?>">
+							<input type="text" disabled class="form-control bg-light bordasImpressao" value="<?= $resultado != null ? date_format(date_create($resultado[0]['data_cadastro']), "d/m/Y") : '-' ?>">
 						</div>
 					</div>
 
 					<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
 						<div class="input-group mb-2">
 							<div class="input-group-prepend">
-								<div class="input-group-text font-weight-bold">
+								<div class="input-group-text font-weight-bold bordasImpressao">
 									Validade
 								</div>
 							</div>
-							<input type="text" disabled class="form-control bg-light" value="<?= $resultado != null ? date_format(date_create($resultado[0]['data_validade']), "d/m/Y") : '-' ?>">
+							<input type="text" disabled class="form-control bg-light bordasImpressao " value="<?= $resultado != null ? date_format(date_create($resultado[0]['data_validade']), "d/m/Y") : '-' ?>">
 						</div>
 					</div>
 
-					<table class="table table-bordered table-hover tabela-impressao table-sm table-responsive" width="100%" cellspacing="0">
+					<table class="table table-bordered table-hover tabela-impressao table-sm table-responsive borda-impressao" width="100%" cellspacing="0">
 						<thead class="thead-light">
 							<tr>
-								<th>Descrição</th>
-								<th>Valor unit.(R$)</th>
-								<th>Quant.</th>
-								<th>Valor Total(R$)</th>
-								<th>Desconto(R$)</th>
-								<th>Total a Pagar(R$)</th>
+								<th class="bordasImpressao">Descrição</th>
+								<th class="bordasImpressao">Valor unit.(R$)</th>
+								<th class="bordasImpressao">Quant.</th>
+								<th class="bordasImpressao">Valor Total(R$)</th>
+								<th class="bordasImpressao">Desconto(R$)</th>
+								<th class="bordasImpressao">Total a Pagar(R$)</th>
 							</tr>
 						</thead>
 						<!--<tfoot class="thead-light">
@@ -107,8 +107,6 @@ if ($_SESSION['user'] == NULL) {
 
 							<?php
 
-
-
 							$contador = 0;
 
 							if ($resultado != NULL) {
@@ -119,17 +117,15 @@ if ($_SESSION['user'] == NULL) {
 								}
 
 							?>
+									<tr class="table-light bordasImpressao">
 
-									<tr class="table-light">
-
-										<td class="text-dark" style="border: 1px solid black"><?= $item['descricao'] ?></td>
-										<td class="text-dark" style="border: 1px solid black"><?= number_format($item['valor_unitario'], 2, ",", ".") ?></td>
-										<td class="text-dark" style="border: 1px solid black"><?= number_format($item['quantidade'], 2, ",", ".") ?></td>
-										<td class="text-dark" style="border: 1px solid black"><?= number_format($item['valor_total'], 3, ",", ".") ?></td>
-										<td class="text-dark" style="border: 1px solid black"><?= number_format($item['desconto'], 3, ",", ".") ?></td>
-										<td class="text-dark" style="border: 1px solid black"><?= number_format($item['total_pagar'], 3, ",", ".") ?></td>
+										<td class="text-dark bordasImpressao" style="border: 1px solid black"><?= $item['descricao'] ?></td>
+										<td class="text-dark bordasImpressao" style="border: 1px solid black"><?= number_format($item['valor_unitario'], 2, ",", ".") ?></td>
+										<td class="text-dark bordasImpressao" style="border: 1px solid black"><?= number_format($item['quantidade'], 2, ",", ".") ?></td>
+										<td class="text-dark bordasImpressao" style="border: 1px solid black"><?= number_format($item['valor_total'], 3, ",", ".") ?></td>
+										<td class="text-dark bordasImpressao" style="border: 1px solid black"><?= number_format($item['desconto'], 3, ",", ".") ?></td>
+										<td class="text-dark bordasImpressao" style="border: 1px solid black"><?= number_format($item['total_pagar'], 3, ",", ".") ?></td>
 									</tr>
-
 							<?php
 									$contador++;
 									$conexao = null;
@@ -140,13 +136,12 @@ if ($_SESSION['user'] == NULL) {
 
 							?>
 									<tr class="table-light">
-
-										<td class="text-dark" style="border: 1px solid black"><?= 'SERVIÇOS/INSTALAÇÕES' ?></td>
-										<td class="text-dark" style="border: 1px solid black"><?= '-' ?></td>
-										<td class="text-dark" style="border: 1px solid black"><?= '-' ?></td>
-										<td class="text-dark" style="border: 1px solid black"><?= number_format($resultadoServico[0]['valor_total_serv'], 3, ",", ".") ?></td>
-										<td class="text-dark" style="border: 1px solid black"><?= number_format($resultadoServico[0]['valor_desconto_serv'], 3, ",", ".") ?></td>
-										<td class="text-dark" style="border: 1px solid black"><?= number_format($resultadoServico[0]['total_pagar_serv'], 3, ",", ".")?></td>
+										<td class="text-dark bordasImpressao"><?= 'SERVIÇOS/INSTALAÇÕES' ?></td>
+										<td class="text-dark bordasImpressao"><?= '-' ?></td>
+										<td class="text-dark bordasImpressao"><?= '-' ?></td>
+										<td class="text-dark bordasImpressao"><?= number_format($resultadoServico[0]['valor_total_serv'], 3, ",", ".") ?></td>
+										<td class="text-dark bordasImpressao"><?= number_format($resultadoServico[0]['valor_desconto_serv'], 3, ",", ".") ?></td>
+										<td class="text-dark bordasImpressao"><?= number_format($resultadoServico[0]['total_pagar_serv'], 3, ",", ".")?></td>
 									</tr>
 
 							<?php
@@ -160,33 +155,33 @@ if ($_SESSION['user'] == NULL) {
 					<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
 						<div class="input-group mb-2">
 							<div class="input-group-prepend">
-								<div class="input-group-text font-weight-bold">
+								<div class="input-group-text font-weight-bold bordasImpressao">
 									Valor total (R$)
 								</div>
 							</div>
-							<input type="text" disabled class="form-control bg-light" value="<?= $resultado != null ? number_format($totalizador[0]['sum_valor_total'], 2, ",", ".") : 0 ?>">
+							<input type="text" disabled class="form-control bg-light bordasImpressao " value="<?= $resultado != null ? number_format($totalizador[0]['sum_valor_total'], 2, ",", ".") : 0 ?>">
 						</div>
 					</div>
 
 					<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
 						<div class="input-group mb-2">
 							<div class="input-group-prepend">
-								<div class="input-group-text font-weight-bold">
+								<div class="input-group-text font-weight-bold bordasImpressao">
 									Descontos (R$)
 								</div>
 							</div>
-							<input type="text" disabled class="form-control bg-light" value="<?= $resultado != null ? number_format($totalizador[0]['sum_desconto'], 2, ",", ".") . ' (' . number_format(100 - (($totalizador[0]['sum_total_pagar'] / $totalizador[0]['sum_valor_total']) * 100), 2, ',', '')  . '%)' : 0 ?>">
+							<input type="text" disabled class="form-control bg-light bordasImpressao " value="<?= $resultado != null ? number_format($totalizador[0]['sum_desconto'], 2, ",", ".") . ' (' . number_format(100 - (($totalizador[0]['sum_total_pagar'] / $totalizador[0]['sum_valor_total']) * 100), 2, ',', '')  . '%)' : 0 ?>">
 						</div>
 					</div>
 
 					<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
 						<div class="input-group mb-2">
 							<div class="input-group-prepend">
-								<div class="input-group-text font-weight-bold">
+								<div class="input-group-text font-weight-bold bordasImpressao">
 									Valor a Pagar (R$)
 								</div>
 							</div>
-							<input type="text" disabled class="form-control bg-light" value="<?= $resultado != null ? number_format($totalizador[0]['sum_total_pagar'], 2, ",", ".") : 0 ?>">
+							<input type="text" disabled class="form-control bg-light bordasImpressao " value="<?= $resultado != null ? number_format($totalizador[0]['sum_total_pagar'], 2, ",", ".") : 0 ?>">
 						</div>
 					</div>
 						

@@ -20,7 +20,8 @@ if ($_SESSION['user'] == NULL) {
 	<?php require_once 'includes/navegacao.php'; ?>
 
 	<div class="content-wrapper" id="background-tela-consulta">
-		<div class="container-fluid">
+
+		<div class="container  containerGeralImpressao">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">
 					<a href="?pagina=os-do-dia" class="text-decoration-none">Início</a>
@@ -95,6 +96,9 @@ if ($_SESSION['user'] == NULL) {
 			<div id="row-tbl-consulta">
 				<div class="col">
 
+						<h1>IMPRESSÃO AQUI</h1>
+
+					
 					<table class="table table-bordered table-hover display" id="dataTable" width="100%" cellspacing="0">
 						<thead class="thead-light">
 							<tr>
@@ -312,13 +316,11 @@ if ($_SESSION['user'] == NULL) {
 					<br>
 				</div>
 			</div>
+
 		</div>
-
+	</div>
 		<?php require_once 'includes/bootstrap-js.php'; ?>
-
 		<!-- rodapé -->
 		<?php require_once 'includes/rodape.php'; ?>
-	</div>
 </body>
-
 </html>

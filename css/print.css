@@ -1,0 +1,22 @@
+@media print {
+
+    body {
+      visibility: hidden;
+    }
+    
+    table { page-break-after:auto }
+    tr    { page-break-inside:avoid; page-break-after:auto }
+    thead { display:table-header-group }
+    tfoot { display:table-footer-group }
+    
+      #imprimir, #imprimir * {
+        visibility: visible;
+      }
+    
+      #imprimir {
+        margin-left: 0;
+        margin-top: 0;
+        margin-right: 0;
+      }
+      
+    }
