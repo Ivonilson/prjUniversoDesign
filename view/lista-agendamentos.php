@@ -53,10 +53,12 @@ if ($_SESSION['user'] == NULL) {
 								echo "<br>TOTAL: <strong>" . $contador[0]['total'] . "</strong>"; ?>
 
 							<!-- DISPARADOR DO MODAL DO WHATSAPP-->
-							<button type="button" class="btn btn-success float-right p-2 border-rouded" data-toggle="modal" data-target="#modalListaAgendamento">
+							<button type="button" class="btn btn-success float-right p-2 border-rouded d-print-none" data-toggle="modal" data-target="#modalListaAgendamento">
 								Envio Whatsapp
 							</button>
-
+							<button type="button" class="btn btn-danger float-right p-2 mr-2 border-rouded d-print-none" onclick="window.print()">
+								Imprimir
+							</button>
 						</div>
 				</div>
 
@@ -71,10 +73,10 @@ if ($_SESSION['user'] == NULL) {
 									<th>ENDEREÇO</th>
 									<th>CIDADE/UF</th>
 									<th>DATA DE AGENDAMENTO</th>
-									<th>SITUAÇÃO PAGAMENTO</th>
-									<th>STATUS</th>
+									<th class="d-print-none">SITUAÇÃO PAGAMENTO</th>
+									<th class="d-print-none">STATUS</th>
 									<th>OBS.</th>
-									<th>ATUALIZAR</th>
+									<th class="d-print-none">ATUALIZAR</th>
 									<!--<th id="esconder">EDITAR</th>-->
 								</tr>
 							</thead>
@@ -107,10 +109,10 @@ if ($_SESSION['user'] == NULL) {
 										<td><?= $value['endereco'] ?></td>
 										<td><?= $value['cidade_uf'] ?></td>
 										<td><?= date_format(date_create($value['data_agendamento']), "d/m/Y") ?></td>
-										<td><strong ><?= $value['sit_pagamento'] ?></strong></td>
-										<td><strong class="statusLista"><?= $value['status'] ?></strong></td>
+										<td class="d-print-none"><strong ><?= $value['sit_pagamento'] ?></strong></td>
+										<td class="d-print-none"><strong class="statusLista"><?= $value['status'] ?></strong></td>
 										<td><?= $value['observacao'] ?></td>
-										<td align="center" id="esconder"><a href="/?pagina=editar-os&cod_os=<?= $value['cod_os'] ?>&form=lista-agendamentos" title="Editar"><i class="fa fa-pencil" aria-hidden="true"></a></td>
+										<td align="center" class="d-print-none" id="esconder"><a href="/?pagina=editar-os&cod_os=<?= $value['cod_os'] ?>&form=lista-agendamentos" title="Editar"><i class="fa fa-pencil" aria-hidden="true"></a></td>
 									</tr>
 									<script>
 										verificaStatusLista()
