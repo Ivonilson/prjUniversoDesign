@@ -32,12 +32,6 @@ if ($_SESSION['user'] == NULL) {
 					Financeiro
 				</li>
 				<li class="breadcrumb-item">
-					Controle de Caixa - Consultas
-				</li>
-				<li class="breadcrumb-item">
-					Relatórios
-				</li>
-				<li class="breadcrumb-item">
 					<mark class="p-2 font-weight-bold">Despesas por periodo</mark>
 				</li>
 

@@ -26,7 +26,7 @@ if ($_SESSION['user'] == NULL) {
 					<a href="?pagina=os-do-dia" class="text-decoration-none">Início</a>
 				</li>
 				<li class="breadcrumb-item">
-					Pesquisas
+					Agendamentos
 				</li>
 				<li class="breadcrumb-item">
 					<mark class="p-2 font-weight-bold">Lista de agendamentos</mark>

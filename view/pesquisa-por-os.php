@@ -25,10 +25,10 @@ if ($_SESSION['user'] == NULL) {
 					<a href="?pagina=os-do-dia" class="text-decoration-none">Início</a>
 				</li>
 				<li class="breadcrumb-item">
-					Pesquisas
+					Ordem de Serviço
 				</li>
 				<li class="breadcrumb-item">
-					<mark class="p-2 font-weight-bold">Por O.S</mark>
+					<mark class="p-2 font-weight-bold">O.S. por código</mark>
 				</li>
 
 				<div class="col">

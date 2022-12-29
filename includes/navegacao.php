@@ -19,7 +19,7 @@
 				<ul class="sidenav-second-level collapse" id="collapseOrcamentos" data-parent="#linksaccordion" style="background-color: #F5FFFA">
 
 					<li>
-						<a href="/?pagina=cadastrar-orcamento" target="opcoes-menu">Novo Orçamento</a>
+						<a href="/?pagina=cadastrar-orcamento">Novo Orçamento</a>
 					</li>
 
 					<li>
@@ -39,11 +39,7 @@
 				<ul class="sidenav-second-level collapse" id="collapseOs" data-parent="#linksaccordion" style="background-color: #F5FFFA">
 
 					<li>
-						<a href="/?pagina=cadastrar-os" target="opcoes-menu">Cadastrar O.S.</a>
-					</li>
-
-					<li>
-						<a href="/?pagina=os-do-dia">O.S(s) Vencendo Hoje</a>
+						<a href="/?pagina=cadastrar-os">Cadastrar O.S.</a>
 					</li>
 
 					<li>
@@ -71,7 +67,7 @@
 				<ul class="sidenav-second-level collapse" id="collapseClientes" data-parent="#linksaccordion" style="background-color: #F5FFFA">
 
 					<li>
-						<a href="/?pagina=cadastrar-cliente" target="opcoes-menu">Cadastrar Cliente</a>
+						<a href="/?pagina=cadastrar-cliente">Cadastrar Cliente</a>
 					</li>
 
 					<li>
@@ -91,7 +87,7 @@
 				<ul class="sidenav-second-level collapse" id="collapseProdutos" data-parent="#linksaccordion" style="background-color: #F5FFFA">
 
 					<li>
-						<a href="/?pagina=cadastrar-produto" target="opcoes-menu">Cadastrar Produto</a>
+						<a href="/?pagina=cadastrar-produto">Cadastrar Produto</a>
 					</li>
 
 					<li>
@@ -111,69 +107,24 @@
 				<ul class="sidenav-second-level collapse" id="collapseFinanceiro" data-parent="#linksaccordion" style="background-color: #F5FFFA">
 
 					<li>
-						<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseDespesaLancamentos">Controle de Caixa - Lançamentos</a>
-
-						<ul class="sidenav-second-level collapse" id="collapseDespesaLancamentos" data-parent="#linksaccordion" style="background-color: #F5FFFA">
-
-							<li>
-								<a href="/?pagina=lancar-despesa">Lançar Despesa</a>
-							</li>
-
-							<li>
-								<a href="/?pagina=lancar-receita">Lançar Receita</a>
-							</li>
-
-						</ul>
-
+						<a href="/?pagina=lancar-despesa">Lançar Despesa</a>
 					</li>
 
 					<li>
-						<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseDespesaConsultas">Controle de Caixa - Consultas</a>
-
-						<ul class="sidenav-second-level collapse" id="collapseDespesaConsultas" data-parent="#linksaccordion" style="background-color: #F5FFFA">
-
-							<li>
-								<a href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseDespesaRelatorios">Relatórios</a>
-
-								<ul class="sidenav-second-level collapse" id="collapseDespesaRelatorios" data-parent="#linksaccordion" style="background-color: #F5FFFA">
-
-									<li>
-										<a href="/?pagina=despesa-por-periodo">Despesas por período</a>
-									</li>
-
-									<li>
-										<a href="/?pagina=receita-por-periodo">Receitas por período</a>
-									</li>
-
-									<li>
-										<a href="/?pagina=resultados-controle">Resultados</a>
-									</li>
-
-								</ul>
-
-							</li>
-
-						</ul>
-
+						<a href="/?pagina=lancar-receita">Lançar Receita</a>
 					</li>
 
-					<!-- <li>
-						<a href="/?pagina=fluxo-de-caixa" href="#" class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#collapseResultados" >Fluxo de Caixa</a>
+					<li>
+						<a href="/?pagina=despesa-por-periodo">Despesas por período</a>
+					</li>
 
-						<ul class="sidenav-second-level collapse" id="collapseResultados" data-parent="#linksaccordion" style="background-color: #F5FFFA">
+					<li>
+						<a href="/?pagina=receita-por-periodo">Receitas por período</a>
+					</li>
 
-							<li>
-								<a href="/?pagina=planejamento">Planejamento</a>
-							</li>
-
-							<li>
-								<a href="/?pagina=resultados">Resultados</a>
-							</li>
-
-						</ul>
-
-					</li>-->
-
+					<li>
+						<a href="/?pagina=resultados-controle">Resultados</a>
+					</li>
 				</ul>
 			</li>
 
@@ -201,7 +152,7 @@
 				<ul class="sidenav-second-level collapse" id="collapseNotificacoes" data-parent="#linksaccordion" style="background-color: #F5FFFA">
 
 					<li>
-						<a href="/?pagina=cadastrar-notificacao" target="opcoes-menu">Cadastrar Notificação</a>
+						<a href="/?pagina=cadastrar-notificacao">Cadastrar Notificação</a>
 					</li>
 
 				</ul>

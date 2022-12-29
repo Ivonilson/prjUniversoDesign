@@ -24,7 +24,7 @@ if ($_SESSION['user'] == NULL) {
 					<a href="?pagina=os-do-dia" class="text-decoration-none">Início</a>
 				</li>
 				<li class="breadcrumb-item">
-					Registros
+					Clientes
 				</li>
 				<li class="breadcrumb-item">
 					<mark class="p-2 font-weight-bold">Atualizar Cliente</mark>
