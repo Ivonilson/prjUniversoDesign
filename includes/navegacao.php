@@ -303,7 +303,7 @@
 			</li>
 			<li>
 				<a href="/?pagina=logout" class="nav-link text-light col-2">
-					<i class="fa fa-sign-out float-right" title="Sair do Sistema" style="font-family: "><span style="font-size: 15px; font-family: Arial, sans-serif">Logout</span></i>
+					<i class="fa fa-sign-out float-right" title="Sair do Sistema"><span style="font-size: 15px; font-family: Arial, sans-serif">Logout</span></i>
 				</a>
 			</li>
 		</ul>
