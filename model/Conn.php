@@ -5,7 +5,7 @@ class Conn
 	public static $host = "localhost";
 	public static $user = "root";
 	public static $pass = "";
-	public static $dbName = "universo_design";
+	public static $dbName = "abgsol79_universo_design";
 
 	private static $Connect = null;
 
@@ -30,7 +30,7 @@ class Conn
 	public function validarUsuario()
 	{
 		$u = filter_input(INPUT_POST, 'usuario');
-		$p =  filter_input(INPUT_POST, 'senha');
+		$p = crypt(filter_input(INPUT_POST, 'senha'), 'administrador');
 
 		try {
 

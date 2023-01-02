@@ -73,7 +73,7 @@ class Receita {
 			$dados_cadastrar->execute();
 
 			} catch (PDOException $erro) {
-				//echo "ERRO: ".$erro->getMessage();
+				echo "ERRO: ".$erro->getMessage();
 			}
 
 			if($dados_cadastrar->rowCount()) {
@@ -83,7 +83,7 @@ class Receita {
 				
 			} else {
 				//echo "<script>alert('Erro ao Incluir Registro!!!')</script>";
-				//print_r($dados_cadastrar->errorInfo());
+				print_r($dados_cadastrar->errorInfo());
 				return false;
 			}
 

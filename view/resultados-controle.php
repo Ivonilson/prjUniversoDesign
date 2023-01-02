@@ -51,7 +51,7 @@ if ($_SESSION['user'] == NULL) {
 							<label class="text-dark float-right input-group-text font-weight-bold">Ano referência</label>
 						</div>
 						<select class=" custom-select" name="sel-carregar-ano" id="">
-							<option value="<?= $receitasExecutadas[0]['ano'] ?>"><?= $receitasExecutadas[0]['ano'] ?></option>
+							<option value="<?= $receitasExecutadas != null ? $receitasExecutadas[0]['ano'] : date('Y') ?>"><?= $receitasExecutadas != null ? $receitasExecutadas[0]['ano'] : date('Y') ?></option>
 
 							<?php 
 								foreach($anos as $value){ 
@@ -104,8 +104,8 @@ if ($_SESSION['user'] == NULL) {
 									   "10" => "OUTUBRO", "11" => "NOVEMBRO", "12" => "DEZEMBRO"
 									  ];
 
-							$contadorReceitas = count($receitasExecutadas);
-							$contadorDespesas = count($despesasExecutadas);
+							$contadorReceitas = count($receitasExecutadas) > 0 ? count($receitasExecutadas) : 0 ;
+							$contadorDespesas = count($despesasExecutadas) > 0 ? count($despesasExecutadas) : 0;
 							$valorReceita = 0;
 							$valorDespesa = 0;	
 							$controleReceita = 0;
