@@ -19,10 +19,10 @@ require"../phpMailer/src/SMTP.php";
       $mail->IsHTML(true);
       $mail->Username = "";
       $mail->Password = "";
-      $mail->SetFrom("universodesign@universodesigncv.com.br", "Universo Design - Site");
+      $mail->SetFrom("r", "Universo Design - Site");
       $mail->Subject = utf8_decode($assunto);
       $mail->Body = utf8_decode($mensagem);
-      $mail->AddAddress("universodesign@universodesigncv.com.br");
+      $mail->AddAddress("");
       if(!$mail->Send()) {
          //echo "Mailer Error: " . $mail->ErrorInfo;
        } else {
