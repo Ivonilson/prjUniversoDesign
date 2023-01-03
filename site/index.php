@@ -134,18 +134,18 @@
 
           <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-left">
             <h3>Sobre Nós</h3>
-            <p style="text-align: justify !important;">Para que serve a comunicação visual? A comunicação visual é o ponto chave para atrair os olhares do público e de transmitir a informação de maneira clara e objetiva. Além disso, essa ferramenta pode trazer grandes vantagens para sua marca, fazendo com ela seja reconhecida e atraia potenciais clientes. Somos uma empresa que atua no ramo de comunicação visual a mais de dez anos, em Planaltina/GO e região. Também trabalhamos com copos e pulseiras personalizadas para festas e similares. Conheça nosso portfólio na seção Produtos e Serviços.</p>
+            <p style="text-align: justify !important;">Para que serve a Comunicação Visual? A Comunicação Visual é o ponto chave para atrair os olhares do público e de transmitir a informação de maneira clara e objetiva. Além disso, essa ferramenta pode trazer grandes vantagens para sua marca, fazendo com ela seja reconhecida e atraia potenciais clientes. Somos uma empresa que atua no ramo de Comunicação Visual a mais de dez anos, em Planaltina/GO e região. Também trabalhamos com copos e pulseiras personalizadas para festas e similares. Conheça nosso portfólio na seção Produtos e Serviços.</p>
 
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
               <div class="icon"><i class="bx bx-chevrons-right"></i></div>
               <h4 class="title"><a href="">Experiência</a></h4>
-              <p class="description">São anos de atuação e dedicação na área de comunicação visual.</p>
+              <p class="description">São anos de atuação e dedicação em Comunicação Visual.</p>
             </div>
 
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
               <div class="icon"><i class="bx bx-chevrons-right"></i></div>
               <h4 class="title"><a href="">Confiabilidade</a></h4>
-              <p class="description">Veja quem são nossos clientes e parceiros. Sinta-se a vontade para buscar informações sobre os trabalhos realizados (ver seção Nossos Cliente).</p>
+              <p class="description">Veja quem são nossos clientes e parceiros. Sinta-se a vontade para buscar informações sobre os trabalhos realizados (ver seção Nossos Clientes).</p>
             </div>
 
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">

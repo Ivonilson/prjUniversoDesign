@@ -46,7 +46,7 @@ if ($_SESSION['user'] == NULL) {
 				<div class="col-10 float-left ml-0">
 				
 				<form method="post">
-					<div class="input-group col-4">
+					<div class="input-group col-lg-4 col-md-4 col-sm-6 col-xs-6">
 						<div class="input-group-prepend">
 							<label class="text-dark float-right input-group-text font-weight-bold">Ano referência</label>
 						</div>
@@ -62,12 +62,12 @@ if ($_SESSION['user'] == NULL) {
 							?>
 						</select>
 					</div>
-					<div class="col-4 mt-1">
-						<button class="btn btn-info btn-block d-print-none">Carregar</button>
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 mt-1">
+						<button class="btn btn-info btn-block d-print-none mb-2">Carregar</button>
 					</div>
 				</div>
 				</form>
-						<div class="col-2">
+						<div class="col-md-2 col-lg-2 col-sm-8 col-xs-8 ">
 							<button class="btn btn-danger btn-block d-print-none" onclick="window.print()">Imprimir</button>
 						</div>
 			</div>

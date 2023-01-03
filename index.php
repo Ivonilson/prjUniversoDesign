@@ -166,7 +166,7 @@ switch ($pagina) {
 
 	case 'logout':
 		unset($_SESSION['user']);
-		include "site/index.html";
+		include "site/index.php";
 		break;
 	
 	case 'site': 
