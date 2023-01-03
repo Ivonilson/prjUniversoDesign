@@ -844,30 +844,31 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
 
-            <!-- 
-            <form method="post" role="form" class="php-email-form" id="formEmail">
+            <form method="post" role="form" action="../model/phpMailer.php" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Seu Nome" required>
+                  <input type="text" name="name" class="form-control" id="nome" placeholder="Seu Nome" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
                   <input type="email" class="form-control" name="email" id="email" placeholder="Seu E-mail" required>
                 </div>
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="assunto" id="subject" placeholder="Assunto" required>
+                <input type="tel" class="form-control" name="telefone" id="telefone" placeholder="Telefone" required>
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="mensagem" rows="5" placeholder="Sua mensagem aqui..." required></textarea>
+                <input type="text" class="form-control" name="assunto" id="assunto" placeholder="Assunto" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="mensagem" id="mensagem" rows="5" placeholder="Sua mensagem aqui..." required></textarea>
               </div>
               <div class="my-3">
-                <div class="loading">Processando</div>
+                <div id="aguarde"></div>
                 <div class="error-message"></div>
-                <div class="sent-message">Sua mensagem foi enviada. Agradecemos pelo contato!</div>
+                <div id="retorno"></div>
               </div>
-              <div class="text-center"><button type="submit">Enviar Mensagem</button></div>
+              <div class="text-center"><button type="submit" id="btn_enviar">Enviar Mensagem</button></div>
             </form>
-            -->
 
           </div>
 
@@ -966,6 +967,8 @@
 
   <!-- Template Main JS File -->
   <script src="site/assets/js/main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="site/envioEmail.js"></script>
     
   </script>
 
