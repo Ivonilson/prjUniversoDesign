@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
 
 <head>
@@ -128,7 +129,7 @@
 
         <div class="row">
           <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch" data-aos="fade-right">
-            <a href="site/assets/img/gallery/video001.mp4" class="glightbox play-btn mb-4"></a>
+            <a href="site/assets/img/gallery/video.mp4" class="glightbox play-btn mb-4"></a>
           </div>
 
           <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-left">
@@ -367,30 +368,6 @@
         <div class="row g-0" data-aos="fade-left">
 
           <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-              <a href="site/assets/img/gallery/gallery-1.jpg" class="gallery-lightbox">
-                <img src="site/assets/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="150">
-              <a href="site/assets/img/gallery/gallery-2.jpg" class="gallery-lightbox">
-                <img src="site/assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-              <a href="site/assets/img/gallery/gallery-3.jpg" class="gallery-lightbox">
-                <img src="site/assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
             <div class="gallery-item" data-aos="zoom-in" data-aos-delay="250">
               <a href="site/assets/img/gallery/gallery-4.jpg" class="gallery-lightbox">
                 <img src="site/assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
@@ -496,70 +473,6 @@
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item" data-aos="zoom-in" data-aos-delay="450">
-              <a href="site/assets/img/gallery/gallery-17.jpg" class="gallery-lightbox">
-                <img src="site/assets/img/gallery/gallery-17.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="450">
-              <a href="site/assets/img/gallery/gallery-18.jpg" class="gallery-lightbox">
-                <img src="site/assets/img/gallery/gallery-18.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="450">
-              <a href="site/assets/img/gallery/gallery-19.jpg" class="gallery-lightbox">
-                <img src="site/assets/img/gallery/gallery-19.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="450">
-              <a href="site/assets/img/gallery/gallery-20.jpg" class="gallery-lightbox">
-                <img src="site/assets/img/gallery/gallery-20.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="450">
-              <a href="site/assets/img/gallery/gallery-21.jpg" class="gallery-lightbox">
-                <img src="site/assets/img/gallery/gallery-21.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="450">
-              <a href="site/assets/img/gallery/gallery-22.jpg" class="gallery-lightbox">
-                <img src="site/assets/img/gallery/gallery-22.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="450">
-              <a href="site/assets/img/gallery/gallery-23.jpg" class="gallery-lightbox">
-                <img src="site/assets/img/gallery/gallery-23.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="450">
-              <a href="site/assets/img/gallery/gallery-24.jpg" class="gallery-lightbox">
-                <img src="site/assets/img/gallery/gallery-24.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="450">
               <a href="site/assets/img/gallery/gallery-25.jpg" class="gallery-lightbox">
                 <img src="site/assets/img/gallery/gallery-25.jpg" alt="" class="img-fluid">
               </a>
@@ -576,72 +489,8 @@
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item" data-aos="zoom-in" data-aos-delay="450">
-              <a href="site/assets/img/gallery/gallery-27.jpg" class="gallery-lightbox">
-                <img src="site/assets/img/gallery/gallery-27.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="450">
               <a href="site/assets/img/gallery/gallery-28.jpg" class="gallery-lightbox">
                 <img src="site/assets/img/gallery/gallery-28.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="450">
-              <a href="site/assets/img/gallery/gallery-29.jpg" class="gallery-lightbox">
-                <img src="site/assets/img/gallery/gallery-29.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="450">
-              <a href="site/assets/img/gallery/gallery-30.jpg" class="gallery-lightbox">
-                <img src="site/assets/img/gallery/gallery-30.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="450">
-              <a href="site/assets/img/gallery/gallery-31.jpg" class="gallery-lightbox">
-                <img src="site/assets/img/gallery/gallery-31.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="450">
-              <a href="site/assets/img/gallery/gallery-32.jpg" class="gallery-lightbox">
-                <img src="site/assets/img/gallery/gallery-32.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="450">
-              <a href="site/assets/img/gallery/gallery-33.jpg" class="gallery-lightbox">
-                <img src="site/assets/img/gallery/gallery-33.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="450">
-              <a href="site/assets/img/gallery/gallery-34.jpg" class="gallery-lightbox">
-                <img src="site/assets/img/gallery/gallery-34.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="450">
-              <a href="site/assets/img/gallery/gallery-35.jpg" class="gallery-lightbox">
-                <img src="site/assets/img/gallery/gallery-35.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
@@ -980,7 +829,7 @@
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>E-mail</h4>
-                <p>universodesign02@gmail.com</p>
+                <p>universodesign@universodesigncv.com.br</p>
               </div>
 
               <div class="phone">
@@ -995,7 +844,8 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <!-- 
+            <form method="post" role="form" class="php-email-form" id="formEmail">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Seu Nome" required>
@@ -1005,10 +855,10 @@
                 </div>
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Assunto" required>
+                <input type="text" class="form-control" name="assunto" id="subject" placeholder="Assunto" required>
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Sua mensagem aqui..." required></textarea>
+                <textarea class="form-control" name="mensagem" rows="5" placeholder="Sua mensagem aqui..." required></textarea>
               </div>
               <div class="my-3">
                 <div class="loading">Processando</div>
@@ -1017,6 +867,7 @@
               </div>
               <div class="text-center"><button type="submit">Enviar Mensagem</button></div>
             </form>
+            -->
 
           </div>
 
@@ -1111,10 +962,12 @@
   <script src="site/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="site/assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="site/assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="site/assets/vendor/php-email-form/validate.js"></script>
+  <!-- <script src="site/assets/vendor/php-email-form/validate.js"></script> -->
 
   <!-- Template Main JS File -->
   <script src="site/assets/js/main.js"></script>
+    
+  </script>
 
 </body>
 

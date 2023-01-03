@@ -170,6 +170,6 @@ switch ($pagina) {
 		break;
 	
 	case 'site': 
-		include "site/index.html";
+		include "site/index.php";
 		break;
 }
