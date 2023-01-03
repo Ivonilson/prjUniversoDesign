@@ -53,5 +53,5 @@ $(document).ready(function () {
 function aguarde() {
     document.getElementById('aguarde').innerHTML = 'Processando...';
     document.getElementById('aguarde').setAttribute("class", "text-center alert alert-warning");
-    $("#aguarde").fadeIn(300).delay(6000).fadeOut(300);
+    $("#aguarde").fadeIn(300).delay(3000).fadeOut(300);
 }
