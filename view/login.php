@@ -41,7 +41,7 @@
       }
       ?>
 
-      <p class="mt-5 mb-3 text-muted">&copy;AbgSoluções 2022</p>
+      <p class="mt-5 mb-3 text-muted">&copy;Universo Design - <?= date('Y')?></p>
     </form>
   </div>
 

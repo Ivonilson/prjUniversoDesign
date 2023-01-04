@@ -6,12 +6,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Universo Design</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>Universo Design - Comunicação Visual</title>
+  <meta content="Faixas, banners, cartões de visita, Comunicação Visual em geral - Planaltina e Região." name="description">
+  <meta content="Universo Design - www.universodesigncv.com.br  , comunicação visual, Planaltina/GO, Brasília/DF, banners, faixas, cartões de visita" name="keywords">
 
   <!-- Favicons -->
-  <link href="site/assets/img/favicon.ico" rel="icon">
+  <link href="site/assets/img/logoOficial.ico" rel="icon">
   <link href="site/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -872,6 +872,18 @@
 
           </div>
 
+        </div>
+
+        <div class="facebook">
+           <a href="https://www.facebook.com/universodesign02/" target="_blank"><img src="site/assets/img/facebook.png" alt="Facebook"title="Facebook" style="width: 50px; height: 50px;">
+        </div>
+
+        <div class="instagram">
+           <a href="https://www.instagram.com/universodesign01/" target="_blank"><img src="site/assets/img/instagram.png" alt="Instagram" title="Instagram" style="width: 50px; height: 50px;">
+        </div>
+
+        <div class="whatsapp">
+           <a href="https://contate.me/universodesigncv" target="_blank"><img src="site/assets/img/whatsapp.png" title="Whatsapp" alt="Whatsapp" style="width: 50px; height: 50px;"></a>
         </div>
 
       </div>

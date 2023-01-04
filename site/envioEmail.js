@@ -13,7 +13,7 @@ $(function () {
         var mensagem = $('#mensagem').val();
 
         if ($('#nome').val() == '' || $('#email').val() == '' || $('#telefone').val() == '' || $('#assunto').val() == ''  || $('#mensagem').val() == '') {
-            alert('Preencha todos os campos prosseguir.');
+            alert('Preencha todos os campos para prosseguir.');
         }  else {
 
             aguarde()
