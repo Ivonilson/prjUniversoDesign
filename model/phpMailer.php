@@ -16,8 +16,8 @@ require"../phpMailer/src/SMTP.php";
       $mail->Host = "br474.hostgator.com.br";
       $mail->Port = 465; // or 587
       $mail->IsHTML(true);
-      $mail->Username = "universodesign@universodesigncv.com.br";
-      $mail->Password = "#F2023Universo";
+      $mail->Username = "";
+      $mail->Password = "";
       $mail->SetFrom("universodesign@universodesigncv.com.br", "Universo Design - Site");
       $mail->Subject = utf8_decode($assunto);
       $mail->Body = utf8_decode($mensagem);
