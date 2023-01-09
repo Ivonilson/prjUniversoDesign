@@ -21,24 +21,22 @@ if ($_SESSION['user'] == NULL) {
 		<div id="imprimir">
 
 			<div class="container containerGeralImpressao">
-				<div class="row">
-					<div class="col divLogo">
-						<img src="../assets/universo.jpg" style="width: 99%; height: 99%;">
+
+				<div class="row informacoes_iniciais">
+					<div class="col-12 divProposta text-center">
+						<h3 class="font-weight-bold">Proposta Comercial</h3>
 					</div>
-					<div class="col-6 divProposta p-3 text-center">
-						<h2 style="font-size: 3vw;">PROPOSTA</h2>
-						<h3 style="font-size: 3vw;">ORÇAMENTO</h3>
-						<h3 style="font-size: 3vw;">SERVIÇO</h3>
+					<div class="col-5 divLogo pb-1">
+						<img src="../assets/universo.jpg" style="width: 70%; height: 60%";">
+					</div>
+					<div class="offset-1 col-6 pt-3 pr-0">
+						<h5 class="font-weight-bold text-dark text-left  pl-5 pr-0 mr-0" style="font-size: 15px text-left;">Fabrício Pereira Betinardi Guimarães</h5>
+						<h6 class="text-dark text-left pl-5 pr-0 ml-0"> CNPJ: 29.173.145/0001-76 <br> Fone: 61 3637-1820 <br> End: QA 05, Mr, Lote 09, Setor Norte, Planaltina/GO <br> E-mail: universodesign@universodesigncv.com.br</h6>
 					</div>
 				</div>
-
-				<div class="col mt-1 p-0">
-					<small class="text-dark">CNPJ: 99.999.999/9990-99 - <em>Qd. 02, Mr-02, Lt. 02, St. Norte, CEP: 99.999-999.</em></small>
-				</div>
-
 				<div class="row pt-2 pb-2 mt-2">
 
-					<div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
+					<div class="col-12">
 						<div class="input-group mb-2">
 							<div class="input-group-prepend">
 								<div class="input-group-text font-weight-bold bordasImpressao">
@@ -49,7 +47,7 @@ if ($_SESSION['user'] == NULL) {
 						</div>
 					</div>
 
-					<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+					<div class="col-12">
 						<div class="input-group mb-2">
 							<div class="input-group-prepend">
 								<div class="input-group-text font-weight-bold bordasImpressao">
@@ -60,7 +58,7 @@ if ($_SESSION['user'] == NULL) {
 						</div>
 					</div>
 
-					<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+					<div class="col-12">
 						<div class="input-group mb-2">
 							<div class="input-group-prepend">
 								<div class="input-group-text font-weight-bold bordasImpressao">
@@ -71,7 +69,7 @@ if ($_SESSION['user'] == NULL) {
 						</div>
 					</div>
 
-					<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+					<div class="col-12">
 						<div class="input-group mb-2">
 							<div class="input-group-prepend">
 								<div class="input-group-text font-weight-bold bordasImpressao">
@@ -152,7 +150,7 @@ if ($_SESSION['user'] == NULL) {
 						</tbody>
 					</table>
 
-					<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+					<div class="col-12">
 						<div class="input-group mb-2">
 							<div class="input-group-prepend">
 								<div class="input-group-text font-weight-bold bordasImpressao">
@@ -163,7 +161,7 @@ if ($_SESSION['user'] == NULL) {
 						</div>
 					</div>
 
-					<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+					<div class="col-12">
 						<div class="input-group mb-2">
 							<div class="input-group-prepend">
 								<div class="input-group-text font-weight-bold bordasImpressao">
@@ -174,7 +172,7 @@ if ($_SESSION['user'] == NULL) {
 						</div>
 					</div>
 
-					<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+					<div class="col-12">
 						<div class="input-group mb-2">
 							<div class="input-group-prepend">
 								<div class="input-group-text font-weight-bold bordasImpressao">
@@ -185,7 +183,7 @@ if ($_SESSION['user'] == NULL) {
 						</div>
 					</div>
 						
-					<div class="col-10 mt-5">
+					<div class="col-12 mt-5">
 						<span class="text-dark h5">Responsável:</span> <span class="text-dark h5"><?= $resultado != null ? $resultado[0]['usuario'] : $_SESSION['user'] ?></span>
 					</div>
 				    

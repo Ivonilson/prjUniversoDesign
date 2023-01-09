@@ -90,7 +90,7 @@
       <div class="row justify-content-between">
         <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
           <div data-aos="zoom-out">
-            <h1>Aqui você encontra tudo para divulgar seu produto:  <span>banners, faixas, cartões de visita, envelopamento e muito mais.</span></h1>
+            <h1>Aqui você encontra tudo para divulgar seu comércio:  <span>banners, faixas, toldos, envelopamentos e muito mais.</span></h1>
             <h2>Entre em contato e faça um orçamento.</h2>
             <div class="text-center text-lg-start">
               <a href="#about" class="btn-get-started scrollto">Saiba mais</a>
@@ -180,35 +180,52 @@
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
               <img src="site/assets/img/gallery/poster.png">
-              <h3><a href="#">&nbspFaixas</a></h3>
+              <h3><a href="#">&nbspFaixas em lona</a></h3>
             </div>
           </div>
-          <div class="col-lg-3 col-md-4 mt-3">
+          <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
               <!-- <i class="ri-store-line" style="color: #ffbb2c;"></i>-->
-             <img src="site/assets/img/gallery/placas.png">
-              <h3>&nbspPlacas</h3>
+             <img src="site/assets/img/gallery/fachada.png">
+              <h3>&nbspFachadas em lona/ACM</h3>
             </div>
           </div>
+
+          <!--
           <div class="col-lg-3 col-md-4 mt-3">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="150">
               <img src="site/assets/img/gallery/lonas.png">
               <h3>&nbspLonas</h3>
             </div>
           </div>
-          <div class="col-lg-3 col-md-4 mt-3">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
-               <img src="site/assets/img/gallery/envelopar.png">
-              <h3>&nbspEnvelopamentos</h3>
+          -->
+
+          
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="150">
+              <img src="site/assets/img/gallery/toldos.png">
+              <h3>&nbspToldos</h3>
             </div>
           </div>
+          
+
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
+               <img src="site/assets/img/gallery/envelopar.png">
+              <h3>Envelopamentos de veículos e freezers/geladeiras</h3>
+            </div>
+          </div>
+
+          <!--
           <div class="col-lg-3 col-md-4 mt-3">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
                <img src="site/assets/img/gallery/copo.png">
               <h3>&nbspCopos personalizados</h3>
             </div>
           </div>
-          <div class="col-lg-3 col-md-4 mt-3">
+           -->
+       
+          <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
                <img src="site/assets/img/gallery/pulseiras.png">
               <h3>&nbspPulseiras para eventos</h3>
@@ -823,19 +840,21 @@
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>Endereço</h4>
-                <p>Quadra QA 5, Lote 09, Setor Norte, Planaltina/GO</p>
+                <p>Quadra QA 5, Mr, Lote 09, Setor Norte, Planaltina/GO</p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>E-mail</h4>
                 <p>universodesign@universodesigncv.com.br</p>
+                <p>atendimento@universodesigncv.com.br</p>
+                <p>compras@universodesigncv.com.br</p>
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Telefone</h4>
-                <p>(61) 99955-6173</p>
+                <p>(61) 3637-1820</p>
               </div>
 
             </div>
