@@ -182,7 +182,18 @@ if ($_SESSION['user'] == NULL) {
 							<input type="text" disabled class="form-control bg-light bordasImpressao " value="<?= $resultado != null ? number_format($totalizador[0]['sum_total_pagar'], 2, ",", ".") : 0 ?>">
 						</div>
 					</div>
-						
+					
+					<div class="col-12">
+						<div class="input-group mb-2">
+							<div class="input-group-prepend">
+								<div class="input-group-text font-weight-bold bordasImpressao">
+									Observações
+								</div>
+							</div>
+							<textarea type="text" disabled class="bg-light bordasImpressao col" id="inlineFormInputObservacoes" cols="100" rows="8" placeholder="Observações" name="ta-observacoesig"><?= $item['observacoes']?></textarea>
+						</div>
+					</div>
+
 					<div class="col-12 mt-5">
 						<span class="text-dark h5">Responsável:</span> <span class="text-dark h5"><?= $resultado != null ? $resultado[0]['usuario'] : $_SESSION['user'] ?></span>
 					</div>
