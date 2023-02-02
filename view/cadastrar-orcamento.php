@@ -96,12 +96,12 @@ if ($_SESSION['user'] == NULL) {
 
 											<br><span class="font-weight-bold text-dark" style="font-size: 20px">Descrição: </span><span style="font-size: 22px"><?= $UltimoOrcCadastrado != null ? $UltimoOrcCadastrado['trabalho_servico'] : '-' ?></span><br>
 
-											<span class="font-weight-bold text-dark" style="font-size: 20px">Itens: </span><span style="font-size: 22px"><?=  isset($totalizador_itens) ? $totalizador_itens['descricao'] : 'Orçamento não possui itens.' ?></span><br>
+											<span class="font-weight-bold text-dark" style="font-size: 20px">Itens: </span><span style="font-size: 22px"><?= isset($totalizador_itens) ? $totalizador_itens['descricao'] : 'Orçamento não possui itens.' ?></span><br>
 
 											<span class="font-weight-bold text-dark" style="font-size: 20px">Valor Total (R$): </span><span style="font-size: 22px"><?= isset($totalizador_itens) ? number_format($totalizador_itens['valor_total'], 2, ',', '.') : 0 ?></span><br>
 
 											<span class="font-weight-bold text-dark" style="font-size: 20px">Desconto (R$): </span><span style="font-size: 22px"><?= isset($totalizador_itens) ? number_format($totalizador_itens['desconto'], 2, ',', '.') : 0 ?></span><br>
-											
+
 											<span class="font-weight-bold text-dark" style="font-size: 20px">Total a pagar (R$): </span><span style="font-size: 22px"><?= isset($totalizador_itens) ? number_format($totalizador_itens['total_pagar'], 2, ',', '.') : 0 ?></span><br>
 
 											<br>
@@ -256,7 +256,7 @@ if ($_SESSION['user'] == NULL) {
 									foreach ($produto as $carregaProduto) {
 
 									?>
-										<option value="<?= $carregaProduto->descricao . ' (' . $carregaProduto->unidade_medida . ')' . '/ ' .  $carregaProduto->preco_unitario . '/ - ' . $carregaProduto->tipo ?>" id="preco"><?= $carregaProduto->descricao . ' (' . $carregaProduto->unidade_medida . ') - Valor Unit.(R$) ' . $carregaProduto->preco_unitario?>
+										<option value="<?= $carregaProduto->descricao . ' (' . $carregaProduto->unidade_medida . ')' . '/ ' .  $carregaProduto->preco_unitario . '/ - ' . $carregaProduto->tipo ?>" id="preco"><?= $carregaProduto->descricao . ' (' . $carregaProduto->unidade_medida . ') - Valor Unit.(R$) ' . $carregaProduto->preco_unitario ?>
 										<?php
 									}
 										?>
@@ -309,11 +309,68 @@ if ($_SESSION['user'] == NULL) {
 										<label class="text-primary" for="valorTotal">VALOR A PAGAR (R$)</label>
 										<input type="text" class="form-control mb-2" id="valorTotalPagar" aria-describedby="inlineFormInputValorTotal" placeholder="-" name="ipt-valor-pagar-global">
 									</div>
+
+									<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 mt-2">
+										<fieldset>
+											<legend>Condições de pagamento</legend>
+
+											<div>
+												<input type="checkbox" id="vista" name="check-vista" checked>
+												<label for="vista">A Vista</label>
+											</div>
+											<div>
+												<input type="checkbox" id="metade" name="check-metade">
+												<label for="metade">50% de entrada</label>
+											</div>
+											<div>
+												<input type="checkbox" id="parcelado" name="check-parcelado">
+												<label for="metade">Parcelado sem entrada</label>
+											</div>
+										</fieldset>
+									</div>
+
+									<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 mt-2">
+										<fieldset>
+											<legend>Forma de pagamento</legend>
+
+											<div>
+												<input type="checkbox" id="dinheiro" name="check-dinheiro" checked>
+												<label for="dinheiro">Dinheiro</label>
+											</div>
+											<div>
+												<input type="checkbox" id="pix" name="check-pix">
+												<label for="pix">Pix</label>
+											</div>
+											<div>
+												<input type="checkbox" id="debito" name="check-debito">
+												<label for="debito">Cartão de débito</label>
+											</div>
+											<div>
+												<input type="checkbox" id="credito" name="check-credito">
+												<label for="credito">Cartão de crédito</label>
+												<br>
+												<label for="">N° parcelas</label>
+												<select name="" id="">
+													<option value="">1 (sem juros)</option>
+													<option value="">2 (sem juros)</option>
+													<option value="">3 (sem juros)</option>
+													<option value="">2 (taxa de 3% a.m.)</option>
+
+												</select>
+											</div>
+											<div>
+												<input type="checkbox" id="online" name="check-online">
+												<label for="online">Transferência on-line</label>
+											</div>
+										</fieldset>
+									</div>
+
 								</div>
 
 							</div>
 							<!-- FIM DA DIV DE RESUMO DE VALORES -->
-
+							
+							<!--
 							<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 mt-4">
 								<label class="text-dark" for="select-condicao-pagamento">
 									CONDIÇÕES PAGAMENTO
@@ -341,6 +398,7 @@ if ($_SESSION['user'] == NULL) {
 									<option value="DEPÓSITO">DEPÓSITO</option>
 								</select>
 							</div>
+							-->
 
 							<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 mt-4">
 								<label class="text-dark" for="inlineFormInputSolicitante">SOLICITADO POR</label>
