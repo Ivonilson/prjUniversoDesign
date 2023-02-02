@@ -310,20 +310,21 @@ if ($_SESSION['user'] == NULL) {
 										<input type="text" class="form-control mb-2" id="valorTotalPagar" aria-describedby="inlineFormInputValorTotal" placeholder="-" name="ipt-valor-pagar-global">
 									</div>
 
+									
 									<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 mt-2">
 										<fieldset>
-											<legend>Condições de pagamento</legend>
+											<label>Condições de pagamento</label>
 
 											<div>
-												<input type="checkbox" id="vista" name="check-vista" checked>
+												<input type="checkbox" id="vista" name="check-condicao" value="A VISTA">
 												<label for="vista">A Vista</label>
 											</div>
 											<div>
-												<input type="checkbox" id="metade" name="check-metade">
+												<input type="checkbox" id="metade" name="check-condicao" value="50% DE ENTRADA">
 												<label for="metade">50% de entrada</label>
 											</div>
 											<div>
-												<input type="checkbox" id="parcelado" name="check-parcelado">
+												<input type="checkbox" id="parcelado" name="check-condicao" value="PARCELADO">
 												<label for="metade">Parcelado sem entrada</label>
 											</div>
 										</fieldset>
@@ -331,22 +332,22 @@ if ($_SESSION['user'] == NULL) {
 
 									<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 mt-2">
 										<fieldset>
-											<legend>Forma de pagamento</legend>
+											<label>Forma de pagamento</label>
 
 											<div>
-												<input type="checkbox" id="dinheiro" name="check-dinheiro" checked>
+												<input type="checkbox" id="dinheiro" name="check-forma" value="DINHEIRO">
 												<label for="dinheiro">Dinheiro</label>
 											</div>
 											<div>
-												<input type="checkbox" id="pix" name="check-pix">
+												<input type="checkbox" id="pix" name="check-forma" value="PIX">
 												<label for="pix">Pix</label>
 											</div>
 											<div>
-												<input type="checkbox" id="debito" name="check-debito">
+												<input type="checkbox" id="debito" name="check-forma" value="DÉBITO">
 												<label for="debito">Cartão de débito</label>
 											</div>
 											<div>
-												<input type="checkbox" id="credito" name="check-credito">
+												<input type="checkbox" id="credito" name="check-forma" value="CRÉDITO">
 												<label for="credito">Cartão de crédito</label>
 												<br>
 												<label for="">N° parcelas</label>
@@ -359,7 +360,7 @@ if ($_SESSION['user'] == NULL) {
 												</select>
 											</div>
 											<div>
-												<input type="checkbox" id="online" name="check-online">
+												<input type="checkbox" id="online" name="check-forma">
 												<label for="online">Transferência on-line</label>
 											</div>
 										</fieldset>
@@ -370,7 +371,6 @@ if ($_SESSION['user'] == NULL) {
 							</div>
 							<!-- FIM DA DIV DE RESUMO DE VALORES -->
 							
-							<!--
 							<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 mt-4">
 								<label class="text-dark" for="select-condicao-pagamento">
 									CONDIÇÕES PAGAMENTO
@@ -398,7 +398,6 @@ if ($_SESSION['user'] == NULL) {
 									<option value="DEPÓSITO">DEPÓSITO</option>
 								</select>
 							</div>
-							-->
 
 							<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 mt-4">
 								<label class="text-dark" for="inlineFormInputSolicitante">SOLICITADO POR</label>
