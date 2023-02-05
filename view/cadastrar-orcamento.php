@@ -370,7 +370,7 @@ if ($_SESSION['user'] == NULL) {
 
 							</div>
 							<!-- FIM DA DIV DE RESUMO DE VALORES -->
-							
+
 							<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 mt-4">
 								<label class="text-dark" for="select-condicao-pagamento">
 									CONDIÇÕES PAGAMENTO
@@ -399,21 +399,15 @@ if ($_SESSION['user'] == NULL) {
 								</select>
 							</div>
 
-							<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 mt-4">
+							<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 mt-4">
 								<label class="text-dark" for="inlineFormInputSolicitante">SOLICITADO POR</label>
 								<input type="text" class="form-control mb-2" id="inlineFormInputSolicitante" placeholder="Nome e telefone" name="ipt-solicitante">
 							</div>
 
-							<!--<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-							<div class="input-group mb-2">
-								<div class="input-group-prepend">
-									<div class="input-group-text bg-secondary text-white">
-										DIGITE O NOME DA PESSOA QUE SOLICITOU O ORÇAMENTO:
-									</div>
-								</div>
-								<input type="text" class="form-control" name="ipt-solicitante" placeholder="Digite...">
+							<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 mt-4">
+								<label class="text-dark" for="prazoEntrega">PRAZO DE ENTREGA</label>
+								<input type="number" min="0" class="form-control mb-2" id="prazoEntrega" placeholder="em dias" name="ipt-prazo-entrega" value="0">
 							</div>
-						</div>-->
 
 						</div>
 

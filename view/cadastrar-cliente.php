@@ -193,12 +193,12 @@ if ($_SESSION['user'] == null) {
 
 						<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
 							<label class="sr-only" for="inlineFormInputCpfCnpj">CPF</label>
-							<input type="text" class="form-control mb-2" id="inlineFormInputCpfCnpj" name="ipt-cpf-cnpj" required>
+							<input type="text" class="form-control mb-2" id="inlineFormInputCpfCnpj" name="ipt-cpf-cnpj">
 						</div>
 
 						<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 							<label class="sr-only" for="inlineFormIputEndereco">Endereço</label>
-							<input type="text" class="form-control mb-2" id="inlineFormInputEndereco" placeholder="Endereço" name="ipt-endereco" required>
+							<input type="text" class="form-control mb-2" id="inlineFormInputEndereco" placeholder="Endereço" name="ipt-endereco">
 						</div>
 
 						<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
@@ -242,7 +242,7 @@ if ($_SESSION['user'] == null) {
 
 						<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 							<label class="sr-only" for="inlineFormInputTelCel">Telefone Celular</label>
-							<input type="text" class="form-control mb-2" id="inlineFormInputTelCel" placeholder="Telefone Celular" name="ipt-tel-cel" required>
+							<input type="text" class="form-control mb-2" id="inlineFormInputTelCel" placeholder="Telefone Celular (opcional)" name="ipt-tel-cel">
 						</div>
 
 						<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">

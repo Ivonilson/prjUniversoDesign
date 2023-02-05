@@ -54,7 +54,11 @@ if ($_SESSION['user'] == NULL) {
 									Cliente
 								</div>
 							</div>
-							<input type="text" disabled class="form-control bg-light bordasImpressao " value="<?= $resultado != null ? $resultado[0]['nome_cliente'] : 'Orçamento sem itens' ?>">
+							<?php if($resultado[0]['cpf_cnpj'] == '' || $resultado[0]['cpf_cnpj'] == '') { ?>
+								<input type="text" disabled class="form-control bg-light bordasImpressao " value="<?= $resultado != null ? $resultado[0]['nome_cliente'] : 'Orçamento sem itens' ?>">
+							<?php } else { ?>
+								<input type="text" disabled class="form-control bg-light bordasImpressao " value="<?= $resultado != null ? $resultado[0]['nome_cliente'].' (CPF/CNPJ: '.$resultado[0]['cpf_cnpj'].')' : 'Orçamento sem itens' ?>">
+							<?php } ?>
 						</div>
 					</div>
 
@@ -183,6 +187,10 @@ if ($_SESSION['user'] == NULL) {
 						</div>
 					</div>
 					
+					<?php 
+						if($item['observacoes'] != '' && $item['observacoes'] != null) {
+					?>
+
 					<div class="col-12">
 						<div class="input-group mb-2">
 							<div class="input-group-prepend">
@@ -190,9 +198,24 @@ if ($_SESSION['user'] == NULL) {
 									Observações
 								</div>
 							</div>
-							<textarea type="text" disabled class="bg-light bordasImpressao col" id="inlineFormInputObservacoes" cols="100" rows="8" placeholder="Observações" name="ta-observacoesig"><?= $item['observacoes']?></textarea>
+							<textarea type="text" disabled class="bg-light bordasImpressao col" id="inlineFormInputObservacoes" cols="100" rows="8"><?= $item['observacoes']?></textarea>
 						</div>
 					</div>
+
+					<div class="col-3">
+						<div class="input-group mb-2">
+							<div class="input-group-prepend">
+								<div class="input-group-text font-weight-bold bordasImpressao">
+									Prazo de Entrega
+								</div>
+							</div>
+							<input type="text" disabled class="form-control bg-light bordasImpressao " value="<?= $resultado != null ? $item['prazo'].' dia(s)' : '0' ?>">
+						</div>
+					</div>
+
+					<?php 
+						}
+					?>
 
 					<div class="col-12 mt-5">
 						<span class="text-dark h5">Responsável:</span> <span class="text-dark h5"><?= $resultado != null ? $resultado[0]['usuario'] : $_SESSION['user'] ?></span>
