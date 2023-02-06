@@ -80,29 +80,29 @@ if ($_SESSION['user'] == NULL) {
 
 							foreach ($resultado as  $item) {
 						?>
-							<tr>
-								<form method="post">
-									<td><?= $item['descricao'] ?>&nbsp&nbsp<button class="btn btn-light d-md-none d-lg-none d-xl-none" value='Excluir' name="btnDeletarItensOrcamento" id="btnDeletarItem" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
-									<td><?= number_format($item['valor_unitario'], 2, ',', '.') ?></td>
-									<td><?= $item['quantidade'] ?></td>
-									<td><?= number_format($item['valor_total'], 3, ',', '.') ?></td>
-									<td><?= number_format($item['desconto'], 3, ',', '.') ?></td>
-									<td><?= number_format($item['total_pagar'], 3, ',', '.') ?></td>
-									<!--<td align="center"  data-toggle="modal" data-target=".modal-ver-itens"><a href="#" title="Atualizar"><i class="fa fa-check-square-o" aria-hidden="true"></i></a></td>--->
+								<tr>
+									<form method="post">
+										<td><?= $item['descricao'] ?>&nbsp&nbsp<button class="btn btn-light d-md-none d-lg-none d-xl-none" value='Excluir' name="btnDeletarItensOrcamento" id="btnDeletarItem" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+										<td><?= number_format($item['valor_unitario'], 2, ',', '.') ?></td>
+										<td><?= $item['quantidade'] ?></td>
+										<td><?= number_format($item['valor_total'], 3, ',', '.') ?></td>
+										<td><?= number_format($item['desconto'], 3, ',', '.') ?></td>
+										<td><?= number_format($item['total_pagar'], 3, ',', '.') ?></td>
+										<!--<td align="center"  data-toggle="modal" data-target=".modal-ver-itens"><a href="#" title="Atualizar"><i class="fa fa-check-square-o" aria-hidden="true"></i></a></td>--->
 
-									<td align="center">
-										<a href="#" class="btn btn-default" data-toggle="modal" data-target="#<?= $contador ?>"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-									</td>
+										<td align="center">
+											<a href="#" class="btn btn-default" data-toggle="modal" data-target="#<?= $contador ?>"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+										</td>
 
-									<td align="center">
+										<td align="center">
 											<input type="hidden" name="ipt-cod-delete" value="<?= $item['id'] ?>">
 
 											<input type="hidden" name="ipt-confirmacao" id="ipt-confirma">
 
 											<button class="btn btn-light d-xs-none" value='Excluir' name="btnDeletarItensOrcamento" id="btnDeletarItem" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir"><i class="fa fa-trash" aria-hidden="true"></i></button>
-									</td>
-								</form>
-							</tr>
+										</td>
+									</form>
+								</tr>
 
 								<!-- MODAL EDITAR ITEM --->
 								<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="<?= $contador ?>">
@@ -155,6 +155,7 @@ if ($_SESSION['user'] == NULL) {
 										</div>
 									</div>
 								</div>
+								<!-- FIM MODAL EDITAR ITEM-->
 
 						<?php
 								$contador++;

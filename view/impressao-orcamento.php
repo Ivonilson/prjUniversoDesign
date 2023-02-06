@@ -202,11 +202,11 @@ if ($_SESSION['user'] == NULL) {
 						</div>
 					</div>
 
-					<div class="col-3">
+					<div class="col-4">
 						<div class="input-group mb-2">
 							<div class="input-group-prepend">
 								<div class="input-group-text font-weight-bold bordasImpressao">
-									Prazo de Entrega
+									Prazo de entrega estimado
 								</div>
 							</div>
 							<input type="text" disabled class="form-control bg-light bordasImpressao " value="<?= $resultado != null ? $item['prazo'].' dia(s)' : '0' ?>">

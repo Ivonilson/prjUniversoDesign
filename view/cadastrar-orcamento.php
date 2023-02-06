@@ -310,7 +310,7 @@ if ($_SESSION['user'] == NULL) {
 										<input type="text" class="form-control mb-2" id="valorTotalPagar" aria-describedby="inlineFormInputValorTotal" placeholder="-" name="ipt-valor-pagar-global">
 									</div>
 
-									
+									<!--
 									<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 mt-2">
 										<fieldset>
 											<label>Condições de pagamento</label>
@@ -365,6 +365,7 @@ if ($_SESSION['user'] == NULL) {
 											</div>
 										</fieldset>
 									</div>
+									-->
 
 								</div>
 

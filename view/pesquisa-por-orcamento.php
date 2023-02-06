@@ -105,6 +105,7 @@ if ($_SESSION['user'] == NULL) {
 								<th>Status</th>
 								<th>Observação</th>
 								<th>Ver Itens</th>
+								<th>Editar</th>
 								<th>Imprimir</th>
 								<th class="d-xs-none">Excluir</th>
 							</tr>
@@ -119,6 +120,7 @@ if ($_SESSION['user'] == NULL) {
 								<th>Status</th>
 								<th>Observação</th>
 								<th>Ver Itens</th>
+								<th>Editar</th>
 								<th>Imprimir</th>
 								<th class="d-xs-none">Excluir</th>
 							</tr>
@@ -132,26 +134,30 @@ if ($_SESSION['user'] == NULL) {
 
 								foreach ($resultado as  $value) {
 							?>
-									
-								<tr>
-									<form method="post">
-										<td id="valor_id"><?= $value['id_orcamento']?>&nbsp&nbsp<button class="btn btn-light d-lg-none" name="btn-deletar-orcamento" id="btn-del-orcamento" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
-										<td><?= $value['nome'] ?></td>
-										<td><?= $value['servico'] ?></td>
-										<td><?= date_format(date_create($value['data_cadastro']), "d/m/Y") ?></td>
-										<td><?= date_format(date_create($value['data_validade']), "d/m/Y") ?></td>
-										<td><?= $value['status'] ?></td>
-										<td><?= $value['observacao'] ?></td>
 
-										<!--<td align="center"  data-toggle="modal" data-target=".modal-ver-itens"><a href="#" title="Atualizar"><i class="fa fa-check-square-o" aria-hidden="true"></i></a></td>--->
+									<tr>
+										<form method="post">
+											<td id="valor_id"><?= $value['id_orcamento'] ?>&nbsp&nbsp<button class="btn btn-light d-lg-none" name="btn-deletar-orcamento" id="btn-del-orcamento" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Excluir"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+											<td><?= $value['nome'] ?></td>
+											<td><?= $value['servico'] ?></td>
+											<td><?= date_format(date_create($value['data_cadastro']), "d/m/Y") ?></td>
+											<td><?= date_format(date_create($value['data_validade']), "d/m/Y") ?></td>
+											<td><?= $value['status'] ?></td>
+											<td><?= $value['observacao'] ?></td>
 
-										<td align="center">
-											<a href="/?pagina=itens-orcamento&id_orcamento=<?= $value['id_orcamento'] ?>" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Itens orçamento" target="_blank" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></a>
-										</td>
+											<!--<td align="center"  data-toggle="modal" data-target=".modal-ver-itens"><a href="#" title="Atualizar"><i class="fa fa-check-square-o" aria-hidden="true"></i></a></td>--->
 
-										<td align="center"><a href="/?pagina=impressao-orcamento&id_orcamento=<?= $value['id_orcamento'] ?>&form=pesquisa-por-orcamento" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Imprimir" target="_blank" class="btn btn-default"><i class="fa fa-print" aria-hidden="true"></i></a></td>
+											<td align="center">
+												<a href="/?pagina=itens-orcamento&id_orcamento=<?= $value['id_orcamento'] ?>" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Itens orçamento" target="_blank" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></a>
+											</td>
 
-										
+											<td align="center">
+												<a href="#" class="btn btn-default" data-toggle="modal" data-target="#<?= $contador ?>"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+											</td>
+
+											<td align="center"><a href="/?pagina=impressao-orcamento&id_orcamento=<?= $value['id_orcamento'] ?>&form=pesquisa-por-orcamento" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Imprimir" target="_blank" class="btn btn-default"><i class="fa fa-print" aria-hidden="true"></i></a></td>
+
+
 
 											<input type="hidden" name="ipt-orcamento-deletar" value="<?= $value['id_orcamento'] ?>">
 
@@ -163,7 +169,76 @@ if ($_SESSION['user'] == NULL) {
 										<!--<td align="center"><a href="/?pagina=historico&cod_os=<?= $value['cod_os'] ?>&form=pesquisa-por-data-receb" title="Histórico" target="_blank"><i class="fa fa-history" aria-hidden="true"></a></td>-->
 									</tr>
 
+
+									<!-- MODAL EDITAR ORÇAMENTO --->
+									<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="<?= $contador ?>">
+										<div class="modal-dialog modal-sm">
+											<div class="modal-content">
+
+												<div class="modal-body">
+													<div class="row justify-content-center">
+
+														<h3 class="text-primary col-12 text-center mt-5">Alterando o orçamento n° <label class="border p-3 text-danger font-weight-bold"><?= $value['id_orcamento'] ?></label></h3>
+
+														<form method="post">
+
+															<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-2">
+																<input type="hidden" class="form-control mb-2"  name="ipt-id-orcamento"  value="<?=$value['id_orcamento']?>">
+															</div>
+
+															<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-2">
+																<label for="servico">Serviço</label>
+																<input type="text" class="form-control mb-2" placeholder="-" name="ipt-servico" aria-describedby="servico" value="<?=$value['trabalho_servico'] ?>">
+															</div>
+
+															<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-4">
+																<label class="text-dark" for="select-status">
+																	Status
+																</label>
+																<select class="form-control mb-2" id="select-status" name="sel-status">
+																	<option value="<?= $value['status'] ?>"><?= $value['status'] ?></option>
+																	<option value="EM ANÁLISE">EM ANÁLISE</option>
+																	<option value="APROVADO">APROVADO</option>
+																	<option value="SUSPENSO">SUSPENSO</option>
+																	<option value="CANCELADO">CANCELADO</option>
+																</select>
+															</div>
+
+															<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-2">
+																<label for="validade">Validade</label>
+																<input type="date" class="form-control mb-2" placeholder="-" name="ipt-validade" aria-describedby="validade" value="<?=$value['data_validade']?>">
+															</div>
+
+															<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-2">
+																<label for="prazo">Prazo de entrega</label>
+																<input type="number" min="1" class="form-control mb-2" placeholder="-" name="ipt-prazo" aria-describedby="prazo" value="<?=$value['prazo'] != null ? $value['prazo'] : 0 ?>">
+															</div>
+
+															<div class="col-12">
+																<label for="inlineFormInputObservacoes">Observações</label>
+																<textarea type="text" class="form-control mb-2" id="inlineFormInputObservacoes" cols="100" rows="3" placeholder="Observações" name="ta-observacao"><?= $value['observacao'] ?></textarea>
+															</div>
+
+															<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-4">
+																<label class="text-danger text-light">-</label>
+																<br>
+																<input class="form-control btn-success" type="submit" name="btnEditarOrcamento" value="Gravar">
+															</div>
+
+														</form>
+
+													</div>
+
+												</div>
+
+											</div>
+										</div>
+									</div>
+									<!-- FIM MODAL EDITAR ORÇAMENTO-->
+
+
 							<?php
+									$contador++;
 									$conexao = null;
 								}
 							} else {
