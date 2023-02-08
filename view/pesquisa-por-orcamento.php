@@ -152,7 +152,7 @@ if ($_SESSION['user'] == NULL) {
 											</td>
 
 											<td align="center">
-												<a href="#" class="btn btn-default" data-toggle="modal" data-target="#<?= $contador ?>"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+												<a href="#" class="btn btn-default" data-toggle="modal" data-target="#<?= $contador ?>"><i class="fa fa-pencil" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Editar" aria-hidden="true"></i></a>
 											</td>
 
 											<td align="center"><a href="/?pagina=impressao-orcamento&id_orcamento=<?= $value['id_orcamento'] ?>&form=pesquisa-por-orcamento" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Imprimir" target="_blank" class="btn btn-default"><i class="fa fa-print" aria-hidden="true"></i></a></td>
@@ -178,7 +178,7 @@ if ($_SESSION['user'] == NULL) {
 												<div class="modal-body">
 													<div class="row justify-content-center">
 
-														<h3 class="text-primary col-12 text-center mt-5">Alterando o orçamento n° <label class="border p-3 text-danger font-weight-bold"><?= $value['id_orcamento'] ?></label></h3>
+														<h3 class="text-primary col-12 text-center mt-5">Alterando orçamento n° <label class="border p-3 text-danger font-weight-bold"><?= $value['id_orcamento'] ?></label></h3>
 
 														<form method="post">
 

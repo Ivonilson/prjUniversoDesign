@@ -27,7 +27,7 @@ if ($_SESSION['user'] == NULL) {
 						<h3 class="font-weight-bold">Proposta Comercial</h3>
 					</div>
 					<div class="col-5 divLogo pb-1">
-						<img src="../assets/universo.jpg" style="width: 70%; height: 60%";">
+						<img src="../assets/universo.jpg" style="width: 70%; height: 60%" ;">
 					</div>
 					<div class="offset-1 col-6 pt-3 pr-0">
 						<h5 class="font-weight-bold text-dark text-left  pl-5 pr-0 mr-0" style="font-size: 15px text-left;">Fabrício Pereira Betinardi Guimarães</h5>
@@ -54,10 +54,10 @@ if ($_SESSION['user'] == NULL) {
 									Cliente
 								</div>
 							</div>
-							<?php if($resultado[0]['cpf_cnpj'] == '' || $resultado[0]['cpf_cnpj'] == '') { ?>
+							<?php if ($resultado[0]['cpf_cnpj'] == '' || $resultado[0]['cpf_cnpj'] == '') { ?>
 								<input type="text" disabled class="form-control bg-light bordasImpressao " value="<?= $resultado != null ? $resultado[0]['nome_cliente'] : 'Orçamento sem itens' ?>">
 							<?php } else { ?>
-								<input type="text" disabled class="form-control bg-light bordasImpressao " value="<?= $resultado != null ? $resultado[0]['nome_cliente'].' (CPF/CNPJ: '.$resultado[0]['cpf_cnpj'].')' : 'Orçamento sem itens' ?>">
+								<input type="text" disabled class="form-control bg-light bordasImpressao " value="<?= $resultado != null ? $resultado[0]['nome_cliente'] . ' (CPF/CNPJ: ' . $resultado[0]['cpf_cnpj'] . ')' : 'Orçamento sem itens' ?>">
 							<?php } ?>
 						</div>
 					</div>
@@ -114,9 +114,9 @@ if ($_SESSION['user'] == NULL) {
 							if ($resultado != NULL) {
 								foreach ($resultado as  $item) {
 
-								if($item['tipo'] == 'OPERACIONAL') {
-									continue;
-								}
+									if ($item['tipo'] == 'OPERACIONAL') {
+										continue;
+									}
 
 							?>
 									<tr class="table-light bordasImpressao">
@@ -128,27 +128,27 @@ if ($_SESSION['user'] == NULL) {
 										<td class="text-dark bordasImpressao" style="border: 1px solid black"><?= number_format($item['desconto'], 3, ",", ".") ?></td>
 										<td class="text-dark bordasImpressao" style="border: 1px solid black"><?= number_format($item['total_pagar'], 3, ",", ".") ?></td>
 									</tr>
-							<?php
+								<?php
 									$contador++;
 									$conexao = null;
 								}
-							} 
+							}
 
-							if($resultadoServico[0]['valor_total_serv'] != 0) {
+							if ($resultadoServico[0]['valor_total_serv'] != 0) {
 
-							?>
-									<tr class="table-light">
-										<td class="text-dark bordasImpressao"><?= 'SERVIÇOS/INSTALAÇÕES' ?></td>
-										<td class="text-dark bordasImpressao"><?= '-' ?></td>
-										<td class="text-dark bordasImpressao"><?= '-' ?></td>
-										<td class="text-dark bordasImpressao"><?= number_format($resultadoServico[0]['valor_total_serv'], 3, ",", ".") ?></td>
-										<td class="text-dark bordasImpressao"><?= number_format($resultadoServico[0]['valor_desconto_serv'], 3, ",", ".") ?></td>
-										<td class="text-dark bordasImpressao"><?= number_format($resultadoServico[0]['total_pagar_serv'], 3, ",", ".")?></td>
-									</tr>
+								?>
+								<tr class="table-light">
+									<td class="text-dark bordasImpressao"><?= 'SERVIÇOS/INSTALAÇÕES' ?></td>
+									<td class="text-dark bordasImpressao"><?= '-' ?></td>
+									<td class="text-dark bordasImpressao"><?= '-' ?></td>
+									<td class="text-dark bordasImpressao"><?= number_format($resultadoServico[0]['valor_total_serv'], 3, ",", ".") ?></td>
+									<td class="text-dark bordasImpressao"><?= number_format($resultadoServico[0]['valor_desconto_serv'], 3, ",", ".") ?></td>
+									<td class="text-dark bordasImpressao"><?= number_format($resultadoServico[0]['total_pagar_serv'], 3, ",", ".") ?></td>
+								</tr>
 
 							<?php
 
-								}
+							}
 
 							?>
 						</tbody>
@@ -186,41 +186,41 @@ if ($_SESSION['user'] == NULL) {
 							<input type="text" disabled class="form-control bg-light bordasImpressao " value="<?= $resultado != null ? number_format($totalizador[0]['sum_total_pagar'], 2, ",", ".") : 0 ?>">
 						</div>
 					</div>
-					
-					<?php 
-						if($item['observacoes'] != '' && $item['observacoes'] != null) {
+
+					<?php
+					if ($item['observacoes'] != '' && $item['observacoes'] != null) {
 					?>
 
-					<div class="col-12">
-						<div class="input-group mb-2">
-							<div class="input-group-prepend">
-								<div class="input-group-text font-weight-bold bordasImpressao">
-									Observações
+						<div class="col-12">
+							<div class="input-group mb-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text font-weight-bold bordasImpressao">
+										Observações
+									</div>
 								</div>
+								<textarea type="text" disabled class="bg-light bordasImpressao col" id="inlineFormInputObservacoes" cols="100" rows="8"><?= $item['observacoes'] ?></textarea>
 							</div>
-							<textarea type="text" disabled class="bg-light bordasImpressao col" id="inlineFormInputObservacoes" cols="100" rows="8"><?= $item['observacoes']?></textarea>
 						</div>
-					</div>
+
+					<?php
+					}
+					?>
 
 					<div class="col-4">
 						<div class="input-group mb-2">
 							<div class="input-group-prepend">
 								<div class="input-group-text font-weight-bold bordasImpressao">
-									Prazo de entrega estimado
+									Prazo de entrega previsto
 								</div>
 							</div>
-							<input type="text" disabled class="form-control bg-light bordasImpressao " value="<?= $resultado != null ? $item['prazo'].' dia(s)' : '0' ?>">
+							<input type="text" disabled class="form-control bg-light bordasImpressao " value="<?= $resultado != null ? $item['prazo'] . ' dia(s)' : '0' ?>">
 						</div>
 					</div>
-
-					<?php 
-						}
-					?>
 
 					<div class="col-12 mt-5">
 						<span class="text-dark h5">Responsável:</span> <span class="text-dark h5"><?= $resultado != null ? $resultado[0]['usuario'] : $_SESSION['user'] ?></span>
 					</div>
-				    
+
 					<!-- 
 					<div class="col mt-5 pl-5 text-left d-print-none">
 						<a href="#"><img src="../assets/whatsapp.png" width="50" height="50" alt="Whatsapp" title="Compartilhar por Whatsapp"></a>
