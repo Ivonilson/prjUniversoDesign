@@ -374,26 +374,37 @@ if ($_SESSION['user'] == NULL) {
 
 							<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 mt-4">
 								<label class="text-dark" for="select-condicao-pagamento">
-									CONDIÇÕES PAGAMENTO
+									Condições de pagamento
 								</label>
 								<select class="form-control mb-2" id="select-condicao-pagamento" name="sel-condicao-pagamento">
 									<option value="-">Selecione</option>
 									<option value="A VISTA">A VISTA</option>
-									<option value="ADIANT. DE 50%">ADIANT. DE 50%</option>
+									<option value="ADIANT. DE 50% + REST. PARCELADO">ADIANT. DE 50% + REST. PARCELADO</option>
 									<option value="PARCELADO CARTÃO DE CRÉDITO">PARCELADO CARTÃO DE CRÉDITO</option>
-									<option value="OUTRO">OUTRO</option>
 								</select>
 							</div>
 
-							<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 mt-4">
-								<label class="text-dark" for="select-meio-pag">
-									MEIO PAGAMENTO
+							<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 mt-4 d-none" id="divAdiantMaisParc">
+								<label class="text-dark" for="inlineFormInputAdiant">Valor Adiant.(R$)</label>
+								<input type="text" class="form-control mb-2" id="inlineFormInputAdiant" placeholder="Digite" name="ipt-valor-adiant">
+							</div>
+
+							
+							<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 d-none" id="div-parcelas">
+								<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+									<label class="text-dark" for="qtdParcelas" id="lblParcelas">Parc. sem juros.</label>
+									<input type="number" min="1" max="6" class="form-control mb-2" aria-describedby="inlineFormInputNumeroParc" value="1" id="qtdParcelas" name="ipt-numero-parcelas">
+								</div>
+							</div>
+							
+							<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 mt-4 d-none" id="div-pag-avista">
+								<label class="text-dark" for="select-meio-pag" id="lbl-meio-pag">
+									Meio pagamento
 								</label>
 								<select class="form-control mb-2" id="select-meio-pag" name="sel-meio-pag">
 									<option value="-">Selecione</option>
 									<option value="DINHEIRO">DINHEIRO</option>
 									<option value="CARTÃO DÉBITO">CARTÃO DÉBITO</option>
-									<option value="CARTÃO CRÉDITO">CARTÃO CRÉDITO</option>
 									<option value="TRANSFERÊNCIA ON-LINE">TRANSFERÊNCIA ON-LINE</option>
 									<option value="PIX">PIX</option>
 									<option value="DEPÓSITO">DEPÓSITO</option>
@@ -401,12 +412,12 @@ if ($_SESSION['user'] == NULL) {
 							</div>
 
 							<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 mt-4">
-								<label class="text-dark" for="inlineFormInputSolicitante">SOLICITADO POR</label>
+								<label class="text-dark" for="inlineFormInputSolicitante">Solicitado por</label>
 								<input type="text" class="form-control mb-2" id="inlineFormInputSolicitante" placeholder="Nome e telefone" name="ipt-solicitante">
 							</div>
 
 							<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 mt-4">
-								<label class="text-dark" for="prazoEntrega">PRAZO DE ENTREGA</label>
+								<label class="text-dark" for="prazoEntrega">Prazo previsto para entrega</label>
 								<input type="number" min="0" class="form-control mb-2" id="prazoEntrega" placeholder="em dias" name="ipt-prazo-entrega" value="0">
 							</div>
 

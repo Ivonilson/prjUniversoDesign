@@ -170,7 +170,7 @@ function addItem() {
 	if (altura > 0) {
 		let subtotal = (((parseFloat(largura) * parseFloat(altura)) * parseFloat(valor_produto[1])) * parseFloat(qtdItens));
 		ipt.value = nome_produto;
-		iptProduto.value = nome_produto + ' (' + largura + ' larg. X ' + altura + ' alt. = ' + (parseFloat(largura) * parseFloat(altura)).toFixed(2) + ' m²)' +  valor_produto[2];
+		iptProduto.value = nome_produto + ' (' + largura + ' larg. X ' + altura + ' alt. = ' + (parseFloat(largura) * parseFloat(altura)).toFixed(2) + ' m²)' + valor_produto[2];
 		iptValorUnit.value = valor_produto[1];
 		iptQuant.value = qtdItens;
 		let desconto = document.getElementById('percentualDesconto').value / 100;
@@ -419,7 +419,7 @@ function confirmarDelecaoOrcamento() {
 					contador++;
 				});
 
-			}  else {
+			} else {
 				event.preventDefault();
 			}
 
@@ -460,7 +460,7 @@ $(document).ready(function () {
 	let background_form_cad = document.querySelector(".background-form-cadastro");
 	let botoes_gravar_cad = document.querySelector("#botoesGravarCad");
 
-	if(background_tela_cadastro != null){
+	if (background_tela_cadastro != null) {
 
 		botoes_atalho_cad.forEach(item => {
 			item.setAttribute("class", "btn btn-secondary btn-block font-weight-bold rounded mb-1");
@@ -490,8 +490,8 @@ $(document).ready(function () {
 	let botoes_cons = document.querySelector("#botoesCons");
 	let div_btn_form_cons = document.querySelector("#div-btn-form-cons");
 
-	if(background_tela_consulta != null){
-			botoes_atalho_cons.forEach(item => {
+	if (background_tela_consulta != null) {
+		botoes_atalho_cons.forEach(item => {
 			item.setAttribute("class", "btn btn-secondary btn-block font-weight-bold rounded mb-1");
 		});
 
@@ -523,27 +523,27 @@ $(document).ready(function () {
 	let background_row_form_edicao = document.querySelector("#row-form-edicao");
 	let btn_edicao = document.querySelector("#btnGravarEdicao");
 
-	if(background_tela_edicao != null){
+	if (background_tela_edicao != null) {
 
-	background_tela_edicao.setAttribute("style", "background-color: #DCDCDC");
-
-	
-	background_form_edicao.setAttribute("style", "background-color: #FFFFF0; border-style: outset; padding-bottom: 3px");
-
-	/*background jumbotron telas de edição*/
-	
-	background_jumbotron_telas_ed.setAttribute("class", "jumbotron jumbotron-fluid text-white");
-	background_jumbotron_telas_ed.setAttribute("style", "background-color: #2F4F4F");
-
-	/*background das rows dos forms de edição*/
-	
-	background_row_form_edicao.setAttribute("class", "row");
-	background_row_form_edicao.setAttribute("style", "background-color: #E6E6FA");
+		background_tela_edicao.setAttribute("style", "background-color: #DCDCDC");
 
 
-	/*botões de gravar alterações de edições*/
-	
-	btn_edicao.setAttribute("class", "btn btn-secondary btn-block font-weight-bold rounded");
+		background_form_edicao.setAttribute("style", "background-color: #FFFFF0; border-style: outset; padding-bottom: 3px");
+
+		/*background jumbotron telas de edição*/
+
+		background_jumbotron_telas_ed.setAttribute("class", "jumbotron jumbotron-fluid text-white");
+		background_jumbotron_telas_ed.setAttribute("style", "background-color: #2F4F4F");
+
+		/*background das rows dos forms de edição*/
+
+		background_row_form_edicao.setAttribute("class", "row");
+		background_row_form_edicao.setAttribute("style", "background-color: #E6E6FA");
+
+
+		/*botões de gravar alterações de edições*/
+
+		btn_edicao.setAttribute("class", "btn btn-secondary btn-block font-weight-bold rounded");
 
 	}
 
@@ -612,10 +612,10 @@ $(document).ready(function () {
 
 /*Constrói a URL depois que o DOM estiver pronto
 document.addEventListener("DOMContentLoaded", function() {
-    //conteúdo que será compartilhado: Título da página + URL
-    var conteudo = encodeURIComponent(document.title + "<h1>TESTE</h1>");
-    //altera a URL do botão
-    document.getElementById("whatsapp-share-btt").href = "https://api.whatsapp.com/send?text=" + conteudo;
+	//conteúdo que será compartilhado: Título da página + URL
+	var conteudo = encodeURIComponent(document.title + "<h1>TESTE</h1>");
+	//altera a URL do botão
+	document.getElementById("whatsapp-share-btt").href = "https://api.whatsapp.com/send?text=" + conteudo;
 }, false);*/
 
 confirmarDelecaoItem();
@@ -624,17 +624,64 @@ confirmarDelecaoOrcamento();
 //Inicializando Tooltips
 const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-  return new bootstrap.Tooltip(tooltipTriggerEl)
+	return new bootstrap.Tooltip(tooltipTriggerEl)
 });
 
-$(document).ready(function() { 
-    $('#botoesCons').click(function() { 
-        $.blockUI({ overlayCSS: { backgroundColor: '#2F4F4F'} }); 
- 
-        //setTimeout($.unblockUI, 2000); 
-        $(document).onload(function(){
-        	$.unblockUI;
-        }); 
-    }); 
-}); 
+$(document).ready(function () {
+	$('#botoesCons').click(function () {
+		$.blockUI({ overlayCSS: { backgroundColor: '#2F4F4F' } });
 
+		//setTimeout($.unblockUI, 2000); 
+		$(document).onload(function () {
+			$.unblockUI;
+		});
+	});
+});
+
+/**Implementação das formas de pagamento */
+$(document).ready(function () {
+	let condicaoPagto = document.querySelectorAll("#select-condicao-pagamento");
+	let divPagtoAvista= document.querySelector("#div-pag-avista");
+	let divParcelas = document.querySelector("#div-parcelas");
+	let divAdiantMaisparc = document.querySelector("#divAdiantMaisParc");
+
+	$("#select-condicao-pagamento").on('change', function () {
+		condicaoPagto.forEach(function(){
+			//alert(condicaoPagto[0].value);
+			if(condicaoPagto[0].value == 'PARCELADO CARTÃO DE CRÉDITO'){
+				divParcelas.setAttribute("class", "col-lg-3 col-md-12 col-sm-12 col-xs-12");
+				divPagtoAvista.setAttribute("class", "d-none");
+				divAdiantMaisparc.setAttribute("class", "d-none")
+			}
+			if(condicaoPagto[0].value == 'A VISTA'){
+				//divMeioPagto.setAttribute("class", "col-lg-3 col-md-12 col-sm-12 col-xs-12 mt-4");
+				divParcelas.setAttribute("class", "d-none");
+				divPagtoAvista.setAttribute("class", "col-lg-3 col-md-12 col-sm-12 col-xs-12 mt-4");
+				divAdiantMaisparc.setAttribute("class", "d-none")
+			}
+			if(condicaoPagto[0].value == "ADIANT. DE 50% + REST. PARCELADO"){
+				divPagtoAvista.setAttribute("class", "d-none");
+				divAdiantMaisparc.setAttribute("class", "col-lg-2 col-md-12 col-sm-12 col-xs-12 mt-4")
+				divParcelas.setAttribute("class", "col-lg-4 col-md-12 col-sm-12 col-xs-12");
+			}
+			if(condicaoPagto[0].value == "-"){
+				divPagtoAvista.setAttribute("class", "d-none");
+				divAdiantMaisparc.setAttribute("class", "d-none");
+				divParcelas.setAttribute("class", "d-none");
+			}
+
+		});
+	});
+
+	$("#qtdParcelas").on('change', function () {	
+		//alert('mudou parcela...');
+		let qtdParcelas = document.querySelector("#qtdParcelas");
+		//alert(qtdParcelas.value);
+		if(qtdParcelas.value >= 0 && qtdParcelas.value <= 3){
+			document.getElementById("lblParcelas").innerHTML = "Parc. sem juros.";
+		} else if (qtdParcelas.value >= 4){
+			document.getElementById("lblParcelas").innerHTML = "Parc. com juros.";
+		}
+	});
+
+});
