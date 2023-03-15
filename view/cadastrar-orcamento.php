@@ -392,7 +392,7 @@ if ($_SESSION['user'] == NULL) {
 							
 							<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 d-none" id="div-parcelas">
 								<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-									<label class="text-dark" for="qtdParcelas" id="lblParcelas">Parc. sem juros.</label>
+									<label class="text-dark" for="qtdParcelas" id="lblParcelas" style="width: 95px">Parc. sem juros.</label>
 									<input type="number" min="1" max="6" class="form-control mb-2" aria-describedby="inlineFormInputNumeroParc" value="1" id="qtdParcelas" name="ipt-numero-parcelas">
 								</div>
 							</div>

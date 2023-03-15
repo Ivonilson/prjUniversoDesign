@@ -684,4 +684,16 @@ $(document).ready(function () {
 		}
 	});
 
+	$("#select-condicao-pagamento").on('change', function() {
+		let forma_pagamento = document.querySelector("#select-condicao-pagamento");
+		switch (forma_pagamento.value){
+			case 'A VISTA':
+			alert('O pagamento será: ' + forma_pagamento.value);
+			break;
+
+			default: 
+			alert('mensagem padrão...');
+		}
+	});
+
 });
