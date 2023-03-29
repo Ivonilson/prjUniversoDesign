@@ -686,13 +686,25 @@ $(document).ready(function () {
 
 	$("#select-condicao-pagamento").on('change', function() {
 		let forma_pagamento = document.querySelector("#select-condicao-pagamento");
+		const valor_a_pagar = document.querySelector("#valorTotalPagar");
+		let observacoes = document.querySelector("#inlineFormInputObservacoesComplementares");
+
 		switch (forma_pagamento.value){
 			case 'A VISTA':
-			alert('O pagamento será: ' + forma_pagamento.value);
-			break;
+				alert('O pagamento será: ' + forma_pagamento.value);
+				alert('Valor total a pagar: ' + valor_a_pagar.value);
+				break;
+
+			case 'ADIANT. DE 50% + REST. PARCELADO':
+				alert('O pagamento serâ: ' + forma_pagamento.value);
+				break;
+
+			case 'PARCELADO CARTÃO DE CRÉDITO':
+				alert('O pagamento será: ' + forma_pagamento.value);
+				break;
 
 			default: 
-			alert('mensagem padrão...');
+				alert('mensagem padrão...');
 		}
 	});
 
