@@ -256,6 +256,7 @@ function addItem() {
 				Descontos();
 				TotalPagar();
 				retornaItensConsolidado();
+				document.querySelector("#inlineFormInputObservacoesComplementares").innerHTML = "Total a pagar: " + document.querySelector("#valorTotalPagar").value;
 			}
 
 		}
@@ -700,12 +701,31 @@ $(document).ready(function () {
 				break;
 
 			case 'PARCELADO CARTÃO DE CRÉDITO':
-				alert('O pagamento será: ' + forma_pagamento.value);
+				//alert('O pagamento será: ' + forma_pagamento.value);
 				break;
 
 			default: 
 				alert('mensagem padrão...');
 		}
+
 	});
 
 });
+
+$("#btnAdicionar").on('click', function(){
+	document.querySelector("#inlineFormInputObservacoesComplementares").innerHTML = "Total a pagar: " + document.querySelector("#valorTotalPagar").value;
+});
+
+$("#qtdParcelas").on('change', function(){
+	let numero_parcelas = document.querySelector("#qtdParcelas");
+	let observacoes = document.querySelector("#inlineFormInputObservacoesComplementares");
+	const valor_a_pagar = document.querySelector("#valorTotalPagar");
+
+	if(numero_parcelas.value == 2) {
+		let valor_parcela =  (valor_a_pagar.value).replace(',' , '.') / 2;
+		observacoes.innerHTML = ("Parc.1:R$" + valor_parcela + " Parc.2:R$" + valor_parcela + 
+		" " + "Total:" + valor_a_pagar.value).replace(/\s/g, "\n");
+	}
+});
+
+

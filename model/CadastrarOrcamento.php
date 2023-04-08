@@ -7,8 +7,6 @@ class CadastrarOrcamento {
 	public function cadOrcamento()
 	{
 			$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-			$condicao = $dados['check-condicao'];
-			$forma = $dados['check-forma'];
 
 			if (!empty($dados['btnCadastrarOrcamento'])) {
 				unset($dados['btnCadastrarOrcamento']);
@@ -18,7 +16,7 @@ class CadastrarOrcamento {
 
 			$conn = new Conn();
 
-			$statement = "INSERT INTO tbl_orcamento (id_orcamento, id_cliente, trabalho_servico, data_validade, condicao_pagamento, meio_pagamento, condicao, forma, prazo, solicitante, observacao, data_cadastro, usuario) VALUES (:id_orcamento, :id_cliente, :trabalho_servico, :data_validade, :condicao_pagamento, :meio_pagamento, :condicao, :forma, :prazo, :solicitante, :observacao, CURDATE(), :usuario)";
+			$statement = "INSERT INTO tbl_orcamento (id_orcamento, id_cliente, trabalho_servico, data_validade, condicao_pagamento, meio_pagamento, prazo, solicitante, observacao, data_cadastro, usuario) VALUES (:id_orcamento, :id_cliente, :trabalho_servico, :data_validade, :condicao_pagamento, :meio_pagamento, :prazo, :solicitante, :observacao, CURDATE(), :usuario)";
 
 			$dados_cadastrar = $conn->getConn()->prepare($statement);
 
@@ -48,8 +46,6 @@ class CadastrarOrcamento {
 			$dados_cadastrar->bindParam(':data_validade', $dados['ipt-data-validade-orc']);
 			$dados_cadastrar->bindParam(':condicao_pagamento', $dados['sel-condicao-pagamento']);
 			$dados_cadastrar->bindParam(':meio_pagamento', $dados['sel-meio-pag']);
-			$dados_cadastrar->bindParam(':condicao', $condicao);
-			$dados_cadastrar->bindParam(':forma', $forma);
 			$dados_cadastrar->bindParam(':prazo', $dados['ipt-prazo-entrega']);
 			$dados_cadastrar->bindParam(':solicitante', $dados['ipt-solicitante']);
 			$dados_cadastrar->bindParam(':observacao', $dados['ta-observacao']);

@@ -384,20 +384,18 @@ if ($_SESSION['user'] == NULL) {
 								</select>
 							</div>
 
-							<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 mt-4 d-none" id="divAdiantMaisParc">
+							<div class="d-none" id="divAdiantMaisParc">
 								<label class="text-dark" for="inlineFormInputAdiant">Valor Adiant.(R$)</label>
 								<input type="text" class="form-control mb-2" id="inlineFormInputAdiant" placeholder="Digite" name="ipt-valor-adiant">
 							</div>
 
 							
-							<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 d-none" id="div-parcelas">
-								<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-									<label class="text-dark" for="qtdParcelas" id="lblParcelas" style="width: 95px">Parc. sem juros.</label>
-									<input type="number" min="1" max="6" class="form-control mb-2" aria-describedby="inlineFormInputNumeroParc" value="1" id="qtdParcelas" name="ipt-numero-parcelas">
-								</div>
+							<div class="d-none" id="div-parcelas">
+								<label class="text-dark" for="qtdParcelas" id="lblParcelas" style="width: 95px">Parc. sem juros.</label>
+								<input type="number" min="1" max="6" class="form-control mb-2" aria-describedby="inlineFormInputNumeroParc" value="1" id="qtdParcelas" name="ipt-numero-parcelas">
 							</div>
 							
-							<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 mt-4 d-none" id="div-pag-avista">
+							<div class="d-none" id="div-pag-avista">
 								<label class="text-dark" for="select-meio-pag" id="lbl-meio-pag">
 									Meio pagamento
 								</label>
