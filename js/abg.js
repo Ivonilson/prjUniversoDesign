@@ -692,12 +692,12 @@ $(document).ready(function () {
 
 		switch (forma_pagamento.value){
 			case 'A VISTA':
-				alert('O pagamento será: ' + forma_pagamento.value);
-				alert('Valor total a pagar: ' + valor_a_pagar.value);
+				//alert('O pagamento será: ' + forma_pagamento.value);
+				//alert('Valor total a pagar: ' + valor_a_pagar.value);
 				break;
 
 			case 'ADIANT. DE 50% + REST. PARCELADO':
-				alert('O pagamento serâ: ' + forma_pagamento.value);
+				//alert('O pagamento serâ: ' + forma_pagamento.value);
 				break;
 
 			case 'PARCELADO CARTÃO DE CRÉDITO':
